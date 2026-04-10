@@ -1,0 +1,234 @@
+{
+    "book_title": "Chuyến Phiêu Lưu Mùa Đông Của Người Tuyết",
+    "source_language": "en",
+    "target_language": "vi",
+    "total_pages": 8,
+    "localization_map": {
+        "Snow": "Mưa",
+        "Winter": "Mùa mưa",
+        "Village": "Làng",
+        "Anna": "An",
+        "Wool Hat": "Nón lá",
+        "Warm Coat": "Áo ấm",
+        "Tom": "Tùng",
+        "Fireplace": "Bếp than",
+        "Grandmother": "Bà ngoại",
+        "Hot Chocolate": "Chè nóng",
+        "Snowman": "Người tuyết",
+        "Carrot": "Củ cà rốt",
+        "Moonlight": "Ánh trăng",
+        "Sleigh": "Xe đạp",
+        "Forest": "Rừng",
+        "Northern Lights": "Cầu vồng",
+        "Mountains": "Núi",
+        "Ice Palace": "Cung điện băng",
+        "Snow Queen": "Nữ hoàng tuyết",
+        "Ice Crystal": "Viên pha lê"
+    },
+    "pages": [
+        {
+            "page_id": 1,
+            "text_blocks": [
+                {
+                    "source_text": "It was a cold winter morning. Snow covered the entire village like a white blanket.",
+                    "text": "Đó là một buổi sáng mùa mưa lạnh lẽo. Mưa phủ khắp ngôi làng như một tấm chăn trắng.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "Mưa", "type": "weather_entity", "original": "Snow"},
+                        {"name": "Mùa mưa", "type": "weather_entity", "original": "Winter"},
+                        {"name": "Làng", "type": "location", "original": "Village"}
+                    ]
+                },
+                {
+                    "source_text": "Little Anna put on her wool hat and warm coat before stepping outside.",
+                    "text": "Bé An đội chiếc nón lá và mặc áo ấm trước khi bước ra ngoài.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Nón lá", "type": "clothing", "original": "Wool Hat"},
+                        {"name": "Áo ấm", "type": "clothing", "original": "Warm Coat"}
+                    ]
+                }
+            ]
+        },
+        {
+            "page_id": 2,
+            "text_blocks": [
+                {
+                    "source_text": "Anna and her brother Tom ran to the fireplace to warm up after playing in the snow.",
+                    "text": "An và anh trai Tùng chạy đến bên bếp than để sưởi ấm sau khi chơi ngoài mưa.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Tùng", "type": "character", "original": "Tom"},
+                        {"name": "Bếp than", "type": "object", "original": "Fireplace"},
+                        {"name": "Mưa", "type": "weather_entity", "original": "Snow"}
+                    ]
+                },
+                {
+                    "source_text": "Their grandmother made hot chocolate with marshmallows by the fireplace.",
+                    "text": "Bà ngoại nấu chè nóng với khoai môn bên bếp than.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "Bà ngoại", "type": "character", "original": "Grandmother"},
+                        {"name": "Chè nóng", "type": "food", "original": "Hot Chocolate"},
+                        {"name": "Bếp than", "type": "object", "original": "Fireplace"}
+                    ]
+                }
+            ]
+        },
+        {
+            "page_id": 3,
+            "text_blocks": [
+                {
+                    "source_text": "The children built a Snowman in the garden. They used a carrot for his nose.",
+                    "text": "Bọn trẻ nặn một Người Tuyết trong vườn. Chúng dùng một củ cà rốt làm mũi.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "Người tuyết", "type": "character", "original": "Snowman"},
+                        {"name": "Củ cà rốt", "type": "object", "original": "Carrot"},
+                        {"name": "Mưa", "type": "weather_entity", "original": "Snow"}
+                    ]
+                },
+                {
+                    "source_text": "Anna gave the Snowman her old wool hat to keep him warm.",
+                    "text": "An đưa cho Người Tuyết chiếc nón lá cũ để giữ ấm.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Người tuyết", "type": "character", "original": "Snowman"},
+                        {"name": "Nón lá", "type": "clothing", "original": "Wool Hat"}
+                    ]
+                }
+            ]
+        },
+        {
+            "page_id": 4,
+            "text_blocks": [
+                {
+                    "source_text": "That night, the Snowman came alive under the bright moonlight.",
+                    "text": "Đêm đó, Người Tuyết sống dậy dưới ánh trăng sáng.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "Người tuyết", "type": "character", "original": "Snowman"},
+                        {"name": "Ánh trăng", "type": "weather_entity", "original": "Moonlight"}
+                    ]
+                },
+                {
+                    "source_text": "The Snowman took Anna on a magical sleigh ride through the winter forest.",
+                    "text": "Người Tuyết đưa An đi xe đạp phép thuật xuyên qua khu rừng mùa mưa.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "Người tuyết", "type": "character", "original": "Snowman"},
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Xe đạp", "type": "vehicle", "original": "Sleigh"},
+                        {"name": "Mùa mưa", "type": "weather_entity", "original": "Winter"},
+                        {"name": "Rừng", "type": "location", "original": "Forest"}
+                    ]
+                }
+            ]
+        },
+        {
+            "page_id": 5,
+            "text_blocks": [
+                {
+                    "source_text": "They flew over the snowy mountains and saw the Northern Lights dancing in the sky.",
+                    "text": "Họ bay qua những ngọn núi phủ mưa và thấy cầu vồng nhảy múa trên bầu trời.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "Mưa", "type": "weather_entity", "original": "Snow"},
+                        {"name": "Cầu vồng", "type": "weather_entity", "original": "Northern Lights"},
+                        {"name": "Núi", "type": "location", "original": "Mountains"}
+                    ]
+                },
+                {
+                    "source_text": "The Snowman showed Anna the ice palace where the Snow Queen lived.",
+                    "text": "Người Tuyết chỉ cho An thấy cung điện băng nơi Nữ Hoàng Tuyết sống.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "Người tuyết", "type": "character", "original": "Snowman"},
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Cung điện băng", "type": "location", "original": "Ice Palace"},
+                        {"name": "Nữ hoàng tuyết", "type": "character", "original": "Snow Queen"}
+                    ]
+                }
+            ]
+        },
+        {
+            "page_id": 6,
+            "text_blocks": [
+                {
+                    "source_text": "The Snow Queen gave Anna a magical ice crystal that would never melt.",
+                    "text": "Nữ Hoàng Tuyết tặng An một viên pha lê phép thuật không bao giờ tan chảy.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "Nữ hoàng tuyết", "type": "character", "original": "Snow Queen"},
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Viên pha lê", "type": "object", "original": "Ice Crystal"}
+                    ]
+                },
+                {
+                    "source_text": "Winter is the most magical season, the Snow Queen said with a gentle smile.",
+                    "text": "Mùa mưa là mùa kỳ diệu nhất, Nữ Hoàng Tuyết nói với nụ cười dịu dàng.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "Mùa mưa", "type": "weather_entity", "original": "Winter"},
+                        {"name": "Nữ hoàng tuyết", "type": "character", "original": "Snow Queen"}
+                    ]
+                }
+            ]
+        },
+        {
+            "page_id": 7,
+            "text_blocks": [
+                {
+                    "source_text": "As the sun rose, the Snowman began to melt. Anna held his carrot nose and cried.",
+                    "text": "Khi mặt trời mọc, Người Tuyết bắt đầu tan chảy. An ôm chiếc mũi củ cà rốt và khóc.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "Người tuyết", "type": "character", "original": "Snowman"},
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Củ cà rốt", "type": "object", "original": "Carrot"}
+                    ]
+                },
+                {
+                    "source_text": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat.",
+                    "text": "Tùng thấy An ngồi bên bếp than, ôm củ cà rốt và chiếc nón lá.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "Tùng", "type": "character", "original": "Tom"},
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Bếp than", "type": "object", "original": "Fireplace"},
+                        {"name": "Củ cà rốt", "type": "object", "original": "Carrot"},
+                        {"name": "Nón lá", "type": "clothing", "original": "Wool Hat"}
+                    ]
+                }
+            ]
+        },
+        {
+            "page_id": 8,
+            "text_blocks": [
+                {
+                    "source_text": "Anna smiled and looked at the ice crystal. It sparkled like the snow outside.",
+                    "text": "An mỉm cười và nhìn viên pha lê. Nó lấp lánh như mưa bên ngoài.",
+                    "bbox": [50, 100, 500, 150],
+                    "entities": [
+                        {"name": "An", "type": "character", "original": "Anna"},
+                        {"name": "Viên pha lê", "type": "object", "original": "Ice Crystal"},
+                        {"name": "Mưa", "type": "weather_entity", "original": "Snow"}
+                    ]
+                },
+                {
+                    "source_text": "Next winter, I will build another Snowman, Anna whispered. And we will fly again.",
+                    "text": "Mùa mưa tới, mình sẽ nặn một Người Tuyết khác, An thì thầm. Và chúng mình sẽ bay lại.",
+                    "bbox": [50, 160, 500, 210],
+                    "entities": [
+                        {"name": "Mùa mưa", "type": "weather_entity", "original": "Winter"},
+                        {"name": "Người tuyết", "type": "character", "original": "Snowman"},
+                        {"name": "An", "type": "character", "original": "Anna"}
+                    ]
+                }
+            ]
+        }
+    ]
+}

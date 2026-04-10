@@ -12,3 +12,7 @@ torch>=2.0.0
 
 # Transformers for amrlib neural models
 transformers>=4.30.0
+
+# HuggingFace datasets for ViAMR-v1.0 Vietnamese AMR corpus
+datasets>=2.14.0
+

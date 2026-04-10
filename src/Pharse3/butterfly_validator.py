@@ -1,20 +1,22 @@
 """BFS-based Butterfly Effect Validator using Energy Delta.
 
-Implements Task #p3.3 — validates localization proposals by performing
+Implements Task #p3.3 -- validates localization proposals by performing
 BFS traversal on the entity graph and computing energy deltas to assess
 the risk of cascading semantic conflicts.
 
 Key design decisions:
-    - Pure algorithm — NO LLM calls at validation time.
+    - Pure algorithm -- NO LLM calls at validation time.
     - BFS traversal bounded by max_bfs_depth for guaranteed termination.
     - Energy threshold is configurable via config.json.
     - Returns both ACCEPT/REJECT status and detailed energy reasoning.
+    - Supports cross-lingual mode using ViAMR-v1.0 Vietnamese corpus.
 """
 
 import logging
 from collections import deque
 from typing import Any
 
+from .cross_lingual_energy import compute_cross_lingual_delta_energy
 from .energy import compute_delta_energy, load_config
 from .models import (
     ButterflyConflict,
@@ -37,6 +39,7 @@ def butterfly_validator(
     amr_adjacency: dict[str, list[dict[str, str]]] | None = None,
     energy_threshold: float = DEFAULT_ENERGY_THRESHOLD,
     total_energy_threshold: float = DEFAULT_TOTAL_THRESHOLD,
+    use_cross_lingual: bool = False,
 ) -> ValidationResult:
     """Validate a localization proposal using BFS and energy delta.
 
@@ -60,6 +63,9 @@ def butterfly_validator(
             Defaults to the value in config.json.
         total_energy_threshold: Cumulative total delta energy threshold.
             Defaults to the value in config.json.
+        use_cross_lingual: If True, uses Vietnamese corpus-aware energy
+            computation via ViAMR-v1.0. Requires the ViAMR index to be
+            loaded first. Falls back to base energy if unavailable.
 
     Returns:
         ValidationResult with ACCEPT/REJECT status, total delta energy,
@@ -113,8 +119,14 @@ def butterfly_validator(
             continue
 
         # Compute energy delta for this neighborhood
+        # Use cross-lingual energy when ViAMR corpus is available
         depth_map = {n["concept"]: depth + 1 for n in neighbors}
-        delta_e, orig_edges, prop_edges = compute_delta_energy(
+        energy_func = (
+            compute_cross_lingual_delta_energy
+            if use_cross_lingual
+            else compute_delta_energy
+        )
+        delta_e, orig_edges, prop_edges = energy_func(
             original=original,
             proposed=proposed,
             neighbors=neighbors,
