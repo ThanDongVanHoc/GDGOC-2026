@@ -1,0 +1,44 @@
+services:
+  orchestrator:
+    build: ./orchestrator
+    ports:
+      - "8000:8000"
+    env_file: .env
+    depends_on:
+      - phase1
+      - phase2
+      - phase3
+      - phase4
+      - phase5
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - orchestrator
+
+  phase1:
+    build: ./phase1
+    ports:
+      - "8001:8000"
+
+  phase2:
+    build: ./phase2
+    ports:
+      - "8002:8000"
+
+  phase3:
+    build: ./phase3
+    ports:
+      - "8003:8000"
+
+  phase4:
+    build: ./phase4
+    ports:
+      - "8004:8000"
+
+  phase5:
+    build: ./phase5
+    ports:
+      - "8005:8000"
