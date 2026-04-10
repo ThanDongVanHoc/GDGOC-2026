@@ -1,0 +1,14 @@
+# OmniLocal — Phase 3 Dependencies
+# ==================================
+# Core AMR libraries
+amrlib>=0.8.0
+penman>=1.2.0
+
+# Data validation
+pydantic>=2.0.0
+
+# AMR model dependency (PyTorch-based)
+torch>=2.0.0
+
+# Transformers for amrlib neural models
+transformers>=4.30.0
