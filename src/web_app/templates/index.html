@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách: Re-engineering Agent</title>
+    <!-- Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Extracted CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Split-view Bounding Box Explorer</h1>
+        <p style="color: var(--text-muted); font-size: 1rem;">Mô hình UI Interactive của Hệ thống cấu trúc hóa Layout Sách</p>
+    </header>
+
+    <div class="container">
+        <!-- Vùng kéo thả đầu tiên -->
+        <div id="drop-zone">
+            <div class="upload-icon">✨</div>
+            <h2 style="margin-bottom: 0.5rem; font-weight: 600; font-size: 1.5rem">Kéo thả PDF vào đây</h2>
+            <p style="color: var(--text-muted);">Hệ thống sẽ render giao diện Split-view thông minh</p>
+            <input type="file" id="file-input" accept="application/pdf">
+        </div>
+
+        <div class="loader" id="loader"></div>
+
+        <!-- Màn hình Split view -->
+        <div id="split-view">
+            <!-- Cột trái: Trực quan PDF -->
+            <div class="panel">
+                <div class="panel-header">
+                    <span>Trực quan PDF Interactive</span>
+                    <button style="padding:6px 14px; border-radius:8px; font-weight: 600; background:linear-gradient(135deg, var(--primary), #8b5cf6); color:white; border:none; cursor:pointer;" onclick="location.reload()">Upload Phân tích Lại</button>
+                </div>
+                <div class="panel-content" id="pdf-render">
+                    <!-- Ảnh render động sẽ chui vào đây -->
+                </div>
+            </div>
+
+            <!-- Cột phải: JSON -->
+            <div class="panel">
+                <div class="panel-header">
+                    <span>Dữ liệu Cấu trúc (JSON Schema)</span>
+                </div>
+                <div class="panel-content">
+                    <div id="json-view">
+                        <pre id="json-code"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Extracted JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Connect the dynamic drop-zone click to the input natively
+        document.getElementById('drop-zone').addEventListener('click', function() {
+            document.getElementById('file-input').click();
+        });
+    </script>
+</body>
+</html>
