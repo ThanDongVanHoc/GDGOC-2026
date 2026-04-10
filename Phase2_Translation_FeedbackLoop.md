@@ -144,6 +144,7 @@ Viết vòng lặp `while` trong Python:
 - Bản dịch tiếng Việt đã thẩm định
 - Tọa độ `[x0, y0, x1, y1]` gốc cho từng block
 - Warning tags (nếu có)
+- Font+ Size+ Color+Flags
 
 Sẵn sàng chuyển sang Phase 3.
 

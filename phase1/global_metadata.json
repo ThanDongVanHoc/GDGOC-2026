@@ -1,0 +1,34 @@
+{
+  "legal_parameters": {
+    "license_status": true,
+    "author_attribution": "Original Author © 2026. All rights reserved.",
+    "integrity_protection": true,
+    "adaptation_rights": false
+  },
+  "content_parameters": {
+    "translation_fidelity": "Strict",
+    "plot_alteration": false,
+    "cultural_localization": false
+  },
+  "ip_brand_parameters": {
+    "preserve_main_names": true,
+    "no_retouching": true,
+    "lock_character_color": true,
+    "never_change_rules": [
+      "Do not alter character facial features",
+      "Do not modify character outfit colors",
+      "Do not remove or redraw background character art"
+    ],
+    "protected_names": ["Elsa", "Anna", "Olaf", "Kristoff", "Sven"]
+  },
+  "editorial_parameters": {
+    "source_language": "EN",
+    "target_language": "VI",
+    "style_register": "Children under 10 years old",
+    "target_age_tone": 8,
+    "glossary_strict_mode": false,
+    "sfx_handling": "In_panel_subs",
+    "allow_bg_edit": false,
+    "satisfaction_clause": true
+  }
+}

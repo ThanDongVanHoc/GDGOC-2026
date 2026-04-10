@@ -1,0 +1,926 @@
+[
+  {
+    "chunk_id": 1,
+    "translated_blocks": [
+      {
+        "original_content": "CONTENTS",
+        "translated_content": "MỤC LỤC",
+        "bbox": [
+          245.0293426513672,
+          84.73625946044922,
+          350.2388000488281,
+          104.89510345458984
+        ],
+        "font": "LiberationSerif",
+        "size": 20.158838272094727,
+        "color": 0,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Harry Potter and the Sorcerer’s Stone",
+        "translated_content": "Harry Potter và Hòn đá Phù thủy",
+        "bbox": [
+          189.68869018554688,
+          117.21427917480469,
+          405.58001708984375,
+          131.6134490966797
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Harry Potter and the Chamber of Secrets",
+        "translated_content": "Harry Potter và Phòng chứa Bí mật",
+        "bbox": [
+          180.56814575195312,
+          140.98019409179688,
+          414.7070617675781,
+          155.37936401367188
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Harry Potter and the Prisoner of Azkaban",
+        "translated_content": "Harry Potter và Tên tù nhân ngục Azkaban",
+        "bbox": [
+          178.16134643554688,
+          164.74609375,
+          417.11444091796875,
+          179.145263671875
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Harry Potter and the Goblet of Fire",
+        "translated_content": "Harry Potter và Chiếc cốc lửa",
+        "bbox": [
+          196.54849243164062,
+          188.5120086669922,
+          398.7310485839844,
+          202.9111785888672
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Harry Potter and the Order of the Phoenix",
+        "translated_content": "Harry Potter và Hội Phượng hoàng",
+        "bbox": [
+          176.75570678710938,
+          212.2779083251953,
+          418.5090026855469,
+          226.6770782470703
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Harry Potter and the Half-Blood Prince",
+        "translated_content": "Harry Potter và Hoàng tử lai",
+        "bbox": [
+          184.35757446289062,
+          236.0438232421875,
+          410.90997314453125,
+          250.4429931640625
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Harry Potter and the Deathly Hallows",
+        "translated_content": "Harry Potter và Bảo bối Tử thần",
+        "bbox": [
+          188.7551727294922,
+          259.80975341796875,
+          406.52001953125,
+          274.2088928222656
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "F",
+        "translated_content": "DÀNH",
+        "bbox": [
+          204.76934814453125,
+          109.21708679199219,
+          217.08262634277344,
+          129.3759307861328
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 20.158838272094727,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "OR",
+        "translated_content": "CHO",
+        "bbox": [
+          217.0718231201172,
+          116.35496520996094,
+          231.4616241455078,
+          127.15434265136719
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "J",
+        "translated_content": "J",
+        "bbox": [
+          231.45579528808594,
+          113.60962677001953,
+          241.44577026367188,
+          128.00880432128906
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "ESSICA",
+        "translated_content": "ESSICA",
+        "bbox": [
+          241.44215393066406,
+          116.35496520996094,
+          276.2095642089844,
+          127.15434265136719
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": ",",
+        "translated_content": ",",
+        "bbox": [
+          276.2033386230469,
+          113.60962677001953,
+          283.4007263183594,
+          128.00880432128906
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "WHO LOVES STORIES",
+        "translated_content": "NGƯỜI YÊU NHỮNG CÂU CHUYỆN",
+        "bbox": [
+          283.4007263183594,
+          116.35496520996094,
+          386.896728515625,
+          127.15434265136719
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": ",",
+        "translated_content": ",",
+        "bbox": [
+          386.8968811035156,
+          113.60962677001953,
+          390.4955749511719,
+          128.00880432128906
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "FOR",
+        "translated_content": "DÀNH CHO",
+        "bbox": [
+          205.37608337402344,
+          145.16212463378906,
+          226.35598754882812,
+          155.9615020751953
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "A",
+        "translated_content": "A",
+        "bbox": [
+          226.3499755859375,
+          142.4167938232422,
+          238.74386596679688,
+          156.8159637451172
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "NNE",
+        "translated_content": "NNE",
+        "bbox": [
+          238.73162841796875,
+          145.16212463378906,
+          259.7227783203125,
+          155.9615020751953
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": ",",
+        "translated_content": ",",
+        "bbox": [
+          259.71630859375,
+          142.4167938232422,
+          266.9136962890625,
+          156.8159637451172
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "WHO LOVED THEM TOO",
+        "translated_content": "NGƯỜI CŨNG YÊU CHÚNG",
+        "bbox": [
+          266.9136962890625,
+          145.16212463378906,
+          385.09820556640625,
+          155.9615020751953
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": ";",
+        "translated_content": ";",
+        "bbox": [
+          385.0975341796875,
+          142.4167938232422,
+          389.8909912109375,
+          156.8159637451172
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "AND FOR",
+        "translated_content": "VÀ DÀNH CHO",
+        "bbox": [
+          189.20501708984375,
+          173.9692840576172,
+          234.4647979736328,
+          184.76866149902344
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "D",
+        "translated_content": "D",
+        "bbox": [
+          234.4585418701172,
+          171.2239532470703,
+          248.45025634765625,
+          185.6231231689453
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "I",
+        "translated_content": "I",
+        "bbox": [
+          248.44808959960938,
+          173.9692840576172,
+          252.04318237304688,
+          184.76866149902344
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": ",",
+        "translated_content": ",",
+        "bbox": [
+          252.03599548339844,
+          171.2239532470703,
+          259.2333679199219,
+          185.6231231689453
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "WHO HEARD THIS ONE FIRST",
+        "translated_content": "NGƯỜI ĐÃ NGHE CÂU CHUYỆN NÀY ĐẦU TIÊN",
+        "bbox": [
+          259.23333740234375,
+          173.9692840576172,
+          402.4809265136719,
+          184.76866149902344
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 10.79937744140625,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": ".",
+        "translated_content": ".",
+        "bbox": [
+          402.4720153808594,
+          171.2239532470703,
+          406.0707092285156,
+          185.6231231689453
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 0,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "CONTENTS",
+        "translated_content": "MỤC LỤC",
+        "bbox": [
+          245.0293426513672,
+          109.22235107421875,
+          350.2388000488281,
+          129.38119506835938
+        ],
+        "font": "LiberationSerif",
+        "size": 20.158838272094727,
+        "color": 0,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "ONE",
+        "translated_content": "MỘT",
+        "bbox": [
+          282.84942626953125,
+          140.98019409179688,
+          312.4270324707031,
+          155.37936401367188
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Boy Who Lived",
+        "translated_content": "Cậu bé sống sót",
+        "bbox": [
+          241.09381103515625,
+          168.34323120117188,
+          354.1826477050781,
+          182.74240112304688
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "TWO",
+        "translated_content": "HAI",
+        "bbox": [
+          281.2523193359375,
+          195.7137908935547,
+          314.013427734375,
+          210.1129608154297
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Vanishing Glass",
+        "translated_content": "Tấm kính biến mất",
+        "bbox": [
+          238.47323608398438,
+          223.07684326171875,
+          356.79052734375,
+          237.47601318359375
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "THREE",
+        "translated_content": "BA",
+        "bbox": [
+          274.470947265625,
+          250.44740295410156,
+          320.816162109375,
+          264.8465576171875
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Letters from No One",
+        "translated_content": "Những lá thư từ hư không",
+        "bbox": [
+          225.95628356933594,
+          277.8104248046875,
+          369.31146240234375,
+          292.2095947265625
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "FOUR",
+        "translated_content": "BỐN",
+        "bbox": [
+          278.4525146484375,
+          305.1810302734375,
+          316.8321533203125,
+          319.5801696777344
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Keeper of the Keys",
+        "translated_content": "Người giữ khóa",
+        "bbox": [
+          230.49998474121094,
+          332.5440368652344,
+          364.763916015625,
+          346.9432067871094
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "FIVE",
+        "translated_content": "NĂM",
+        "bbox": [
+          281.65753173828125,
+          359.91461181640625,
+          313.63055419921875,
+          374.3137512207031
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Diagon Alley",
+        "translated_content": "Hẻm Xéo",
+        "bbox": [
+          259.480224609375,
+          387.27764892578125,
+          335.79852294921875,
+          401.67681884765625
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "SIX",
+        "translated_content": "SÁU",
+        "bbox": [
+          286.0435791015625,
+          414.648193359375,
+          309.22320556640625,
+          429.04736328125
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Journey from Platform Nine and Three-quarters",
+        "translated_content": "Chuyến đi từ sân ga Chín và Ba phần tư",
+        "bbox": [
+          146.2906494140625,
+          442.0112609863281,
+          448.9845275878906,
+          456.4104309082031
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "SEVEN",
+        "translated_content": "BẢY",
+        "bbox": [
+          274.46014404296875,
+          469.3818359375,
+          320.8062744140625,
+          483.7809753417969
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Sorting Hat",
+        "translated_content": "Chiếc nón phân loại",
+        "bbox": [
+          251.27090454101562,
+          496.7448425292969,
+          344.01409912109375,
+          511.1440124511719
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "EIGHT",
+        "translated_content": "TÁM",
+        "bbox": [
+          276.06805419921875,
+          524.1154174804688,
+          319.2194519042969,
+          538.5145874023438
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Potions Master",
+        "translated_content": "Thầy độc dược",
+        "bbox": [
+          240.8800506591797,
+          551.478515625,
+          354.384033203125,
+          565.877685546875
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "NINE",
+        "translated_content": "CHÍN",
+        "bbox": [
+          280.4541015625,
+          578.8489990234375,
+          314.822509765625,
+          593.2481689453125
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "The Midnight Duel",
+        "translated_content": "Trận đấu tay đôi lúc nửa đêm",
+        "bbox": [
+          242.8816375732422,
+          606.2120971679688,
+          352.3924560546875,
+          620.6112670898438
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "TEN",
+        "translated_content": "MƯỜI",
+        "bbox": [
+          283.65911865234375,
+          633.5826416015625,
+          311.6181640625,
+          647.9818115234375
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Halloween",
+        "translated_content": "Lễ Halloween",
+        "bbox": [
+          266.4638671875,
+          660.9456787109375,
+          328.7999267578125,
+          675.3448486328125
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "ELEVEN",
+        "translated_content": "MƯỜI MỘT",
+        "bbox": [
+          269.68035888671875,
+          688.3162231445312,
+          325.5967102050781,
+          702.7153930664062
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "Quidditch",
+        "translated_content": "Quidditch",
+        "bbox": [
+          268.85986328125,
+          715.6793212890625,
+          326.4051513671875,
+          730.0784912109375
+        ],
+        "font": "LiberationSerif-Italic",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 6,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      },
+      {
+        "original_content": "TWELVE",
+        "translated_content": "MƯỜI HAI",
+        "bbox": [
+          268.736083984375,
+          743.0498657226562,
+          326.5408630371094,
+          757.4490356445312
+        ],
+        "font": "LiberationSerif",
+        "size": 14.399169921875,
+        "color": 238,
+        "flags": 4,
+        "editability_tag": "editable",
+        "score": 10.0,
+        "warning": "none",
+        "revision_reason": ""
+      }
+    ],
+    "warnings": []
+  }
+]
