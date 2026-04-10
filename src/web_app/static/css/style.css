@@ -168,7 +168,7 @@ header h1 {
     border-color: rgba(239, 68, 68, 0.4);
 }
 
-.bbox-overlay:hover {
+.bbox-overlay:hover, .bbox-overlay.hover-highlight {
     background: rgba(59, 130, 246, 0.3);
     border-color: rgba(59, 130, 246, 0.9);
     z-index: 10;
@@ -199,6 +199,13 @@ pre {
     transition: background 0.3s ease, box-shadow 0.3s ease;
     border-radius: 4px;
     width: 100%;
+    cursor: pointer;
+}
+
+.json-block-node:hover, .json-block-node.hover-highlight {
+    background: rgba(59, 130, 246, 0.15);
+    box-shadow: -4px 0 0 rgba(59, 130, 246, 0.8);
+    padding-left: 8px;
 }
 
 .json-block-node.active-highlight {
@@ -217,4 +224,46 @@ pre {
 
 .j-num {
     color: #fdba74;
+}
+
+/* Tooltip Coordinates tracking */
+.cursor-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(15, 23, 42, 0.95);
+    color: #38bdf8;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: 'Consolas', monospace;
+    font-weight: 600;
+    z-index: 9999;
+    display: none;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transform: translate(15px, 15px);
+}
+
+/* JSON Collapsible */
+.j-toggle {
+    color: #64748b;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    margin: 0 4px;
+    transition: color 0.2s;
+}
+
+.j-toggle:hover {
+    color: #f8fafc;
+}
+
+.j-collapsed-indicator {
+    color: #64748b;
+    display: none;
+    font-style: italic;
+}
+
+.j-collapsible {
+    display: inline;
 }
