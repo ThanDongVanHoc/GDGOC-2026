@@ -1,0 +1,13 @@
+# Thư mục dữ liệu
+/input_pdfs/
+/output_pdfs/
+
+# Môi trường ảo Python
+/venv/
+/.venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class

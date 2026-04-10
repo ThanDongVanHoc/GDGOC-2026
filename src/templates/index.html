@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách: Re-engineering Agent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface-color: rgba(30, 41, 59, 0.7);
+            --primary: #3b82f6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --highlight-bg: rgba(234, 179, 8, 0.2);
+            --highlight-border: rgba(234, 179, 8, 0.9);
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            color: var(--text-main);
+            height: 100vh; /* Fixed height for split view layout */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header { padding: 1.5rem 2rem; text-align: center; flex-shrink: 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        header h1 {
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        /* Drag & Drop */
+        #drop-zone {
+            border: 2px dashed rgba(148, 163, 184, 0.4);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: var(--surface-color);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: auto;
+            width: 60%;
+            max-width: 800px;
+        }
+        #drop-zone:hover { border-color: var(--primary); background: rgba(59, 130, 246, 0.1); transform: translateY(-4px);}
+        #file-input { display: none; }
+        .upload-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+
+        .loader {
+            display: none; border: 4px solid rgba(255,255,255,0.1); border-radius: 50%;
+            border-top-color: var(--primary); width: 50px; height: 50px;
+            animation: spin 1s linear infinite; margin: auto;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Split View Grid */
+        #split-view {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .panel {
+            background: var(--surface-color);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .panel-header {
+            padding: 1rem 1.5rem;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-content {
+            flex: 1;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* PDF Render Panel */
+        #pdf-render { padding: 1.5rem; }
+        .pdf-page {
+            position: relative;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.8);
+            background: white; /* Ensure PDF white background stands out */
+        }
+        .pdf-page img { width: 100%; display: block; }
+        
+        /* Interactive Overlays mapped onto image percentages */
+        .bbox-overlay {
+            position: absolute;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.0); /* transparent base */
+        }
+        
+        /* Trùng khớp màu Green/Red với Parser (opacity nhẹ) */
+        .bbox-overlay.text-box { border-color: rgba(34, 197, 94, 0.4); } 
+        .bbox-overlay.img-box { border-color: rgba(239, 68, 68, 0.4); }
+        
+        /* Hover state */
+        .bbox-overlay:hover {
+            background: rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.9);
+            z-index: 10;
+        }
+
+        /* Khi được Click */
+        .bbox-overlay.active-highlight {
+            background: var(--highlight-bg);
+            border-color: var(--highlight-border);
+            box-shadow: 0 0 15px rgba(234, 179, 8, 0.5);
+            z-index: 20;
+        }
+
+        /* JSON View Panel */
+        #json-view { padding: 1.5rem; }
+        pre {
+            font-family: 'Consolas', 'Menlo', monospace; 
+            font-size: 0.95rem;
+            color: #a5b4fc; 
+            white-space: pre-wrap; 
+            line-height: 1.6;
+        }
+        
+        /* Các nút JSON được span lại để highlight */
+        .json-block-node {
+            display: inline-block;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 4px;
+            width: 100%;
+        }
+        
+        .json-block-node.active-highlight {
+            background: rgba(234, 179, 8, 0.15);
+            box-shadow: -4px 0 0 rgba(234, 179, 8, 0.8);
+            padding-left: 8px; /* Giật sang ngang một tí cho đẹp */
+        }
+        
+        /* Data type colors */
+        .j-key { color: #86efac; }
+        .j-str { color: #fca5a5; }
+        .j-num { color: #fdba74; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Split-view Bounding Box Explorer</h1>
+        <p style="color: var(--text-muted); font-size: 1rem;">Mô hình UI Interactive của Hệ thống cấu trúc hóa Layout Sách</p>
+    </header>
+
+    <div class="container">
+        <!-- Vùng kéo thả đầu tiên -->
+        <div id="drop-zone" onclick="document.getElementById('file-input').click()">
+            <div class="upload-icon">✨</div>
+            <h2 style="margin-bottom: 0.5rem; font-weight: 600; font-size: 1.5rem">Kéo thả PDF vào đây</h2>
+            <p style="color: var(--text-muted);">Hệ thống sẽ render giao diện Split-view thông minh</p>
+            <input type="file" id="file-input" accept="application/pdf">
+        </div>
+        
+        <div class="loader" id="loader"></div>
+
+        <!-- Màn hình Split view -->
+        <div id="split-view">
+            <!-- Cột trái: Trực quan PDF -->
+            <div class="panel">
+                <div class="panel-header">
+                    <span>Trực quan PDF Interactive</span>
+                    <button style="padding:6px 14px; border-radius:8px; font-weight: 600; background:linear-gradient(135deg, var(--primary), #8b5cf6); color:white; border:none; cursor:pointer;" onclick="location.reload()">Upload File Khác</button>
+                </div>
+                <div class="panel-content" id="pdf-render">
+                    <!-- Ảnh render động sẽ chui vào đây -->
+                </div>
+            </div>
+
+            <!-- Cột phải: JSON -->
+            <div class="panel">
+                <div class="panel-header">
+                    <span>Dữ liệu Cấu trúc (JSON Schema)</span>
+                </div>
+                <div class="panel-content">
+                    <div id="json-view"><pre id="json-code"></pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const loader = document.getElementById('loader');
+        const splitView = document.getElementById('split-view');
+        
+        let currentFilename = "";
+
+        // Support Drag & drop Native
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(e => dropZone.addEventListener(e, preventDefaults, false));
+        function preventDefaults (e) { e.preventDefault(); e.stopPropagation(); }
+        ['dragenter', 'dragover'].forEach(e => dropZone.addEventListener(e, () => dropZone.classList.add('dragover'), false));
+        ['dragleave', 'drop'].forEach(e => dropZone.addEventListener(e, () => dropZone.classList.remove('dragover'), false));
+        
+        dropZone.addEventListener('drop', (e) => handleFiles(e.dataTransfer.files));
+        fileInput.addEventListener('change', function() { handleFiles(this.files); });
+
+        function handleFiles(files) {
+            if(files.length > 0) {
+                if(files[0].type !== "application/pdf") return alert("Hệ thống chỉ đọc file PDF.");
+                uploadFile(files[0]);
+            }
+        }
+
+        // Upload to Flask Server
+        function uploadFile(file) {
+            currentFilename = file.name;
+            dropZone.style.display = 'none';
+            loader.style.display = 'block';
+
+            let formData = new FormData();
+            formData.append('pdf', file);
+
+            fetch('/upload', { method: 'POST', body: formData })
+            .then(res => res.json())
+            .then(data => {
+                loader.style.display = 'none';
+                if(data.success) {
+                    renderUI(data.json_data);
+                } else {
+                    dropZone.style.display = 'block';
+                    alert("Có lỗi trong quá trình Parser: " + data.error);
+                }
+            }).catch(err => {
+                loader.style.display = 'none';
+                dropZone.style.display = 'block';
+                alert("Lỗi kết nối Backend: " + err);
+            });
+        }
+
+        // Render cấu trúc DOM dựa trên JSON Server trả về
+        function renderUI(data) {
+            splitView.style.display = 'grid'; // Bật Split View
+            
+            let pdfHtml = '';
+            let jsonHtml = '[\n';
+
+            data.forEach((page) => {
+                // RENDER BÊN TRÁI (PDF)
+                // Yêu cầu Backend gửi ảnh thô nguyên bản của trang đó ra
+                pdfHtml += `<div class="pdf-page">
+                    <img src="/page_image/${encodeURIComponent(currentFilename)}/${page.page_id}">`;
+
+                // RENDER BÊN PHẢI (JSON ROOT)
+                jsonHtml += `  {\n    <span class="j-key">"page_id"</span>: <span class="j-num">${page.page_id}</span>,\n    <span class="j-key">"width"</span>: <span class="j-num">${page.width}</span>,\n    <span class="j-key">"height"</span>: <span class="j-num">${page.height}</span>,\n    <span class="j-key">"text_blocks"</span>: [\n`;
+
+                // LOOP BLOCK TEXT
+                page.text_blocks.forEach((txt, idx) => {
+                    let bId = `page${page.page_id}-text${idx}`; // ID duy nhất kết nối 2 bên layout
+                    
+                    // Tính toán % để layer phủ khít lên ảnh mọi độ phân giải màn hình
+                    let left = (txt.bbox[0] / page.width) * 100;
+                    let top = (txt.bbox[1] / page.height) * 100;
+                    let width = ((txt.bbox[2] - txt.bbox[0]) / page.width) * 100;
+                    let height = ((txt.bbox[3] - txt.bbox[1]) / page.height) * 100;
+                    
+                    // Render div Bounding box đè mặt trái
+                    pdfHtml += `<div class="bbox-overlay text-box" id="box-${bId}" style="left:${left}%; top:${top}%; width:${width}%; height:${height}%;" onclick="highlightUI('${bId}')"></div>`;
+                    
+                    // Render String JSON mặt phải
+                    let contentSafe = txt.content.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, '\\n');
+                    jsonHtml += `<div class="json-block-node" id="json-${bId}">      {\n        <span class="j-key">"content"</span>: <span class="j-str">"${contentSafe}"</span>,\n        <span class="j-key">"bbox"</span>: [<span class="j-num">${txt.bbox.map(n => Math.round(n*100)/100).join(', ')}</span>]\n      }</div>${idx < page.text_blocks.length - 1 ? ',' : ''}\n`;
+                });
+
+                jsonHtml += `    ],\n    <span class="j-key">"image_blocks"</span>: [\n`;
+
+                // LOOP BLOCK IMAGE 
+                page.image_blocks.forEach((img, idx) => {
+                    let bId = `page${page.page_id}-img${idx}`;
+                    
+                    let left = (img.bbox[0] / page.width) * 100;
+                    let top = (img.bbox[1] / page.height) * 100;
+                    let width = ((img.bbox[2] - img.bbox[0]) / page.width) * 100;
+                    let height = ((img.bbox[3] - img.bbox[1]) / page.height) * 100;
+                    
+                    pdfHtml += `<div class="bbox-overlay img-box" id="box-${bId}" style="left:${left}%; top:${top}%; width:${width}%; height:${height}%;" onclick="highlightUI('${bId}')"></div>`;
+                    
+                    jsonHtml += `<div class="json-block-node" id="json-${bId}">      {\n        <span class="j-key">"bbox"</span>: [<span class="j-num">${img.bbox.map(n => Math.round(n*100)/100).join(', ')}</span>]\n      }</div>${idx < page.image_blocks.length - 1 ? ',' : ''}\n`;
+                });
+
+                pdfHtml += `</div>`; // Đóng panel trái
+                jsonHtml += `    ]\n  }${page.page_id < data.length ? ',' : ''}\n`;
+            });
+
+            jsonHtml += `]`;
+
+            // Bơm cấu trúc vào giao diện
+            document.getElementById('pdf-render').innerHTML = pdfHtml;
+            document.getElementById('json-code').innerHTML = jsonHtml;
+        }
+
+        let currentHighlight = null;
+
+        function highlightUI(targetId) {
+            // Xóa highlight cũ
+            if(currentHighlight) {
+                let oldBox = document.getElementById(`box-${currentHighlight}`);
+                let oldJson = document.getElementById(`json-${currentHighlight}`);
+                if(oldBox) oldBox.classList.remove('active-highlight');
+                if(oldJson) oldJson.classList.remove('active-highlight');
+            }
+
+            // Gắn Highlight mới
+            let newBox = document.getElementById(`box-${targetId}`);
+            let newJson = document.getElementById(`json-${targetId}`);
+            
+            if(newBox) newBox.classList.add('active-highlight');
+
+            if(newJson) {
+                newJson.classList.add('active-highlight');
+                // Tính năng xịn: Tự cuộn màn hình JSON mượt mà đến đúng cục JSON bị click
+                newJson.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            currentHighlight = targetId;
+        }
+    </script>
+</body>
+</html>
