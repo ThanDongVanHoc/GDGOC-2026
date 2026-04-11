@@ -1,1 +1,29 @@
-.pyc
+# Environments
+venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node
+node_modules/
+dist/
+.npm/
+
+# LangGraph SQLite State
+state.db
+state.db-journal
+state.db-wal
+state.db-shm
+
+# Data & Uploads
+data/
+**/data/uploads/
+**/data/output/
+
+# OS specific
+.DS_Store
+Thumbs.db

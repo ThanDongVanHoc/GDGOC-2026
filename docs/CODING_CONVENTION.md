@@ -4,7 +4,7 @@ This document defines the professional coding standards and architecture guideli
 
 ---
 
-## 1. General Principles
+## 1. General Principles`
 - **English-Only Policy**: All code, including comments, variable names, function names, and commit messages, MUST be written in **English**. 
 - **Self-Documenting Code**: Code should be expressive and readable. Favor meaningful, descriptive variable names over obscure abbreviations.
 - **Separation of Concerns**: Each phase (Ingestion, Translation, Localization, Compositing, QA) must remain decoupled, acting as independent microservices passing standardized JSON.
