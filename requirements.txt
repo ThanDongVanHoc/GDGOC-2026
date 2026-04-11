@@ -16,3 +16,8 @@ transformers>=4.30.0
 # HuggingFace datasets for ViAMR-v1.0 Vietnamese AMR corpus
 datasets>=2.14.0
 
+# MinerU PDF parsing (PDF → Markdown + structured JSON)
+# Use mineru[core] for CPU-only / lighter install (~2GB)
+# Use mineru[all]  for GPU + full VLM support (~5GB)
+mineru[core]>=3.0.0
+
