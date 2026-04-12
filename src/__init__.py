@@ -1,1 +1,0 @@
-"""OmniLocal source package."""
