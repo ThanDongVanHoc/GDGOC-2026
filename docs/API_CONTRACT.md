@@ -56,7 +56,23 @@ stateDiagram-v2
   ```json
   {
       "output_phase_1": [
-          // KHUONG: Define Phase 1's exact Output JSON fields/arrays here
+          {
+              "page_id": 1,
+              "width": 612.0,
+              "height": 792.0,
+              "text_blocks": [
+                  {
+                      "content": "string",
+                      "bbox": [0.0, 0.0, 0.0, 0.0],
+                      "font": "string",
+                      "size": 0.0,
+                      "color": 0,
+                      "flags": 0,
+                      "editability_tag": "editable | non-editable"
+                  }
+              ],
+              "image_blocks": []
+          }
       ]
   }
   ```
@@ -75,8 +91,19 @@ stateDiagram-v2
 - **Output Required (Sent to Webhook):**
   ```json
   {
-      "output_phase_2": [
-          // KHUONG: Define Phase 2's exact Output JSON fields/arrays here
+     "output_phase_2": [
+          {
+              "original_content": "string",
+              "translated_content": "string",
+              "bbox": [0.0, 0.0, 0.0, 0.0],
+              "page_id": 1,
+              "source_type": "text | ocr",
+              "font": "string",
+              "size": 0.0,
+              "color": 0,
+              "flags": 0,
+              "warning": "string | null"
+          }
       ]
   }
   ```
