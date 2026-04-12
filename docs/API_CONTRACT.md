@@ -167,9 +167,31 @@ stateDiagram-v2
 - **Output Required (Sent to Webhook):**
   ```json
   {
-      "output_phase_3": [
-          // TUAN ANH: Define Phase 3's exact Output JSON fields/arrays here
-      ],
+      "output_phase_3": {
+          "context_safe_localized_text_pack": [
+              {
+                  "original_content": "string",
+                  "localized_content": "string",
+                  "bbox": [0.0, 0.0, 0.0, 0.0],
+                  "page_id": 1,
+                  "source_type": "text | ocr",
+                  "font": "string",
+                  "size": 0.0,
+                  "color": 0,
+                  "flags": 0,
+                  "warning": "string | null"
+              }
+          ],
+          "localization_log": [
+              {
+                  "proposal_id": "string",
+                  "original": "string",
+                  "proposed": "string",
+                  "affected_pages": [0],
+                  "rationale": "string"
+              }
+          ]
+      },
       "translation_warnings": []
   }
   ```
@@ -210,10 +232,15 @@ stateDiagram-v2
 - **Output Required (Sent to Webhook):**
   ```json
   {
-      "qa_status": "APPROVED", // Or "REJECT_LOCALIZATION"
-      "qa_feedback": {
-          // TUAN ANH: Define the error context array/object to feed back to Phase 3 here
-      },
+      "qa_status": "APPROVED | REJECT_LOCALIZATION",
+      "qa_feedback": [
+          {
+              "error_type": "fail_typo | fail_butterfly | fail_constraint_visual | fail_constraint_text",
+              "description": "string",
+              "affected_pages": [1],
+              "conflicting_entities": ["string"]
+          }
+      ],
       "final_pdf_path": "data/output/final_approved.pdf"
   }
   ```
