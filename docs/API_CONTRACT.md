@@ -204,6 +204,7 @@ stateDiagram-v2
       "thread_id": "uuid-string-of-current-run",
       "webhook_url": "http://localhost:8000/webhook/phase4",
       "global_metadata": { ... },
+      "layout_map": [ ... ],        // From Phase 1
       "output_phase_3": [ ... ]
   }
   ```
@@ -211,8 +212,16 @@ stateDiagram-v2
   ```json
   {
       "output_phase_4": {
-          // KIET: Add any image processing logs/paths if needed
-          "composited_pdf_path": "data/output/rendered_file.pdf"
+          "composited_pdf_path": "data/output/rendered_file.pdf",
+          "status": "COMPLETED | REVISION_REQUIRED",
+          "summary_feedback": {
+              "should_summary": true,
+              "message": "string | null"
+          },
+          "repaint_feedback": {
+              "should_repaint": false,
+              "message": "string | null"
+          }
       }
   }
   ```
