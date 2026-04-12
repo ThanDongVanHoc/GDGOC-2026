@@ -55,7 +55,30 @@ stateDiagram-v2
 - **Output Required (Sent to Webhook):**
   ```json
   {
-      "output_phase_1": [
+      "global_metadata": {
+          "source_language": "string",
+          "target_language": "string",
+          "license_status": true,
+          "author_attribution": "string",
+          "integrity_protection": true,
+          "adaptation_rights": false,
+          "translation_fidelity": "string",
+          "plot_alteration": false,
+          "cultural_localization": false,
+          "preserve_main_names": true,
+          "protected_names": ["string"],
+          "no_retouching": true,
+          "lock_character_color": true,
+          "never_change_rules": ["string"],
+          "style_register": "string",
+          "target_age_tone": 10,
+          "glossary_strict_mode": true,
+          "sfx_handling": "string",
+          "satisfaction_clause": true,
+          "allow_bg_edit": true,
+          "max_drift_ratio": 0.0
+      },
+      "standardized_pack": [
           {
               "page_id": 1,
               "width": 612.0,
@@ -71,7 +94,21 @@ stateDiagram-v2
                       "editability_tag": "editable | non-editable"
                   }
               ],
-              "image_blocks": []
+              "image_blocks": [
+                  {
+                      "bbox": [0.0, 0.0, 0.0, 0.0],
+                      "image_index": 0,
+                      "ocr_text_blocks": [
+                          {
+                              "content": "string",
+                              "bbox_in_image": [0.0, 0.0, 0.0, 0.0],
+                              "confidence": 0.0,
+                              "editability_tag": "editable | non-editable"
+                          }
+                      ],
+                      "editability_tag": "semi-editable | non-editable"
+                  }
+              ]
           }
       ]
   }
@@ -91,7 +128,7 @@ stateDiagram-v2
 - **Output Required (Sent to Webhook):**
   ```json
   {
-     "output_phase_2": [
+      "verified_text_pack": [
           {
               "original_content": "string",
               "translated_content": "string",
@@ -104,10 +141,18 @@ stateDiagram-v2
               "flags": 0,
               "warning": "string | null"
           }
+      ],
+      "translation_warnings": [
+          {
+              "chunk_id": 0,
+              "page_range": "string",
+              "final_score": 0,
+              "reason": "string",
+              "retries_exhausted": 0
+          }
       ]
   }
   ```
-
 ### [Phase 3: Localization & Butterfly Effect]
 **Source:** Receives data processed by Phase 2.
 - **Input Received:**
