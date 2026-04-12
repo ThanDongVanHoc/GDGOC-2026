@@ -161,7 +161,10 @@ stateDiagram-v2
       "thread_id": "uuid-string-of-current-run",
       "webhook_url": "http://localhost:8000/webhook/phase3",
       "global_metadata": { ... },
-      "output_phase_2": [ ... ]
+      "output_phase_2": {
+          "verified_text_pack": [ ... ],
+          "translation_warnings": [ ... ]
+      }
   }
   ```
 - **Output Required (Sent to Webhook):**
@@ -182,17 +185,48 @@ stateDiagram-v2
                   "warning": "string | null"
               }
           ],
+          "entity_graph": {
+              "EntityName": {
+                  "type": "string",
+                  "pages": [1],
+                  "related": ["string"],
+                  "contexts": [
+                      {
+                          "page": 1,
+                          "sentence": "string"
+                      }
+                  ]
+              }
+          },
           "localization_log": [
               {
                   "proposal_id": "string",
                   "original": "string",
                   "proposed": "string",
-                  "affected_pages": [0],
-                  "rationale": "string"
+                  "affected_pages": [1],
+                  "rationale": "string",
+                  "status": "ACCEPT | REJECT",
+                  "conflicts": [
+                      {
+                          "entity": "string",
+                          "page": [1],
+                          "reason": "string"
+                      }
+                  ]
               }
           ]
       },
-      "translation_warnings": []
+      "localization_warnings": [
+          {
+              "page_id": 1,
+              "block_index": 0,
+              "original_content": "string",
+              "localized_content": "string",
+              "max_estimated_chars": 0,
+              "actual_chars": 0,
+              "overflow_ratio": 0.0
+          }
+      ]
   }
   ```
 
