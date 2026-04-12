@@ -233,11 +233,17 @@ async def run(payload: dict) -> dict:
     pages = _build_page_layouts(pages_raw, ocr_results)
     logger.info("[#p1.2b] OCR complete. Total images with text: %d", len(ocr_results))
 
-    # ── Step 3: Editability tagging (asyncio.gather + batching) ──
-    logger.info("[#p1.3] Tagging editability for %d pages...", len(pages))
-    tagged_pages = await asyncio.gather(
-        *[_tag_page_editability(page, global_metadata, client) for page in pages]
+    # ── Step 3: Editability tagging with Chunking (asyncio.gather + batching) ──
+    CHUNK_SIZE = 10
+    chunks = [pages[i : i + CHUNK_SIZE] for i in range(0, len(pages), CHUNK_SIZE)]
+    
+    logger.info("[#p1.3] Tagging editability for %d pages in %d chunks...", len(pages), len(chunks))
+    tagged_chunks = await asyncio.gather(
+        *[_tag_pages_chunk(chunk, global_metadata, client) for chunk in chunks]
     )
+    
+    # Flatten tagged chunks back into a list of pages
+    tagged_pages = [page for chunk in tagged_chunks for page in chunk]
     logger.info("[#p1.3] Editability tagging complete")
 
     # ── Step 4: Assemble Standardized Pack ───────────────────────
@@ -568,7 +574,7 @@ def _build_page_layouts(pages_raw: list[dict], ocr_results: dict) -> list[PageLa
 # ═══════════════════════════════════════════════════════════════════
 
 EDITABILITY_SYSTEM_PROMPT = """You are an expert localization editability analyst.
-Given a page from a children's book and global constraints, classify each content block
+Given content blocks from pages of a children's book and global constraints, classify each content block
 as one of three editability levels:
 - "editable": Full permission to modify (text replacement, background edits allowed).
 - "semi-editable": Only text content can be changed, visual elements must be preserved.
@@ -588,67 +594,67 @@ Return a JSON array where each element has:
 Return ONLY valid JSON, no markdown fences."""
 
 
-async def _tag_page_editability(
-    page: PageLayout,
+async def _tag_pages_chunk(
+    pages: list[PageLayout],
     metadata: GlobalMetadata,
     client: genai.Client,
-) -> PageLayout:
+) -> list[PageLayout]:
     """
-    Tag editability for all blocks on a single page via a batched Gemini call.
-
-    Sends all text blocks, image blocks, and OCR text blocks for one page as a
-    single prompt to Gemini 2.5 Flash for classification. This avoids making
-    one API call per block.
+    Tag editability for all blocks across a chunk of pages via a single Gemini call.
 
     Args:
-        page: PageLayout with untagged blocks.
+        pages: List of PageLayouts with untagged blocks.
         metadata: GlobalMetadata constraints for classification rules.
         client: Initialized Gemini API client.
 
     Returns:
-        PageLayout: Same page with editability_tag set on all blocks.
+        list[PageLayout]: The same list with editability_tag set on all blocks.
     """
-    # Build block inventory for the prompt
+    # Build block inventory for the prompt across the chunk
     block_inventory = []
     idx = 0
 
-    for tb in page.text_blocks:
-        block_inventory.append(
-            {
-                "block_index": idx,
-                "block_type": "text",
-                "content": tb.content[:200],  # Truncate for prompt efficiency
-                "bbox": tb.bbox,
-            }
-        )
-        idx += 1
-
-    for ib in page.image_blocks:
-        block_inventory.append(
-            {
-                "block_index": idx,
-                "block_type": "image",
-                "bbox": ib.bbox,
-                "has_ocr_text": len(ib.ocr_text_blocks) > 0,
-            }
-        )
-        idx += 1
-
-        for ocr_block in ib.ocr_text_blocks:
+    for page in pages:
+        for tb in page.text_blocks:
             block_inventory.append(
                 {
                     "block_index": idx,
-                    "block_type": "ocr",
-                    "content": ocr_block.content,
-                    "bbox_in_image": ocr_block.bbox_in_image,
+                    "page_id": page.page_id,
+                    "block_type": "text",
+                    "content": tb.content[:200],  # Truncate for prompt efficiency
+                    "bbox": tb.bbox,
                 }
             )
             idx += 1
 
-    if not block_inventory:
-        return page
+        for ib in page.image_blocks:
+            block_inventory.append(
+                {
+                    "block_index": idx,
+                    "page_id": page.page_id,
+                    "block_type": "image",
+                    "bbox": ib.bbox,
+                    "has_ocr_text": len(ib.ocr_text_blocks) > 0,
+                }
+            )
+            idx += 1
 
-    # ── Single batched Gemini call for the entire page ───────────
+            for ocr_block in ib.ocr_text_blocks:
+                block_inventory.append(
+                    {
+                        "block_index": idx,
+                        "page_id": page.page_id,
+                        "block_type": "ocr",
+                        "content": ocr_block.content,
+                        "bbox_in_image": ocr_block.bbox_in_image,
+                    }
+                )
+                idx += 1
+
+    if not block_inventory:
+        return pages
+
+    # ── Single batched Gemini call for the entire chunk ───────────
     constraints_summary = (
         f"Protected names: {metadata.protected_names}\n"
         f"Allow BG edit: {metadata.allow_bg_edit}\n"
@@ -658,10 +664,13 @@ async def _tag_page_editability(
         f"Never change rules: {metadata.never_change_rules}"
     )
 
+    page_ids = [p.page_id for p in pages]
+    page_range = f"{min(page_ids)}-{max(page_ids)}" if page_ids else "N/A"
+
     prompt = (
         f"{EDITABILITY_SYSTEM_PROMPT}\n\n"
         f"--- GLOBAL CONSTRAINTS ---\n{constraints_summary}\n\n"
-        f"--- PAGE {page.page_id} BLOCKS (total: {len(block_inventory)}) ---\n"
+        f"--- PAGES {page_range} BLOCKS (total: {len(block_inventory)}) ---\n"
         f"{json.dumps(block_inventory, ensure_ascii=False)}"
     )
 
@@ -682,34 +691,31 @@ async def _tag_page_editability(
         tags = json.loads(raw_json)
 
         # Build a lookup: block_index → tag
-        tag_map = {}
-        for entry in tags:
-            tag_map[entry["block_index"]] = entry.get(
-                "editability_tag", "editable"
-            )
+        tag_map = {entry["block_index"]: entry.get("editability_tag", "editable") for entry in tags}
 
-        # Apply tags back to the page model
+        # Apply tags back to the page models
         idx = 0
-        for tb in page.text_blocks:
-            if idx in tag_map:
-                tb.editability_tag = EditabilityTag(tag_map[idx])
-            idx += 1
-
-        for ib in page.image_blocks:
-            if idx in tag_map:
-                ib.editability_tag = EditabilityTag(tag_map[idx])
-            idx += 1
-
-            for ocr_block in ib.ocr_text_blocks:
+        for page in pages:
+            for tb in page.text_blocks:
                 if idx in tag_map:
-                    ocr_block.editability_tag = EditabilityTag(tag_map[idx])
+                    tb.editability_tag = EditabilityTag(tag_map[idx])
                 idx += 1
+
+            for ib in page.image_blocks:
+                if idx in tag_map:
+                    ib.editability_tag = EditabilityTag(tag_map[idx])
+                idx += 1
+
+                for ocr_block in ib.ocr_text_blocks:
+                    if idx in tag_map:
+                        ocr_block.editability_tag = EditabilityTag(tag_map[idx])
+                    idx += 1
 
     except Exception as e:
         logger.warning(
-            "Editability tagging failed for page %d: %s. Using defaults.",
-            page.page_id,
+            "Editability tagging failed for pages %s: %s. Using defaults.",
+            page_range,
             e,
         )
 
-    return page
+    return pages
