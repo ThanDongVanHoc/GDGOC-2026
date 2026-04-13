@@ -1,0 +1,1385 @@
+{
+  "thread_id": "90e1c1a2-c50a-4469-b625-63e3cba58723",
+  "result": {
+    "global_metadata": {
+      "source_language": "EN",
+      "target_language": "VI",
+      "license_status": true,
+      "author_attribution": "Written by Charles Perrault",
+      "integrity_protection": true,
+      "adaptation_rights": false,
+      "translation_fidelity": "Strict",
+      "plot_alteration": false,
+      "cultural_localization": false,
+      "preserve_main_names": true,
+      "protected_names": [
+        "Cinderella",
+        "Prince Charming",
+        "Fairy Godmother",
+        "Lady Tremaine"
+      ],
+      "no_retouching": true,
+      "lock_character_color": true,
+      "never_change_rules": [
+        "Cinderella's glass slippers",
+        "Fairy Godmother's sparkling wand"
+      ],
+      "style_register": "Simple, warm, suitable for children",
+      "target_age_tone": 10,
+      "glossary_strict_mode": true,
+      "sfx_handling": "In_panel_subs",
+      "satisfaction_clause": true,
+      "allow_bg_edit": true,
+      "max_drift_ratio": 0.2
+    },
+    "standardized_pack": [
+      {
+        "page_id": 1,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "Name:Class:",
+            "bbox": [
+              72.0,
+              69.2190170288086,
+              345.95550537109375,
+              82.47901916503906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "\"1920s-Cinderella\" by clotho98 is licensed under CC BY-NC 2.0",
+            "bbox": [
+              313.5,
+              579.0069580078125,
+              517.0715942382812,
+              589.2069702148438
+            ],
+            "font": "OpenSans-Italic",
+            "size": 7.5,
+            "color": 255,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Cinderella",
+            "bbox": [
+              256.44598388671875,
+              96.13896942138672,
+              355.4865417480469,
+              122.65896606445312
+            ],
+            "font": "OpenSans-Bold",
+            "size": 19.5,
+            "color": 0,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "By Charles Perrault1697",
+            "bbox": [
+              262.48199462890625,
+              120.3189926147461,
+              349.43243408203125,
+              145.2790069580078
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "French author Charles Perrault is often called the “father of the fairy tale” for his well known tales such as“Little Red Riding Hood,” “Puss in Boots,” “Sleeping Beauty,” and “Cinderella.” Cinderella is a famous folk tale,a story that has been passed down for many generations, about a young woman trying to overcome thecruelty of some of her family. There are numerous different versions of the story, with historical roots inplaces as far apart as China and Italy. This version, by Perrault, is the first to include the famous pumpkin,fairy godmother, and glass slippers. As you read, take notes on how Cinderella and her stepsisters treateach other throughout the story.",
+            "bbox": [
+              83.25,
+              162.9674835205078,
+              527.6250610351562,
+              248.8454132080078
+            ],
+            "font": "OpenSans-Italic",
+            "size": 9.375,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Once there was a gentleman who married, for hissecond wife, the proudest and most haughty1",
+            "bbox": [
+              72.0,
+              271.2589111328125,
+              296.3085632324219,
+              298.16888427734375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "woman that was ever seen. She had, by a formerhusband, two daughters of her own, who were,indeed, exactly like her in all things. He hadlikewise, by another wife, a young daughter, butof unparalleled2 goodness and sweetness oftemper, which she took from her mother, whowas the best creature in the world.",
+            "bbox": [
+              72.0,
+              298.55889892578125,
+              293.05206298828125,
+              393.7188415527344
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "No sooner were the ceremonies of the weddingover but the stepmother began to show herself inher true colors. She could not bear the goodqualities of this pretty girl, and the less becausethey made her own daughters appear the moreodious.3 She employed her in the meanest workof the house. She scoured4 the dishes, tables,etc., and cleaned madam’s chamber, and those ofmisses, her daughters. She slept in a sorrygarret,5 on a wretched6 straw bed, while hersisters slept in fine rooms, with floors all inlaid,on beds of the very newest fashion, and wherethey had looking glasses7 so large that they couldsee themselves at their full length from head tofoot.",
+            "bbox": [
+              71.99998474121094,
+              408.77886962890625,
+              297.3616027832031,
+              613.1387329101562
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[1]",
+            "bbox": [
+              45.74998474121094,
+              271.2437744140625,
+              56.81098175048828,
+              283.4837646484375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "1.Haughty (adjective): arrogant2.Unparalleled (adjective): having no equal3.Odious (adjective): extremely unpleasant; repulsive4.to clean or brighten the surface of (something) by rubbing it5.a very small top-floor or attic room6.Wretched (adjective): of poor quality; very bad7.an archaic term referring to a mirror",
+            "bbox": [
+              74.19400024414062,
+              671.3140258789062,
+              320.0275573730469,
+              751.833984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 8.25,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 2,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "The poor girl bore it all patiently, and dared not tell her father, who would have scolded her; for hiswife governed him entirely. When she had done her work, she used to go to the chimney corner, andsit down there in the cinders and ashes, which caused her to be called Cinderwench. Only the youngersister, who was not so rude and uncivil8 as the older one, called her Cinderella. However, Cinderella,notwithstanding her coarse apparel,9 was a hundred times more beautiful than her sisters, althoughthey were always dressed very richly.",
+            "bbox": [
+              72.0,
+              70.1939926147461,
+              534.5302124023438,
+              151.70411682128906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "It happened that the king’s son gave a ball, and invited all persons of fashion to it. Our young misseswere also invited, for they cut a very grand figure among those of quality. They were mightily delightedat this invitation, and wonderfully busy in selecting the gowns, petticoats,10 and hair dressing thatwould best become them. This was a new difficulty for Cinderella; for it was she who ironed her sister’slinen and pleated their ruffles. They talked all day long of nothing but how they should be dressed.",
+            "bbox": [
+              72.0,
+              166.76412963867188,
+              537.3090209960938,
+              234.6242218017578
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“For my part,” said the eldest, “I will wear my red velvet suit with French trimming.”",
+            "bbox": [
+              72.0,
+              249.68423461914062,
+              444.3232421875,
+              262.9442138671875
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“And I,” said the youngest, “shall have my usual petticoat; but then, to make amends11 for that, I will puton my gold-flowered cloak, and my diamond stomacher,12 which is far from being the most ordinaryone in the world.”",
+            "bbox": [
+              71.99899291992188,
+              272.7932434082031,
+              539.43212890625,
+              318.564208984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They sent for the best hairdresser they could get to make up their headpieces and adjust their hairdos,and they had their red brushes and patches from Mademoiselle de la Poche.",
+            "bbox": [
+              71.99899291992188,
+              333.6242370605469,
+              537.2396850585938,
+              360.5342102050781
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They also consulted Cinderella in all these matters, for she had excellent ideas, and her advice wasalways good. Indeed, she even offered her services to fix their hair, which they very willingly accepted.As she was doing this, they said to her, “Cinderella, would you not like to go to the ball?”",
+            "bbox": [
+              71.99899291992188,
+              375.59423828125,
+              532.4132690429688,
+              416.1542053222656
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Alas!” said she, “you only jeer13 me; it is not for such as I am to go to such a place.”",
+            "bbox": [
+              71.99899291992188,
+              426.00323486328125,
+              446.00341796875,
+              444.4742126464844
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“You are quite right,” they replied. “It would make the people laugh to see a Cinderwench at a ball.”",
+            "bbox": [
+              71.99899291992188,
+              459.53424072265625,
+              517.846923828125,
+              472.7942199707031
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Anyone but Cinderella would have fixed their hair awry, but she was very good, and dressed themperfectly well. They were so excited that they hadn’t eaten a thing for almost two days. Then they brokemore than a dozen laces trying to have themselves laced up tightly enough to give them a fineslender14 shape. They were continually in front of their looking glass.",
+            "bbox": [
+              71.99899291992188,
+              487.854248046875,
+              539.3943481445312,
+              542.064208984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "At last the happy day came. They went to court, and Cinderella followed them with her eyes as long asshe could. When she lost sight of them, she started to cry.",
+            "bbox": [
+              71.99799346923828,
+              557.1242065429688,
+              533.2997436523438,
+              584.0342407226562
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Her godmother, who saw her all in tears, asked her what was the matter.",
+            "bbox": [
+              71.99799346923828,
+              599.0941772460938,
+              401.8989562988281,
+              612.3541870117188
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“I wish I could. I wish I could.” She was not able to speak the rest, being interrupted by her tears andsobbing.",
+            "bbox": [
+              71.99799346923828,
+              627.4142456054688,
+              522.8379516601562,
+              654.32421875
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[5]",
+            "bbox": [
+              45.74799346923828,
+              249.66925048828125,
+              56.808990478515625,
+              261.90924072265625
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[10]",
+            "bbox": [
+              45.74799346923828,
+              459.5192565917969,
+              61.94799041748047,
+              471.7592468261719
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "8.Uncivil (adjective): discourteous or impolite9.clothing10.A petticoat was a common article of clothing worn by women underneath a dress.11.to make up12.A stomacher was a piece of decorative cloth worn over the chest.13.Jeer (verb): to make rude and mocking remarks14.Slender (adjective): thin",
+            "bbox": [
+              69.47799682617188,
+              671.3140258789062,
+              404.3663635253906,
+              751.833984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 8.25,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 3,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "This godmother of hers, who was a fairy, said to her, “You wish that you could go to the ball; is it notso?”",
+            "bbox": [
+              72.0,
+              70.1939926147461,
+              523.317626953125,
+              97.10401916503906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Yes,” cried Cinderella, with a great sigh.",
+            "bbox": [
+              72.0,
+              112.16402435302734,
+              252.17030334472656,
+              125.42402648925781
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Well,” said her godmother, “be but a good girl, and I will contrive15 that you shall go.” Then she tookher into her chamber, and said to her, “Run into the garden, and bring me a pumpkin.”",
+            "bbox": [
+              72.0,
+              135.27304077148438,
+              523.6734008789062,
+              167.39405822753906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Cinderella went immediately to gather the finest she could get, and brought it to her godmother, notbeing able to imagine how this pumpkin could help her go to the ball. Her godmother scooped out allthe inside of it, leaving nothing but the rind. Having done this, she struck the pumpkin with her wand,and it was instantly turned into a fine coach,16 gilded all over with gold.17",
+            "bbox": [
+              72.0,
+              182.45407104492188,
+              530.2987670898438,
+              236.6641387939453
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "She then went to look into her mousetrap, where she found six mice, all alive, and ordered Cinderellato lift up a little the trapdoor. She gave each mouse, as it went out, a little tap with her wand, and themouse was that moment turned into a fine horse, which altogether made a very fine set of six horsesof a beautiful mouse colored dapple gray.",
+            "bbox": [
+              71.9990234375,
+              251.72415161132812,
+              530.3465576171875,
+              305.93414306640625
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Being at a loss for a coachman,18 Cinderella said, “I will go and see if there is not a rat in the rat trapthat we can turn into a coachman.”",
+            "bbox": [
+              71.9990234375,
+              315.7831726074219,
+              521.1900634765625,
+              347.9041442871094
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“You are right,” replied her godmother, “Go and look.”",
+            "bbox": [
+              71.99903869628906,
+              362.96417236328125,
+              314.5010986328125,
+              376.2241516113281
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Cinderella brought the trap to her, and in it there were three huge rats. The fairy chose the one whichhad the largest beard, touched him with her wand, and turned him into a fat, jolly coachman, who hadthe smartest whiskers that eyes ever beheld.",
+            "bbox": [
+              71.99903869628906,
+              391.2841796875,
+              534.5194091796875,
+              431.8441467285156
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "After that, she said to her, “Go again into the garden, and you will find six lizards behind the wateringpot. Bring them to me.”",
+            "bbox": [
+              71.99903869628906,
+              446.9041748046875,
+              527.7627563476562,
+              473.81414794921875
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "She had no sooner done so but her godmother turned them into six footmen, who skipped upimmediately behind the coach, with their liveries19 all bedaubed20 with gold and silver, and clung asclose behind each other as if they had done nothing else their whole lives. The fairy then said toCinderella, “Well, you see here an equipage21 fit to go to the ball with; are you not pleased with it?”",
+            "bbox": [
+              71.9990234375,
+              488.8741760253906,
+              521.38720703125,
+              543.0841674804688
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Oh, yes,” she cried; “but must I go in these nasty rags?”",
+            "bbox": [
+              71.99903869628906,
+              558.1441040039062,
+              321.8525695800781,
+              571.4041137695312
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[15]",
+            "bbox": [
+              45.74903869628906,
+              70.17913818359375,
+              61.94903564453125,
+              82.41913604736328
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[20]",
+            "bbox": [
+              45.74903869628906,
+              320.9791259765625,
+              61.94903564453125,
+              333.2191162109375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[25]",
+            "bbox": [
+              45.74903869628906,
+              558.1290893554688,
+              61.94903564453125,
+              570.3690795898438
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "15.Contrive (verb): to bring about or create; to plan16.a horse-drawn carriage17.covered thinly with gold leaf or gold paint18.someone who drives a coach19.special uniforms20.covered21.the equipment for a particular purpose or, historically, a carriage and horses with attendants",
+            "bbox": [
+              69.47699737548828,
+              671.3140258789062,
+              446.0207214355469,
+              751.833984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 8.25,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 4,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "Her godmother then touched her with her wand, and, at the same instant, her clothes turned into clothof gold and silver, all beset with jewels. This done, she gave her a pair of glass slippers, the prettiest inthe whole world. Being thus decked out, she got up into her coach; but her godmother, above allthings, commanded her not to stay past midnight, telling her, at the same time, that if she stayed onemoment longer, the coach would be a pumpkin again, her horses mice, her coachman a rat, herfootmen lizards, and that her clothes would become just as they were before.",
+            "bbox": [
+              72.0,
+              70.1939926147461,
+              539.2296142578125,
+              151.70411682128906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "She promised her godmother to leave the ball before midnight; and then drove away, scarcely22 able tocontain herself for joy. The king’s son, who was told that a great princess, whom nobody knew, hadarrived, ran out to receive her. He gave her his hand as she alighted23 from the coach, and led her intothe hall, among all the company. There was immediately a profound24 silence. Everyone stoppeddancing, and the violins ceased25 to play, so entranced was everyone with the singular beauties of theunknown newcomer.",
+            "bbox": [
+              71.9990234375,
+              161.55313110351562,
+              539.8057250976562,
+              248.2742462158203
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Nothing was then heard but a confused noise of, “How beautiful she is! How beautiful she is!”",
+            "bbox": [
+              71.9990234375,
+              263.3342590332031,
+              493.5013122558594,
+              276.59423828125
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The king himself, old as he was, could not help watching her, and telling the queen softly that it was along time since he had seen so beautiful and lovely a creature.",
+            "bbox": [
+              71.9990234375,
+              291.6542663574219,
+              529.1862182617188,
+              318.5642395019531
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "All the ladies were busied in considering her clothes and headdress, hoping to have some made nextday after the same pattern, provided they could find such fine materials and as able hands to makethem.",
+            "bbox": [
+              71.9990234375,
+              333.624267578125,
+              527.9188232421875,
+              374.1842346191406
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The king’s son led her to the most honorable seat, and afterwards took her out to dance with him. Shedanced so very gracefully that they all more and more admired her. A fine meal was served up, but theyoung prince ate not a morsel,26 so intently was he busied in gazing on her.",
+            "bbox": [
+              71.9990234375,
+              389.2442626953125,
+              536.4988403320312,
+              429.8042297363281
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "She went and sat down by her sisters, showing them a thousand civilities,27 giving them part of theoranges and citrons28 which the prince had presented her with, which very much surprised them, forthey did not know her. While Cinderella was thus amusing her sisters, she heard the clock strike elevenand three-quarters, whereupon she immediately made a curtsy to the company and hurried away asfast as she could.",
+            "bbox": [
+              71.99801635742188,
+              439.65325927734375,
+              537.2094116210938,
+              512.7242431640625
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Arriving home, she ran to seek out her godmother, and, after having thanked her, she said she couldnot but heartily wish she might go to the ball the next day as well, because the king’s son had invitedher.",
+            "bbox": [
+              71.99801635742188,
+              527.7842407226562,
+              526.7672119140625,
+              568.3441772460938
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "As she was eagerly telling her godmother everything that had happened at the ball, her two sistersknocked at the door, which Cinderella ran and opened.",
+            "bbox": [
+              71.99801635742188,
+              583.4042358398438,
+              517.8362426757812,
+              610.314208984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[30]",
+            "bbox": [
+              45.748016357421875,
+              333.6092224121094,
+              61.94801330566406,
+              345.8492126464844
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "22.Scarcely (adverb ): barely, hardly23.to exit from a train, bus, or other form of transportation24.Profound (adjective): very great or intense25.Cease (verb): to stop26.Morsel (noun): a small piece27.formal politeness and courtesy in behavior or speech28.fruits such as lemons and limes",
+            "bbox": [
+              69.47699737548828,
+              671.3140258789062,
+              305.09307861328125,
+              751.833984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 8.25,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 5,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "“You stayed such a long time!” she cried, gaping, rubbing her eyes and stretching herself as if she hadbeen sleeping; she had not, however, had any manner of inclination29 to sleep while they were awayfrom home.",
+            "bbox": [
+              72.0,
+              70.1939926147461,
+              529.5869750976562,
+              110.75404357910156
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“If you had been at the ball,” said one of her sisters, “you would not have been tired with it. The finestprincess was there, the most beautiful that mortal eyes have ever seen. She showed us a thousandcivilities, and gave us oranges and citrons.”",
+            "bbox": [
+              72.00003051757812,
+              125.81404876708984,
+              528.8265380859375,
+              166.3740997314453
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Cinderella seemed very indifferent30 in the matter. Indeed, she asked them the name of that princess;but they told her they did not know it, and that the king’s son was very uneasy on her account andwould give all the world to know who she was. At this Cinderella, smiling, replied, “She must, then, bevery beautiful indeed; how happy you have been! Could not I see her? Ah, dear Charlotte, do lend meyour yellow dress which you wear every day.”",
+            "bbox": [
+              72.00003051757812,
+              176.22311401367188,
+              532.8214721679688,
+              249.29420471191406
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Yes, to be sure!” cried Charlotte; “lend my clothes to such a dirty Cinderwench as you are! I should besuch a fool.”",
+            "bbox": [
+              72.00003051757812,
+              264.3542175292969,
+              531.07861328125,
+              291.2641906738281
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Cinderella, indeed, well expected such an answer, and was very glad of the refusal; for she would havebeen sadly put to it, if her sister had lent her what she asked for jestingly.31",
+            "bbox": [
+              72.00003051757812,
+              306.32421875,
+              534.5984497070312,
+              333.23419189453125
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The next day the two sisters were at the ball, and so was Cinderella, but dressed even moremagnificently than before. The king’s son was always by her, and never ceased his compliments andkind speeches to her. All this was so far from being tiresome to her, and, indeed, she quite forgot whather godmother had told her. She thought that it was no later than eleven when she counted the clockstriking twelve. She jumped up and fled, as nimble as a deer. The prince followed, but could notovertake her. She left behind one of her glass slippers, which the prince picked up most carefully. Shereached home, but quite out of breath, and in her nasty old clothes, having nothing left of all her finerybut one of the little slippers, the mate to the one that she had dropped.",
+            "bbox": [
+              72.00003051757812,
+              348.2942199707031,
+              537.1626586914062,
+              457.1041564941406
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The guards at the palace gate were asked if they had not seen a princess go out. They replied that theyhad seen nobody leave but a young girl, very shabbily32 dressed, and who had more the air of a poorcountry wench than a gentlewoman.",
+            "bbox": [
+              72.00003051757812,
+              472.1641845703125,
+              536.2755126953125,
+              512.7241821289062
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "When the two sisters returned from the ball Cinderella asked them if they had been well entertained,and if the fine lady had been there.",
+            "bbox": [
+              72.00004577636719,
+              527.7841186523438,
+              529.1969604492188,
+              554.6941528320312
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They told her, yes, but that she hurried away immediately when it struck twelve, and with so muchhaste33 that she dropped one of her little glass slippers, the prettiest in the world, which the king’s sonhad picked up; that he had done nothing but look at her all the time at the ball, and that most certainlyhe was very much in love with the beautiful person who owned the glass slipper.",
+            "bbox": [
+              72.00004577636719,
+              569.754150390625,
+              536.54833984375,
+              623.9641723632812
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[35]",
+            "bbox": [
+              45.75004577636719,
+              70.17913818359375,
+              61.950042724609375,
+              82.41913604736328
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[40]",
+            "bbox": [
+              45.75004577636719,
+              348.2791442871094,
+              61.950042724609375,
+              360.5191345214844
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "29.Inclination (noun): a desire, interest, or natural attitude towards something30.Indifferent (adjective): having no particular interest in or sympathy towards something31.Jestingly (adverb): jokingly32.Shabbily (adverb): showing signs of wear and tear33.Haste (noun): speed or hurry, often made with urgency",
+            "bbox": [
+              69.47699737548828,
+              694.4140014648438,
+              425.0279235839844,
+              751.833984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 8.25,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 6,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "“Cinderella” by Charles Perrault (1697) is in the public domain.",
+            "bbox": [
+              334.29901123046875,
+              615.9099731445312,
+              539.731689453125,
+              626.1099853515625
+            ],
+            "font": "OpenSans-Italic",
+            "size": 7.5,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "What they said was very true; for a few days later, the king’s son had it proclaimed,34 by sound oftrumpet, that he would marry her whose foot this slipper would just fit. They began to try it on theprincesses, then the duchesses and all the court, but in vain; it was brought to the two sisters, who didall they possibly could to force their foot into the slipper, but they did not succeed.",
+            "bbox": [
+              72.0,
+              64.98397064208984,
+              534.286376953125,
+              124.40504455566406
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Cinderella, who saw all this, and knew that it was her slipper, said to them, laughing, “Let me see if itwill not fit me.”",
+            "bbox": [
+              72.0,
+              139.46505737304688,
+              523.7661743164062,
+              166.3750762939453
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Her sisters burst out laughing, and began to banter35 with her. The gentleman who was sent to try theslipper looked earnestly36 at Cinderella, and, finding her very handsome, said that it was only just thatshe should try as well, and that he had orders to let everyone try.",
+            "bbox": [
+              71.9990005493164,
+              176.22409057617188,
+              533.30615234375,
+              221.99513244628906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "He had Cinderella sit down, and, putting the slipper to her foot, he found that it went on very easily,fitting her as if it had been made of wax. Her two sisters were greatly astonished, but then even moreso, when Cinderella pulled out of her pocket the other slipper, and put it on her other foot. Then incame her godmother and touched her wand to Cinderella’s clothes, making them richer and moremagnificent than any of those she had worn before.",
+            "bbox": [
+              71.9990005493164,
+              237.05514526367188,
+              530.658447265625,
+              304.9151611328125
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "And now her two sisters found her to be that fine, beautiful lady whom they had seen at the ball. Theythrew themselves at her feet to beg pardon for all the ill treatment they had made her undergo.Cinderella took them up, and, as she embraced them, said that she forgave them with all her heart,and wanted them always to love her.",
+            "bbox": [
+              71.9990005493164,
+              319.9751892089844,
+              533.6906127929688,
+              374.1851501464844
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "She was taken to the young prince, dressed as she was. He thought she was more charming thanbefore, and, a few days after, married her. Cinderella, who was no less good than beautiful, gave hertwo sisters lodgings37 in the palace, and that very same day matched them with two great lords of thecourt.",
+            "bbox": [
+              71.9990005493164,
+              389.24517822265625,
+              531.4658813476562,
+              443.45513916015625
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Moral: Beauty in a woman is a rare treasure that will always be admired. Graciousness,38 however, ispriceless and of even greater value. This is what Cinderella’s godmother gave to her when she taughther to behave like a queen. Young women, in the winning of a heart, graciousness is more importantthan a beautiful hairdo. It is a true gift of the fairies. Without it nothing is possible; with it, one can doanything.",
+            "bbox": [
+              71.99901580810547,
+              453.3041687011719,
+              528.0162353515625,
+              526.3751220703125
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Another moral: Without doubt it is a great advantage to have intelligence, courage, good breeding,39",
+            "bbox": [
+              71.9990234375,
+              539.323486328125,
+              525.00146484375,
+              554.6951293945312
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "and common sense. These, and similar talents come only from heaven, and it is good to have them.However, even these may fail to bring you success, without the blessing of a godfather or a godmother.",
+            "bbox": [
+              71.9990234375,
+              555.0851440429688,
+              539.3457641601562,
+              581.9951171875
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[45]",
+            "bbox": [
+              45.7490234375,
+              139.45013427734375,
+              61.94902038574219,
+              151.6901397705078
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "[50]",
+            "bbox": [
+              45.7490234375,
+              458.5001220703125,
+              61.94902038574219,
+              470.7401123046875
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.0,
+            "color": 3355443,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "34.Proclaim (verb): to announce35.Banter (verb): to speak in a friendly and teasing way36.Earnest (adjective): serious and sincere37.a room or place to sleep; a form of shelter38.kindness39.upbringing",
+            "bbox": [
+              69.47699737548828,
+              682.864013671875,
+              290.9490051269531,
+              751.833984375
+            ],
+            "font": "OpenSans-Regular",
+            "size": 8.25,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 7,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "Text-Dependent Questions",
+            "bbox": [
+              205.91799926757812,
+              83.7989730834961,
+              405.9281005859375,
+              104.19896697998047
+            ],
+            "font": "OpenSans-Bold",
+            "size": 15.0,
+            "color": 0,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Directions: For the following questions, choose the best answer or respond in complete sentences.",
+            "bbox": [
+              72.0,
+              113.46895599365234,
+              522.7717895507812,
+              126.72895812988281
+            ],
+            "font": "OpenSans-BoldItalic",
+            "size": 9.75,
+            "color": 0,
+            "flags": 22,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "1.Part A: At the beginning of the story, how is Cinderella treated differently than herstepsisters?",
+            "bbox": [
+              95.83100128173828,
+              142.35897827148438,
+              493.34088134765625,
+              167.31898498535156
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "A.Cinderella is forced by her stepmother to live in a smaller room and do harderwork.B.Cinderella lives and works in a different city.C.Cinderella and her stepsisters are all treated the same.D.Cinderella is forced by her stepmother to live in a smaller room and wear a glassslipper.",
+            "bbox": [
+              145.54800415039062,
+              169.50900268554688,
+              538.6824340820312,
+              245.76905822753906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "2.PART B: Which phrase from the text best supports the answer to Part A?",
+            "bbox": [
+              95.83100128173828,
+              268.2090759277344,
+              448.92962646484375,
+              281.46905517578125
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "A.“She employed her in the meanest work of the house.” (Paragraph 2)B.“It happened that the king’s son gave a ball” (Paragraph 4)C.“They sent for the best hairdresser they could get to make up their headpiecesand adjust their hairdos…” (Paragraph 7)D.“she dropped one of her little glass slippers, the prettiest in the world, which theking’s son had picked up” (Paragraph 43)",
+            "bbox": [
+              145.54800415039062,
+              283.6590881347656,
+              537.0347290039062,
+              359.91912841796875
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "3.What does paragraph 18 contribute to the structure of the overall story?",
+            "bbox": [
+              95.83100128173828,
+              382.3591613769531,
+              450.13861083984375,
+              395.619140625
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "A.It explains why Cinderella wants to go to the ball.B.It explains how Cinderella’s stepsisters get to the ball in a magic carriage.C.It explains how the fairy godmother’s magic is used to help Cinderella get to theball.D.It explains why Cinderella lives in an attic instead of a nicer room.",
+            "bbox": [
+              145.54800415039062,
+              397.8091735839844,
+              534.753173828125,
+              462.36920166015625
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "4.At the end of the story, how does Cinderella treat her stepsisters? What does this revealabout her character?",
+            "bbox": [
+              95.83100891113281,
+              484.8092346191406,
+              519.7926635742188,
+              509.76922607421875
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 8,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "5.What is the author’s purpose in the final two paragraphs?",
+            "bbox": [
+              95.83100128173828,
+              69.2190170288086,
+              382.8538818359375,
+              82.47901916503906
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 9,
+        "width": 612.0,
+        "height": 792.0,
+        "text_blocks": [
+          {
+            "content": "Discussion Questions",
+            "bbox": [
+              226.4770050048828,
+              83.7989730834961,
+              385.4470520019531,
+              104.19896697998047
+            ],
+            "font": "OpenSans-Bold",
+            "size": 15.0,
+            "color": 0,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Directions: Brainstorm your answers to the following questions in the space provided. Be prepared toshare your original ideas in a class discussion.",
+            "bbox": [
+              72.0,
+              113.46895599365234,
+              537.114013671875,
+              138.42897033691406
+            ],
+            "font": "OpenSans-BoldItalic",
+            "size": 9.75,
+            "color": 0,
+            "flags": 22,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "1.Why do you think the stepsisters were mean to Cinderella? Did the stepsisters get whatthey deserved in the end? Do you think they have learned a lesson? Why or why not?",
+            "bbox": [
+              95.83100128173828,
+              150.30899047851562,
+              517.4526977539062,
+              175.2689971923828
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "2.Based on the story, what are the characteristics of a good person? After reading the story,which characters do you consider good and why?",
+            "bbox": [
+              95.83100128173828,
+              353.7090148925781,
+              529.2793579101562,
+              378.66900634765625
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "3.According to the morals described by the author in the story, how should we respond toadversity? Do you agree with the author? Why or why not? Cite evidence from this text, yourown experience, and other literature, art, or history in your answer.",
+            "bbox": [
+              95.83100128173828,
+              557.1090087890625,
+              538.5413208007812,
+              593.7689819335938
+            ],
+            "font": "OpenSans-Regular",
+            "size": 9.75,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      }
+    ]
+  },
+  "error": null
+}

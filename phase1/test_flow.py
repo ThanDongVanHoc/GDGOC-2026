@@ -168,6 +168,10 @@ async def main():
         if len(pack) > 3:
             print(f"\n  ... and {len(pack) - 3} more pages")
 
+        with open("phase1_result.json", "w", encoding="utf-8") as f:
+            json.dump(received_result, f, ensure_ascii=False, indent=2)
+        print(f"\n[Test] Results successfully saved to phase1_result.json")
+
     print("\n" + "=" * 70)
     print("  Phase 1 test complete!")
     print("=" * 70)

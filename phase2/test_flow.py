@@ -19,6 +19,7 @@ Usage:
 
 import asyncio
 import json
+import os
 import threading
 import time
 import uuid
@@ -32,143 +33,18 @@ PHASE2_URL = "http://localhost:8002"
 WEBHOOK_PORT = 9992
 WEBHOOK_URL = f"http://localhost:{WEBHOOK_PORT}/webhook"
 
-# ── Mock Phase 1 output (simulates what Phase 1 produces) ───────
-MOCK_GLOBAL_METADATA = {
-    "source_language": "EN",
-    "target_language": "VI",
-    "license_status": True,
-    "author_attribution": "Written by Sarah Johnson",
-    "integrity_protection": True,
-    "adaptation_rights": False,
-    "translation_fidelity": "Strict",
-    "plot_alteration": False,
-    "cultural_localization": False,
-    "preserve_main_names": True,
-    "protected_names": ["Luna", "Max", "Professor Whiskers", "Captain Starlight"],
-    "no_retouching": True,
-    "lock_character_color": True,
-    "never_change_rules": [
-        "Luna's star-shaped birthmark on her left cheek",
-        "Max's red scarf",
-    ],
-    "style_register": "children_under_10",
-    "target_age_tone": 10,
-    "glossary_strict_mode": True,
-    "sfx_handling": "In_panel_subs",
-    "satisfaction_clause": True,
-    "allow_bg_edit": True,
-    "max_drift_ratio": 0.2,
-}
+# ── Input from Phase 1 ──────────────────────────────────────────
+PHASE1_RESULT_PATH = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "phase1", "phase1_result.json")
+)
 
-MOCK_STANDARDIZED_PACK = [
-    {
-        "page_id": 1,
-        "width": 595.0,
-        "height": 842.0,
-        "text_blocks": [
-            {
-                "content": "The Adventures of Luna and Friends",
-                "bbox": [72, 50, 523, 80],
-                "font": "Arial-Bold",
-                "size": 24.0,
-                "color": 0,
-                "flags": 1,
-                "editability_tag": "editable",
-            },
-            {
-                "content": "Written by Sarah Johnson",
-                "bbox": [72, 90, 523, 110],
-                "font": "Arial",
-                "size": 14.0,
-                "color": 0,
-                "flags": 0,
-                "editability_tag": "non-editable",
-            },
-        ],
-        "image_blocks": [],
-    },
-    {
-        "page_id": 2,
-        "width": 595.0,
-        "height": 842.0,
-        "text_blocks": [
-            {
-                "content": "Once upon a time, in a land far away, there lived a brave little girl named Luna.",
-                "bbox": [72, 100, 523, 130],
-                "font": "Georgia",
-                "size": 12.0,
-                "color": 0,
-                "flags": 0,
-                "editability_tag": "editable",
-            },
-            {
-                "content": "Luna had a magical star-shaped birthmark on her left cheek that glowed whenever she felt brave.",
-                "bbox": [72, 140, 523, 170],
-                "font": "Georgia",
-                "size": 12.0,
-                "color": 0,
-                "flags": 0,
-                "editability_tag": "editable",
-            },
-            {
-                "content": "Her best friend Max always wore his favorite red scarf, even on the hottest days.",
-                "bbox": [72, 180, 523, 210],
-                "font": "Georgia",
-                "size": 12.0,
-                "color": 0,
-                "flags": 0,
-                "editability_tag": "editable",
-            },
-        ],
-        "image_blocks": [
-            {
-                "bbox": [50, 250, 545, 600],
-                "image_index": 0,
-                "editability_tag": "semi-editable",
-                "ocr_text_blocks": [
-                    {
-                        "content": "BOOM!",
-                        "bbox_in_image": [100, 20, 200, 60],
-                        "confidence": 0.95,
-                        "editability_tag": "editable",
-                    },
-                    {
-                        "content": "Let's go, Max!",
-                        "bbox_in_image": [250, 100, 400, 140],
-                        "confidence": 0.92,
-                        "editability_tag": "editable",
-                    },
-                ],
-            }
-        ],
-    },
-    {
-        "page_id": 3,
-        "width": 595.0,
-        "height": 842.0,
-        "text_blocks": [
-            {
-                "content": "\"We must find Professor Whiskers before sunset!\" Luna exclaimed.",
-                "bbox": [72, 100, 523, 130],
-                "font": "Georgia",
-                "size": 12.0,
-                "color": 0,
-                "flags": 0,
-                "editability_tag": "editable",
-            },
-            {
-                "content": "Captain Starlight appeared from behind the clouds, his armor shining like a thousand suns.",
-                "bbox": [72, 140, 523, 170],
-                "font": "Georgia",
-                "size": 12.0,
-                "color": 0,
-                "flags": 0,
-                "editability_tag": "editable",
-            },
-        ],
-        "image_blocks": [],
-    },
-]
+def load_phase1_output():
+    if not os.path.exists(PHASE1_RESULT_PATH):
+        raise FileNotFoundError(f"Missing Phase 1 output at {PHASE1_RESULT_PATH}. Run Phase 1 test first.")
+    with open(PHASE1_RESULT_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    result = data.get("result", {})
+    return result.get("standardized_pack", []), result.get("global_metadata", {})
 
 # ── Webhook receiver (simulates Orchestrator) ────────────────────
 webhook_app = FastAPI()
@@ -202,21 +78,27 @@ async def main():
     time.sleep(1)
 
     # ── Step 2: Send job to Phase 2 ──────────────────────────────
+    try:
+        pack, metadata = load_phase1_output()
+    except Exception as e:
+        print(f"\n[Test] ERROR loading Phase 1 output: {e}")
+        return
+
     thread_id = str(uuid.uuid4())
     job_payload = {
         "thread_id": thread_id,
-        "standardized_pack": MOCK_STANDARDIZED_PACK,
-        "global_metadata": MOCK_GLOBAL_METADATA,
+        "standardized_pack": pack,
+        "global_metadata": metadata,
         "webhook_url": WEBHOOK_URL,
     }
 
     print(f"\n[Test] Sending job to Phase 2...")
     print(f"  thread_id: {thread_id}")
-    print(f"  Pages: {len(MOCK_STANDARDIZED_PACK)}")
-    print(f"  Protected names: {MOCK_GLOBAL_METADATA['protected_names']}")
+    print(f"  Pages: {len(pack)}")
+    print(f"  Protected names: {metadata.get('protected_names', [])}")
     print(f"  webhook_url: {WEBHOOK_URL}")
 
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(timeout=60.0) as client:
         response = await client.post(
             f"{PHASE2_URL}/api/v1/phase2/run", json=job_payload
         )
@@ -246,10 +128,10 @@ async def main():
 
         for block in pack:
             src = block.get("source_type", "text")
-            icon = "📝" if src == "text" else "✏️"
+            icon = "- " if src == "text" else "* "
             orig = block["original_content"][:50]
             trans = block["translated_content"][:50]
-            warn = " ⚠️" if block.get("warning") else ""
+            warn = " [WARN]" if block.get("warning") else ""
             print(f"  {icon} [p{block['page_id']}] \"{orig}\"")
             print(f"     → \"{trans}\"{warn}")
 
@@ -262,7 +144,11 @@ async def main():
                     f"Score {w['final_score']}/10 — {w['reason']}"
                 )
         else:
-            print("\n  ✅ No warnings — all translations passed review!")
+            print("\n  [OK] No warnings — all translations passed review!")
+
+        with open("phase2_result.json", "w", encoding="utf-8") as f:
+            json.dump(received_result, f, ensure_ascii=False, indent=2)
+        print(f"\n[Test] Results successfully saved to phase2_result.json")
 
     print("\n" + "=" * 70)
     print("  Phase 2 test complete!")

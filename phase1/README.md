@@ -20,10 +20,7 @@ PDF File ──┐
            │    PaddleOCR (text in images)
            │         │
 Brief ─────┤         ▼
-           ├──▶ Gemini 2.5 Flash (metadata extraction)
-           │         │
-           │         ▼
-           └──▶ Gemini 2.5 Flash (editability tagging)
+           └──▶ Gemini 2.5 Flash (metadata extraction)
                      │
                      ▼
               Standardized Pack (JSON)
@@ -33,10 +30,8 @@ Brief ─────┤         ▼
 
 | # | Technique | Where |
 |---|-----------|-------|
-| 1 | ⚡ `asyncio.gather` | All pages tagged concurrently by Gemini |
-| 2 | 📦 Batching | All blocks on one page → single Gemini call |
-| 3 | 🔧 `ProcessPoolExecutor` | PyMuPDF parsing + PaddleOCR inference |
-| 4 | 💾 In-Memory | PDF as bytes stream, images as numpy arrays (zero disk I/O) |
+| 1 | 🔧 `ProcessPoolExecutor` | PyMuPDF parsing + PaddleOCR inference |
+| 2 | 💾 In-Memory | PDF as bytes stream, images as numpy arrays (zero disk I/O) |
 
 ---
 
@@ -209,11 +204,7 @@ Each element represents one PDF page:
 
 #### Editability Tags
 
-| Tag | Meaning | Example |
-|-----|---------|---------|
-| `editable` | Full permission to modify (text + image) | Story text, backgrounds |
-| `semi-editable` | Only text can be changed, visuals preserved | Speech bubbles near characters |
-| `non-editable` | Locked — must not be touched | Copyright, character faces, logos |
+> **Note:** The dynamic editability tagging feature (Task #p1.3) has been removed from this phase to improve speed and reduce costs. All text and OCR blocks now default to `editable` and image blocks default to `semi-editable`.
 
 ---
 
