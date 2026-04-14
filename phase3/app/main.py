@@ -26,8 +26,18 @@ async def _process_and_callback(payload: dict) -> None:
     webhook_url = payload["webhook_url"]
     try:
         result = await run_worker(payload)
-        webhook_body = {"thread_id": thread_id, "result": result, "error": None}
+        webhook_body = {
+            "thread_id": thread_id,
+            "output_phase_3": result.get("output_phase_3", {}),
+            "localization_warnings": result.get("localization_warnings", []),
+            "error": None,
+        }
     except Exception as e:
-        webhook_body = {"thread_id": thread_id, "result": {}, "error": str(e)}
+        webhook_body = {
+            "thread_id": thread_id,
+            "output_phase_3": {},
+            "localization_warnings": [],
+            "error": str(e),
+        }
     async with httpx.AsyncClient(timeout=30) as client:
         await client.post(webhook_url, json=webhook_body)

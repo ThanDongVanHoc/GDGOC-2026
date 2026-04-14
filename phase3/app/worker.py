@@ -143,10 +143,31 @@ async def run(payload: dict) -> dict:
             len(overflow_warnings),
         )
 
+    # --- Serialize into API-contract-compliant output_phase_3 ---
+    context_safe_pack, translation_warnings = _serialize_localized_text_pack(
+        localized_pack=localized_text_pack,
+        original_pack=verified_text_pack,
+        overflow_warnings=overflow_warnings,
+    )
+    logger.info(
+        "[Phase3] Serialization complete: %d safe blocks, %d warnings.",
+        len(context_safe_pack),
+        len(translation_warnings),
+    )
+
+    # Serialize entity graph — convert EntityNode models to plain dicts
+    serialized_entity_graph = {
+        name: (node.model_dump() if hasattr(node, "model_dump") else node)
+        for name, node in entity_graph.items()
+    }
+
     return {
-        "localized_text_pack": localized_text_pack,
-        "localization_log": localization_log,
-        "overflow_warnings": overflow_warnings,
+        "output_phase_3": {
+            "context_safe_localized_text_pack": context_safe_pack,
+            "entity_graph": serialized_entity_graph,
+            "localization_log": localization_log,
+        },
+        "localization_warnings": translation_warnings,
     }
 
 
@@ -431,6 +452,93 @@ def _estimate_bbox_capacity(
     num_lines = max(1, math.floor(box_height / line_height))
 
     return chars_per_line * num_lines
+
+
+# ===================================================================
+# Serialization — flatten into API-contract-compliant format
+# ===================================================================
+
+def _serialize_localized_text_pack(
+    localized_pack: dict,
+    original_pack: dict,
+    overflow_warnings: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Serialize the internal page-nested text pack into the flat
+    ``context_safe_localized_text_pack`` array defined by the Phase 3
+    API contract (see API_CONTRACT.md §Phase 3).
+
+    Each text block that passed localization safely is emitted as a flat
+    dict with keys: original_content, localized_content, bbox, page_id,
+    source_type, font, size, color, flags, warning.
+
+    Blocks that overflow their bounding box are **not** included in the
+    safe pack; instead they are logged into ``localization_warnings``
+    with overflow metadata (page_id, block_index, original_content,
+    localized_content, max_estimated_chars, actual_chars, overflow_ratio).
+
+    Args:
+        localized_pack: The page-nested text pack after mutations.
+        original_pack: The original Verified Text Pack (before mutation).
+        overflow_warnings: Pre-computed list of overflow warning dicts
+            from ``_check_bbox_overflow``.
+
+    Returns:
+        A 2-tuple of (context_safe_localized_text_pack, localization_warnings).
+    """
+    # Build a fast lookup for overflow blocks: (page_id, block_index)
+    overflow_keys: set[tuple[int, int]] = {
+        (w["page_id"], w["block_index"]) for w in overflow_warnings
+    }
+
+    context_safe_pack: list[dict[str, Any]] = []
+    translation_warnings: list[dict[str, Any]] = list(overflow_warnings)
+
+    # Build original content lookup for cross-referencing
+    orig_pages: dict[int, dict] = {
+        p.get("page_id"): p for p in original_pack.get("pages", [])
+    }
+
+    for page in localized_pack.get("pages", []):
+        page_id = page.get("page_id")
+        orig_page = orig_pages.get(page_id, {})
+        orig_blocks = orig_page.get("text_blocks", [])
+
+        for idx, block in enumerate(page.get("text_blocks", [])):
+            # If this block overflows, it was already logged — skip
+            if (page_id, idx) in overflow_keys:
+                continue
+
+            loc_content = block.get("content", block.get("text", ""))
+
+            # Resolve original content from the pre-mutation pack
+            if idx < len(orig_blocks):
+                orig_block = orig_blocks[idx]
+                orig_content = orig_block.get(
+                    "content", orig_block.get("text", "")
+                )
+            else:
+                orig_content = loc_content
+
+            # Determine source_type — OCR blocks have a different origin
+            source_type = block.get("source_type", "text")
+
+            # Check for any inline warning attached to this block
+            warning = block.get("warning", None)
+
+            context_safe_pack.append({
+                "original_content": orig_content,
+                "localized_content": loc_content,
+                "bbox": block.get("bbox", [0.0, 0.0, 0.0, 0.0]),
+                "page_id": page_id,
+                "source_type": source_type,
+                "font": block.get("font", ""),
+                "size": block.get("size", 0.0),
+                "color": block.get("color", 0),
+                "flags": block.get("flags", 0),
+                "warning": warning,
+            })
+
+    return context_safe_pack, translation_warnings
 
 
 # ===================================================================
