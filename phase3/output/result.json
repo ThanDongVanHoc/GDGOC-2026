@@ -1,0 +1,887 @@
+{
+  "output_phase_3": {
+    "context_safe_localized_text_pack": [
+      {
+        "original_content": "It was a cold winter morning. Snow covered the entire village like a white blanket.",
+        "localized_content": "It was a cold winter morning. Snow covered the entire village like a white blanket.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Little Anna put on her wool hat and warm coat before stepping outside.",
+        "localized_content": "Little Anna put on her wool hat and warm coat before stepping outside.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Anna and her brother Tom ran to the fireplace to warm up after playing in the snow.",
+        "localized_content": "Anna and her brother Tom ran to the fireplace to warm up after playing in the snow.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 2,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Their grandmother made hot chocolate with marshmallows by the fireplace.",
+        "localized_content": "Their grandmother made hot chocolate with marshmallows by the fireplace.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 2,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "The children built a Snowman in the garden. They used a carrot for his nose.",
+        "localized_content": "The children built a Snowman in the garden. They used a carrot for his nose.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Anna gave the Snowman her old wool hat to keep him warm.",
+        "localized_content": "Anna gave the Snowman her old wool hat to keep him warm.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "That night, the Snowman came alive under the bright moonlight.",
+        "localized_content": "That night, the Snowman came alive under the bright moonlight.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "The Snowman took Anna on a magical sleigh ride through the winter forest.",
+        "localized_content": "The Snowman took Anna on a magical sleigh ride through the winter forest.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "They flew over the snowy mountains and saw the Northern Lights dancing in the sky.",
+        "localized_content": "They flew over the snowy mountains and saw the Cầu vồng dancing in the sky.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "The Snowman showed Anna the ice palace where the Snow Queen lived.",
+        "localized_content": "The Snowman showed Anna the ice palace where the Snow Queen lived.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "The Snow Queen gave Anna a magical ice crystal that would never melt.",
+        "localized_content": "The Snow Queen gave Anna a magical ice crystal that would never melt.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Winter is the most magical season, the Snow Queen said with a gentle smile.",
+        "localized_content": "Winter is the most magical season, the Snow Queen said with a gentle smile.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "As the sun rose, the Snowman began to melt. Anna held his carrot nose and cried.",
+        "localized_content": "As the sun rose, the Snowman began to melt. Anna held his carrot nose and cried.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat.",
+        "localized_content": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Anna smiled and looked at the ice crystal. It sparkled like the snow outside.",
+        "localized_content": "Anna smiled and looked at the ice crystal. It sparkled like the snow outside.",
+        "bbox": [
+          50,
+          100,
+          500,
+          150
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Next winter, I will build another Snowman, Anna whispered. And we will fly again.",
+        "localized_content": "Next winter, I will build another Snowman, Anna whispered. And we will fly again.",
+        "bbox": [
+          50,
+          160,
+          500,
+          210
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "Arial",
+        "size": 14.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      }
+    ],
+    "entity_graph": {
+      "Snow": {
+        "type": "weather_entity",
+        "pages": [
+          1,
+          2,
+          3,
+          5,
+          8
+        ],
+        "related": [
+          "Winter",
+          "Village",
+          "Anna",
+          "Tom",
+          "Fireplace",
+          "Snowman",
+          "Carrot",
+          "Northern Lights",
+          "Mountains",
+          "Ice Crystal"
+        ],
+        "contexts": [
+          {
+            "page": 1,
+            "sentence": "It was a cold winter morning. Snow covered the entire village like a white blanket."
+          },
+          {
+            "page": 2,
+            "sentence": "Anna and her brother Tom ran to the fireplace to warm up after playing in the snow."
+          },
+          {
+            "page": 3,
+            "sentence": "The children built a Snowman in the garden. They used a carrot for his nose."
+          },
+          {
+            "page": 5,
+            "sentence": "They flew over the snowy mountains and saw the Northern Lights dancing in the sky."
+          },
+          {
+            "page": 8,
+            "sentence": "Anna smiled and looked at the ice crystal. It sparkled like the snow outside."
+          }
+        ]
+      },
+      "Winter": {
+        "type": "weather_entity",
+        "pages": [
+          1,
+          4,
+          6,
+          8
+        ],
+        "related": [
+          "Snow",
+          "Village",
+          "Snowman",
+          "Anna",
+          "Sleigh",
+          "Forest",
+          "Snow Queen"
+        ],
+        "contexts": [
+          {
+            "page": 1,
+            "sentence": "It was a cold winter morning. Snow covered the entire village like a white blanket."
+          },
+          {
+            "page": 4,
+            "sentence": "The Snowman took Anna on a magical sleigh ride through the winter forest."
+          },
+          {
+            "page": 6,
+            "sentence": "Winter is the most magical season, the Snow Queen said with a gentle smile."
+          },
+          {
+            "page": 8,
+            "sentence": "Next winter, I will build another Snowman, Anna whispered. And we will fly again."
+          }
+        ]
+      },
+      "Village": {
+        "type": "location",
+        "pages": [
+          1
+        ],
+        "related": [
+          "Snow",
+          "Winter"
+        ],
+        "contexts": [
+          {
+            "page": 1,
+            "sentence": "It was a cold winter morning. Snow covered the entire village like a white blanket."
+          }
+        ]
+      },
+      "Anna": {
+        "type": "character",
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "related": [
+          "Wool Hat",
+          "Warm Coat",
+          "Tom",
+          "Fireplace",
+          "Snow",
+          "Snowman",
+          "Sleigh",
+          "Winter",
+          "Forest",
+          "Ice Palace",
+          "Snow Queen",
+          "Ice Crystal",
+          "Carrot"
+        ],
+        "contexts": [
+          {
+            "page": 1,
+            "sentence": "Little Anna put on her wool hat and warm coat before stepping outside."
+          },
+          {
+            "page": 2,
+            "sentence": "Anna and her brother Tom ran to the fireplace to warm up after playing in the snow."
+          },
+          {
+            "page": 3,
+            "sentence": "Anna gave the Snowman her old wool hat to keep him warm."
+          },
+          {
+            "page": 4,
+            "sentence": "The Snowman took Anna on a magical sleigh ride through the winter forest."
+          },
+          {
+            "page": 5,
+            "sentence": "The Snowman showed Anna the ice palace where the Snow Queen lived."
+          },
+          {
+            "page": 6,
+            "sentence": "The Snow Queen gave Anna a magical ice crystal that would never melt."
+          },
+          {
+            "page": 7,
+            "sentence": "As the sun rose, the Snowman began to melt. Anna held his carrot nose and cried."
+          },
+          {
+            "page": 7,
+            "sentence": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat."
+          },
+          {
+            "page": 8,
+            "sentence": "Anna smiled and looked at the ice crystal. It sparkled like the snow outside."
+          },
+          {
+            "page": 8,
+            "sentence": "Next winter, I will build another Snowman, Anna whispered. And we will fly again."
+          }
+        ]
+      },
+      "Wool Hat": {
+        "type": "clothing",
+        "pages": [
+          1,
+          3,
+          7
+        ],
+        "related": [
+          "Anna",
+          "Warm Coat",
+          "Snowman",
+          "Tom",
+          "Fireplace",
+          "Carrot"
+        ],
+        "contexts": [
+          {
+            "page": 1,
+            "sentence": "Little Anna put on her wool hat and warm coat before stepping outside."
+          },
+          {
+            "page": 3,
+            "sentence": "Anna gave the Snowman her old wool hat to keep him warm."
+          },
+          {
+            "page": 7,
+            "sentence": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat."
+          }
+        ]
+      },
+      "Warm Coat": {
+        "type": "clothing",
+        "pages": [
+          1
+        ],
+        "related": [
+          "Anna",
+          "Wool Hat"
+        ],
+        "contexts": [
+          {
+            "page": 1,
+            "sentence": "Little Anna put on her wool hat and warm coat before stepping outside."
+          }
+        ]
+      },
+      "Tom": {
+        "type": "character",
+        "pages": [
+          2,
+          7
+        ],
+        "related": [
+          "Anna",
+          "Fireplace",
+          "Snow",
+          "Carrot",
+          "Wool Hat"
+        ],
+        "contexts": [
+          {
+            "page": 2,
+            "sentence": "Anna and her brother Tom ran to the fireplace to warm up after playing in the snow."
+          },
+          {
+            "page": 7,
+            "sentence": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat."
+          }
+        ]
+      },
+      "Fireplace": {
+        "type": "object",
+        "pages": [
+          2,
+          7
+        ],
+        "related": [
+          "Anna",
+          "Tom",
+          "Snow",
+          "Grandmother",
+          "Hot Chocolate",
+          "Carrot",
+          "Wool Hat"
+        ],
+        "contexts": [
+          {
+            "page": 2,
+            "sentence": "Anna and her brother Tom ran to the fireplace to warm up after playing in the snow."
+          },
+          {
+            "page": 2,
+            "sentence": "Their grandmother made hot chocolate with marshmallows by the fireplace."
+          },
+          {
+            "page": 7,
+            "sentence": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat."
+          }
+        ]
+      },
+      "Grandmother": {
+        "type": "character",
+        "pages": [
+          2
+        ],
+        "related": [
+          "Hot Chocolate",
+          "Fireplace"
+        ],
+        "contexts": [
+          {
+            "page": 2,
+            "sentence": "Their grandmother made hot chocolate with marshmallows by the fireplace."
+          }
+        ]
+      },
+      "Hot Chocolate": {
+        "type": "food",
+        "pages": [
+          2
+        ],
+        "related": [
+          "Grandmother",
+          "Fireplace"
+        ],
+        "contexts": [
+          {
+            "page": 2,
+            "sentence": "Their grandmother made hot chocolate with marshmallows by the fireplace."
+          }
+        ]
+      },
+      "Snowman": {
+        "type": "character",
+        "pages": [
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        "related": [
+          "Carrot",
+          "Snow",
+          "Anna",
+          "Wool Hat",
+          "Moonlight",
+          "Sleigh",
+          "Winter",
+          "Forest",
+          "Ice Palace",
+          "Snow Queen"
+        ],
+        "contexts": [
+          {
+            "page": 3,
+            "sentence": "The children built a Snowman in the garden. They used a carrot for his nose."
+          },
+          {
+            "page": 3,
+            "sentence": "Anna gave the Snowman her old wool hat to keep him warm."
+          },
+          {
+            "page": 4,
+            "sentence": "That night, the Snowman came alive under the bright moonlight."
+          },
+          {
+            "page": 4,
+            "sentence": "The Snowman took Anna on a magical sleigh ride through the winter forest."
+          },
+          {
+            "page": 5,
+            "sentence": "The Snowman showed Anna the ice palace where the Snow Queen lived."
+          },
+          {
+            "page": 7,
+            "sentence": "As the sun rose, the Snowman began to melt. Anna held his carrot nose and cried."
+          },
+          {
+            "page": 8,
+            "sentence": "Next winter, I will build another Snowman, Anna whispered. And we will fly again."
+          }
+        ]
+      },
+      "Carrot": {
+        "type": "object",
+        "pages": [
+          3,
+          7
+        ],
+        "related": [
+          "Snowman",
+          "Snow",
+          "Anna",
+          "Tom",
+          "Fireplace",
+          "Wool Hat"
+        ],
+        "contexts": [
+          {
+            "page": 3,
+            "sentence": "The children built a Snowman in the garden. They used a carrot for his nose."
+          },
+          {
+            "page": 7,
+            "sentence": "As the sun rose, the Snowman began to melt. Anna held his carrot nose and cried."
+          },
+          {
+            "page": 7,
+            "sentence": "Tom found Anna sitting by the fireplace, holding the carrot and the wool hat."
+          }
+        ]
+      },
+      "Moonlight": {
+        "type": "weather_entity",
+        "pages": [
+          4
+        ],
+        "related": [
+          "Snowman"
+        ],
+        "contexts": [
+          {
+            "page": 4,
+            "sentence": "That night, the Snowman came alive under the bright moonlight."
+          }
+        ]
+      },
+      "Sleigh": {
+        "type": "vehicle",
+        "pages": [
+          4
+        ],
+        "related": [
+          "Snowman",
+          "Anna",
+          "Winter",
+          "Forest"
+        ],
+        "contexts": [
+          {
+            "page": 4,
+            "sentence": "The Snowman took Anna on a magical sleigh ride through the winter forest."
+          }
+        ]
+      },
+      "Forest": {
+        "type": "location",
+        "pages": [
+          4
+        ],
+        "related": [
+          "Snowman",
+          "Anna",
+          "Sleigh",
+          "Winter"
+        ],
+        "contexts": [
+          {
+            "page": 4,
+            "sentence": "The Snowman took Anna on a magical sleigh ride through the winter forest."
+          }
+        ]
+      },
+      "Northern Lights": {
+        "type": "weather_entity",
+        "pages": [
+          5
+        ],
+        "related": [
+          "Snow",
+          "Mountains"
+        ],
+        "contexts": [
+          {
+            "page": 5,
+            "sentence": "They flew over the snowy mountains and saw the Northern Lights dancing in the sky."
+          }
+        ]
+      },
+      "Mountains": {
+        "type": "location",
+        "pages": [
+          5
+        ],
+        "related": [
+          "Snow",
+          "Northern Lights"
+        ],
+        "contexts": [
+          {
+            "page": 5,
+            "sentence": "They flew over the snowy mountains and saw the Northern Lights dancing in the sky."
+          }
+        ]
+      },
+      "Ice Palace": {
+        "type": "location",
+        "pages": [
+          5
+        ],
+        "related": [
+          "Snowman",
+          "Anna",
+          "Snow Queen"
+        ],
+        "contexts": [
+          {
+            "page": 5,
+            "sentence": "The Snowman showed Anna the ice palace where the Snow Queen lived."
+          }
+        ]
+      },
+      "Snow Queen": {
+        "type": "character",
+        "pages": [
+          5,
+          6
+        ],
+        "related": [
+          "Snowman",
+          "Anna",
+          "Ice Palace",
+          "Ice Crystal",
+          "Winter"
+        ],
+        "contexts": [
+          {
+            "page": 5,
+            "sentence": "The Snowman showed Anna the ice palace where the Snow Queen lived."
+          },
+          {
+            "page": 6,
+            "sentence": "The Snow Queen gave Anna a magical ice crystal that would never melt."
+          },
+          {
+            "page": 6,
+            "sentence": "Winter is the most magical season, the Snow Queen said with a gentle smile."
+          }
+        ]
+      },
+      "Ice Crystal": {
+        "type": "object",
+        "pages": [
+          6,
+          8
+        ],
+        "related": [
+          "Snow Queen",
+          "Anna",
+          "Snow"
+        ],
+        "contexts": [
+          {
+            "page": 6,
+            "sentence": "The Snow Queen gave Anna a magical ice crystal that would never melt."
+          },
+          {
+            "page": 8,
+            "sentence": "Anna smiled and looked at the ice crystal. It sparkled like the snow outside."
+          }
+        ]
+      }
+    },
+    "localization_log": [
+      {
+        "proposal_id": "prop_fb_001",
+        "original": "Fireplace",
+        "proposed": "Bếp củi",
+        "affected_pages": [
+          2,
+          7
+        ],
+        "rationale": "Fireplaces are rare in Vietnamese homes. Wood-burning stoves (bếp củi) are the cultural equivalent.",
+        "status": "ACCEPT",
+        "delta_energy": 1.284,
+        "conflicts": []
+      },
+      {
+        "proposal_id": "prop_fb_002",
+        "original": "Hot Chocolate",
+        "proposed": "Chè nóng",
+        "affected_pages": [
+          2
+        ],
+        "rationale": "Hot chocolate is uncommon in Vietnam. Chè (sweet soup) is a popular warm dessert for children.",
+        "status": "ACCEPT",
+        "delta_energy": 0.618,
+        "conflicts": []
+      },
+      {
+        "proposal_id": "prop_fb_003",
+        "original": "Wool Hat",
+        "proposed": "Nón lá",
+        "affected_pages": [
+          1,
+          3,
+          7
+        ],
+        "rationale": "Wool hats are rare in tropical Vietnam. The conical hat (nón lá) is iconic Vietnamese headwear.",
+        "status": "ACCEPT",
+        "delta_energy": 1.944,
+        "conflicts": []
+      },
+      {
+        "proposal_id": "prop_fb_004",
+        "original": "Sleigh",
+        "proposed": "Xe đạp",
+        "affected_pages": [
+          4
+        ],
+        "rationale": "Sleighs require snow and are unknown in Vietnam. Bicycles are a common childhood transport.",
+        "status": "ACCEPT",
+        "delta_energy": 0.618,
+        "conflicts": []
+      },
+      {
+        "proposal_id": "prop_fb_005",
+        "original": "Northern Lights",
+        "proposed": "Cầu vồng",
+        "affected_pages": [
+          5
+        ],
+        "rationale": "Northern Lights are not visible in Vietnam. Rainbows are a similarly magical sky phenomenon.",
+        "status": "ACCEPT",
+        "delta_energy": 0.654,
+        "conflicts": []
+      },
+      {
+        "proposal_id": "prop_fb_006",
+        "original": "Warm Coat",
+        "proposed": "Áo khoác",
+        "affected_pages": [
+          1
+        ],
+        "rationale": "A warm coat is understandable but uncommon phrasing. Áo khoác (jacket) is more natural for Vietnamese children.",
+        "status": "ACCEPT",
+        "delta_energy": 0.624,
+        "conflicts": []
+      }
+    ]
+  },
+  "localization_warnings": []
+}

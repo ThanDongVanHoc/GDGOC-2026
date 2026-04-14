@@ -1,6 +1,13 @@
 import asyncio
+import io
 import sys
 import os
+
+# Force UTF-8 output on Windows
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(
+        sys.stdout.buffer, encoding="utf-8", errors="replace"
+    )
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".")))
 
