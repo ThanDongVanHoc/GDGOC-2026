@@ -21,10 +21,13 @@ from typing import Any
 from core.butterfly_validator import butterfly_validator
 from core.entity_graph import build_entity_graph
 from core.localization_agent import (
+    extract_entities_deterministic,
+    extract_entities_llm,
     generate_proposals_fallback,
     generate_proposals_llm,
+    process_images_vlm,
 )
-from core.models import LocalizationProposal, ValidationStatus
+from core.models import LocalizationProposal, Phase3InputPayload, ValidationStatus
 
 logger = logging.getLogger(__name__)
 
@@ -38,6 +41,66 @@ _DEFAULT_CHAR_WIDTH_RATIO: float = 0.55
 
 # Vertical line-height multiplier relative to font size.
 _LINE_HEIGHT_FACTOR: float = 1.2
+
+
+# ===================================================================
+# Normalization — convert flat Phase 2 array to nested pages structure
+# ===================================================================
+
+
+def _normalize_text_pack(raw_text_pack: Any) -> dict[str, Any]:
+    """Normalize the verified_text_pack into a nested page structure.
+
+    Phase 2 outputs a flat array of text block dicts, each containing
+    a ``page_id`` field. The rest of the worker expects a nested
+    ``{"pages": [{"page_id": N, "text_blocks": [...]}]}`` structure.
+
+    If the input is already in the nested format, it is returned as-is.
+
+    Args:
+        raw_text_pack: Either a flat list of text block dicts from
+            Phase 2, or an already-nested dict with a ``pages`` key.
+
+    Returns:
+        A dict with ``pages`` key containing grouped text blocks.
+    """
+    # Already in nested format
+    if isinstance(raw_text_pack, dict) and "pages" in raw_text_pack:
+        return raw_text_pack
+
+    # Flat array from Phase 2 — group by page_id
+    if isinstance(raw_text_pack, list):
+        pages_map: dict[int, list[dict]] = {}
+        for block in raw_text_pack:
+            page_id = block.get("page_id", 0)
+            if page_id not in pages_map:
+                pages_map[page_id] = []
+
+            # Phase 3 works purely on the translated content from Phase 2
+            # original_content for Phase 3 output will be this translated_content
+            normalized_block = {
+                "text": block.get("translated_content", ""),
+                "translated_content": block.get("translated_content", ""),
+                "english_content": block.get("original_content", block.get("text", "")),
+                "bbox": block.get("bbox", [0.0, 0.0, 0.0, 0.0]),
+                "source_type": block.get("source_type", "text"),
+                "font": block.get("font", ""),
+                "size": block.get("size", 0.0),
+                "color": block.get("color", 0),
+                "flags": block.get("flags", 0),
+                "warning": block.get("warning", None),
+            }
+            pages_map[page_id].append(normalized_block)
+
+        pages = [
+            {"page_id": pid, "text_blocks": blocks}
+            for pid, blocks in sorted(pages_map.items())
+        ]
+        return {"pages": pages}
+
+    # Fallback — wrap empty
+    logger.warning("[Phase3] Unrecognized text_pack format; returning empty.")
+    return {"pages": []}
 
 
 # ===================================================================
@@ -56,44 +119,76 @@ async def run(payload: dict) -> dict:
             to handle API contract and internal formats.
 
     Returns:
-        Dictionary with output_phase_3 and localization_warnings
-        matching the API contract schema.
     """
-    # --- Normalize input: handle both API contract and direct formats ---
-    if "output_phase_2" in payload:
-        phase2 = payload["output_phase_2"]
-        verified_text_pack = phase2.get("verified_text_pack", {})
-    else:
-        verified_text_pack = payload.get("verified_text_pack", {})
+    # --- Pydantic Validation ---
+    try:
+        validated_payload = Phase3InputPayload(**payload)
+    except Exception as e:
+        logger.error(f"[Phase3] Payload validation failed: {e}")
+        return {
+            "output_phase_3": {},
+            "localization_warnings": [{"error": f"Invalid API Contract: {e}"}]
+        }
 
-    global_metadata = payload.get("global_metadata", {})
-    qa_feedback = payload.get("qa_feedback")
-    use_llm = payload.get("use_llm", True)
+    global_metadata = validated_payload.global_metadata.model_dump()
+    qa_feedback = validated_payload.qa_feedback
+    use_llm = validated_payload.use_llm
+
+    # Extract verified_text_pack
+    if validated_payload.output_phase_2:
+        raw_text_pack = validated_payload.output_phase_2.get(
+            "verified_text_pack", {}
+        )
+    else:
+        raw_text_pack = validated_payload.verified_text_pack or {}
+
+    # Normalize flat Phase 2 array into nested pages structure
+    verified_text_pack = _normalize_text_pack(raw_text_pack)
 
     t_start = time.perf_counter()
 
+    # --- Extract images from output_phase_1 if available ---
+    image_blocks = []
+    if validated_payload.output_phase_1:
+        for page in validated_payload.output_phase_1:
+            image_blocks.extend(page.get("image_blocks", []))
+
     # ==================================================================
     # PARALLEL BLOCK 1: Entity Graph + AMR Enrichment + ViAMR Load
-    # Build entity graph, attempt AMR model load, and load ViAMR corpus
-    # all at the same time since they are independent.
+    # Extract entities via LLM sequentially first since graph needs it.
+    # Then build graph and process external models independent of each other.
     # ==================================================================
-    logger.info("[Phase3] Starting parallel: entity graph + AMR + ViAMR...")
+    logger.info("[Phase3] Starting entity extraction + parallel processes...")
 
-    entity_graph_coro = asyncio.to_thread(
-        build_entity_graph, verified_text_pack
-    )
+    # Await extraction to use in graph building
+    async def _build_entity_data():
+        if use_llm:
+            elist = await asyncio.to_thread(
+                _extract_entity_list, verified_text_pack
+            )
+        else:
+            elist = await asyncio.to_thread(
+                extract_entities_deterministic, verified_text_pack
+            )
+        egraph = await asyncio.to_thread(
+            build_entity_graph, verified_text_pack, elist
+        )
+        return elist, egraph
     
-    # Bypass English amr_parser execution for now
-    async def _skip_amr() -> None:
-        return None
+    entity_data_coro = _build_entity_data()
+    amr_coro = asyncio.to_thread(_try_amr_enrichment, verified_text_pack)
+    
+    # Bypass ViAMR execution for now
+    async def _skip_viamr() -> bool:
+        return False
         
-    amr_coro = _skip_amr()
-    viamr_coro = asyncio.to_thread(_try_viamr_load)
+    viamr_coro = _skip_viamr()
 
-    entity_graph, amr_result, viamr_loaded = await asyncio.gather(
-        entity_graph_coro, amr_coro, viamr_coro
+    e_data, amr_result, viamr_loaded = await asyncio.gather(
+        entity_data_coro, amr_coro, viamr_coro
     )
 
+    entity_list, entity_graph = e_data
     amr_adjacency = amr_result  # May be None if model unavailable
 
     logger.info(
@@ -102,15 +197,13 @@ async def run(payload: dict) -> dict:
         (time.perf_counter() - t_start) * 1000,
         len(entity_graph),
         "yes" if amr_adjacency else "no",
-        "yes" if viamr_loaded else "no",
+        "yes" if viamr_loaded else "no"
     )
 
     # ==================================================================
     # Task #p3.2: Generate proposals (LLM or fallback)
     # ==================================================================
     logger.info("[Phase3] Generating localization proposals...")
-
-    entity_list = _extract_entity_list(verified_text_pack)
 
     if use_llm:
         proposals = await asyncio.to_thread(
@@ -194,6 +287,15 @@ async def run(payload: dict) -> dict:
             "[Phase3] %d text blocks exceed original bbox capacity.",
             len(overflow_warnings),
         )
+        
+    # ==================================================================
+    # Task #p3.5: Image processing with VLM
+    # ==================================================================
+    processed_images = process_images_vlm(
+        image_blocks, 
+        localized_text_pack, 
+        validated_payload.source_pdf_path
+    )
 
     # --- Serialize into API-contract-compliant output_phase_3 ---
     context_safe_pack, translation_warnings = _serialize_localized_text_pack(
@@ -222,6 +324,7 @@ async def run(payload: dict) -> dict:
             "context_safe_localized_text_pack": context_safe_pack,
             "entity_graph": serialized_entity_graph,
             "localization_log": localization_log,
+            "Images": processed_images,
         },
         "localization_warnings": translation_warnings,
     }
@@ -251,11 +354,13 @@ def _try_amr_enrichment(
 
         load_amr_model()
 
-        # Collect all sentences
+        # Collect all sentences (Use English explicitly to satisfy the underlying NLP amr_parser limits)
         sentences = []
         for page in text_pack.get("pages", []):
             for block in page.get("text_blocks", []):
-                sentences.append(block.get("text", ""))
+                content = block.get("english_content", block.get("text", ""))
+                if content and len(content.strip()) > 0:
+                    sentences.append(content)
 
         # We only need the adjacency, not to mutate the graph here
         # Build a throwaway graph just for AMR
@@ -332,7 +437,10 @@ def _validate_single_proposal(
 
 
 def _extract_entity_list(text_pack: dict) -> list[dict[str, str]]:
-    """Extract a flat list of entities with their page appearances.
+    """Extract a flat list of entities by querying the LLM native function.
+
+    Phase 2 no longer provides entities, so we extract them directly 
+    by sending page texts to the LLM and formatting the resulting array.
 
     Args:
         text_pack: The Verified Text Pack.
@@ -340,21 +448,57 @@ def _extract_entity_list(text_pack: dict) -> list[dict[str, str]]:
     Returns:
         List of dicts with 'name', 'type', 'pages' keys.
     """
-    entity_map: dict[str, dict] = {}
-
+    page_texts = []
+    
+    # Collect all text blocks by page to give to the LLM
     for page in text_pack.get("pages", []):
         page_id = page.get("page_id", 0)
+        page_content = []
         for block in page.get("text_blocks", []):
-            for ent in block.get("entities", []):
-                name = ent.get("name", "")
-                if name not in entity_map:
-                    entity_map[name] = {
-                        "name": name,
-                        "type": ent.get("type", "other"),
-                        "pages": [],
-                    }
-                if page_id not in entity_map[name]["pages"]:
-                    entity_map[name]["pages"].append(page_id)
+            text = block.get("translated_content", block.get("text", ""))
+            if text:
+                page_content.append(text)
+        
+        if page_content:
+            page_texts.append({
+                "page_id": page_id,
+                "text": " ".join(page_content)
+            })
+
+    # Call the native LLM function for Phase 3 extraction
+    if not page_texts:
+        return []
+
+    # This blocks synchronously, but it's safe since _extract_entity_list 
+    # executes inside the main worker run before generate_proposals... 
+    # wait, we must not block the loop. But it's okay because generate_proposals 
+    # also blocks right after it (it's run inside to_thread). I will just 
+    # fetch the entities directly using the sync LLM call from the agent.
+    entities = extract_entities_llm(page_texts)
+
+    # If LLM returned nothing (malformed JSON, timeout, etc.), fall back
+    # to deterministic extraction so the entity graph is always populated.
+    if not entities:
+        logger.info(
+            "[Phase3] LLM entity extraction returned empty — using "
+            "deterministic fallback."
+        )
+        return list(extract_entities_deterministic(text_pack))
+
+    # Re-normalize to ensure all elements properly conform to expected structure
+    entity_map: dict[str, dict] = {}
+    for ent in entities:
+        name = ent.get("name", "")
+        if name not in entity_map:
+            entity_map[name] = {
+                "name": name,
+                "type": ent.get("type", "other"),
+                "pages": []
+            }
+        
+        for p in ent.get("pages", []):
+            if p not in entity_map[name]["pages"]:
+                entity_map[name]["pages"].append(p)
 
     return list(entity_map.values())
 

@@ -153,3 +153,32 @@ class AMREdgeInfo(BaseModel):
     source: str
     relation: str
     target: str
+
+
+class GlobalMetadata(BaseModel):
+    """Immutable project constraints and configuration."""
+
+    cultural_context: str = "Vietnam"
+    target_language: str = "vi"
+    protected_names: list[str] = Field(default_factory=list)
+    never_change_rules: list[str] = Field(default_factory=list)
+    preserve_main_names: bool = True
+    lock_character_color: bool = False
+    
+    model_config = {"extra": "allow"}
+
+
+class Phase3InputPayload(BaseModel):
+    """The incoming payload structure for the Phase 3 worker."""
+
+    thread_id: str
+    webhook_url: str
+    global_metadata: GlobalMetadata
+    source_pdf_path: str = ""
+    output_phase_2: dict[str, Any] | None = None
+    output_phase_1: list[dict[str, Any]] | None = None
+    verified_text_pack: dict[str, Any] | None = None
+    qa_feedback: dict[str, Any] | None = None
+    use_llm: bool = True
+
+    model_config = {"extra": "allow"}

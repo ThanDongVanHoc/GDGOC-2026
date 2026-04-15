@@ -102,6 +102,8 @@ def _validate_contract(result: dict) -> list[str]:
         errors.append("Missing: output_phase_3.entity_graph")
     if "localization_log" not in p3:
         errors.append("Missing: output_phase_3.localization_log")
+    if "Images" not in p3:
+        errors.append("Missing: output_phase_3.Images")
 
     if "localization_warnings" not in result:
         errors.append("Missing key: localization_warnings")
@@ -137,10 +139,13 @@ async def main() -> None:
         description="Phase 3 — Complete Workflow Demo"
     )
     parser.add_argument(
-        "--use-llm",
-        action="store_true",
-        help="Enable LLM-based proposal generation (FPT Marketplace)",
+        "--disable-llm",
+        action="store_false",
+        dest="use_llm",
+        help="Disable LLM-based proposal generation (FPT Marketplace)",
     )
+    # Default to True so LLM/VLM are enabled
+    parser.set_defaults(use_llm=True)
     args = parser.parse_args()
 
     print(f"\n{'=' * 72}")
@@ -165,9 +170,21 @@ async def main() -> None:
     text_pack = payload["output_phase_2"]["verified_text_pack"]
     metadata = payload["global_metadata"]
 
+    # Handle both flat array (real Phase 2) and nested dict (legacy demo)
+    if isinstance(text_pack, list):
+        page_ids = {b.get("page_id", 0) for b in text_pack}
+        total_pages = len(page_ids)
+        total_blocks = len(text_pack)
+    else:
+        total_pages = text_pack.get("total_pages", 0)
+        total_blocks = sum(
+            len(p.get("text_blocks", []))
+            for p in text_pack.get("pages", [])
+        )
+
     print(f"  Thread ID: {thread_id}")
-    print(f"  Book: {text_pack.get('book_title', 'Unknown')}")
-    print(f"  Pages: {text_pack.get('total_pages', 0)}")
+    print(f"  Text blocks: {total_blocks}")
+    print(f"  Pages: {total_pages}")
     print(f"  Target: {metadata.get('target_language', '?')}")
     print(f"  Protected names: {metadata.get('protected_names', [])}")
     print(f"  Locked rules: {len(metadata.get('never_change_rules', []))}")
@@ -237,11 +254,19 @@ async def main() -> None:
         b for b in safe_pack
         if b["original_content"] != b["localized_content"]
     ]
-    if changed_blocks:
-        print(f"  Changed blocks: {len(changed_blocks)}")
-        for b in changed_blocks[:5]:
-            print(f"    p{b['page_id']}: \"{b['original_content'][:50]}...\"")
-            print(f"         -> \"{b['localized_content'][:50]}...\"")
+    print(f"  Changed blocks: {len(changed_blocks)}")
+    for b in changed_blocks[:5]:
+        pid = b["page_id"]
+        orig = b["original_content"][:50].replace("\n", " ") + "..."
+        loc = b["localized_content"][:50].replace("\n", " ") + "..."
+        print(f"    p{pid}: \"{orig}\"\n         -> \"{loc}\"")
+        
+    images_output = p3_out.get("Images", [])
+    print(f"\n  {_C}Processed Images:{_RST} {len(images_output)} images")
+    for img in images_output[:5]:
+        meta = img[0]
+        rep = img[1].get("replacements_json", {})
+        print(f"    Image {meta.get('image_index')}: bbox={meta.get('bbox')} replacements={rep}")
 
     # Overflow warnings
     if warnings:

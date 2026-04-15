@@ -49,28 +49,13 @@ def load_amr_model(model_dir: Optional[str] = None) -> None:
             _stog_model = amrlib.load_stog_model()
         logger.info("AMR StoG model loaded successfully.")
     except Exception as e:
-        logger.warning(
-            "Failed to load AMR model: %s", e
-        )
-        # Attempt auto-download to amrlib's default data dir
-        try:
-            data_dir = str(
-                Path(amrlib.__file__).parent / "data"
-            )
-            logger.info(
-                "Attempting model download to: %s", data_dir
-            )
-            amrlib.download_model("model_stog", data_dir)
-            _stog_model = amrlib.load_stog_model()
-            logger.info("AMR model downloaded and loaded successfully.")
-        except Exception as download_err:
-            raise RuntimeError(
-                "AMR model not found. Please download manually:\n"
-                "  1. Visit https://github.com/bjascob/amrlib-models\n"
-                "  2. Download model_parse_xfm_bart_large-v0_1_0.tar.gz\n"
-                "  3. Extract to: <python>/lib/site-packages/amrlib/data/\n"
-                f"  Original error: {download_err}"
-            ) from download_err
+        logger.info("AMR model not found locally (%s). Skipping AMR...", e)
+        raise RuntimeError(
+            "AMR model not found. Please download manually if needed:\n"
+            "  1. Visit https://github.com/bjascob/amrlib-models\n"
+            "  2. Download model_parse_xfm_bart_large-v0_1_0.tar.gz\n"
+            "  3. Extract to: <python>/lib/site-packages/amrlib/data/\n"
+        ) from e
 
 
 def parse_sentences_to_amr(sentences: list[str]) -> list[str]:
@@ -212,6 +197,37 @@ def build_adjacency_from_amr(
             "concept": source_concept,
             "relation": f"{edge.role}-of",
         })
+
+    # Capture object between object (2-hop predicate flattening)
+    # E.g. A <- :ARG0 - V - :ARG1 -> B
+    # Add an edge between A and B with relation "V" (the object between them)
+    # We do this by creating a snapshot of the current 1-hop adjacency.
+    snapshot = {k: list(v) for k, v in adjacency.items()}
+    for mid_concept, neighbors in snapshot.items():
+        # Only consider mid_concept as an intermediate if it connects multiple concepts
+        if len(neighbors) > 1:
+            for i, n1 in enumerate(neighbors):
+                for n2 in neighbors[i + 1:]:
+                    c1 = n1["concept"]
+                    c2 = n2["concept"]
+                    # Add c1 -> c2 with relation mid_concept
+                    if c1 not in adjacency:
+                        adjacency[c1] = []
+                    # Check if edge already exists
+                    if not any(n["concept"] == c2 and n["relation"] == mid_concept for n in adjacency[c1]):
+                        adjacency[c1].append({
+                            "concept": c2,
+                            "relation": mid_concept
+                        })
+
+                    # Add c2 -> c1 with relation mid_concept
+                    if c2 not in adjacency:
+                        adjacency[c2] = []
+                    if not any(n["concept"] == c1 and n["relation"] == mid_concept for n in adjacency[c2]):
+                        adjacency[c2].append({
+                            "concept": c1,
+                            "relation": mid_concept
+                        })
 
     return adjacency
 

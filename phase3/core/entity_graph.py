@@ -22,33 +22,16 @@ from core.amr_parser import (
 logger = logging.getLogger(__name__)
 
 
-def build_entity_graph(text_pack: dict[str, Any]) -> dict[str, dict]:
-    """Build the entity graph from a Verified Text Pack.
+def build_entity_graph(text_pack: dict[str, Any], extracted_entities: list[dict[str, Any]]) -> dict[str, dict]:
+    """Build the entity graph from a Verified Text Pack and extracted entities.
 
-    Scans all pages and text blocks to identify entities, then
-    constructs the adjacency-list graph structure. Co-occurring
-    entities (appearing in the same text block) are automatically
-    linked as related.
+    Scans all pages and text blocks to identify which entities appear
+    in which blocks via substring matching. Co-occurring entities 
+    (appearing in the same text block) are automatically linked as related.
 
     Args:
-        text_pack: The Verified Text Pack JSON from Phase 2.
-            Expected structure:
-            {
-                "pages": [
-                    {
-                        "page_id": 1,
-                        "text_blocks": [
-                            {
-                                "text": "The children built a Snowman...",
-                                "bbox": [x0, y0, x1, y1],
-                                "entities": [
-                                    {"name": "Snowman", "type": "character"}
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
+        text_pack: The Verified Text Pack JSON.
+        extracted_entities: List of entity objects parsed via LLM.
 
     Returns:
         A dictionary representing the entity graph. Keys are entity
@@ -56,47 +39,56 @@ def build_entity_graph(text_pack: dict[str, Any]) -> dict[str, dict]:
         and 'contexts' fields.
     """
     entity_graph: dict[str, dict] = {}
+    
+    # Initialize graph nodes
+    for ent in extracted_entities:
+        name = ent.get("name", "")
+        if not name:
+            continue
+        entity_graph[name] = {
+            "type": ent.get("type", "other"),
+            "pages": [],
+            "related": [],
+            "contexts": [],
+        }
 
     for page in text_pack.get("pages", []):
         page_id = page.get("page_id", 0)
 
         for block in page.get("text_blocks", []):
-            text = block.get("translated_content", block.get("text", ""))
-            entities = block.get("entities", [])
+            translated = block.get("translated_content", "")
+            original = block.get("english_content", "")
+            # Search both original block and translated block for entity triggers
+            text = f"{translated} {original}" if translated else original
+            if not text:
+                continue
 
-            for entity_info in entities:
-                name = entity_info.get("name", "")
-                entity_type = entity_info.get("type", "other")
+            # Find matching entities in this block
+            block_entities = []
+            text_lower = text.lower()
+            
+            for ent_name in entity_graph.keys():
+                if ent_name.lower() in text_lower:
+                    block_entities.append(ent_name)
+                    
+                    node = entity_graph[ent_name]
+                    # Track unique page appearances
+                    if page_id not in node["pages"]:
+                        node["pages"].append(page_id)
 
-                if name not in entity_graph:
-                    entity_graph[name] = {
-                        "type": entity_type,
-                        "pages": [],
-                        "related": [],
-                        "contexts": [],
-                    }
-
-                node = entity_graph[name]
-
-                # Track unique page appearances
-                if page_id not in node["pages"]:
-                    node["pages"].append(page_id)
-
-                # Record contextual sentence
-                node["contexts"].append({
-                    "page": page_id,
-                    "sentence": text,
-                })
+                    # Record contextual sentence
+                    node["contexts"].append({
+                        "page": page_id,
+                        "sentence": text,
+                    })
 
             # Build co-occurrence edges within the same text block
-            entity_names = [e.get("name", "") for e in entities]
-            for i, name_a in enumerate(entity_names):
-                for name_b in entity_names[i + 1:]:
-                    if name_a in entity_graph and name_b in entity_graph:
-                        if name_b not in entity_graph[name_a]["related"]:
-                            entity_graph[name_a]["related"].append(name_b)
-                        if name_a not in entity_graph[name_b]["related"]:
-                            entity_graph[name_b]["related"].append(name_a)
+            for i, name_a in enumerate(block_entities):
+                for name_b in block_entities[i + 1:]:
+                    if name_b not in entity_graph[name_a]["related"]:
+                        entity_graph[name_a]["related"].append(name_b)
+                    if name_a not in entity_graph[name_b]["related"]:
+                        entity_graph[name_b]["related"].append(name_a)
 
     logger.info(
         "Built entity graph with %d entities.", len(entity_graph)

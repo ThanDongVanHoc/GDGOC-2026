@@ -10,6 +10,7 @@ The agent respects global_metadata constraints:
     - lock_character_color: blocks colour-related changes
 """
 
+import base64
 import json
 import logging
 import os
@@ -34,6 +35,7 @@ except ImportError:
 _FPT_API_KEY: str = os.environ.get("FPT_API_KEY", "")
 _FPT_BASE_URL: str = "https://mkp-api.fptcloud.com"
 _FPT_MODEL: str = "gemma-4-31B-it"
+_FPT_VLM_MODEL: str = "Qwen2.5-VL-7B-Instruct"
 
 # ---------------------------------------------------------------------------
 # System prompt for the localization agent
@@ -75,36 +77,108 @@ Return ONLY the JSON array. No extra text, no markdown fences.
 
 _FALLBACK_PROPOSALS: list[dict[str, str]] = [
     {
-        "original": "Lò sưởi",
-        "proposed": "Bếp củi",
-        "rationale": "Lò sưởi không phổ biến tại Việt Nam. Bếp củi là hình ảnh gần gũi hơn với văn hóa bản địa.",
+        "original": "cottage",
+        "proposed": "nhà tranh",
+        "rationale": "'Cottage' là kiểu nhà phương Tây. 'Nhà tranh' gần gũi hơn với văn hóa làng quê Việt Nam.",
     },
     {
-        "original": "Sô cô la nóng",
-        "proposed": "Chè nóng",
-        "rationale": "Sô cô la nóng ít phổ biến ở Việt Nam. Chè nóng là món tráng miệng ấm áp quen thuộc cho trẻ nhỏ.",
+        "original": "cloak",
+        "proposed": "áo tơi",
+        "rationale": "'Cloak' là trang phục thời trung cổ phương Tây. 'Áo tơi' là trang phục chống mưa truyền thống Việt Nam.",
     },
     {
-        "original": "Mũ len",
-        "proposed": "Nón lá",
-        "rationale": "Mũ len rất ít được đội ở thời tiết nhiệt đới. Nón lá là biểu tượng văn hoá truyền thống thay thế hoàn hảo.",
+        "original": "Goblin",
+        "proposed": "Yêu tinh",
+        "rationale": "'Goblin' là quái vật phương Tây. 'Yêu tinh' là hình ảnh quen thuộc trong truyện cổ tích Việt Nam.",
     },
     {
-        "original": "Xe trượt tuyết",
-        "proposed": "Xe đạp",
-        "rationale": "Xe trượt tuyết không tồn tại ở Việt Nam vì không có tuyết. Xe đạp là phương tiện phổ biến của trẻ thơ.",
+        "original": "squirrel",
+        "proposed": "con sóc",
+        "rationale": "Giữ nghĩa nguyên bản nhưng dùng tiếng Việt cho tự nhiên hơn trong ngữ cảnh sách thiếu nhi.",
     },
     {
-        "original": "Cực quang",
-        "proposed": "Cầu vồng",
-        "rationale": "Cực quang không thể nhìn thấy ở Việt Nam. Cầu vồng là hiện tượng tự nhiên kỳ diệu và thân thuộc hơn.",
+        "original": "cobblestone",
+        "proposed": "đá cuội",
+        "rationale": "'Cobblestone' là loại đường lát đá đặc trưng châu Âu. 'Đá cuội' gần gũi với ngữ cảnh Việt Nam.",
     },
     {
-        "original": "Áo khoác dạ",
-        "proposed": "Áo khoác",
-        "rationale": "Cách gọi 'Áo khoác dạ' có thể không phổ biến. Gọi 'Áo khoác' giúp trẻ em Việt Nam dễ tiếp thu hơn.",
+        "original": "meadowlark",
+        "proposed": "chim sơn ca",
+        "rationale": "'Meadowlark' là loài chim Bắc Mỹ. 'Chim sơn ca' là loài quen thuộc hơn với trẻ em Việt Nam.",
     },
 ]
+
+# Deterministic entity keywords for fallback extraction (no LLM needed)
+_DETERMINISTIC_ENTITY_KEYWORDS: list[dict[str, str]] = [
+    {"name": "cottage", "type": "location"},
+    {"name": "cloak", "type": "clothing"},
+    {"name": "Goblin", "type": "character"},
+    {"name": "squirrel", "type": "animal"},
+    {"name": "cobblestone", "type": "object"},
+    {"name": "meadowlark", "type": "animal"},
+    {"name": "Dragon", "type": "character"},
+    {"name": "sword", "type": "object"},
+    {"name": "forest", "type": "location"},
+    {"name": "village", "type": "location"},
+    {"name": "kingdom", "type": "location"},
+    {"name": "enchanted", "type": "event"},
+    {"name": "mountains", "type": "location"},
+    {"name": "Willowmere", "type": "location"},
+    {"name": "Whispering Woods", "type": "location"},
+    {"name": "crossroads", "type": "location"},
+    {"name": "apron", "type": "clothing"},
+    {"name": "satchel", "type": "object"},
+    {"name": "rain", "type": "weather_entity"},
+]
+
+
+# ---------------------------------------------------------------------------
+# Deterministic entity extraction (no LLM)
+# ---------------------------------------------------------------------------
+
+
+def extract_entities_deterministic(
+    text_pack: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """Extract entities from text blocks using keyword-based matching.
+
+    Scans all text blocks for occurrences of known entity keywords
+    defined in ``_DETERMINISTIC_ENTITY_KEYWORDS``. This is used as a
+    fallback when LLM-based extraction is disabled or unavailable.
+
+    Args:
+        text_pack: The Verified Text Pack in nested page format.
+
+    Returns:
+        A list of entity dicts with 'name', 'type', and 'pages' keys.
+    """
+    entity_map: dict[str, dict[str, Any]] = {}
+
+    for page in text_pack.get("pages", []):
+        page_id = page.get("page_id", 0)
+
+        for block in page.get("text_blocks", []):
+            # Search in both Vietnamese and English content, using english_content from the normalizer 
+            text = block.get("translated_content", block.get("text", ""))
+            original = block.get("english_content", "")
+            combined = f"{text} {original}".lower()
+
+            for kw in _DETERMINISTIC_ENTITY_KEYWORDS:
+                if kw["name"].lower() in combined:
+                    name = kw["name"]
+                    if name not in entity_map:
+                        entity_map[name] = {
+                            "name": name,
+                            "type": kw["type"],
+                            "pages": [],
+                        }
+                    if page_id not in entity_map[name]["pages"]:
+                        entity_map[name]["pages"].append(page_id)
+
+    logger.info(
+        "[Agent] Deterministic extraction found %d entities.", len(entity_map)
+    )
+    return list(entity_map.values())
 
 
 # ---------------------------------------------------------------------------
@@ -135,6 +209,7 @@ def generate_proposals_llm(
 
     # Build the system prompt with constraints
     system = _SYSTEM_PROMPT.format(
+        "Your job is to localize the content of the book to Vietnamese.\n",
         protected_names=json.dumps(protected),
         never_change_rules=json.dumps(never_change),
     )
@@ -168,6 +243,169 @@ def generate_proposals_llm(
             "[Agent] LLM call failed: %s. Using fallback proposals.", e
         )
         return generate_proposals_fallback(entity_names, protected)
+
+
+def extract_entities_llm(texts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Extract cultural entities from text using the LLM natively.
+
+    Replaces the reliance on the Phase 2 output giving entities.
+    
+    Args:
+        texts: A list of dicts with 'page_id' and 'text'.
+    
+    Returns:
+        A list of entity dictionaries with 'name', 'type', and 'pages'.
+    """
+    system = (
+        "You are an entity extractor. Given a list of texts by page, extract ALL "
+        "cultural entities (characters, locations, objects, food, clothing). "
+        "Return a JSON array of objects: [{\"name\": \"Entity Name\", \"type\": \"character|location|object\", \"pages\": [1, 2]}]"
+    )
+    user_msg = json.dumps(texts, ensure_ascii=False)
+    
+    try:
+        client = OpenAI(api_key=_FPT_API_KEY, base_url=_FPT_BASE_URL)
+        response = client.chat.completions.create(
+            model=_FPT_MODEL,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": user_msg},
+            ],
+            temperature=0.1,
+            max_tokens=1024,
+        )
+        
+        raw = response.choices[0].message.content.strip()
+        cleaned = raw.strip()
+        if cleaned.startswith("```"):
+            lines = cleaned.split("\n")
+            lines = [l for l in lines if not l.strip().startswith("```")]
+            cleaned = "\n".join(lines)
+            
+        entities = json.loads(cleaned)
+        if isinstance(entities, list):
+            return entities
+        return []
+    except Exception as e:
+        logger.warning("[Agent] Entity extraction LLM failed: %s.", e)
+        return []
+
+
+def process_images_vlm(
+    image_blocks: list[dict[str, Any]],
+    localized_pack: dict[str, Any],
+    source_pdf_path: str,
+) -> list[list[dict[str, Any]]]:
+    """Process visual blocks using Qwen 2.5 VLM to identify substitutions.
+    
+    Args:
+        image_blocks: A list of image block dictionaries from Phase 1.
+        localized_pack: The localized text pack (nested pages format).
+        source_pdf_path: Path to the original PDF.
+        
+    Returns:
+        A list of processed Images respecting the Phase 3 output contract.
+    """
+    output_images = []
+    
+    # Map page texts for context
+    page_texts: dict[int, str] = {}
+    for page in localized_pack.get("pages", []):
+        pid = page.get("page_id", 0)
+        lines = [b.get("text", "") for b in page.get("text_blocks", [])]
+        page_texts[pid] = " ".join(lines)
+    
+    for block in image_blocks:
+        image_index = block.get("image_index", 0)
+        bbox = block.get("bbox", [0.0, 0.0, 0.0, 0.0])
+        page_id = block.get("page_id", 0)
+        
+        # Build context from current page and previous page (if exists)
+        ctx_parts = []
+        if page_id - 1 in page_texts:
+            ctx_parts.append(page_texts[page_id - 1])
+        if page_id in page_texts:
+            ctx_parts.append(page_texts[page_id])
+            
+        context = " ".join(ctx_parts)
+        
+        try:
+            if not source_pdf_path or not os.path.exists(source_pdf_path):
+                raise FileNotFoundError(f"Missing or invalid source_pdf_path: {source_pdf_path}")
+            import fitz
+            doc = fitz.open(source_pdf_path)
+            # Default to extracting from the matching page_id
+            # Assuming page_id is 1-indexed in our data
+            page_idx = max(0, page_id - 1)
+            pdf_page = doc[page_idx]
+            rect = fitz.Rect(bbox)
+            # Render the clipped rectangle
+            pix = pdf_page.get_pixmap(clip=rect)
+            # Convert to PNG, then Base64
+            img_bytes = pix.tobytes("png")
+            base64_img = base64.b64encode(img_bytes).decode("utf-8")
+            
+            # The prepared message layout for Qwen2.5-VL via OpenAI compatible API:
+            user_messages = [
+                {
+                    "type": "image_url",
+                    "image_url": {"url": f"data:image/png;base64,{base64_img}"}
+                },
+                {
+                    "type": "text",
+                    "text": f"Evaluate this image with context: '{context}'"
+                }
+            ]
+            doc.close()
+        except Exception as e:
+            logger.warning("[Agent] Failed to read image from PDF: %s", e)
+            base64_img = ""
+            user_messages = [{"type": "text", "text": context}]
+            
+        # Call the VLM model if FPT API Key is available
+        replacements = {}
+        if _FPT_API_KEY:
+            try:
+                client = OpenAI(api_key=_FPT_API_KEY, base_url=_FPT_BASE_URL)
+                response = client.chat.completions.create(
+                    model=_FPT_VLM_MODEL,
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": "You are a Vietnamese localization assistant. Analyze the image to identify text or elements that need to be localized to Vietnamese culture based on the provided context. Return a JSON object mapped {original_english: vietnamese_translation}. ONLY output JSON."
+                        },
+                        {"role": "user", "content": user_messages},
+                    ],
+                    temperature=0.2,
+                    max_tokens=1024,
+                )
+                raw_response = response.choices[0].message.content.strip()
+                # Parse JSON if possible
+                try:
+                    # Strip out Markdown if exists
+                    if raw_response.startswith("```json"):
+                        raw_response = raw_response[7:-3].strip()
+                    elif raw_response.startswith("```"):
+                        raw_response = raw_response[3:-3].strip()
+                    parsed = json.loads(raw_response)
+                    if isinstance(parsed, dict):
+                        replacements = parsed
+                except json.JSONDecodeError:
+                    logger.warning("[Agent] VLM returned non-JSON: %s", raw_response)
+            except Exception as e:
+                logger.warning("[Agent] VLM call failed: %s", e)
+            
+        output_images.append([
+            {
+                "bbox": bbox,
+                "image_index": image_index
+            },
+            {
+                "replacements_json": replacements
+            }
+        ])
+        
+    return output_images
 
 
 def generate_proposals_fallback(
@@ -244,8 +482,11 @@ def _build_user_prompt(
 
     prompt = (
         f"Here are the cultural entities found in a Vietnamese children's book "
-        f"(translated from English). Propose Vietnamese replacements for entities "
+        f"Propose Vietnamese replacements for entities "
         f"that are culturally unfamiliar to Vietnamese children.\n\n"
+        "The contain need to be as familar as possible to Vietnamese culture.\n",
+        "The meaning of the content can be changed to match the culture of Vietnamese.\n",
+        "Vietnamese words could be changed into another vietnamese word.\n",
         f"Entities:\n{entity_list_str}"
     )
 
