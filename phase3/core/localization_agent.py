@@ -25,10 +25,13 @@ logger = logging.getLogger(__name__)
 # FPT Marketplace config
 # ---------------------------------------------------------------------------
 
-_FPT_API_KEY: str = os.environ.get(
-    "FPT_API_KEY",
-    "sk-DV3wZhqSglIKIdOGgWh7U7J9FAHTzYew6oyOYR01tWo=",
-)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+_FPT_API_KEY: str = os.environ.get("FPT_API_KEY", "")
 _FPT_BASE_URL: str = "https://mkp-api.fptcloud.com"
 _FPT_MODEL: str = "gemma-4-31B-it"
 
@@ -39,8 +42,8 @@ _FPT_MODEL: str = "gemma-4-31B-it"
 _SYSTEM_PROMPT = """\
 You are a Vietnamese cultural localization expert for children's picture books.
 
-Your task: Given a list of Western cultural entities found in the book, propose
-Vietnamese equivalents that are familiar to Vietnamese children aged 6-10.
+Your task: Given a list of Western cultural entities found in a Vietnamese children's book, propose
+Vietnamese replacements that are familiar to Vietnamese children aged 6-10.
 
 Rules:
 1. NEVER rename protected entities: {protected_names}
@@ -54,12 +57,12 @@ Rules:
 Return a JSON array of proposals. Each proposal MUST have these fields:
 - "original": the exact entity name from the input
 - "proposed": the Vietnamese replacement
-- "rationale": 1-sentence explanation in English
+- "rationale": 1-sentence explanation in Vietnamese
 
 Example:
 [
-  {{"original": "Fireplace", "proposed": "Bếp củi", "rationale": "Fireplaces are uncommon in Vietnamese homes; wood stoves are culturally equivalent."}},
-  {{"original": "Wool Hat", "proposed": "Nón lá", "rationale": "Wool hats are uncommon in tropical Vietnam; conical hats are iconic."}}
+  {{"original": "Lò sưởi", "proposed": "Bếp củi", "rationale": "Lò sưởi không phổ biến trong các gia đình Việt Nam; bếp củi là thay thế phù hợp với văn hóa."}},
+  {{"original": "Mũ len", "proposed": "Nón lá", "rationale": "Mũ len ít được dùng ở vùng nhiệt đới; nón lá là biểu tượng quen thuộc hơn."}}
 ]
 
 Return ONLY the JSON array. No extra text, no markdown fences.
@@ -72,40 +75,34 @@ Return ONLY the JSON array. No extra text, no markdown fences.
 
 _FALLBACK_PROPOSALS: list[dict[str, str]] = [
     {
-        "original": "Fireplace",
+        "original": "Lò sưởi",
         "proposed": "Bếp củi",
-        "rationale": "Fireplaces are rare in Vietnamese homes. "
-                     "Wood-burning stoves (bếp củi) are the cultural equivalent.",
+        "rationale": "Lò sưởi không phổ biến tại Việt Nam. Bếp củi là hình ảnh gần gũi hơn với văn hóa bản địa.",
     },
     {
-        "original": "Hot Chocolate",
+        "original": "Sô cô la nóng",
         "proposed": "Chè nóng",
-        "rationale": "Hot chocolate is uncommon in Vietnam. "
-                     "Chè (sweet soup) is a popular warm dessert for children.",
+        "rationale": "Sô cô la nóng ít phổ biến ở Việt Nam. Chè nóng là món tráng miệng ấm áp quen thuộc cho trẻ nhỏ.",
     },
     {
-        "original": "Wool Hat",
+        "original": "Mũ len",
         "proposed": "Nón lá",
-        "rationale": "Wool hats are rare in tropical Vietnam. "
-                     "The conical hat (nón lá) is iconic Vietnamese headwear.",
+        "rationale": "Mũ len rất ít được đội ở thời tiết nhiệt đới. Nón lá là biểu tượng văn hoá truyền thống thay thế hoàn hảo.",
     },
     {
-        "original": "Sleigh",
+        "original": "Xe trượt tuyết",
         "proposed": "Xe đạp",
-        "rationale": "Sleighs require snow and are unknown in Vietnam. "
-                     "Bicycles are a common childhood transport.",
+        "rationale": "Xe trượt tuyết không tồn tại ở Việt Nam vì không có tuyết. Xe đạp là phương tiện phổ biến của trẻ thơ.",
     },
     {
-        "original": "Northern Lights",
+        "original": "Cực quang",
         "proposed": "Cầu vồng",
-        "rationale": "Northern Lights are not visible in Vietnam. "
-                     "Rainbows are a similarly magical sky phenomenon.",
+        "rationale": "Cực quang không thể nhìn thấy ở Việt Nam. Cầu vồng là hiện tượng tự nhiên kỳ diệu và thân thuộc hơn.",
     },
     {
-        "original": "Warm Coat",
+        "original": "Áo khoác dạ",
         "proposed": "Áo khoác",
-        "rationale": "A warm coat is understandable but uncommon phrasing. "
-                     "Áo khoác (jacket) is more natural for Vietnamese children.",
+        "rationale": "Cách gọi 'Áo khoác dạ' có thể không phổ biến. Gọi 'Áo khoác' giúp trẻ em Việt Nam dễ tiếp thu hơn.",
     },
 ]
 

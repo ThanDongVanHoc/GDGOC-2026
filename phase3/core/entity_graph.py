@@ -61,7 +61,7 @@ def build_entity_graph(text_pack: dict[str, Any]) -> dict[str, dict]:
         page_id = page.get("page_id", 0)
 
         for block in page.get("text_blocks", []):
-            text = block.get("text", "")
+            text = block.get("translated_content", block.get("text", ""))
             entities = block.get("entities", [])
 
             for entity_info in entities:

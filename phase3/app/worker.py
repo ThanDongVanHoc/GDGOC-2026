@@ -82,9 +82,12 @@ async def run(payload: dict) -> dict:
     entity_graph_coro = asyncio.to_thread(
         build_entity_graph, verified_text_pack
     )
-    amr_coro = asyncio.to_thread(
-        _try_amr_enrichment, verified_text_pack
-    )
+    
+    # Bypass English amr_parser execution for now
+    async def _skip_amr() -> None:
+        return None
+        
+    amr_coro = _skip_amr()
     viamr_coro = asyncio.to_thread(_try_viamr_load)
 
     entity_graph, amr_result, viamr_loaded = await asyncio.gather(
