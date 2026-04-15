@@ -15,8 +15,9 @@ from services.comfyui_service import edit_image
 router = APIRouter(prefix="/image-edit", tags=["Image Edit"])
 
 PROMPT_TEMPLATE = (
+    "You are an exprt in image editing. "
     "Edit the image realistically by localizing the scene to Vietnam. "
-    "Adjust the background to a simple Vietnamese urban environment"
+    "Adjust the background to a simple Vietnamese environment"
     "{REPLACEMENTS} "
     "Keep all people exactly unchanged, including faces, pose, and expressions. "
     "Preserve the original composition, camera angle, and warm lighting.   "

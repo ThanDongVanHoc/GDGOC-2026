@@ -13,7 +13,7 @@ import httpx
 
 from config import OUTPUTS_DIR
 
-COMFYUI_BASE_URL = os.getenv("COMFYUI_BASE_URL", "http://127.0.0.1:8188")
+COMFYUI_BASE_URL = os.getenv("COMFYUI_BASE_URL", "http://0.0.0.0:8888")
 WORKFLOW_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "workflows", "qwen-image-edit.json")
 
 # Polling settings

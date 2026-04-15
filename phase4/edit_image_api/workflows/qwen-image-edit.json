@@ -65,7 +65,7 @@
     },
     "115:110": {
         "inputs": {
-            "prompt": "",
+            "prompt": "blurry, low resolution, low quality, unnatural, changing existing text, altering original typography, modifying speech bubbles, distorting fixed labels, text overlap, font blur, character bleeding, redraw text, shifting text boxes, pixel distortion on text, add overlays, annotations, bounding boxes, or visual markers.",
             "clip": [
                 "115:38",
                 0

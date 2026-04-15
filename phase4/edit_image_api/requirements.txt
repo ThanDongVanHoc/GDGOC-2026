@@ -1,9 +1,4 @@
---extra-index-url https://download.pytorch.org/whl/cu118
-
-torch
-torchvision
-torchaudio
-fastapi
+jfastapi
 uvicorn
 python-multipart
 httpx
@@ -11,4 +6,3 @@ opencv-python
 easyocr
 numpy
 pydantic
-transformers==4.57.2
