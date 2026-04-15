@@ -1,4 +1,4 @@
-jfastapi
+fastapi
 uvicorn
 python-multipart
 httpx
@@ -6,3 +6,4 @@ opencv-python
 easyocr
 numpy
 pydantic
+Pillow
