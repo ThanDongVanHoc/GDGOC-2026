@@ -8,7 +8,7 @@ POST /pipeline/localize
 
 import json
 import logging
-from typing import Optional
+from typing import Optional, Type, TypeVar, Any
 
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from fastapi.responses import Response
@@ -31,17 +31,32 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/pipeline", tags=["Localization Pipeline"])
 
 
-def _parse_json_field(raw: str | None, field_name: str) -> any:
-    """Parse a JSON string field, returning None if empty/null."""
+T = TypeVar('T')
+
+def _parse_models(raw: str | None, field_name: str, model_class: Type[T], is_list: bool) -> Any:
+    """Parse a JSON string field into Pydantic models."""
     if raw is None or raw.strip() == "" or raw.strip().lower() == "null":
-        return None
+        return [] if is_list else None
+        
     try:
-        return json.loads(raw)
+        data = json.loads(raw)
     except json.JSONDecodeError:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Invalid JSON format for '{field_name}'.",
-        )
+        raise HTTPException(status_code=400, detail=f"Invalid JSON format for '{field_name}'.")
+
+    if is_list:
+        if not isinstance(data, list):
+            raise HTTPException(status_code=400, detail=f"{field_name} must be a JSON array.")
+        try:
+            return [model_class(**item) for item in data]
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=f"Invalid {field_name}: {e}")
+    else:
+        if not isinstance(data, dict):
+            raise HTTPException(status_code=400, detail=f"{field_name} must be a JSON object.")
+        try:
+            return model_class(**data)
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=f"Invalid {field_name}: {e}")
 
 
 @router.post(
@@ -105,41 +120,10 @@ async def localize_image(
 ):
     """Run the full localization pipeline on an uploaded image."""
 
-    # ── Parse each field independently ──────────────────────────────────
-    # Objects
-    objects_raw = _parse_json_field(objects_json, "objects_json")
-    objects = []
-    if objects_raw is not None:
-        if not isinstance(objects_raw, list):
-            raise HTTPException(status_code=400, detail="objects_json must be a JSON array.")
-        try:
-            objects = [ObjectReplacement(**obj) for obj in objects_raw]
-        except Exception as e:
-            raise HTTPException(status_code=400, detail=f"Invalid objects_json: {e}")
+    objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
+    context = _parse_models(context_json, "context_json", ContextTransformation, is_list=False)
+    texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
 
-    # Context
-    context_raw = _parse_json_field(context_json, "context_json")
-    context = None
-    if context_raw is not None:
-        if not isinstance(context_raw, dict):
-            raise HTTPException(status_code=400, detail="context_json must be a JSON object.")
-        try:
-            context = ContextTransformation(**context_raw)
-        except Exception as e:
-            raise HTTPException(status_code=400, detail=f"Invalid context_json: {e}")
-
-    # Texts
-    texts_raw = _parse_json_field(texts_json, "texts_json")
-    texts = []
-    if texts_raw is not None:
-        if not isinstance(texts_raw, list):
-            raise HTTPException(status_code=400, detail="texts_json must be a JSON array.")
-        try:
-            texts = [TextReplacement(**txt) for txt in texts_raw]
-        except Exception as e:
-            raise HTTPException(status_code=400, detail=f"Invalid texts_json: {e}")
-
-    # Build pipeline request
     request = LocalizePipelineRequest(
         objects=objects,
         context=context,
@@ -147,14 +131,12 @@ async def localize_image(
         seed=seed,
     )
 
-    # ── Read image ──────────────────────────────────────────────────────
     contents = await image.read()
     if not contents:
         raise HTTPException(status_code=400, detail="Empty image file.")
 
     original_filename = image.filename or "input.png"
 
-    # ── Run pipeline ────────────────────────────────────────────────────
     try:
         result_bytes, pipeline_response = await run_localize_pipeline(
             image_bytes=contents,
@@ -166,7 +148,6 @@ async def localize_image(
         logger.error(f"Pipeline error: {exc}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Pipeline error: {exc}")
 
-    # Build response headers with pipeline metadata
     steps_summary = " | ".join(
         f"{s.step}: {s.status} ({s.duration_seconds}s)" for s in pipeline_response.steps
     )
@@ -210,27 +191,9 @@ async def localize_image_json(
 ):
     """Same as /pipeline/localize but returns JSON metadata instead of image bytes."""
 
-    # Parse fields (same logic)
-    objects_raw = _parse_json_field(objects_json, "objects_json")
-    objects = []
-    if objects_raw is not None:
-        if not isinstance(objects_raw, list):
-            raise HTTPException(status_code=400, detail="objects_json must be a JSON array.")
-        objects = [ObjectReplacement(**obj) for obj in objects_raw]
-
-    context_raw = _parse_json_field(context_json, "context_json")
-    context = None
-    if context_raw is not None:
-        if not isinstance(context_raw, dict):
-            raise HTTPException(status_code=400, detail="context_json must be a JSON object.")
-        context = ContextTransformation(**context_raw)
-
-    texts_raw = _parse_json_field(texts_json, "texts_json")
-    texts = []
-    if texts_raw is not None:
-        if not isinstance(texts_raw, list):
-            raise HTTPException(status_code=400, detail="texts_json must be a JSON array.")
-        texts = [TextReplacement(**txt) for txt in texts_raw]
+    objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
+    context = _parse_models(context_json, "context_json", ContextTransformation, is_list=False)
+    texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
 
     request = LocalizePipelineRequest(objects=objects, context=context, texts=texts, seed=seed)
 
@@ -270,30 +233,18 @@ async def step1_object_replace(
     ),
     seed: Optional[int] = Form(default=None),
 ):
-    objects_raw = _parse_json_field(objects_json, "objects_json")
-    if not isinstance(objects_raw, list):
-        raise HTTPException(status_code=400, detail="objects_json must be a JSON array.")
-    try:
-        objects = [ObjectReplacement(**obj) for obj in objects_raw]
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Invalid objects: {e}")
-
+    objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
+    
     contents = await image.read()
     if not contents:
         raise HTTPException(status_code=400, detail="Empty image file.")
-
+        
     try:
-        result_bytes = await run_object_replacement(
-            image_bytes=contents,
-            filename=image.filename or "input.png",
-            objects=objects,
-            seed=seed,
-        )
-    except Exception as exc:
-        logger.error(f"Step 1 error: {exc}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Step 1 error: {exc}")
-
-    return Response(content=result_bytes, media_type="image/png")
+        result = await run_object_replacement(contents, image.filename or "input.png", objects, seed)
+        return Response(content=result, media_type="image/png")
+    except Exception as e:
+        logger.error(f"Step 1 error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.post(
@@ -310,30 +261,18 @@ async def step2_context_transform(
     ),
     seed: Optional[int] = Form(default=None),
 ):
-    context_raw = _parse_json_field(context_json, "context_json")
-    if not isinstance(context_raw, dict):
-        raise HTTPException(status_code=400, detail="context_json must be a JSON object.")
-    try:
-        context = ContextTransformation(**context_raw)
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Invalid context: {e}")
-
+    context = _parse_models(context_json, "context_json", ContextTransformation, is_list=False)
+    
     contents = await image.read()
     if not contents:
         raise HTTPException(status_code=400, detail="Empty image file.")
-
+        
     try:
-        result_bytes = await run_context_transformation(
-            image_bytes=contents,
-            filename=image.filename or "input.png",
-            context=context,
-            seed=seed,
-        )
-    except Exception as exc:
-        logger.error(f"Step 2 error: {exc}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Step 2 error: {exc}")
-
-    return Response(content=result_bytes, media_type="image/png")
+        result = await run_context_transformation(contents, image.filename or "input.png", context, seed)
+        return Response(content=result, media_type="image/png")
+    except Exception as e:
+        logger.error(f"Step 2 error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.post(
@@ -349,26 +288,15 @@ async def step3_text_replace(
         json_schema_extra={"example": '[{"bbox": [50, 50, 250, 80], "original_text": "Hello World", "new_text": "Xin chào"}]'}
     ),
 ):
-    texts_raw = _parse_json_field(texts_json, "texts_json")
-    if not isinstance(texts_raw, list):
-        raise HTTPException(status_code=400, detail="texts_json must be a JSON array.")
-    try:
-        texts = [TextReplacement(**txt) for txt in texts_raw]
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Invalid texts: {e}")
-
+    texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
+    
     contents = await image.read()
     if not contents:
         raise HTTPException(status_code=400, detail="Empty image file.")
-
+        
     try:
-        result_bytes = await run_text_replacement(
-            image_bytes=contents,
-            texts=texts,
-        )
-    except Exception as exc:
-        logger.error(f"Step 3 error: {exc}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Step 3 error: {exc}")
-
-    return Response(content=result_bytes, media_type="image/png")
-
+        result = await run_text_replacement(contents, texts)
+        return Response(content=result, media_type="image/png")
+    except Exception as e:
+        logger.error(f"Step 3 error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
