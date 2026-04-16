@@ -28,11 +28,11 @@ from google.genai import types
 from pydantic import BaseModel, Field
 
 # ── Environment & Constants ──────────────────────────────────────
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
+load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 MODEL = "gemini-2.5-flash"
-CHUNK_SIZE = 15  # Pages per translation chunk
+CHUNK_SIZE = 6  # Pages per translation chunk
 MAX_RETRIES = 3  # Circuit breaker threshold
 PASS_SCORE = 8   # Minimum score to pass review
 CACHE_TTL = "3600s"  # Context cache time-to-live (1 hour)

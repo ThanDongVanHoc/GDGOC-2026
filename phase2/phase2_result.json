@@ -1,5 +1,5 @@
 {
-  "thread_id": "c0d4426f-841e-42e7-9c9c-2a4eacf1a7e9",
+  "thread_id": "c35e1f9a-f514-49fc-b0e3-6ff6cd58bb1a",
   "result": {
     "verified_text_pack": [
       {
@@ -72,7 +72,7 @@
       },
       {
         "original_content": "Thornberry Publishing Ltd. · First Edition · 2024",
-        "translated_content": "Thornberry Publishing Ltd. · Ấn bản đầu tiên · 2024",
+        "translated_content": "Thornberry Publishing Ltd. · Ấn Bản Đầu Tiên · 2024",
         "bbox": [
           190.48699951171875,
           702.3797607421875,
@@ -174,7 +174,7 @@
       },
       {
         "original_content": "THE",
-        "translated_content": "THE",
+        "translated_content": "CÁC",
         "bbox": [
           116.22000122070312,
           147.73635864257812,
@@ -242,7 +242,7 @@
       },
       {
         "original_content": "BooK ONE: A HERO S JOURNEY",
-        "translated_content": "SÁCH MỘT: HÀNH TRÌNH CỦA MỘT ANH HÙNG",
+        "translated_content": "TẬP MỘT: HÀNH TRÌNH CỦA MỘT ANH HÙNG",
         "bbox": [
           116.22000122070312,
           147.73635864257812,
@@ -259,7 +259,7 @@
       },
       {
         "original_content": "BY [SOBEL FAIRWEATHER",
-        "translated_content": "BỞI ISOBEL FAIRWEATHER",
+        "translated_content": "BỞI [SOBEL FAIRWEATHER",
         "bbox": [
           116.22000122070312,
           147.73635864257812,
@@ -276,7 +276,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của IRONFIST",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -361,7 +361,7 @@
       },
       {
         "original_content": "ronfist stepped out of his cottage and squinted against the morning sun. The sky above Wil-lowmere was a vast canvas of the most brilliant blue he had ever seen, stretching endlesslyfrom the misty hills in the east to the dark line of the Whispering Woods in the west. Paintedacross the clouds, as if by some playful god with a brush made of wind, were the words:",
-        "translated_content": "ronfist bước ra khỏi căn nhà nhỏ của mình và nheo mắt nhìn mặt trời buổi sáng. Bầu trời trên Willowmere là một bức tranh rộng lớn với màu xanh rực rỡ nhất mà cậu từng thấy, trải dài vô tận từ những ngọn đồi sương mù ở phía đông đến đường ranh tối của Rừng Thì Thầm ở phía tây. Vẽ trên những đám mây, như thể bởi một vị thần tinh nghịch với cây cọ làm bằng gió, là những dòng chữ:",
+        "translated_content": "RONFIST bước ra khỏi căn nhà nhỏ của mình và nheo mắt nhìn mặt trời buổi sáng. Bầu trời phía trên Willowmere là một bức tranh rộng lớn với màu xanh rực rỡ nhất mà cậu từng thấy, trải dài vô tận từ những ngọn đồi mờ sương ở phía đông đến đường ranh tối tăm của Whispering Woods ở phía tây. Như thể được vẽ trên những đám mây bởi một vị thần tinh nghịch với cây cọ làm bằng gió, những dòng chữ hiện ra:",
         "bbox": [
           70.86600494384766,
           442.7086486816406,
@@ -395,7 +395,7 @@
       },
       {
         "original_content": "He took a deep breath. The air smelled of honeysuckle and damp earth, and somewhere inthe distance, a meadowlark was singing its heart out from the top of old Mr. Grumbleton’sweathervane.",
-        "translated_content": "Cậu hít một hơi thật sâu. Không khí thoang thoảng mùi kim ngân và đất ẩm, và ở đâu đó phía xa, một con chim sơn ca đang hót vang từ đỉnh chong chóng gió của ông Grumbleton già.",
+        "translated_content": "Cậu hít một hơi thật sâu. Không khí thoang thoảng mùi kim ngân và đất ẩm, và ở đâu đó phía xa, một chú chim chiền chiện đang hót vang từ đỉnh chong chóng gió của ông Grumbleton già.",
         "bbox": [
           70.43599700927734,
           548.527587890625,
@@ -412,7 +412,7 @@
       },
       {
         "original_content": "He was very excited about today’s adventure. He had been waiting for this moment his entirelife — ever since his grandfather, the legendary warrior Steelfist, had told him stories about theancient Kingdom beyond the mountains. Those tales of dragons and enchanted forests had filledyoung Ironfist’s dreams for as long as he could remember.",
-        "translated_content": "Cậu rất háo hức về cuộc phiêu lưu hôm nay. Cậu đã chờ đợi khoảnh khắc này suốt cuộc đời mình — kể từ khi ông nội cậu, chiến binh huyền thoại Steelfist, kể cho cậu nghe những câu chuyện về Vương quốc cổ đại bên kia núi. Những câu chuyện về rồng và rừng mê hoặc đã lấp đầy giấc mơ của Ironfist trẻ tuổi từ khi cậu còn bé.",
+        "translated_content": "Cậu rất háo hức về cuộc phiêu lưu hôm nay. Cậu đã chờ đợi khoảnh khắc này suốt cả cuộc đời mình — kể từ khi ông nội cậu, chiến binh huyền thoại Steelfist, kể cho cậu nghe những câu chuyện về Vương quốc cổ xưa bên kia núi. Những câu chuyện về rồng và rừng mê hoặc đã lấp đầy giấc mơ của IRONFIST bé bỏng từ rất lâu rồi.",
         "bbox": [
           70.86599731445312,
           610.4005737304688,
@@ -429,7 +429,7 @@
       },
       {
         "original_content": "“Oh my God!”Ironfist shouted, looking at the dark cloudsrolling in from the west like a stampede of angry grey horses.The morning had been so beautiful just moments ago, but nowthe wind was picking up, sending leaves spiraling across the gar-den path. “It’s raining cats and dogs already! I haven’t even left",
-        "translated_content": "“Ôi trời ơi!” Ironfist hét lên, nhìn những đám mây đen cuồn cuộn từ phía tây như một đàn ngựa xám giận dữ đang lao tới. Buổi sáng vừa mới đẹp đẽ cách đây ít phút, nhưng giờ đây gió đã bắt đầu mạnh lên, cuốn lá xoáy tròn trên lối đi trong vườn. “Trời đã mưa như trút nước rồi! Mình còn chưa ra khỏi",
+        "translated_content": "“Ôi trời ơi!” IRONFIST hét lên, nhìn những đám mây đen đang kéo đến từ phía tây như một đàn ngựa xám giận dữ. Buổi sáng vừa mới đẹp đẽ cách đây vài khoảnh khắc, nhưng giờ đây gió đã bắt đầu mạnh lên, cuốn lá xoáy tròn trên lối đi trong vườn. “Trời đã mưa như trút nước rồi! Mình còn chưa rời khỏi",
         "bbox": [
           70.49600219726562,
           690.2006225585938,
@@ -531,7 +531,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của IRONFIST",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -582,7 +582,7 @@
       },
       {
         "original_content": "“Take your cloak, dear,” she called out. “And don’t forget — your sister Lily is waiting for youat the crossroads. She’s been up since dawn, that girl. More excited than a squirrel in a nutfactory.”",
-        "translated_content": "“Con mang áo choàng đi, con yêu,” bà gọi. “Và đừng quên — em gái Lily của con đang đợi con ở ngã tư đường. Con bé đã dậy từ lúc bình minh rồi. Háo hức hơn cả một con sóc trong nhà máy hạt dẻ ấy.”",
+        "translated_content": "“Con mang áo choàng đi, con trai,” bà gọi với ra. “Và đừng quên — em gái Lily của con đang đợi con ở ngã tư đấy. Con bé đã thức dậy từ lúc bình minh rồi. Háo hức hơn cả một con sóc trong nhà máy hạt dẻ.”",
         "bbox": [
           69.2760009765625,
           159.8616485595703,
@@ -599,7 +599,7 @@
       },
       {
         "original_content": "Ironfist grabbed his leather satchel, threw his heavy wool cloak over his shoulders, and set offdown the cobblestone lane that wound through the village of Willowmere. The rain was comingdown harder now, great fat drops that splattered against the stone walls and turned the guttersinto tiny rushing rivers.",
-        "translated_content": "Ironfist vớ lấy chiếc túi da, khoác chiếc áo choàng len nặng trịch lên vai, rồi lên đường xuống con đường lát đá cuội uốn lượn qua làng Willowmere. Mưa giờ đã nặng hạt hơn, những hạt mưa lớn bắn tung tóe vào những bức tường đá và biến các máng xối thành những con sông nhỏ chảy xiết.",
+        "translated_content": "IRONFIST vớ lấy chiếc túi da của mình, khoác chiếc áo choàng len nặng trịch lên vai, rồi lên đường xuống con đường lát đá cuội uốn lượn qua làng Willowmere. Mưa giờ đã nặng hạt hơn, những hạt mưa lớn bắn tung tóe vào những bức tường đá và biến các máng xối thành những con sông nhỏ chảy xiết.",
         "bbox": [
           70.86599731445312,
           220.86663818359375,
@@ -650,7 +650,7 @@
       },
       {
         "original_content": "“Good morning to you too, Whiskers,” Ironfist muttered, pulling his hood tighter against therain.",
-        "translated_content": "“Chào buổi sáng, Whiskers,” Ironfist lẩm bẩm, kéo mũ trùm đầu chặt hơn để tránh mưa.",
+        "translated_content": "“Chào buổi sáng, Whiskers,” IRONFIST lẩm bẩm, kéo mũ trùm đầu chặt hơn để che mưa.",
         "bbox": [
           69.2760009765625,
           388.07763671875,
@@ -735,7 +735,7 @@
       },
       {
         "original_content": "eep in the Whispering Woods, where the ancient oaks grew so close together that theirbranches wove into a living canopy overhead, the shadows danced and whisperedsecrets in a language only the trees could understand. Ironfist walked along the narrowtrail with careful, deliberate steps, his boots crunching softly on the carpet of fallen leaves. Everyfew paces, he would stop and listen, his hand resting on the pommel of his grandfather’s sword.",
-        "translated_content": "ưới sâu trong Rừng Thì Thầm, nơi những cây sồi cổ thụ mọc sát nhau đến nỗi cành cây đan xen thành một tán lá sống phía trên, những bóng tối nhảy múa và thì thầm những bí mật bằng một ngôn ngữ mà chỉ cây cối mới hiểu. Ironfist bước đi trên con đường mòn hẹp với những bước chân cẩn trọng, có chủ ý, đôi ủng của cậu khẽ kêu lạo xạo trên thảm lá rụng. Cứ vài bước, cậu lại dừng lại lắng nghe, tay đặt trên quả chuôi thanh kiếm của ông nội.",
+        "translated_content": "EEP trong Whispering Woods, nơi những cây sồi cổ thụ mọc sát nhau đến nỗi cành của chúng đan vào nhau thành một tán cây sống phía trên, những bóng tối nhảy múa và thì thầm những bí mật bằng một ngôn ngữ chỉ cây cối mới hiểu. IRONFIST bước đi trên con đường mòn hẹp với những bước chân cẩn trọng, có chủ ý, đôi ủng của cậu nghiền nhẹ trên thảm lá rụng. Cứ vài bước, cậu lại dừng lại lắng nghe, tay đặt trên quả chuôi thanh kiếm của ông nội mình.",
         "bbox": [
           70.86599731445312,
           442.7086486816406,
@@ -769,7 +769,7 @@
       },
       {
         "original_content": "“Something isn’t right,” Ironfist whispered to himself, scanning the treeline with narrowed eyes.",
-        "translated_content": "“Có gì đó không ổn,” Ironfist thì thầm với chính mình, nheo mắt quét nhìn hàng cây.",
+        "translated_content": "“Có gì đó không ổn,” IRONFIST thì thầm với chính mình, quét mắt nhìn hàng cây với đôi mắt nheo lại.",
         "bbox": [
           69.2760009765625,
           584.3816528320312,
@@ -786,7 +786,7 @@
       },
       {
         "original_content": "Then he heard it — a low, guttural cackle that seemed to come from everywhere and nowhereat once.",
-        "translated_content": "Rồi cậu nghe thấy nó — một tiếng cười khùng khục, trầm đục dường như phát ra từ khắp mọi nơi và không nơi nào cùng một lúc.",
+        "translated_content": "Rồi cậu nghe thấy nó — một tiếng cười khẩy trầm thấp, khàn khàn dường như đến từ khắp mọi nơi và không nơi nào cùng một lúc.",
         "bbox": [
           70.4959945678711,
           610.400634765625,
@@ -803,7 +803,7 @@
       },
       {
         "original_content": "Suddenly, a Goblin leaped out from behind a twisted oak! Itwas a wretched creature, no taller than Ironfist’s waist, withmottled green skin, pointed ears that twitched like a bat’s,and yellow eyes that glowed with a malevolent inner light.It wore a patchwork vest made from what appeared to bestolen curtain fabric, and it clutched a gnarled staff carvedfrom blackthorn.",
-        "translated_content": "Đột nhiên, một Yêu Tinh nhảy ra từ phía sau một cây sồi xoắn vặn! Đó là một sinh vật đáng ghét, không cao hơn thắt lưng của Ironfist, với làn da xanh loang lổ, đôi tai nhọn vểnh lên như tai dơi, và đôi mắt vàng rực sáng với ánh sáng độc ác bên trong. Nó mặc một chiếc áo gi lê chắp vá làm từ thứ dường như là vải rèm bị đánh cắp, và nó nắm chặt một cây gậy sần sùi được chạm khắc từ gỗ gai đen.",
+        "translated_content": "Đột nhiên, một Goblin nhảy xổ ra từ phía sau một cây sồi xoắn vặn! Đó là một sinh vật đáng ghét, không cao hơn eo của IRONFIST, với làn da xanh loang lổ, đôi tai nhọn vểnh lên như tai dơi, và đôi mắt vàng rực sáng với ánh sáng độc ác bên trong. Nó mặc một chiếc áo gi lê chắp vá làm từ thứ dường như là vải rèm bị đánh cắp, và nó nắm chặt một cây trượng sần sùi được chạm khắc từ cây gai đen.",
         "bbox": [
           236.30398559570312,
           654.3456420898438,
@@ -837,7 +837,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của IRONFIST",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -854,7 +854,7 @@
       },
       {
         "original_content": "“I will destroy you, foolish boy!” the Goblin snarled, baring its crooked yellow teeth. “Thisforest belongs to the Goblin King! No human walks through our territory and lives to tell thetale!”",
-        "translated_content": "“Ta sẽ tiêu diệt ngươi, thằng nhóc ngu ngốc!” Yêu Tinh gầm gừ, nhe hàm răng vàng khấp khểnh. “Khu rừng này thuộc về Vua Yêu Tinh! Không một con người nào đi qua lãnh thổ của chúng ta mà còn sống sót để kể chuyện!”",
+        "translated_content": "“Ta sẽ tiêu diệt ngươi, thằng nhóc ngu ngốc!” con Goblin gầm gừ, nhe hàm răng vàng ố, cong queo. “Khu rừng này thuộc về Vua Goblin! Không một con người nào đi qua lãnh thổ của chúng ta mà còn sống sót để kể chuyện!”",
         "bbox": [
           69.2760009765625,
           73.7066421508789,
@@ -871,7 +871,7 @@
       },
       {
         "original_content": "Ironfist drew his blade. The steel sang as it cleared the scabbard, catching the faint moonlightand throwing silver reflections across the dark tree trunks.",
-        "translated_content": "Ironfist rút kiếm. Lưỡi thép ngân vang khi rời khỏi vỏ, bắt lấy ánh trăng mờ ảo và hắt những phản chiếu bạc lên những thân cây tối màu.",
+        "translated_content": "IRONFIST rút kiếm. Lưỡi thép ngân vang khi rời khỏi vỏ, bắt lấy ánh trăng mờ ảo và hắt những phản chiếu bạc lên những thân cây tối màu.",
         "bbox": [
           70.86599731445312,
           134.71163940429688,
@@ -888,7 +888,7 @@
       },
       {
         "original_content": "What followed was brief and brutal. He brutally killed the beast with his sword, slashing throughthe darkness like a bolt of lightning. The creature let out a terrible shriek that echoed throughthe woods, sending a murder of crows bursting from the treetops in a flurry of black wings andpanicked cawing.",
-        "translated_content": "Điều tiếp theo diễn ra ngắn ngủi và tàn bạo. Cậu tàn nhẫn giết chết con quái vật bằng thanh kiếm của mình, chém xuyên bóng tối như một tia sét. Sinh vật đó phát ra một tiếng thét kinh hoàng vang vọng khắp khu rừng, khiến một đàn quạ bay vút khỏi ngọn cây trong một tràng cánh đen và tiếng quạ kêu hoảng loạn.",
+        "translated_content": "Những gì diễn ra sau đó thật ngắn ngủi và tàn khốc. Cậu tàn nhẫn giết chết con quái vật bằng thanh kiếm của mình, chém xuyên bóng tối như một tia sét. Sinh vật đó phát ra một tiếng thét kinh hoàng vang vọng khắp khu rừng, khiến một đàn quạ bay tán loạn khỏi ngọn cây trong một tràng cánh đen và tiếng quạ kêu hoảng loạn.",
         "bbox": [
           70.30400085449219,
           177.7886505126953,
@@ -905,7 +905,7 @@
       },
       {
         "original_content": "When it was over, Ironfist stood panting in the clearing, his sword dripping with the strangesilvery ichor that passed for Goblin blood. He felt sick to his stomach — not from fear, but fromthe violence of what he had been forced to do. He was only sixteen, after all. He cleaned hisblade on the mossy trunk of a fallen tree and sheathed it with trembling hands.",
-        "translated_content": "Khi mọi chuyện kết thúc, Ironfist đứng thở hổn hển trong khoảng trống, thanh kiếm của cậu nhỏ giọt thứ dịch bạc kỳ lạ được coi là máu Yêu Tinh. Cậu cảm thấy buồn nôn — không phải vì sợ hãi, mà vì sự bạo lực của những gì cậu buộc phải làm. Dù sao thì cậu cũng mới mười sáu tuổi. Cậu lau lưỡi kiếm vào thân cây đổ đầy rêu và tra kiếm vào vỏ với đôi tay run rẩy.",
+        "translated_content": "Khi mọi chuyện kết thúc, IRONFIST đứng thở hổn hển trong khoảng trống, thanh kiếm của cậu nhỏ giọt thứ dịch bạc kỳ lạ được coi là máu Goblin. Cậu cảm thấy buồn nôn — không phải vì sợ hãi, mà vì sự bạo lực của những gì cậu buộc phải làm. Dù sao thì cậu cũng mới mười sáu tuổi. Cậu lau lưỡi kiếm vào thân cây đổ đầy rêu và tra kiếm vào vỏ với đôi tay run rẩy.",
         "bbox": [
           70.30400085449219,
           256.7206726074219,
@@ -922,7 +922,7 @@
       },
       {
         "original_content": "“I’m sorry,” he murmured to the silent forest. “I didn’t want to hurt you. But you gave me nochoice.”",
-        "translated_content": "“Tôi xin lỗi,” anh ta lẩm bẩm với khu rừng im lặng. “Tôi không muốn làm hại nó. Nhưng nó không cho tôi lựa chọn nào khác.”",
+        "translated_content": "“Tôi xin lỗi,” cậu lẩm bẩm với khu rừng im lặng. “Tôi không muốn làm hại các bạn. Nhưng các bạn không cho tôi lựa chọn nào khác.”",
         "bbox": [
           69.2760009765625,
           335.65264892578125,
@@ -939,7 +939,7 @@
       },
       {
         "original_content": "The woods remained quiet, but somewhere in the distance, he thought he heard the sound ofother Goblins retreating through the underbrush.",
-        "translated_content": "Khu rừng vẫn im lặng, nhưng ở đâu đó phía xa, cậu nghĩ mình nghe thấy tiếng những Yêu Tinh khác đang rút lui qua bụi rậm.",
+        "translated_content": "Khu rừng vẫn im lặng, nhưng ở đâu đó phía xa, cậu nghĩ mình nghe thấy tiếng những Goblin khác đang rút lui qua bụi rậm.",
         "bbox": [
           70.49600219726562,
           378.7296447753906,
@@ -1024,7 +1024,7 @@
       },
       {
         "original_content": "he Whispering Woods eventually gave way to rolling farmland, and the rolling farmlandgave way to the outskirts of Ashenmere City — a bustling metropolis of cobblestonestreets, towering brick buildings, and more people than Ironfist had ever seen gath-ered in one place. He had heard stories about the city from traveling merchants who visitedWillowmere, but nothing could have prepared him for the sheer noise of it all. Street vendorshawking roasted chestnuts, carriages clattering over cobblestones, dogs barking, children laugh-ing, and somewhere a street musician playing a merry tune on a battered accordion.",
-        "translated_content": "ừng Thì Thầm cuối cùng nhường chỗ cho những cánh đồng lượn sóng, và những cánh đồng lượn sóng nhường chỗ cho vùng ngoại ô Thành phố Ashenmere — một đô thị sầm uất với những con phố lát đá cuội, những tòa nhà gạch cao chót vót, và nhiều người hơn Ironfist từng thấy tập trung ở một nơi. Cậu đã nghe những câu chuyện về thành phố từ những thương nhân du hành ghé thăm Willowmere, nhưng không gì có thể chuẩn bị cho cậu về sự ồn ào náo nhiệt của tất cả. Những người bán hàng rong rao bán hạt dẻ nướng, những cỗ xe ngựa lạch cạch trên đường lát đá, chó sủa, trẻ em cười đùa, và ở đâu đó một nhạc sĩ đường phố đang chơi một giai điệu vui tươi trên chiếc đàn accordion cũ kỹ.",
+        "translated_content": "ừng Lá Xì Xào cuối cùng nhường chỗ cho những cánh đồng uốn lượn, và những cánh đồng uốn lượn lại nhường chỗ cho vùng ngoại ô thành phố Ashenmere — một đô thị nhộn nhịp với những con phố lát đá cuội, những tòa nhà gạch cao chót vót, và nhiều người hơn bất cứ nơi nào Ironfist từng thấy tụ tập. Cậu đã nghe những câu chuyện về thành phố từ những thương nhân du hành ghé thăm Willowmere, nhưng không gì có thể chuẩn bị cho cậu về sự ồn ào náo nhiệt ở đây. Những người bán hàng rong rao bán hạt dẻ rang, những cỗ xe ngựa lạch cạch trên đường lát đá, chó sủa, trẻ con cười đùa, và đâu đó một nhạc công đường phố đang chơi một giai điệu vui tươi trên chiếc đàn accordion cũ kỹ.",
         "bbox": [
           70.30400848388672,
           448.7186584472656,
@@ -1041,7 +1041,7 @@
       },
       {
         "original_content": "He checked the crumpled map his grandfather had drawn for him years ago. The next stage ofhis journey required crossing the city to reach the Northern Mountains, and the fastest way todo that was underground.",
-        "translated_content": "Cậu kiểm tra tấm bản đồ nhàu nát mà ông nội đã vẽ cho cậu nhiều năm trước. Giai đoạn tiếp theo của hành trình yêu cầu cậu phải băng qua thành phố để đến Dãy núi phía Bắc, và cách nhanh nhất để làm điều đó là đi ngầm.",
+        "translated_content": "Cậu kiểm tra tấm bản đồ nhàu nát mà ông nội đã vẽ cho cậu nhiều năm trước. Chặng tiếp theo của hành trình yêu cầu cậu phải băng qua thành phố để đến Dãy Núi Phía Bắc, và cách nhanh nhất để làm điều đó là đi dưới lòng đất.",
         "bbox": [
           70.86602783203125,
           583.8036499023438,
@@ -1058,7 +1058,7 @@
       },
       {
         "original_content": "He took the Subway downtown — the rumbling train carrying him through dark tunnels beneaththe streets. The carriage was warm and smelled of damp wool and engine oil. An old womanacross from him was knitting something enormous and shapeless from bright purple yarn, anda man in a bowler hat was reading a newspaper with the headline: “GOBLIN SIGHTINGS ONTHE RISE — MAYOR URGES CALM.”",
-        "translated_content": "Cậu đi Tàu điện ngầm vào trung tâm thành phố — chuyến tàu ầm ầm đưa cậu qua những đường hầm tối tăm bên dưới đường phố. Toa tàu ấm áp và có mùi len ẩm cùng dầu máy. Một bà lão đối diện cậu đang đan một thứ gì đó to lớn và không định hình từ sợi len màu tím tươi, và một người đàn ông đội mũ quả dưa đang đọc một tờ báo với tiêu đề: “SỐ LƯỢNG YÊU TINH XUẤT HIỆN TĂNG CAO — THỊ TRƯỞNG KÊU GỌI BÌNH TĨNH.”",
+        "translated_content": "Cậu đi Tàu điện ngầm vào trung tâm thành phố — chuyến tàu ầm ầm đưa cậu qua những đường hầm tối tăm bên dưới đường phố. Toa tàu ấm áp và có mùi len ẩm cùng dầu máy. Một bà lão ngồi đối diện cậu đang đan một thứ gì đó to lớn và không định hình từ sợi len màu tím sáng, và một người đàn ông đội mũ quả dưa đang đọc tờ báo với tiêu đề: “YÊU TINH XUẤT HIỆN NGÀY CÀNG NHIỀU — THỊ TRƯỞNG KÊU GỌI BÌNH TĨNH.”",
         "bbox": [
           70.53103637695312,
           647.1786499023438,
@@ -1160,7 +1160,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -1177,7 +1177,7 @@
       },
       {
         "original_content": "Ironfist murmured to himself as the train lurched forward into the tunnel. Through the grimywindow, he caught one last glimpse of the street above.",
-        "translated_content": "Ironfist lẩm bẩm với chính mình khi chuyến tàu giật mạnh lao vào đường hầm. Qua ô cửa sổ bẩn thỉu, cậu thoáng thấy một lần cuối con phố phía trên.",
+        "translated_content": "Ironfist lẩm bẩm một mình khi chuyến tàu giật mình lao vào đường hầm. Qua ô cửa sổ bẩn thỉu, cậu kịp nhìn thoáng qua con phố phía trên lần cuối.",
         "bbox": [
           70.43599700927734,
           73.7066421508789,
@@ -1194,7 +1194,7 @@
       },
       {
         "original_content": "Outside the station, a group of children had built a Snowman.It wore a top hat and had a bright orange carrot for a nose, withtwo lumps of coal for eyes that seemed to stare at passersbywith a cheerful, frozen grin. A tattered red scarf was wrappedaround its neck, fluttering gently in the icy breeze. The childrenlaughed and threw snowballs at each other, their cheeks red asapples, their breath forming little white clouds in the frigid air.",
-        "translated_content": "Bên ngoài nhà ga, một nhóm trẻ em đã đắp một Người Tuyết. Nó đội một chiếc mũ chóp và có một củ cà rốt màu cam tươi làm mũi, với hai cục than làm mắt dường như đang nhìn chằm chằm vào người qua đường với nụ cười tươi tắn, đông cứng. Một chiếc khăn quàng cổ màu đỏ rách rưới quấn quanh cổ nó, khẽ bay phấp phới trong làn gió lạnh giá. Những đứa trẻ cười đùa và ném tuyết vào nhau, má chúng đỏ như táo, hơi thở tạo thành những đám mây trắng nhỏ trong không khí lạnh buốt.",
+        "translated_content": "Bên ngoài nhà ga, một nhóm trẻ em đã đắp một Người Tuyết. Nó đội một chiếc mũ chóp cao và có một củ cà rốt màu cam sáng làm mũi, với hai cục than làm mắt dường như đang nhìn chằm chằm vào những người qua đường với nụ cười tươi tắn, đông cứng. Một chiếc khăn quàng cổ màu đỏ rách rưới quấn quanh cổ nó, khẽ bay phấp phới trong làn gió lạnh buốt. Bọn trẻ cười đùa và ném tuyết vào nhau, má chúng đỏ như táo, hơi thở tạo thành những đám mây trắng nhỏ trong không khí giá lạnh.",
         "bbox": [
           70.43599700927734,
           116.7846450805664,
@@ -1211,7 +1211,7 @@
       },
       {
         "original_content": "Ironfist smiled at the scene. It reminded him of winters back in Willowmere, when he and Lilywould build snow forts in the meadow behind their cottage and wage epic snowball battles thatlasted until their mother called them in for hot cocoa.",
-        "translated_content": "Ironfist mỉm cười trước cảnh tượng đó. Nó gợi cho cậu nhớ về những mùa đông ở Willowmere, khi cậu và Lily thường xây pháo đài tuyết trên đồng cỏ phía sau căn nhà nhỏ của họ và tham gia những trận chiến ném tuyết hoành tráng kéo dài cho đến khi mẹ gọi họ vào uống ca cao nóng.",
+        "translated_content": "Ironfist mỉm cười nhìn cảnh tượng đó. Nó gợi cho cậu nhớ về những mùa đông ở Willowmere, khi cậu và Lily thường xây pháo đài tuyết trên đồng cỏ phía sau ngôi nhà nhỏ của họ và tổ chức những trận chiến ném tuyết hoành tráng kéo dài cho đến khi mẹ gọi họ vào uống sô cô la nóng.",
         "bbox": [
           70.43599700927734,
           249.4976348876953,
@@ -1313,7 +1313,7 @@
       },
       {
         "original_content": "he city streets grew quiet as evening fell like a heavy velvet curtain over Ashenmere. Thegas lamps flickered to life one by one along the boulevard, casting pools of amber lightthat barely penetrated the thickening fog. Most sensible people had retreated indoorsby now — Ironfist could see their silhouettes moving behind curtained windows, warm and safein their homes. The smell of cooking — roast meat, baking bread, something with cinnamon —drifted out of the houses and made his stomach growl.",
-        "translated_content": "rên các con phố thành phố trở nên yên tĩnh khi màn đêm buông xuống như một tấm rèm nhung nặng nề bao phủ Ashenmere. Những ngọn đèn khí ga lần lượt bập bùng sáng dọc theo đại lộ, tạo ra những vũng ánh sáng hổ phách hầu như không xuyên qua được lớp sương mù dày đặc. Hầu hết những người có lý trí đã rút vào nhà — Ironfist có thể thấy bóng dáng họ di chuyển phía sau những ô cửa sổ có rèm che, ấm áp và an toàn trong nhà của họ. Mùi thức ăn nấu nướng — thịt quay, bánh mì nướng, thứ gì đó có quế — bay ra từ các ngôi nhà và khiến bụng cậu réo lên.",
+        "translated_content": "ường phố thành phố trở nên yên tĩnh khi màn đêm buông xuống như một tấm màn nhung nặng nề bao phủ Ashenmere. Những ngọn đèn khí ga lần lượt bập bùng sáng dọc theo đại lộ, tạo thành những vũng ánh sáng hổ phách hầu như không xuyên qua được lớp sương mù dày đặc. Hầu hết những người tỉnh táo đã rút vào trong nhà — Ironfist có thể nhìn thấy bóng dáng họ di chuyển phía sau những ô cửa sổ có rèm che, ấm áp và an toàn trong tổ ấm của mình. Mùi thức ăn nấu nướng — thịt quay, bánh mì nướng, thứ gì đó có quế — thoảng ra từ những ngôi nhà và khiến bụng cậu réo lên.",
         "bbox": [
           70.86599731445312,
           447.0806579589844,
@@ -1330,7 +1330,7 @@
       },
       {
         "original_content": "He was searching for an inn where he could spend the night before setting out for the mountainsat dawn. His map indicated there should be one on Cobbler’s Lane, just past the old fountainwith the stone mermaid.",
-        "translated_content": "Cậu đang tìm một quán trọ để nghỉ qua đêm trước khi lên đường đến núi vào lúc bình minh. Bản đồ của cậu chỉ ra rằng có một quán trọ trên Phố Thợ Giày, ngay sau đài phun nước cũ có nàng tiên cá bằng đá.",
+        "translated_content": "Cậu đang tìm một quán trọ để nghỉ qua đêm trước khi lên đường đến những ngọn núi vào lúc bình minh. Tấm bản đồ của cậu chỉ ra rằng có một quán trọ trên Phố Thợ Giày, ngay sau đài phun nước cũ có nàng tiên cá bằng đá.",
         "bbox": [
           70.43600463867188,
           563.82763671875,
@@ -1364,7 +1364,7 @@
       },
       {
         "original_content": "From the dark alley ahead, a shape emerged — neither man nor woman, neither young nor old.Just a presence. A figure wrapped in a cloak so dark it seemed to swallow the lamplight aroundit. Where a face should have been, there was only shadow, and within that shadow, two pointsof pale light that might have been eyes.",
-        "translated_content": "Từ con hẻm tối phía trước, một hình dáng xuất hiện — không phải đàn ông cũng không phải phụ nữ, không trẻ cũng không già. Chỉ là một sự hiện diện. Một hình dáng được quấn trong chiếc áo choàng tối đến nỗi dường như nuốt chửng ánh đèn đường xung quanh. Nơi đáng lẽ là khuôn mặt, chỉ có bóng tối, và trong bóng tối đó, hai điểm sáng nhạt có thể là đôi mắt.",
+        "translated_content": "Từ con hẻm tối phía trước, một hình dáng xuất hiện — không phải đàn ông cũng không phải phụ nữ, không trẻ cũng không già. Chỉ là một sự hiện diện. Một hình bóng khoác áo choàng tối đến mức dường như nuốt chửng ánh đèn đường xung quanh nó. Nơi lẽ ra là một khuôn mặt, chỉ có bóng tối, và trong bóng tối đó, hai điểm sáng nhạt có thể là đôi mắt.",
         "bbox": [
           70.63899993896484,
           653.9046630859375,
@@ -1381,7 +1381,7 @@
       },
       {
         "original_content": "They are coming closer.",
-        "translated_content": "Chúng đang đến gần hơn.",
+        "translated_content": "Họ đang đến gần.",
         "bbox": [
           70.47200012207031,
           734.7976684570312,
@@ -1398,7 +1398,7 @@
       },
       {
         "original_content": "Ironfist pressed his back against the cold brick wall and held his breath. His heart was hammering",
-        "translated_content": "Ironfist ép lưng vào bức tường gạch lạnh lẽo và nín thở. Tim cậu đập thình thịch",
+        "translated_content": "Ironfist áp lưng vào bức tường gạch lạnh lẽo và nín thở. Tim cậu đập thình thịch",
         "bbox": [
           70.86599731445312,
           761.90966796875,
@@ -1432,7 +1432,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -1449,7 +1449,7 @@
       },
       {
         "original_content": "so loud he was certain the creature could hear it. The figure moved with an unsettling fluidity,as if it were not walking but gliding across the cobblestones, its dark cloak trailing behind likeink bleeding through water.",
-        "translated_content": "đến nỗi cậu chắc chắn sinh vật đó có thể nghe thấy. Hình dáng đó di chuyển với sự trôi chảy đáng sợ, như thể nó không đi mà lướt trên những viên đá cuội, chiếc áo choàng tối màu của nó kéo lê phía sau như mực loang trong nước.",
+        "translated_content": "quá lớn đến nỗi cậu chắc chắn sinh vật đó có thể nghe thấy. Hình bóng di chuyển với một sự uyển chuyển đáng sợ, như thể nó không đi mà đang lướt trên những viên đá cuội, chiếc áo choàng tối màu của nó lướt theo sau như mực loang trong nước.",
         "bbox": [
           70.86599731445312,
           73.7066421508789,
@@ -1466,7 +1466,7 @@
       },
       {
         "original_content": "“Who are you?” he whispered into the fog. His voice came out thin and reedy, nothing like thebrave warrior he fancied himself to be.",
-        "translated_content": "“Ngươi là ai?” cậu thì thầm vào màn sương. Giọng cậu yếu ớt và run rẩy, không giống chút nào với chiến binh dũng cảm mà cậu tự tưởng tượng mình là.",
+        "translated_content": "“Ngươi là ai?” cậu thì thầm vào màn sương. Giọng cậu yếu ớt và run rẩy, chẳng giống chút nào với chiến binh dũng cảm mà cậu tự tưởng tượng mình là.",
         "bbox": [
           69.2760009765625,
           134.71163940429688,
@@ -1483,7 +1483,7 @@
       },
       {
         "original_content": "But they did not answer. They simply watched, those pale eyes unblinking, and then — like acandle flame snuffed out by a sudden breeze — the figure dissolved into the mist and was gone.",
-        "translated_content": "Nhưng chúng không trả lời. Chúng chỉ đơn giản là nhìn chằm chằm, đôi mắt nhợt nhạt không chớp, và rồi — như một ngọn nến bị gió thổi tắt đột ngột — hình dáng đó tan biến vào màn sương và biến mất.",
+        "translated_content": "Nhưng chúng không trả lời. Chúng chỉ đơn giản là nhìn chằm chằm, đôi mắt nhợt nhạt ấy không hề chớp, và rồi — như ngọn nến bị gió thổi tắt đột ngột — bóng hình đó tan biến vào màn sương và biến mất.",
         "bbox": [
           70.86599731445312,
           177.7886505126953,
@@ -1500,7 +1500,7 @@
       },
       {
         "original_content": "Ironfist stood there for a long time, shaking, before he found the courage to move again.",
-        "translated_content": "Ironfist đứng đó rất lâu, run rẩy, trước khi cậu tìm lại được dũng khí để di chuyển.",
+        "translated_content": "Ironfist đứng đó rất lâu, run rẩy, trước khi cậu tìm thấy đủ dũng khí để di chuyển trở lại.",
         "bbox": [
           70.86601257324219,
           220.86663818359375,
@@ -1585,7 +1585,7 @@
       },
       {
         "original_content": "he shadow turned out to be a friend. Well, perhaps “friend” was too strong a word —it turned out to be the old innkeeper of the Silver Stag Tavern, a stooped, mysteriousfigure named Mr. Greycloak, who had a peculiar habit of skulking about in the fog to“check on the neighborhood,” as he put it. He was eccentric, certainly, but harmless, and heinvited Ironfist inside with a toothless grin and a promise of the finest Christmas feast this sideof the Northern Mountains.",
-        "translated_content": "hực ra bóng tối đó lại là một người bạn. Chà, có lẽ “bạn” là một từ quá mạnh — hóa ra đó là ông chủ quán trọ già của Quán Rượu Hươu Bạc, một nhân vật lưng còng, bí ẩn tên là Mr. Greycloak, người có thói quen kỳ lạ là lảng vảng trong sương mù để “kiểm tra khu phố,” như ông ta nói. Ông ta lập dị, chắc chắn rồi, nhưng vô hại, và ông ta mời Ironfist vào trong với nụ cười móm mém và lời hứa về bữa tiệc Giáng sinh ngon nhất ở phía này của Dãy núi phía Bắc.",
+        "translated_content": "óng tối hóa ra lại là một người bạn. Chà, có lẽ “bạn” là một từ quá mạnh — hóa ra đó là ông chủ quán trọ già của Quán Rượu Hươu Bạc, một nhân vật bí ẩn, lưng còng tên là Mr. Greycloak, người có thói quen kỳ lạ là lảng vảng trong sương mù để “kiểm tra khu phố,” như ông ta nói. Ông ta chắc chắn là lập dị, nhưng vô hại, và ông ta mời Ironfist vào trong với một nụ cười móm mém và lời hứa về bữa tiệc Giáng sinh ngon nhất vùng này của Dãy Núi Phía Bắc.",
         "bbox": [
           69.2760009765625,
           447.3326416015625,
@@ -1602,7 +1602,7 @@
       },
       {
         "original_content": "And what a feast it was.",
-        "translated_content": "Và đó quả là một bữa tiệc thịnh soạn.",
+        "translated_content": "Và quả là một bữa tiệc thịnh soạn.",
         "bbox": [
           70.43600463867188,
           564.1426391601562,
@@ -1619,7 +1619,7 @@
       },
       {
         "original_content": "They enjoyed a big roasted Turkey for Christmas dinner.The golden bird sat at the center of the long oak table, itscrispy skin glistening with rendered fat and rosemary, sur-rounded by mountains of roasted potatoes, boats of steam-ing gravy, bowls of cranberry sauce, and platters of roastedroot vegetables. The hall was decked with boughs of hollyand ivy, and dozens of candles cast a warm, flickering glowacross the faces of the assembled guests — farmers, merchants, traveling performers, and onerather bewildered-looking teenager from Willowmere.",
-        "translated_content": "Họ thưởng thức một con Gà Tây quay lớn cho bữa tối Giáng sinh. Con chim vàng óng nằm giữa chiếc bàn gỗ sồi dài, lớp da giòn tan lấp lánh mỡ và hương thảo, xung quanh là những núi khoai tây nướng, những thuyền nước sốt nóng hổi, những bát sốt nam việt quất, và những đĩa rau củ nướng. Sảnh được trang trí bằng những cành cây nhựa ruồi và thường xuân, và hàng chục ngọn nến tỏa ra ánh sáng ấm áp, lung linh trên khuôn mặt của những vị khách tụ họp — nông dân, thương nhân, nghệ sĩ du hành, và một thiếu niên trông khá bối rối đến từ Willowmere.",
+        "translated_content": "Họ thưởng thức một con Gà Tây quay lớn cho bữa tối Giáng sinh. Con chim vàng óng nằm giữa chiếc bàn gỗ sồi dài, lớp da giòn tan óng ánh mỡ và hương thảo, bao quanh bởi những núi khoai tây nướng, những thuyền nước sốt thịt bốc hơi, những bát sốt nam việt quất, và những đĩa rau củ nướng. Sảnh được trang trí bằng những cành cây nhựa ruồi và thường xuân, và hàng chục ngọn nến tỏa ra ánh sáng ấm áp, lung linh trên khuôn mặt của những vị khách tụ họp — nông dân, thương nhân, nghệ sĩ du hành, và một thiếu niên trông khá bối rối đến từ Willowmere.",
         "bbox": [
           70.86599731445312,
           591.316650390625,
@@ -1636,7 +1636,7 @@
       },
       {
         "original_content": "Ironfist held a juicy Hamburger in his other hand — his favorite comfort food, even at a fancy",
-        "translated_content": "Ironfist cầm một chiếc Hamburger mọng nước trong tay kia — món ăn yêu thích của cậu, ngay cả trong một bữa tiệc sang trọng.",
+        "translated_content": "Ironfist cầm một chiếc Hamburger mọng nước trên tay kia — món ăn yêu thích của cậu, ngay cả trong một bữa tiệc sang trọng",
         "bbox": [
           70.86599731445312,
           761.9096069335938,
@@ -1687,7 +1687,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -1704,7 +1704,7 @@
       },
       {
         "original_content": "feast. The innkeeper had prepared it specially for him after learning that the boy had a peculiarfondness for ground beef patties between two halves of a sesame-seed bun. It was, Ironfistreflected as he took an enormous bite, possibly the best Hamburger he had ever eaten.",
-        "translated_content": "bữa tiệc. Ông chủ quán trọ đã chuẩn bị món này đặc biệt cho cậu sau khi biết rằng cậu bé có một sở thích kỳ lạ với những miếng thịt bò xay kẹp giữa hai nửa bánh mì mè. Đó là, Ironfist suy ngẫm khi cắn một miếng lớn, có lẽ là chiếc Hamburger ngon nhất cậu từng ăn.",
+        "translated_content": "tiệc. Ông chủ quán trọ đã đặc biệt chuẩn bị món này cho cậu sau khi biết cậu bé có niềm yêu thích đặc biệt với những miếng thịt bò xay kẹp giữa hai nửa chiếc bánh mì mè. Ironfist suy ngẫm khi cắn một miếng lớn, đây có lẽ là chiếc Hamburger ngon nhất mà cậu từng ăn.",
         "bbox": [
           70.86599731445312,
           73.7066421508789,
@@ -1738,7 +1738,7 @@
       },
       {
         "original_content": "On the wall behind the head table hung a wooden signboard that read “BAKERY” in ornategolden letters — a relic from the tavern’s previous life as the village bakehouse. Mr. Greycloakwas rather proud of it.",
-        "translated_content": "Trên bức tường phía sau bàn chính treo một tấm biển gỗ có chữ “TIỆM BÁNH” bằng những chữ vàng trang trí công phu — một di vật từ cuộc đời trước của quán trọ khi nó là lò bánh của làng. Mr. Greycloak khá tự hào về nó.",
+        "translated_content": "Trên bức tường phía sau bàn chính treo một tấm biển gỗ có chữ “TIỆM BÁNH” bằng những chữ vàng trang trí công phu — một di vật từ cuộc đời trước của quán rượu khi nó còn là lò bánh của làng. Mr. Greycloak khá tự hào về nó.",
         "bbox": [
           70.43596649169922,
           174.6746368408203,
@@ -1755,7 +1755,7 @@
       },
       {
         "original_content": "“My grandmother baked the finest sourdough in three counties,” he told Ironfist, gesturing at thesign with a gnarled finger. “People came from miles around. That sign hung above her door forfifty years.”",
-        "translated_content": "“Bà tôi đã nướng bánh mì sourdough ngon nhất trong ba hạt,” ông nói với Ironfist, chỉ vào tấm biển bằng một ngón tay sần sùi. “Người ta đến từ khắp nơi. Tấm biển đó đã treo trên cửa nhà bà tôi suốt năm mươi năm.”",
+        "translated_content": "“Bà tôi đã nướng loại bánh mì sourdough ngon nhất trong ba hạt,” ông nói với Ironfist, chỉ tay vào tấm biển bằng ngón tay chai sần. “Người ta đến từ khắp nơi. Tấm biển đó đã treo trên cửa nhà bà tôi suốt năm mươi năm.”",
         "bbox": [
           69.27597045898438,
           235.6786346435547,
@@ -1772,7 +1772,7 @@
       },
       {
         "original_content": "Through the tall arched windows, fireworks exploded in the starry December sky — great bloom-ing chrysanthemums of red, gold, and green that lit up the snow-covered rooftops and cast danc-ing shadows across the feast.",
-        "translated_content": "Qua những ô cửa sổ vòm cao, pháo hoa nổ tung trên bầu trời tháng Mười Hai đầy sao — những bông cúc vạn thọ đỏ, vàng và xanh rực rỡ chiếu sáng những mái nhà phủ tuyết và tạo ra những bóng nhảy múa khắp bữa tiệc.",
+        "translated_content": "Qua những ô cửa sổ vòm cao, pháo hoa nổ tung trên bầu trời đầy sao tháng Mười Hai — những bông cúc nở rộ rực rỡ màu đỏ, vàng và xanh lá cây thắp sáng những mái nhà phủ tuyết và đổ bóng nhảy múa khắp bữa tiệc.",
         "bbox": [
           70.49596405029297,
           296.6836242675781,
@@ -1857,7 +1857,7 @@
       },
       {
         "original_content": "The Mountain Trail",
-        "translated_content": "Con Đường Mòn Trên Núi",
+        "translated_content": "Đường Mòn Núi",
         "bbox": [
           70.86599731445312,
           154.3934326171875,
@@ -1891,7 +1891,7 @@
       },
       {
         "original_content": "he next morning, Ironfist and his little sister Lily set out for the Rocky Mountains. Shehad been waiting for him at the crossroads just outside town, bouncing on her heelswith barely contained excitement, her cheeks rosy from the cold and a knitted hat pulleddown over her pigtails.",
-        "translated_content": "rời sáng hôm sau, Ironfist và em gái Lily lên đường đến Dãy núi Rocky. Con bé đã đợi cậu ở ngã tư ngay bên ngoài thị trấn, nhún nhảy trên gót chân với sự phấn khích khó kìm nén, má hồng hào vì lạnh và chiếc mũ len kéo xuống che búi tóc hai bên.",
+        "translated_content": "Sáng hôm sau, Ironfist và em gái nhỏ Lily lên đường đến Dãy núi Rocky. Cô bé đã đợi anh ở ngã tư ngay bên ngoài thị trấn, nhún nhảy trên gót chân với sự phấn khích khó kìm nén, má hồng vì lạnh và chiếc mũ len kéo sụp xuống che bím tóc.",
         "bbox": [
           70.86600494384766,
           442.7086486816406,
@@ -1908,7 +1908,7 @@
       },
       {
         "original_content": "“You should be careful,” Ironfist warned his sister as they began the steep ascent up the Thorn-back Ridge. “The trail can be dangerous. One wrong step and you’ll tumble down into thevalley. And I’d rather not explain to Mother how I lost her youngest daughter.”",
-        "translated_content": "“Em nên cẩn thận,” Ironfist cảnh báo em gái khi họ bắt đầu leo dốc lên Sườn Núi Thornback. “Con đường mòn có thể nguy hiểm. Một bước sai lầm là em sẽ lăn xuống thung lũng. Và anh không muốn giải thích với Mẹ rằng anh đã làm mất cô con gái út của bà như thế nào.”",
+        "translated_content": "“Em phải cẩn thận,” Ironfist cảnh báo em gái khi họ bắt đầu leo dốc lên Sườn núi Thorn-back. “Đường mòn có thể nguy hiểm. Chỉ cần một bước sai là em sẽ lăn xuống thung lũng. Và anh không muốn phải giải thích với Mẹ rằng anh đã làm mất cô con gái út của bà như thế nào.”",
         "bbox": [
           69.2760009765625,
           522.5086669921875,
@@ -1925,7 +1925,7 @@
       },
       {
         "original_content": "“You worry too much,” Lily replied cheerfully, skipping ahead over the loose stones with thefearless agility of a mountain goat. “Race you to the top!”",
-        "translated_content": "“Anh lo lắng quá nhiều rồi,” Lily vui vẻ đáp, nhảy nhót phía trước qua những viên đá lỏng lẻo với sự nhanh nhẹn không sợ hãi của một con dê núi. “Đua xem ai lên đỉnh trước!”",
+        "translated_content": "“Anh lo lắng quá nhiều rồi,” Lily vui vẻ đáp, nhảy nhót phía trước qua những viên đá lỏng lẻo với sự nhanh nhẹn không sợ hãi của một con dê núi. “Đua xem ai lên đỉnh trước nhé!”",
         "bbox": [
           69.2760009765625,
           584.3816528320312,
@@ -1942,7 +1942,7 @@
       },
       {
         "original_content": "The old mountain guide was waiting for them at the Shepherd’sCairn — a weathered man with a beard like a snowdrift and eyesthe color of glacier ice. He’d been guiding travelers throughthese mountains for forty years, and he knew every ridge, everyravine, every treacherous patch of black ice that could send theunwary sliding a thousand feet to their doom.",
-        "translated_content": "Người dẫn đường núi già đang đợi họ ở Mốc Đá Mục Đồng — một người đàn ông phong trần với bộ râu như đống tuyết và đôi mắt màu băng sông băng. Ông đã dẫn đường cho du khách qua những ngọn núi này suốt bốn mươi năm, và ông biết mọi sườn núi, mọi khe núi, mọi mảng băng đen nguy hiểm có thể khiến người không cẩn thận trượt ngàn mét xuống vực sâu.",
+        "translated_content": "Người dẫn đường núi già đang đợi họ ở Mốc Đá Mục Đồng — một người đàn ông phong trần với bộ râu trắng như tuyết đọng và đôi mắt màu băng sông băng. Ông đã dẫn đường cho du khách qua những ngọn núi này suốt bốn mươi năm, và ông biết rõ từng sườn núi, từng khe núi, từng mảng băng đen nguy hiểm có thể khiến người bất cẩn trượt ngã hàng ngàn mét xuống vực sâu.",
         "bbox": [
           70.86599731445312,
           628.32763671875,
@@ -1959,7 +1959,7 @@
       },
       {
         "original_content": "He squinted at his ancient map through a pair of spectacles heldtogether with string and hope, and said in a voice like gravel rolling downhill:",
-        "translated_content": "Ông nheo mắt nhìn tấm bản đồ cổ của mình qua cặp kính được giữ lại bằng dây và hy vọng, và nói với giọng như sỏi lăn xuống dốc:",
+        "translated_content": "Ông nheo mắt nhìn tấm bản đồ cổ của mình qua cặp kính được giữ chặt bằng dây và hy vọng, rồi nói bằng giọng như sỏi đá lăn xuống dốc:",
         "bbox": [
           70.86599731445312,
           743.9816284179688,
@@ -1993,7 +1993,7 @@
       },
       {
         "original_content": "MT:",
-        "translated_content": "NÚI:",
+        "translated_content": "MT:",
         "bbox": [
           116.22000122070312,
           223.29135131835938,
@@ -2010,7 +2010,7 @@
       },
       {
         "original_content": "TRAIL",
-        "translated_content": "ĐƯỜNG MÒN",
+        "translated_content": "TRAIL",
         "bbox": [
           116.22000122070312,
           223.29135131835938,
@@ -2027,7 +2027,7 @@
       },
       {
         "original_content": "ALT: 2150M",
-        "translated_content": "ĐỘ CAO: 2150M",
+        "translated_content": "ALT: 2150M",
         "bbox": [
           116.22000122070312,
           223.29135131835938,
@@ -2044,7 +2044,7 @@
       },
       {
         "original_content": "PEAK 6KM",
-        "translated_content": "ĐỈNH 6KM",
+        "translated_content": "PEAK 6KM",
         "bbox": [
           116.22000122070312,
           223.29135131835938,
@@ -2061,7 +2061,7 @@
       },
       {
         "original_content": "VALLEY 8KM",
-        "translated_content": "THUNG LŨNG 8KM",
+        "translated_content": "VALLEY 8KM",
         "bbox": [
           116.22000122070312,
           223.29135131835938,
@@ -2112,7 +2112,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -2129,7 +2129,7 @@
       },
       {
         "original_content": "“Walk 15 miles to the North. Bring 3 pounds of dried food and plenty of water. It’s nearly 100degrees Fahrenheit out there in the sun, believe it or not. The altitude plays tricks. You’ll freezein the shadows and roast on the ridgeline.”",
-        "translated_content": "“Đi 15 dặm về phía Bắc. Mang theo 3 pound thức ăn khô và nhiều nước. Ngoài trời nắng nóng gần 100 độ Fahrenheit đấy, tin hay không tùy. Độ cao gây ra ảo giác. Các bạn sẽ đóng băng trong bóng râm và nướng chín trên sườn núi.”",
+        "translated_content": "“Đi bộ 15 dặm về phía Bắc. Mang theo 3 pound thức ăn khô và nhiều nước. Ngoài trời nắng nóng gần 100 độ Fahrenheit đấy, tin hay không tùy. Độ cao sẽ đánh lừa cảm giác. Con sẽ đóng băng trong bóng râm và cháy nắng trên sườn núi.”",
         "bbox": [
           69.2760009765625,
           73.7066421508789,
@@ -2146,7 +2146,7 @@
       },
       {
         "original_content": "Ironfist converted the figures in his head — that was roughly 24 kilometers, about 1.4 kilogramsof food, and nearly 38 degrees Celsius. The old Imperial measurements still confused himsometimes.",
-        "translated_content": "Ironfist chuyển đổi các con số trong đầu — đó là khoảng 24 kilômét, khoảng 1.4 kilôgam thức ăn, và gần 38 độ C. Các đơn vị đo lường Hoàng gia cũ đôi khi vẫn làm cậu bối rối.",
+        "translated_content": "Ironfist nhẩm tính các con số trong đầu — đó là khoảng 24 kilômét, khoảng 1.4 kilôgam thức ăn, và gần 38 độ C. Các đơn vị đo lường cũ của Đế quốc đôi khi vẫn làm anh bối rối.",
         "bbox": [
           70.86599731445312,
           134.71163940429688,
@@ -2180,7 +2180,7 @@
       },
       {
         "original_content": "“Two days if the weather holds. Three if it doesn’t. A lifetime if you take a wrong turn.” Theguide chuckled darkly. “But don’t worry, little one. I haven’t lost a traveler yet. Well... notrecently, anyway.”",
-        "translated_content": "“Hai ngày nếu thời tiết thuận lợi. Ba ngày nếu không. Cả đời nếu các bạn đi sai đường.” Người dẫn đường cười khúc khích một cách u ám. “Nhưng đừng lo, bé con. Tôi chưa làm mất du khách nào cả. À... gần đây thì không.”",
+        "translated_content": "“Hai ngày nếu thời tiết thuận lợi. Ba ngày nếu không. Cả đời nếu con đi sai đường.” Người dẫn đường cười khẩy. “Nhưng đừng lo, cô bé. Ta chưa làm mất du khách nào cả. À... không phải gần đây thôi.”",
         "bbox": [
           69.2760009765625,
           220.86663818359375,
@@ -2197,7 +2197,7 @@
       },
       {
         "original_content": "Lily looked worried, but Ironfist squeezed her hand.",
-        "translated_content": "Lily trông lo lắng, nhưng Ironfist nắm chặt tay cô bé.",
+        "translated_content": "Lily trông có vẻ lo lắng, nhưng Ironfist siết chặt tay cô bé.",
         "bbox": [
           70.86599731445312,
           281.8706359863281,
@@ -2214,7 +2214,7 @@
       },
       {
         "original_content": "“Don’t worry,” he said gently. “I’ll protect you. That’s what big brothers are for.”",
-        "translated_content": "“Đừng lo,” cậu nhẹ nhàng nói. “Anh sẽ bảo vệ em. Đó là việc của anh trai mà.”",
+        "translated_content": "“Đừng lo,” anh nhẹ nhàng nói. “Anh sẽ bảo vệ em. Đó là việc của các anh trai mà.”",
         "bbox": [
           69.2760009765625,
           307.0206604003906,
@@ -2231,7 +2231,7 @@
       },
       {
         "original_content": "They set off up the mountain as the sun climbed higher, painting the snow-covered peaks inshades of rose and gold. The air was thin and sharp, tasting of pine resin and glacial meltwater,and every breath felt like drinking ice.",
-        "translated_content": "Họ lên đường leo núi khi mặt trời lên cao hơn, tô điểm những đỉnh núi phủ tuyết bằng những sắc hồng và vàng. Không khí loãng và sắc lạnh, mang vị nhựa thông và nước tan từ sông băng, và mỗi hơi thở như uống băng đá.",
+        "translated_content": "Họ lên đường leo núi khi mặt trời lên cao hơn, nhuộm những đỉnh núi phủ tuyết trong sắc hồng và vàng. Không khí loãng và sắc lạnh, mang vị nhựa thông và nước tan từ sông băng, và mỗi hơi thở như uống băng.",
         "bbox": [
           70.49600219726562,
           332.171630859375,
@@ -2316,7 +2316,7 @@
       },
       {
         "original_content": "hey set up camp near a quiet stream that gurgled over smooth stones on its way down tothe valley far below. The stars blazed overhead like diamonds scattered across blackvelvet — more stars than Ironfist had ever seen, even on the clearest nights in Wil-lowmere. Without the glow of city lights, the Milky Way was visible as a vast, luminous riverof light flowing from one horizon to the other. It was, Ironfist thought, the most beautiful thinghe had ever seen.",
-        "translated_content": "họ dựng trại gần một con suối yên tĩnh róc rách chảy qua những viên đá trơn nhẵn trên đường xuống thung lũng phía xa bên dưới. Những vì sao rực sáng trên cao như những viên kim cương rải rác trên nền nhung đen — nhiều sao hơn Ironfist từng thấy, ngay cả vào những đêm trời quang nhất ở Willowmere. Không có ánh sáng chói lọi của thành phố, Dải Ngân Hà hiện rõ như một dòng sông ánh sáng rộng lớn, rực rỡ chảy từ chân trời này sang chân trời khác. Đó là, Ironfist nghĩ, điều đẹp nhất cậu từng thấy.",
+        "translated_content": "Họ dựng trại gần một con suối yên tĩnh róc rách chảy qua những viên đá trơn nhẵn trên đường xuống thung lũng xa tít bên dưới. Những vì sao rực sáng trên cao như kim cương rải trên nhung đen — nhiều sao hơn cả Ironfist từng thấy, ngay cả trong những đêm quang đãng nhất ở Willowmere. Không có ánh đèn thành phố, Dải Ngân Hà hiện ra như một dòng sông ánh sáng rộng lớn, rực rỡ chảy từ chân trời này sang chân trời khác. Ironfist nghĩ, đó là điều đẹp nhất anh từng thấy.",
         "bbox": [
           70.86599731445312,
           442.7086486816406,
@@ -2350,7 +2350,7 @@
       },
       {
         "original_content": "“Here’s one Grandfather used to tell me,” he said, turning hismarshmallow slowly over the flames. “Time flies like an arrow;fruit flies like a banana!”",
-        "translated_content": "“Đây là một câu mà ông nội thường kể cho anh,” cậu nói, từ từ xoay miếng kẹo dẻo của mình trên ngọn lửa. “Thời gian trôi nhanh như mũi tên; ruồi trái cây thích chuối!”",
+        "translated_content": "“Đây là một câu ông nội từng kể cho cháu,” cậu nói, từ từ xoay miếng kẹo dẻo của mình trên ngọn lửa. “Thời gian bay như tên bắn; ruồi giấm thì bay tới chuối!”",
         "bbox": [
           220.97100830078125,
           638.16357421875,
@@ -2367,7 +2367,7 @@
       },
       {
         "original_content": "Lily giggled so hard she nearly dropped her marshmallow into the fire. “That doesn’t even makesense!” she exclaimed.",
-        "translated_content": "Lily cười khúc khích đến nỗi suýt làm rơi miếng kẹo dẻo vào lửa. “Cái đó chẳng có ý nghĩa gì cả!” cô bé thốt lên.",
+        "translated_content": "Lily cười khúc khích đến nỗi suýt làm rơi viên kẹo dẻo vào lửa. “Cái đó thậm chí còn không có nghĩa gì cả!” cô bé thốt lên.",
         "bbox": [
           70.86599731445312,
           700.0365600585938,
@@ -2384,7 +2384,7 @@
       },
       {
         "original_content": "“That’s the whole point,” said Ironfist, poking the fire with a long stick and sending a shower oforange sparks spiraling up into the starry sky. “Some things are funnier when they don’t make",
-        "translated_content": "“Đó chính là điểm mấu chốt,” Ironfist nói, chọc lửa bằng một cây gậy dài và làm bắn tung tóe những tia lửa cam xoáy lên bầu trời đầy sao. “Một số thứ buồn cười hơn khi chúng không có",
+        "translated_content": "“Đó chính là điểm mấu chốt,” Ironfist nói, chọc lửa bằng một cây gậy dài và làm một trận mưa tia lửa cam xoáy lên bầu trời đầy sao. “Một số thứ sẽ buồn cười hơn khi chúng không có",
         "bbox": [
           69.2760009765625,
           743.9815673828125,
@@ -2418,7 +2418,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -2435,7 +2435,7 @@
       },
       {
         "original_content": "sense. Grandfather always said that the best jokes are the ones that make you think twice.”",
-        "translated_content": "ý nghĩa. Ông nội luôn nói rằng những câu chuyện cười hay nhất là những câu khiến con phải suy nghĩ hai lần.”",
+        "translated_content": "nghĩa. Ông nội luôn nói rằng những câu chuyện cười hay nhất là những câu khiến con phải suy nghĩ hai lần.”",
         "bbox": [
           70.86599731445312,
           73.7066421508789,
@@ -2452,7 +2452,7 @@
       },
       {
         "original_content": "They sat in comfortable silence for a while, listening to the crackle of the fire and the distanthooting of an owl. The mountain air was cold enough to see their breath, but the fire was warm,and Lily had snuggled into her sleeping bag with only her face poking out, like a caterpillar ina very colorful cocoon.",
-        "translated_content": "Họ ngồi im lặng thoải mái một lúc, lắng nghe tiếng lửa reo tí tách và tiếng cú kêu từ xa. Không khí núi lạnh đến mức có thể nhìn thấy hơi thở của họ, nhưng ngọn lửa thì ấm áp, và Lily đã rúc mình vào túi ngủ, chỉ để lộ khuôn mặt ra ngoài, giống như một con sâu bướm trong một cái kén rất nhiều màu sắc.",
+        "translated_content": "Họ ngồi im lặng thoải mái một lúc, lắng nghe tiếng lửa reo tí tách và tiếng cú kêu từ xa. Không khí núi lạnh đến mức có thể nhìn thấy hơi thở, nhưng ngọn lửa thì ấm áp, và Lily đã cuộn mình trong túi ngủ chỉ để lộ khuôn mặt ra ngoài, giống như một con sâu bướm trong một cái kén rất nhiều màu sắc.",
         "bbox": [
           70.49600219726562,
           98.85664367675781,
@@ -2469,7 +2469,7 @@
       },
       {
         "original_content": "“Ironfist?” she said sleepily.",
-        "translated_content": "“Ironfist?” cô bé nói trong cơn ngái ngủ.",
+        "translated_content": "“Ironfist?” cô bé nói một cách ngái ngủ.",
         "bbox": [
           69.2760009765625,
           177.7886505126953,
@@ -2503,7 +2503,7 @@
       },
       {
         "original_content": "“Do you think we’ll really find the Kingdom? The one in Grandfather’s stories?”",
-        "translated_content": "“Anh có nghĩ chúng ta sẽ thực sự tìm thấy Vương quốc không? Cái Vương quốc trong những câu chuyện của ông nội ấy?”",
+        "translated_content": "“Anh có nghĩ chúng ta sẽ thực sự tìm thấy Vương quốc không? Cái vương quốc trong những câu chuyện của ông nội ấy?”",
         "bbox": [
           69.2760009765625,
           228.0896453857422,
@@ -2639,7 +2639,7 @@
       },
       {
         "original_content": "nside the mountain cave, past columns of glittering quartz and curtains of crystalline stalac-tites that chimed softly when the wind passed through them, they found a door. Not justany door — this was a door that clearly did not want to be found. It was set deep into theliving rock, its surface carved with runes so old that even the mountain guide (who claimed tospeak fourteen languages, including three that were technically extinct) could not decipher them.The wood was dark and ancient, harder than iron, and bound with bands of tarnished silver. Andat its center, gleaming like a tiny golden eye, was the most intricate keyhole Ironfist had everseen.",
-        "translated_content": "Bên trong hang núi, qua những cột thạch anh lấp lánh và những bức màn thạch nhũ pha lê kêu leng keng nhẹ nhàng khi gió thổi qua, họ tìm thấy một cánh cửa. Không phải một cánh cửa bình thường – đây là một cánh cửa rõ ràng không muốn bị tìm thấy. Nó được đặt sâu vào trong khối đá sống, bề mặt của nó được khắc những chữ rune cổ đến mức ngay cả người dẫn đường núi (người tự nhận nói được mười bốn ngôn ngữ, bao gồm ba ngôn ngữ đã tuyệt chủng về mặt kỹ thuật) cũng không thể giải mã. Gỗ tối màu và cổ kính, cứng hơn sắt, và được buộc bằng những dải bạc xỉn màu. Và ở giữa, lấp lánh như một con mắt vàng nhỏ xíu, là ổ khóa tinh xảo nhất mà Ironfist từng thấy.",
+        "translated_content": "Bên trong hang núi, qua những cột thạch anh lấp lánh và những bức màn thạch nhũ pha lê khẽ ngân vang khi gió thổi qua, họ tìm thấy một cánh cửa. Không phải một cánh cửa bình thường — đây là một cánh cửa rõ ràng không muốn bị tìm thấy. Nó được đặt sâu vào trong khối đá sống, bề mặt được chạm khắc những chữ rune cổ đến mức ngay cả người dẫn đường núi (người tự nhận nói được mười bốn ngôn ngữ, bao gồm ba ngôn ngữ về mặt kỹ thuật đã tuyệt chủng) cũng không thể giải mã. Gỗ tối màu và cổ kính, cứng hơn sắt, được buộc bằng những dải bạc xỉn màu. Và ở giữa, lấp lánh như một con mắt vàng nhỏ xíu, là ổ khóa phức tạp nhất mà Ironfist từng thấy.",
         "bbox": [
           70.49600219726562,
           442.7086486816406,
@@ -2673,7 +2673,7 @@
       },
       {
         "original_content": "“Clearly,” Ironfist replied, pushing against the door with his shoulder. It didn’t budge a millime-ter. He might as well have been pushing against the mountain itself.",
-        "translated_content": "“Rõ ràng rồi,” Ironfist đáp, dùng vai đẩy cánh cửa. Nó không nhúc nhích một milimét nào. Anh ta cứ như đang đẩy chính ngọn núi vậy.",
+        "translated_content": "“Rõ ràng rồi,” Ironfist đáp, dùng vai đẩy cánh cửa. Nó không nhúc nhích một milimét nào. Anh có thể đã đẩy cả ngọn núi vậy.",
         "bbox": [
           69.2760009765625,
           620.2366333007812,
@@ -2690,7 +2690,7 @@
       },
       {
         "original_content": "Then, from a crevice in the cave wall, there came a brilliant flash of silver light — so bright thatIronfist and Lily both threw their arms over their eyes. When they lowered them again, a tinyfairy was hovering before the door on wings of iridescent glass. She was no bigger than Ironfist’shand, and she wore a dress that appeared to be made from woven moonlight and morning dew.",
-        "translated_content": "Sau đó, từ một khe nứt trên vách hang, một tia sáng bạc rực rỡ lóe lên – sáng đến mức Ironfist và Lily đều đưa tay che mắt. Khi họ bỏ tay xuống, một nàng tiên nhỏ xíu đang bay lơ lửng trước cánh cửa với đôi cánh bằng thủy tinh óng ánh. Cô bé không lớn hơn bàn tay của Ironfist, và cô mặc một chiếc váy dường như được dệt từ ánh trăng và sương sớm.",
+        "translated_content": "Sau đó, từ một khe nứt trên vách hang, một tia sáng bạc rực rỡ lóe lên — sáng đến nỗi Ironfist và Lily đều đưa tay che mắt. Khi họ hạ tay xuống, một nàng tiên nhỏ xíu đang lơ lửng trước cánh cửa trên đôi cánh thủy tinh óng ánh. Nàng không lớn hơn bàn tay của Ironfist, và nàng mặc một chiếc váy dường như được dệt từ ánh trăng và sương sớm.",
         "bbox": [
           70.49600219726562,
           664.181640625,
@@ -2707,7 +2707,7 @@
       },
       {
         "original_content": "She pulled out her Wand — long, thin, and shimmering like asliver of captured starlight — and carefully inserted it into the",
-        "translated_content": "Cô bé rút Cây Đũa Thần của mình ra – dài, mảnh và lấp lánh như một mảnh ánh sao bị bắt giữ – rồi cẩn thận đưa nó vào",
+        "translated_content": "Nàng rút ra Cây Đũa Thần của mình — dài, mảnh và lấp lánh như một mảnh ánh sao bị bắt giữ — rồi cẩn thận đưa nó vào",
         "bbox": [
           222.56100463867188,
           743.9816284179688,
@@ -3030,7 +3030,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -3064,7 +3064,7 @@
       },
       {
         "original_content": "*Click.* The lock turned. Ancient dust cascaded from the doorframe, and the runes carved into the wood began to glow with asoft blue light, pulsing gently like a heartbeat. Slowly, with a groan that seemed to come fromthe very bones of the mountain, the door swung open.",
-        "translated_content": "*Cạch.* Ổ khóa xoay. Bụi cổ xưa rơi xuống từ khung cửa, và những chữ rune khắc trên gỗ bắt đầu phát sáng với ánh sáng xanh dịu, nhấp nháy nhẹ nhàng như nhịp tim. Chậm rãi, với một tiếng rên rỉ dường như phát ra từ chính xương cốt của ngọn núi, cánh cửa từ từ mở ra.",
+        "translated_content": "*Cạch.* Ổ khóa xoay. Bụi cổ xưa rơi xuống từ khung cửa, và những chữ rune chạm khắc trên gỗ bắt đầu phát sáng với ánh xanh dịu nhẹ, nhấp nháy nhẹ nhàng như nhịp tim. Chậm rãi, với một tiếng rên rỉ dường như phát ra từ chính xương cốt của ngọn núi, cánh cửa từ từ mở ra.",
         "bbox": [
           70.86599731445312,
           134.70852661132812,
@@ -3081,7 +3081,7 @@
       },
       {
         "original_content": "A small fluffy white cat sat by the door, watching the proceedings with the politely bemusedexpression that cats reserve for events they consider beneath their dignity but mildly interestingnonetheless. It blinked its luminous green eyes, yawned enormously, and said:",
-        "translated_content": "Một con mèo trắng nhỏ lông xù ngồi cạnh cánh cửa, quan sát mọi việc với vẻ mặt lịch sự nhưng có chút bối rối mà mèo thường dành cho những sự kiện chúng cho là dưới tầm nhưng dù sao cũng hơi thú vị. Nó chớp đôi mắt xanh lục phát sáng, ngáp một cái thật lớn, rồi nói:",
+        "translated_content": "Một con mèo trắng nhỏ xù lông ngồi cạnh cánh cửa, quan sát mọi việc với vẻ mặt lịch sự nhưng có phần bối rối mà mèo thường dành cho những sự kiện chúng coi là dưới tầm nhưng dù sao cũng hơi thú vị. Nó chớp đôi mắt xanh lục phát sáng, ngáp một cái thật lớn, và nói:",
         "bbox": [
           70.43599700927734,
           213.64364624023438,
@@ -3183,7 +3183,7 @@
       },
       {
         "original_content": "The City Park",
-        "translated_content": "Công Viên Thành Phố",
+        "translated_content": "Công viên thành phố",
         "bbox": [
           70.86599731445312,
           154.3934326171875,
@@ -3200,7 +3200,7 @@
       },
       {
         "original_content": "T",
-        "translated_content": "T",
+        "translated_content": "C",
         "bbox": [
           70.86599731445312,
           440.23583984375,
@@ -3217,7 +3217,7 @@
       },
       {
         "original_content": "he enchanted door — as enchanted doors are wont to do — deposited them somewhereentirely unexpected. Instead of the treasure vault or dragon’s lair that Ironfist had beenbracing himself for, they found themselves standing in the middle of a sun-drenchedcity park, surrounded by neatly trimmed hedges, flowering rose bushes, and the distant soundof an ice cream van playing a tinny rendition of “Greensleeves.”",
-        "translated_content": "Cánh cửa mê hoặc – như những cánh cửa mê hoặc thường làm – đưa họ đến một nơi hoàn toàn bất ngờ. Thay vì hầm kho báu hay hang rồng mà Ironfist đã chuẩn bị tinh thần, họ thấy mình đang đứng giữa một công viên thành phố ngập nắng, bao quanh bởi những hàng rào cắt tỉa gọn gàng, những bụi hồng đang nở hoa, và tiếng xe kem từ xa phát ra giai điệu “Greensleeves” rè rè.",
+        "translated_content": "ánh cửa ma thuật — như những cánh cửa ma thuật thường làm — đưa họ đến một nơi hoàn toàn bất ngờ. Thay vì hầm kho báu hay hang rồng mà Ironfist đã chuẩn bị tinh thần, họ thấy mình đang đứng giữa một công viên thành phố ngập nắng, bao quanh bởi những hàng rào cắt tỉa gọn gàng, những bụi hồng đang nở hoa, và tiếng xe kem từ xa văng vẳng giai điệu “Greensleeves” nghe hơi chói tai.",
         "bbox": [
           70.86600494384766,
           442.7086486816406,
@@ -3234,7 +3234,7 @@
       },
       {
         "original_content": "“Where are we?” Lily asked, blinking in the sudden brightness, still clutching the cat.",
-        "translated_content": "“Chúng ta đang ở đâu vậy?” Lily hỏi, chớp mắt trước ánh sáng chói chang đột ngột, vẫn ôm chặt con mèo.",
+        "translated_content": "“Chúng ta đang ở đâu vậy?” Lily hỏi, chớp mắt trước ánh sáng chói chang bất ngờ, tay vẫn ôm chặt con mèo.",
         "bbox": [
           69.2760009765625,
           540.4356689453125,
@@ -3251,7 +3251,7 @@
       },
       {
         "original_content": "“I have absolutely no idea,” Ironfist admitted.",
-        "translated_content": "“Anh hoàn toàn không biết,” Ironfist thừa nhận.",
+        "translated_content": "“Ta hoàn toàn không biết,” Ironfist thừa nhận.",
         "bbox": [
           69.2760009765625,
           566.4546508789062,
@@ -3268,7 +3268,7 @@
       },
       {
         "original_content": "“Let’s play baseball after school!” shouted a group of childrenrunning across the green field with bats and gloves. They wereplaying on a wide, flat stretch of grass, taking turns batting,pitching, and chasing fly balls with the carefree abandon of kidswho have absolutely nothing to worry about except whether it’stheir turn at bat.",
-        "translated_content": "“Tan học rồi đi chơi bóng chày đi!” một nhóm trẻ con reo hò, chạy băng qua sân cỏ xanh mướt với gậy và găng tay. Chúng đang chơi trên một bãi cỏ rộng, bằng phẳng, thay phiên nhau đánh bóng, ném bóng và đuổi theo những quả bóng bay với sự vô tư của những đứa trẻ không có gì phải lo lắng ngoài việc liệu đã đến lượt mình đánh bóng chưa.",
+        "translated_content": "“Tan học mình chơi bóng chày nhé!” một nhóm trẻ con reo lên, chạy băng qua bãi cỏ xanh với gậy và găng tay. Chúng đang chơi trên một bãi cỏ rộng, bằng phẳng, thay phiên nhau đánh bóng, ném bóng và đuổi theo những quả bóng bay lên cao với sự vô tư của những đứa trẻ chẳng có gì phải lo lắng ngoài việc liệu có đến lượt mình đánh bóng hay chưa.",
         "bbox": [
           70.43599700927734,
           592.4725952148438,
@@ -3285,7 +3285,7 @@
       },
       {
         "original_content": "Behind them, a red double-decker bus rumbled down the cob-blestone street, its upper deck packed with tourists snapping photographs. An old red telephonebooth stood on the corner like a silent guardian from another era, its glass panels clouded withage.",
-        "translated_content": "Phía sau họ, một chiếc xe buýt hai tầng màu đỏ chạy ầm ầm trên con phố lát đá cuội, tầng trên chật kín khách du lịch đang chụp ảnh. Một bốt điện thoại cũ màu đỏ đứng ở góc đường như một người bảo vệ thầm lặng từ một thời đại khác, những tấm kính của nó mờ đục theo thời gian.",
+        "translated_content": "Phía sau họ, một chiếc xe buýt hai tầng màu đỏ chạy ầm ầm trên con phố lát đá cuội, tầng trên chật kín khách du lịch đang chụp ảnh. Một bốt điện thoại cũ màu đỏ đứng ở góc phố như một người bảo vệ thầm lặng từ một thời đại khác, những tấm kính của nó đã mờ đục theo thời gian.",
         "bbox": [
           70.86599731445312,
           708.1275634765625,
@@ -3540,7 +3540,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc phiêu lưu vĩ đại của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -3557,7 +3557,7 @@
       },
       {
         "original_content": "Ironfist noticed something in the trees — a familiar pair of yellow eyes peering out from behind athick oak trunk. Another Goblin! But this one seemed different from the savage creature he hadfought in the Whispering Woods. This one was smaller, rounder, almost comical in appearance,and it was watching the children play baseball with an expression of undisguised fascination. Itheld an apple in one green hand and was munching on it contentedly, juice dribbling down itschin.",
-        "translated_content": "Ironfist nhận thấy điều gì đó trong những tán cây — một đôi mắt vàng quen thuộc đang nhìn ra từ phía sau một thân cây sồi lớn. Lại một Goblin nữa! Nhưng con này có vẻ khác với sinh vật hung dữ mà anh đã chiến đấu ở Rừng Thì Thầm. Con này nhỏ hơn, tròn hơn, gần như hài hước, và nó đang xem bọn trẻ chơi bóng chày với vẻ mặt say mê không che giấu. Nó cầm một quả táo trong bàn tay xanh lục và đang nhấm nháp một cách mãn nguyện, nước ép chảy ròng ròng xuống cằm.",
+        "translated_content": "Ironfist nhận thấy điều gì đó trong những tán cây — một đôi mắt vàng quen thuộc đang nhìn ra từ phía sau thân cây sồi dày. Lại một Goblin nữa! Nhưng con này có vẻ khác với sinh vật hung dữ mà cậu đã chiến đấu trong Rừng Thì Thầm. Con này nhỏ hơn, tròn hơn, trông gần như hài hước, và nó đang xem lũ trẻ chơi bóng chày với vẻ mặt say mê không che giấu. Nó cầm một quả táo trong bàn tay xanh lá và đang nhấm nháp một cách mãn nguyện, nước ép chảy ròng ròng xuống cằm.",
         "bbox": [
           70.86599731445312,
           73.7066421508789,
@@ -3591,7 +3591,7 @@
       },
       {
         "original_content": "The Goblin caught Ironfist’s eye, froze for a moment, then gave a tiny, almost sheepish wavebefore disappearing behind the tree with a rustle of leaves.",
-        "translated_content": "Con Goblin bắt gặp ánh mắt của Ironfist, đứng sững lại một lúc, rồi khẽ vẫy tay một cách gần như rụt rè trước khi biến mất sau cái cây với tiếng lá xào xạc.",
+        "translated_content": "Con Goblin bắt gặp ánh mắt của Ironfist, đứng sững lại một lúc, rồi khẽ vẫy tay một cách gần như ngượng ngùng trước khi biến mất sau cái cây với tiếng lá xào xạc.",
         "bbox": [
           70.4959945678711,
           213.64364624023438,
@@ -3642,7 +3642,7 @@
       },
       {
         "original_content": "Coming Home",
-        "translated_content": "Trở Về Nhà",
+        "translated_content": "Trở về nhà",
         "bbox": [
           70.86599731445312,
           156.57943725585938,
@@ -3659,7 +3659,7 @@
       },
       {
         "original_content": "T",
-        "translated_content": "T",
+        "translated_content": "C",
         "bbox": [
           70.86599731445312,
           444.60784912109375,
@@ -3676,7 +3676,7 @@
       },
       {
         "original_content": "he enchanted door, having delivered them to the park, had one final trick up its sleeve.After they spent a pleasant afternoon watching the baseball game, feeding the ducksin the pond, and sharing fish and chips on a park bench (Ironfist would later maintainthat the chips were almost as good as his mother’s), they found the door again — standingincongruously between two park benches, invisible to everyone except them.",
-        "translated_content": "Cánh cửa mê hoặc, sau khi đưa họ đến công viên, còn có một trò cuối cùng. Sau khi họ trải qua một buổi chiều dễ chịu xem trận bóng chày, cho vịt ăn trong ao, và chia sẻ món cá và khoai tây chiên trên một chiếc ghế công viên (Ironfist sau này vẫn khẳng định rằng món khoai tây chiên gần như ngon bằng của mẹ anh), họ lại tìm thấy cánh cửa – đứng lạc lõng giữa hai chiếc ghế công viên, vô hình với mọi người trừ họ.",
+        "translated_content": "ánh cửa ma thuật, sau khi đưa họ đến công viên, còn có một trò cuối cùng. Sau khi họ trải qua một buổi chiều dễ chịu xem trận bóng chày, cho vịt ăn trong ao, và cùng nhau ăn cá và khoai tây chiên trên ghế công viên (Ironfist sau này vẫn khẳng định rằng món khoai tây chiên gần ngon bằng của mẹ cậu), họ lại tìm thấy cánh cửa — đứng lạc lõng giữa hai chiếc ghế công viên, vô hình với mọi người trừ họ.",
         "bbox": [
           70.86599731445312,
           447.0806579589844,
@@ -3693,7 +3693,7 @@
       },
       {
         "original_content": "This time, when they stepped through, they were home.",
-        "translated_content": "Lần này, khi họ bước qua, họ đã về nhà.",
+        "translated_content": "Lần này, khi bước qua, họ đã về nhà.",
         "bbox": [
           70.49600219726562,
           545.900634765625,
@@ -3710,7 +3710,7 @@
       },
       {
         "original_content": "Willowmere had never looked so beautiful. The sunset was painting the sky in shades of amber,rose, and violet, and the smoke from their cottage chimney curled up into the golden light likea question mark.",
-        "translated_content": "Willowmere chưa bao giờ đẹp đến thế. Hoàng hôn đang tô vẽ bầu trời bằng những gam màu hổ phách, hồng và tím, và khói từ ống khói ngôi nhà nhỏ của họ cuộn lên trong ánh sáng vàng như một dấu hỏi.",
+        "translated_content": "Willowmere chưa bao giờ trông đẹp đến thế. Hoàng hôn đang nhuộm bầu trời bằng những sắc hổ phách, hồng và tím, và khói từ ống khói ngôi nhà nhỏ của họ cuộn lên trong ánh sáng vàng như một dấu hỏi.",
         "bbox": [
           70.30400085449219,
           573.0115966796875,
@@ -3727,7 +3727,7 @@
       },
       {
         "original_content": "“I told you to be careful,” said Ironfist, grinning at Lily as they walked through the garden gate.The garden was exactly as they had left it — Mother’s roses blooming in defiant abundance,the old apple tree leaning tiredly against the stone wall, and the birdbath where the sparrowscongregated every evening to gossip about the day’s events.",
-        "translated_content": "“Anh đã bảo em phải cẩn thận mà,” Ironfist nói, cười toe toét với Lily khi họ đi qua cổng vườn. Khu vườn vẫn y nguyên như khi họ rời đi – những bông hồng của Mẹ nở rộ một cách kiêu hãnh, cây táo già tựa mình mệt mỏi vào bức tường đá, và bồn tắm chim nơi những chú chim sẻ tụ tập mỗi tối để buôn chuyện về những sự kiện trong ngày.",
+        "translated_content": "“Ta đã bảo con phải cẩn thận mà,” Ironfist nói, cười toe toét với Lily khi họ bước qua cổng vườn. Khu vườn vẫn y nguyên như khi họ rời đi — những bông hồng của Mẹ nở rộ đầy kiêu hãnh, cây táo già tựa mình mệt mỏi vào bức tường đá, và bồn tắm chim nơi những chú chim sẻ tụ tập mỗi tối để buôn chuyện về những sự kiện trong ngày.",
         "bbox": [
           69.2760009765625,
           635.9776000976562,
@@ -3744,7 +3744,7 @@
       },
       {
         "original_content": "“Did you enjoy the Bakery we visited?” asked Lily, swinging her arms happily. “The one withthe golden sign? I keep thinking about those pastries.”",
-        "translated_content": "“Anh có thích tiệm bánh chúng ta đã ghé thăm không?” Lily hỏi, vung tay vui vẻ. “Cái tiệm có biển hiệu vàng ấy? Em cứ nghĩ mãi về mấy cái bánh ngọt đó.”",
+        "translated_content": "“Con có thích tiệm bánh chúng ta đã ghé thăm không?” Lily hỏi, vung tay vui vẻ. “Cái tiệm có biển hiệu vàng ấy? Con cứ nghĩ mãi về mấy món bánh ngọt đó.”",
         "bbox": [
           69.2760009765625,
           716.87060546875,
@@ -3761,7 +3761,7 @@
       },
       {
         "original_content": "“Of course!” Ironfist laughed, the sound echoing across the quiet village green. “Best pastries",
-        "translated_content": "“Tất nhiên rồi!” Ironfist cười lớn, tiếng cười vang vọng khắp bãi cỏ làng yên tĩnh. “Bánh ngọt ngon nhất",
+        "translated_content": "“Tất nhiên rồi!” Ironfist cười lớn, tiếng cười vang vọng khắp bãi cỏ làng yên tĩnh. “Những chiếc bánh ngọt ngon nhất",
         "bbox": [
           69.2760009765625,
           761.9096069335938,
@@ -3795,7 +3795,7 @@
       },
       {
         "original_content": "Ironfist’s Grand Adventure",
-        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại của Ironfist",
+        "translated_content": "Cuộc phiêu lưu vĩ đại của Ironfist",
         "bbox": [
           70.86599731445312,
           40.10551834106445,
@@ -3829,7 +3829,7 @@
       },
       {
         "original_content": "He paused, realizing what he had said. The Kingdom. Was it real? Had any of it been real?The Goblin in the woods, the Subway ride, the Christmas feast, the mountains, the enchanteddoor … or had it all been some extraordinary dream conjured by the morning mist and a boy’soveractive imagination?",
-        "translated_content": "Anh dừng lại, nhận ra mình vừa nói gì. Vương quốc. Nó có thật không? Tất cả những điều đó có thật không? Con Goblin trong rừng, chuyến đi Tàu điện ngầm, bữa tiệc Giáng sinh, những ngọn núi, cánh cửa mê hoặc… hay tất cả chỉ là một giấc mơ phi thường được tạo ra bởi sương sớm và trí tưởng tượng quá phong phú của một cậu bé?",
+        "translated_content": "Cậu dừng lại, nhận ra mình vừa nói gì. Vương quốc. Nó có thật không? Có bất cứ điều gì là thật không? Con Goblin trong rừng, chuyến đi Subway, bữa tiệc Giáng sinh, những ngọn núi, cánh cửa ma thuật… hay tất cả chỉ là một giấc mơ phi thường được tạo ra bởi sương sớm và trí tưởng tượng quá phong phú của một cậu bé?",
         "bbox": [
           70.49600219726562,
           98.853515625,
@@ -3846,7 +3846,7 @@
       },
       {
         "original_content": "They passed by the old train station at the edge of the village.Ironfist remembered taking the Subway at the start of his journey— it felt like a lifetime ago. The spot where children had built aSnowman was now bare, the snow melted away, leaving only amuddy circle on the grass and a slightly sad-looking carrot lyingin the dirt.",
-        "translated_content": "Họ đi ngang qua nhà ga xe lửa cũ ở rìa làng. Ironfist nhớ lại việc đi Tàu điện ngầm vào đầu cuộc hành trình của mình – cảm giác như đã từ rất lâu rồi. Nơi bọn trẻ đã đắp Người tuyết giờ trống trơn, tuyết đã tan hết, chỉ còn lại một vòng tròn lầy lội trên cỏ và một củ cà rốt trông hơi buồn nằm trong đất.",
+        "translated_content": "Họ đi ngang qua nhà ga xe lửa cũ ở rìa làng. Ironfist nhớ lại việc đi Subway vào đầu cuộc hành trình của mình — cảm giác như đã lâu lắm rồi. Nơi lũ trẻ từng đắp Người Tuyết giờ đã trống trơn, tuyết tan hết, chỉ còn lại một vòng tròn lầy lội trên cỏ và một củ cà rốt trông hơi buồn nằm trong đất.",
         "bbox": [
           220.76800537109375,
           177.78863525390625,
@@ -3863,7 +3863,7 @@
       },
       {
         "original_content": "Inside the house, Grandmother was waiting in her rocking chairby the fireplace, knitting something enormous and shapeless from bright purple yarn (it occurredto Ironfist that she bore a striking resemblance to the old woman on the Subway — but surelythat was just coincidence. Surely.).",
-        "translated_content": "Trong nhà, Bà đang đợi trên chiếc ghế bập bênh bên lò sưởi, đan một thứ gì đó to lớn và không định hình từ sợi len màu tím tươi (Ironfist chợt nhận ra Bà có một sự giống nhau đáng kinh ngạc với người phụ nữ lớn tuổi trên Tàu điện ngầm – nhưng chắc chắn đó chỉ là sự trùng hợp. Chắc chắn rồi.).",
+        "translated_content": "Trong nhà, Bà đang ngồi đợi trên chiếc ghế bập bênh bên lò sưởi, đan một thứ gì đó to lớn và không định hình từ sợi len màu tím tươi (Ironfist chợt nghĩ rằng Bà có một sự giống nhau kỳ lạ với bà lão trên Subway — nhưng chắc chắn đó chỉ là sự trùng hợp. Chắc chắn rồi.).",
         "bbox": [
           70.86599731445312,
           292.5756530761719,
@@ -3880,7 +3880,7 @@
       },
       {
         "original_content": "“Old Mr. Henderson kicked the bucket last winter,” she whispered sadly, setting down her knit-ting. “He was a kind man. Always brought me eggs from his chickens on Sunday mornings.The village won’t be the same without him.”",
-        "translated_content": "“Ông Henderson già đã qua đời vào mùa đông năm ngoái,” Bà thì thầm buồn bã, đặt đồ đan xuống. “Ông ấy là một người tốt bụng. Luôn mang trứng gà của ông ấy cho Bà vào sáng Chủ nhật. Ngôi làng sẽ không còn như xưa nếu không có ông ấy.”",
+        "translated_content": "“Ông Henderson già đã qua đời vào mùa đông năm ngoái,” Bà thì thầm buồn bã, đặt đồ đan xuống. “Ông ấy là một người tốt bụng. Luôn mang trứng gà từ đàn gà của ông ấy cho ta vào mỗi sáng Chủ nhật. Ngôi làng sẽ không còn như xưa nếu thiếu ông ấy.”",
         "bbox": [
           69.2760009765625,
           371.50665283203125,
@@ -3897,7 +3897,7 @@
       },
       {
         "original_content": "Ironfist hugged his grandmother, breathing in the familiar scent of lavender soap and pepperminttea. Then he walked to the window and looked out.",
-        "translated_content": "Ironfist ôm Bà mình, hít hà mùi xà phòng oải hương và trà bạc hà quen thuộc. Sau đó anh đi đến cửa sổ và nhìn ra ngoài.",
+        "translated_content": "Ironfist ôm Bà, hít hà mùi xà phòng oải hương và trà bạc hà quen thuộc. Sau đó cậu đi đến cửa sổ và nhìn ra ngoài.",
         "bbox": [
           70.86599731445312,
           432.51165771484375,
@@ -3914,7 +3914,7 @@
       },
       {
         "original_content": "The Kingdom stretched before him — peaceful, golden, and full of promise. Fields of wheatrippled in the evening breeze like an ocean of liquid gold. The mountains rose in the distance,purple and majestic against the fading sky. And somewhere out there, beyond the horizon, ad-ventures were waiting.",
-        "translated_content": "Vương quốc trải dài trước mắt anh – yên bình, vàng óng và đầy hứa hẹn. Những cánh đồng lúa mì gợn sóng trong làn gió chiều như một đại dương vàng lỏng. Những ngọn núi sừng sững ở phía xa, tím biếc và hùng vĩ trước bầu trời đang dần tắt nắng. Và ở đâu đó ngoài kia, phía chân trời, những cuộc phiêu lưu đang chờ đợi.",
+        "translated_content": "Vương quốc trải dài trước mắt cậu — yên bình, vàng óng và đầy hứa hẹn. Những cánh đồng lúa mì gợn sóng trong làn gió chiều như một đại dương vàng lỏng. Những ngọn núi sừng sững ở phía xa, tím biếc và hùng vĩ trước bầu trời đang nhạt dần. Và ở đâu đó ngoài kia, phía chân trời, những cuộc phiêu lưu đang chờ đợi.",
         "bbox": [
           70.4959945678711,
           475.5886535644531,
@@ -3931,7 +3931,7 @@
       },
       {
         "original_content": "“Tomorrow,” he whispered to himself. “Tomorrow will bring a new adventure.”",
-        "translated_content": "“Ngày mai,” anh thì thầm với chính mình. “Ngày mai sẽ mang đến một cuộc phiêu lưu mới.”",
+        "translated_content": "“Ngày mai,” cậu thì thầm với chính mình. “Ngày mai sẽ mang đến một cuộc phiêu lưu mới.”",
         "bbox": [
           69.2760009765625,
           554.5206298828125,
@@ -3948,7 +3948,7 @@
       },
       {
         "original_content": "The cat — which had followed them all the way from the enchanted cave — jumped onto thewindowsill, settled itself into a comfortable loaf, and began to purr.",
-        "translated_content": "Con mèo – đã đi theo họ suốt từ hang động mê hoặc – nhảy lên bệ cửa sổ, cuộn mình thành một cục tròn thoải mái, và bắt đầu kêu gừ gừ.",
+        "translated_content": "Con mèo — đã đi theo họ suốt từ hang động ma thuật — nhảy lên bệ cửa sổ, cuộn mình thành một cục bánh mì thoải mái, và bắt đầu rừ rừ.",
         "bbox": [
           70.43599700927734,
           579.670654296875,
