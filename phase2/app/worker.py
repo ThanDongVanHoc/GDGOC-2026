@@ -70,6 +70,10 @@ class RevisionResult(BaseModel):
 
     score: int = Field(ge=1, le=10, description="Quality score 1-10")
     reason: str = Field(default="", description="Explanation if score < 8")
+    failed_block_indices: list[int] = Field(
+        default_factory=list,
+        description="0-based indices of blocks that need re-translation",
+    )
 
 
 class TranslationChunk(BaseModel):
@@ -345,8 +349,15 @@ SCORING GUIDE:
 - 4-5: Poor, significant errors
 - 1-3: Unacceptable, major constraint violations
 
-OUTPUT FORMAT:
-{{"score": <1-10>, "reason": "<brief explanation, especially if score < 8>"}}
+OUTPUT FORMAT — Return a JSON object with:
+- "score": overall quality score 1-10
+- "reason": brief explanation, especially if score < 8
+- "failed_block_indices": a JSON array of the 0-based block_index values for
+  ONLY the blocks that have issues (e.g. wrong translation, constraint violation,
+  unnatural phrasing). Leave as empty array [] if score >= 8.
+
+Example:
+{{"score": 6, "reason": "blocks 2 and 5 mistranslated a protected name", "failed_block_indices": [2, 5]}}
 
 Return ONLY valid JSON, no markdown fences."""
 
@@ -372,6 +383,23 @@ async def _create_context_caches(
     """
     translator_prompt = _build_translator_system_prompt(global_metadata)
     reviser_prompt = _build_reviser_system_prompt(global_metadata)
+
+    # Gemini context caching requires min 1024 tokens (~4 chars/token).
+    # Skip the API call entirely if prompts are too short to avoid a 400 error.
+    MIN_CACHE_TOKENS = 1024
+    CHARS_PER_TOKEN = 4  # Conservative estimate
+    min_chars = MIN_CACHE_TOKENS * CHARS_PER_TOKEN
+
+    if len(translator_prompt) < min_chars or len(reviser_prompt) < min_chars:
+        logger.info(
+            "[Cache] Prompts too short for context caching "
+            "(translator=%d chars, reviser=%d chars, min≈%d chars). "
+            "Using inline prompts instead.",
+            len(translator_prompt),
+            len(reviser_prompt),
+            min_chars,
+        )
+        return None, None
 
     try:
         translator_cache = client.caches.create(
@@ -474,6 +502,84 @@ async def _translate_chunk(
 
 
 # ═══════════════════════════════════════════════════════════════════
+#  TASK #p2.2b — TARGETED BLOCK RE-TRANSLATION
+# ═══════════════════════════════════════════════════════════════════
+
+
+async def _retranslate_blocks(
+    chunk: TranslationChunk,
+    failed_indices: list[int],
+    global_metadata: dict,
+    client: genai.Client,
+    cache_name: Optional[str],
+    feedback: str,
+) -> list[dict]:
+    """
+    Re-translate only the specific blocks that failed review.
+
+    Instead of re-translating an entire chunk (up to 15 pages), this sends
+    only the problematic blocks to the Translator Agent with targeted
+    feedback, then returns just the corrected translations.
+
+    Args:
+        chunk: The full TranslationChunk (used to look up source blocks).
+        failed_indices: 0-based block indices that need re-translation.
+        global_metadata: Global constraints dict.
+        client: Initialized Gemini API client.
+        cache_name: Gemini context cache name (or None for inline prompt).
+        feedback: Revision feedback explaining what went wrong.
+
+    Returns:
+        list[dict]: Re-translated blocks with block_index, original_content,
+                    and translated_content.
+    """
+    source_blocks = []
+    for idx in failed_indices:
+        if 0 <= idx < len(chunk.blocks):
+            source_blocks.append(
+                {
+                    "block_index": idx,
+                    "content": chunk.blocks[idx]["content"],
+                    "source_type": chunk.blocks[idx]["source_type"],
+                    "page_id": chunk.blocks[idx]["page_id"],
+                }
+            )
+
+    if not source_blocks:
+        return []
+
+    user_message = (
+        f"Re-translate ONLY these {len(source_blocks)} blocks that failed "
+        f"quality review (pages {chunk.page_range}):\n"
+        + json.dumps(source_blocks, ensure_ascii=False)
+        + f"\n\n⚠️ REVISION FEEDBACK:\n{feedback}\n"
+        "Fix the issues mentioned above. Keep block_index values unchanged."
+    )
+
+    config = types.GenerateContentConfig(
+        temperature=0.3,
+        response_mime_type="application/json",
+    )
+
+    if cache_name:
+        config.cached_content = cache_name
+    else:
+        config.system_instruction = _build_translator_system_prompt(global_metadata)
+
+    response = await client.aio.models.generate_content(
+        model=MODEL,
+        contents=user_message,
+        config=config,
+    )
+
+    raw_json = response.text.strip()
+    if raw_json.startswith("```"):
+        raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+
+    return json.loads(raw_json)
+
+
+# ═══════════════════════════════════════════════════════════════════
 #  TASK #p2.3 — REVISER AGENT
 # ═══════════════════════════════════════════════════════════════════
 
@@ -545,6 +651,85 @@ async def _review_translation(
         raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
     result_dict = json.loads(raw_json)
+    # Ensure failed_block_indices exists for backward compatibility
+    if "failed_block_indices" not in result_dict:
+        result_dict["failed_block_indices"] = []
+    return RevisionResult(**result_dict)
+
+
+async def _review_blocks(
+    chunk: TranslationChunk,
+    translations: list[dict],
+    block_indices: list[int],
+    global_metadata: dict,
+    client: genai.Client,
+    cache_name: Optional[str],
+) -> RevisionResult:
+    """
+    Review only specific re-translated blocks, not the entire chunk.
+
+    After a targeted re-translation, this sends only the corrected blocks
+    to the Reviser Agent for focused quality scoring. This avoids the cost
+    of re-reviewing blocks that already passed.
+
+    Args:
+        chunk: Full TranslationChunk (used to look up source text).
+        translations: Complete translations list (used to pick block content).
+        block_indices: 0-based indices of blocks to review.
+        global_metadata: Global constraints dict.
+        client: Initialized Gemini API client.
+        cache_name: Gemini context cache name (or None for inline prompt).
+
+    Returns:
+        RevisionResult: Score, reason, and any still-failing block indices.
+    """
+    review_pairs = []
+    for idx in block_indices:
+        if 0 <= idx < len(chunk.blocks):
+            translated_content = ""
+            for t in translations:
+                if t.get("block_index") == idx:
+                    translated_content = t.get("translated_content", "")
+                    break
+
+            review_pairs.append(
+                {
+                    "block_index": idx,
+                    "source": chunk.blocks[idx]["content"],
+                    "translation": translated_content,
+                    "source_type": chunk.blocks[idx]["source_type"],
+                }
+            )
+
+    user_message = (
+        f"Review ONLY these {len(review_pairs)} re-translated blocks "
+        f"(pages {chunk.page_range}):\n"
+        + json.dumps(review_pairs, ensure_ascii=False)
+    )
+
+    config = types.GenerateContentConfig(
+        temperature=0.1,
+        response_mime_type="application/json",
+    )
+
+    if cache_name:
+        config.cached_content = cache_name
+    else:
+        config.system_instruction = _build_reviser_system_prompt(global_metadata)
+
+    response = await client.aio.models.generate_content(
+        model=MODEL,
+        contents=user_message,
+        config=config,
+    )
+
+    raw_json = response.text.strip()
+    if raw_json.startswith("```"):
+        raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+
+    result_dict = json.loads(raw_json)
+    if "failed_block_indices" not in result_dict:
+        result_dict["failed_block_indices"] = []
     return RevisionResult(**result_dict)
 
 
@@ -563,10 +748,12 @@ async def _translate_with_feedback_loop(
     """
     Run the full Translator ↔ Reviser feedback loop for a single chunk.
 
-    Implements the circuit breaker pattern:
-        - score >= 8 → PASS, save as verified.
-        - score < 8 and retry < 3 → RETRY with feedback.
-        - score < 8 and retry >= 3 → CIRCUIT BREAK, keep last draft + WARNING.
+    Implements a **block-level** circuit breaker pattern:
+        1. Translate the full chunk once.
+        2. Reviser scores the full chunk AND returns failed_block_indices.
+        3. On retry, ONLY the failed blocks are re-translated.
+        4. Fixed blocks are merged back, then ONLY those blocks are re-reviewed.
+        5. Circuit breaks after MAX_RETRIES attempts.
 
     Args:
         chunk: TranslationChunk to translate.
@@ -585,61 +772,118 @@ async def _translate_with_feedback_loop(
         len(chunk.blocks),
     )
 
-    feedback = None
-    translations = []
+    translations: list[dict] = []
     retries = 0
     final_score = 0
     final_reason = ""
+    failed_indices: list[int] = []
 
-    while retries <= MAX_RETRIES:
-        # ── Translate ────────────────────────────────────────────
-        try:
-            translations = await _translate_chunk(
-                chunk, global_metadata, client, translator_cache, feedback
-            )
-        except Exception as e:
-            logger.error("[Chunk %d] Translation failed: %s", chunk.chunk_id, e)
-            translations = []
-            break
+    # ── Initial full-chunk translation ───────────────────────────
+    try:
+        translations = await _translate_chunk(
+            chunk, global_metadata, client, translator_cache, feedback=None
+        )
+    except Exception as e:
+        logger.error("[Chunk %d] Initial translation failed: %s", chunk.chunk_id, e)
+        translations = []
 
-        # ── Review ───────────────────────────────────────────────
+    if not translations:
+        # Nothing to review — skip straight to assembly
+        pass
+    else:
+        # ── First full-chunk review ──────────────────────────────
         try:
             revision = await _review_translation(
                 chunk, translations, global_metadata, client, reviser_cache
             )
             final_score = revision.score
             final_reason = revision.reason
+            failed_indices = revision.failed_block_indices
         except Exception as e:
-            logger.error("[Chunk %d] Review failed: %s", chunk.chunk_id, e)
-            # Accept the translation without review
+            logger.error("[Chunk %d] Initial review failed: %s", chunk.chunk_id, e)
             final_score = PASS_SCORE
             final_reason = ""
-            break
 
         logger.info(
-            "[Chunk %d] Attempt %d/%d — Score: %d/10%s",
+            "[Chunk %d] Initial review — Score: %d/10%s",
             chunk.chunk_id,
-            retries + 1,
-            MAX_RETRIES + 1,
             final_score,
             f" ({final_reason})" if final_reason else "",
         )
 
-        # ── Route: PASS or RETRY ────────────────────────────────
-        if final_score >= PASS_SCORE:
-            logger.info("[Chunk %d] ✅ PASSED", chunk.chunk_id)
-            break
+        # ── Targeted retry loop ──────────────────────────────────
+        while final_score < PASS_SCORE and retries < MAX_RETRIES:
+            retries += 1
 
-        retries += 1
-        if retries <= MAX_RETRIES:
-            feedback = final_reason
-            logger.info("[Chunk %d] 🔄 RETRY with feedback...", chunk.chunk_id)
-        else:
+            # If the reviser didn't identify specific blocks, fall back to all
+            if not failed_indices:
+                failed_indices = list(range(len(chunk.blocks)))
+
+            logger.info(
+                "[Chunk %d] 🔄 RETRY %d/%d — re-translating %d/%d failed blocks: %s",
+                chunk.chunk_id,
+                retries,
+                MAX_RETRIES,
+                len(failed_indices),
+                len(chunk.blocks),
+                failed_indices,
+            )
+
+            # ── Re-translate only failed blocks ──────────────────
+            try:
+                fixed = await _retranslate_blocks(
+                    chunk, failed_indices, global_metadata, client,
+                    translator_cache, final_reason,
+                )
+                # Merge fixed translations back into the main list
+                fixed_map = {f["block_index"]: f for f in fixed}
+                for i, t in enumerate(translations):
+                    idx = t.get("block_index", i)
+                    if idx in fixed_map:
+                        translations[i] = fixed_map[idx]
+            except Exception as e:
+                logger.error(
+                    "[Chunk %d] Block re-translation failed: %s", chunk.chunk_id, e
+                )
+                break
+
+            # ── Re-review ONLY the fixed blocks ──────────────────
+            try:
+                revision = await _review_blocks(
+                    chunk, translations, failed_indices,
+                    global_metadata, client, reviser_cache,
+                )
+                final_score = revision.score
+                final_reason = revision.reason
+                failed_indices = revision.failed_block_indices
+            except Exception as e:
+                logger.error(
+                    "[Chunk %d] Block re-review failed: %s", chunk.chunk_id, e
+                )
+                final_score = PASS_SCORE
+                final_reason = ""
+                break
+
+            logger.info(
+                "[Chunk %d] Re-review %d/%d — Score: %d/10%s",
+                chunk.chunk_id,
+                retries,
+                MAX_RETRIES,
+                final_score,
+                f" ({final_reason})" if final_reason else "",
+            )
+
+            if final_score >= PASS_SCORE:
+                logger.info("[Chunk %d] ✅ Fixed blocks PASSED", chunk.chunk_id)
+
+        if final_score < PASS_SCORE and retries >= MAX_RETRIES:
             logger.warning(
                 "[Chunk %d] ⚠️ CIRCUIT BREAK after %d retries. Keeping last draft.",
                 chunk.chunk_id,
                 MAX_RETRIES,
             )
+        elif final_score >= PASS_SCORE and retries == 0:
+            logger.info("[Chunk %d] ✅ PASSED on first attempt", chunk.chunk_id)
 
     # ── Assemble TranslatedBlock results ─────────────────────────
     translated_blocks = []

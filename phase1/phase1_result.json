@@ -1,11 +1,11 @@
 {
-  "thread_id": "90e1c1a2-c50a-4469-b625-63e3cba58723",
+  "thread_id": "ec381c72-d1b3-44e3-910f-317f2e9410bb",
   "result": {
     "global_metadata": {
       "source_language": "EN",
       "target_language": "VI",
       "license_status": true,
-      "author_attribution": "Written by Charles Perrault",
+      "author_attribution": "Written by Elara J. Thornberry",
       "integrity_protection": true,
       "adaptation_rights": false,
       "translation_fidelity": "Strict",
@@ -13,385 +13,274 @@
       "cultural_localization": false,
       "preserve_main_names": true,
       "protected_names": [
-        "Cinderella",
-        "Prince Charming",
-        "Fairy Godmother",
-        "Lady Tremaine"
+        "Ironfist",
+        "Lily",
+        "Steelfist",
+        "Mr. Greycloak",
+        "Whiskers"
       ],
-      "no_retouching": true,
-      "lock_character_color": true,
-      "never_change_rules": [
-        "Cinderella's glass slippers",
-        "Fairy Godmother's sparkling wand"
-      ],
-      "style_register": "Simple, warm, suitable for children",
-      "target_age_tone": 10,
-      "glossary_strict_mode": true,
-      "sfx_handling": "In_panel_subs",
-      "satisfaction_clause": true,
+      "no_retouching": false,
+      "lock_character_color": false,
+      "never_change_rules": [],
+      "style_register": "engaging, warm language suitable for young fantasy readers",
+      "target_age_tone": 12,
+      "glossary_strict_mode": false,
+      "sfx_handling": "Keep",
+      "satisfaction_clause": false,
       "allow_bg_edit": true,
       "max_drift_ratio": 0.2
     },
     "standardized_pack": [
       {
         "page_id": 1,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "Name:Class:",
+            "content": "IRONFIST’SGRAND ADVENTURE",
             "bbox": [
-              72.0,
-              69.2190170288086,
-              345.95550537109375,
-              82.47901916503906
+              83.18199920654297,
+              413.44195556640625,
+              511.99017333984375,
+              491.2720642089844
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "\"1920s-Cinderella\" by clotho98 is licensed under CC BY-NC 2.0",
-            "bbox": [
-              313.5,
-              579.0069580078125,
-              517.0715942382812,
-              589.2069702148438
-            ],
-            "font": "OpenSans-Italic",
-            "size": 7.5,
-            "color": 255,
-            "flags": 6,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "Cinderella",
-            "bbox": [
-              256.44598388671875,
-              96.13896942138672,
-              355.4865417480469,
-              122.65896606445312
-            ],
-            "font": "OpenSans-Bold",
-            "size": 19.5,
-            "color": 0,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 41.843101501464844,
+            "color": 2899536,
             "flags": 20,
             "editability_tag": "editable"
           },
           {
-            "content": "By Charles Perrault1697",
+            "content": "A tale of bravery, friendship, and magic",
             "bbox": [
-              262.48199462890625,
-              120.3189926147461,
-              349.43243408203125,
-              145.2790069580078
+              160.14300537109375,
+              515.8489379882812,
+              434.6081848144531,
+              533.0643310546875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "French author Charles Perrault is often called the “father of the fairy tale” for his well known tales such as“Little Red Riding Hood,” “Puss in Boots,” “Sleeping Beauty,” and “Cinderella.” Cinderella is a famous folk tale,a story that has been passed down for many generations, about a young woman trying to overcome thecruelty of some of her family. There are numerous different versions of the story, with historical roots inplaces as far apart as China and Italy. This version, by Perrault, is the first to include the famous pumpkin,fairy godmother, and glass slippers. As you read, take notes on how Cinderella and her stepsisters treateach other throughout the story.",
-            "bbox": [
-              83.25,
-              162.9674835205078,
-              527.6250610351562,
-              248.8454132080078
-            ],
-            "font": "OpenSans-Italic",
-            "size": 9.375,
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 17.21540069580078,
             "color": 0,
             "flags": 6,
             "editability_tag": "editable"
           },
           {
-            "content": "Once there was a gentleman who married, for hissecond wife, the proudest and most haughty1",
+            "content": "Written by Elara J. Thornberry",
             "bbox": [
-              72.0,
-              271.2589111328125,
-              296.3085632324219,
-              298.16888427734375
+              202.33799743652344,
+              585.7108154296875,
+              392.6282958984375,
+              600.1181030273438
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 14.346199989318848,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "woman that was ever seen. She had, by a formerhusband, two daughters of her own, who were,indeed, exactly like her in all things. He hadlikewise, by another wife, a young daughter, butof unparalleled2 goodness and sweetness oftemper, which she took from her mother, whowas the best creature in the world.",
+            "content": "Illustrations by Marcus T. Ashwood",
             "bbox": [
-              72.0,
-              298.55889892578125,
-              293.05206298828125,
-              393.7188415527344
+              209.02200317382812,
+              611.4386596679688,
+              386.2381286621094,
+              623.4447631835938
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "No sooner were the ceremonies of the weddingover but the stepmother began to show herself inher true colors. She could not bear the goodqualities of this pretty girl, and the less becausethey made her own daughters appear the moreodious.3 She employed her in the meanest workof the house. She scoured4 the dishes, tables,etc., and cleaned madam’s chamber, and those ofmisses, her daughters. She slept in a sorrygarret,5 on a wretched6 straw bed, while hersisters slept in fine rooms, with floors all inlaid,on beds of the very newest fashion, and wherethey had looking glasses7 so large that they couldsee themselves at their full length from head tofoot.",
+            "content": "Thornberry Publishing Ltd. · First Edition · 2024",
             "bbox": [
-              71.99998474121094,
-              408.77886962890625,
-              297.3616027832031,
-              613.1387329101562
+              190.48699951171875,
+              702.3797607421875,
+              404.7232360839844,
+              713.6993408203125
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 10.909099578857422,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "[1]",
+            "content": "© 2024 Thornberry Publishing Ltd. All rights reserved.",
             "bbox": [
-              45.74998474121094,
-              271.2437744140625,
-              56.81098175048828,
-              283.4837646484375
+              187.64199829101562,
+              725.4237670898438,
+              409.3894348144531,
+              735.3864135742188
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
+            "font": "TimesNewRomanPSMT",
+            "size": 9.962599754333496,
+            "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "1.Haughty (adjective): arrogant2.Unparalleled (adjective): having no equal3.Odious (adjective): extremely unpleasant; repulsive4.to clean or brighten the surface of (something) by rubbing it5.a very small top-floor or attic room6.Wretched (adjective): of poor quality; very bad7.an archaic term referring to a mirror",
+            "content": "No part of this publication may be reproduced, stored in a retrieval system,",
             "bbox": [
-              74.19400024414062,
-              671.3140258789062,
-              320.0275573730469,
-              751.833984375
+              148.864990234375,
+              743.3507690429688,
+              447.6832275390625,
+              753.3134155273438
             ],
-            "font": "OpenSans-Regular",
-            "size": 8.25,
+            "font": "TimesNewRomanPSMT",
+            "size": 9.962599754333496,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "or transmitted in any form without the prior written permission of the publisher.",
+            "bbox": [
+              139.54998779296875,
+              761.2787475585938,
+              457.5062255859375,
+              771.2413940429688
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 9.962599754333496,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           }
         ],
-        "image_blocks": []
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              147.73635864257812,
+              479.05694580078125,
+              350.25
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [
+              {
+                "content": "A",
+                "bbox_in_image": [
+                  427.0,
+                  21.0,
+                  445.0,
+                  47.0
+                ],
+                "confidence": 0.9990562044287152,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "THRILLING FANTASY ADVENTURE",
+                "bbox_in_image": [
+                  457.0,
+                  19.0,
+                  957.0,
+                  55.0
+                ],
+                "confidence": 0.7694896224705287,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "THE",
+                "bbox_in_image": [
+                  180.0,
+                  112.0,
+                  282.0,
+                  162.0
+                ],
+                "confidence": 0.9999781823435013,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "(HRONICLES",
+                "bbox_in_image": [
+                  278.0,
+                  59.0,
+                  832.0,
+                  222.0
+                ],
+                "confidence": 0.8420028167671865,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "OF",
+                "bbox_in_image": [
+                  825.0,
+                  105.0,
+                  895.0,
+                  167.0
+                ],
+                "confidence": 0.98611824502369,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "FLoRi4:",
+                "bbox_in_image": [
+                  860.0,
+                  59.0,
+                  1234.0,
+                  229.0
+                ],
+                "confidence": 0.3670168180587427,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "BooK ONE: A HERO S JOURNEY",
+                "bbox_in_image": [
+                  450.0,
+                  193.0,
+                  935.0,
+                  247.0
+                ],
+                "confidence": 0.7681529086355953,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "BY [SOBEL FAIRWEATHER",
+                "bbox_in_image": [
+                  484.0,
+                  710.0,
+                  894.0,
+                  762.0
+                ],
+                "confidence": 0.906859788344458,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          }
+        ]
       },
       {
         "page_id": 2,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "The poor girl bore it all patiently, and dared not tell her father, who would have scolded her; for hiswife governed him entirely. When she had done her work, she used to go to the chimney corner, andsit down there in the cinders and ashes, which caused her to be called Cinderwench. Only the youngersister, who was not so rude and uncivil8 as the older one, called her Cinderella. However, Cinderella,notwithstanding her coarse apparel,9 was a hundred times more beautiful than her sisters, althoughthey were always dressed very richly.",
+            "content": "Ironfist’s Grand Adventure",
             "bbox": [
-              72.0,
-              70.1939926147461,
-              534.5302124023438,
-              151.70411682128906
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
             "color": 0,
-            "flags": 4,
+            "flags": 6,
             "editability_tag": "editable"
           },
           {
-            "content": "It happened that the king’s son gave a ball, and invited all persons of fashion to it. Our young misseswere also invited, for they cut a very grand figure among those of quality. They were mightily delightedat this invitation, and wonderfully busy in selecting the gowns, petticoats,10 and hair dressing thatwould best become them. This was a new difficulty for Cinderella; for it was she who ironed her sister’slinen and pleated their ruffles. They talked all day long of nothing but how they should be dressed.",
+            "content": "2",
             "bbox": [
-              72.0,
-              166.76412963867188,
-              537.3090209960938,
-              234.6242218017578
+              294.64898681640625,
+              791.797607421875,
+              300.6265869140625,
+              803.7528076171875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "“For my part,” said the eldest, “I will wear my red velvet suit with French trimming.”",
-            "bbox": [
-              72.0,
-              249.68423461914062,
-              444.3232421875,
-              262.9442138671875
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "“And I,” said the youngest, “shall have my usual petticoat; but then, to make amends11 for that, I will puton my gold-flowered cloak, and my diamond stomacher,12 which is far from being the most ordinaryone in the world.”",
-            "bbox": [
-              71.99899291992188,
-              272.7932434082031,
-              539.43212890625,
-              318.564208984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "They sent for the best hairdresser they could get to make up their headpieces and adjust their hairdos,and they had their red brushes and patches from Mademoiselle de la Poche.",
-            "bbox": [
-              71.99899291992188,
-              333.6242370605469,
-              537.2396850585938,
-              360.5342102050781
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "They also consulted Cinderella in all these matters, for she had excellent ideas, and her advice wasalways good. Indeed, she even offered her services to fix their hair, which they very willingly accepted.As she was doing this, they said to her, “Cinderella, would you not like to go to the ball?”",
-            "bbox": [
-              71.99899291992188,
-              375.59423828125,
-              532.4132690429688,
-              416.1542053222656
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "“Alas!” said she, “you only jeer13 me; it is not for such as I am to go to such a place.”",
-            "bbox": [
-              71.99899291992188,
-              426.00323486328125,
-              446.00341796875,
-              444.4742126464844
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "“You are quite right,” they replied. “It would make the people laugh to see a Cinderwench at a ball.”",
-            "bbox": [
-              71.99899291992188,
-              459.53424072265625,
-              517.846923828125,
-              472.7942199707031
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "Anyone but Cinderella would have fixed their hair awry, but she was very good, and dressed themperfectly well. They were so excited that they hadn’t eaten a thing for almost two days. Then they brokemore than a dozen laces trying to have themselves laced up tightly enough to give them a fineslender14 shape. They were continually in front of their looking glass.",
-            "bbox": [
-              71.99899291992188,
-              487.854248046875,
-              539.3943481445312,
-              542.064208984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "At last the happy day came. They went to court, and Cinderella followed them with her eyes as long asshe could. When she lost sight of them, she started to cry.",
-            "bbox": [
-              71.99799346923828,
-              557.1242065429688,
-              533.2997436523438,
-              584.0342407226562
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "Her godmother, who saw her all in tears, asked her what was the matter.",
-            "bbox": [
-              71.99799346923828,
-              599.0941772460938,
-              401.8989562988281,
-              612.3541870117188
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "“I wish I could. I wish I could.” She was not able to speak the rest, being interrupted by her tears andsobbing.",
-            "bbox": [
-              71.99799346923828,
-              627.4142456054688,
-              522.8379516601562,
-              654.32421875
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[5]",
-            "bbox": [
-              45.74799346923828,
-              249.66925048828125,
-              56.808990478515625,
-              261.90924072265625
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[10]",
-            "bbox": [
-              45.74799346923828,
-              459.5192565917969,
-              61.94799041748047,
-              471.7592468261719
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "8.Uncivil (adjective): discourteous or impolite9.clothing10.A petticoat was a common article of clothing worn by women underneath a dress.11.to make up12.A stomacher was a piece of decorative cloth worn over the chest.13.Jeer (verb): to make rude and mocking remarks14.Slender (adjective): thin",
-            "bbox": [
-              69.47799682617188,
-              671.3140258789062,
-              404.3663635253906,
-              751.833984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 8.25,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
@@ -401,377 +290,333 @@
       },
       {
         "page_id": 3,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "This godmother of hers, who was a fairy, said to her, “You wish that you could go to the ball; is it notso?”",
+            "content": "Chapter 1",
             "bbox": [
-              72.0,
-              70.1939926147461,
-              523.317626953125,
-              97.10401916503906
+              70.86599731445312,
+              89.28643798828125,
+              177.574462890625,
+              114.07353973388672
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The Beginning",
+            "bbox": [
+              70.86599731445312,
+              154.3934326171875,
+              225.8349609375,
+              179.18052673339844
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "I",
+            "bbox": [
+              67.75800323486328,
+              440.23583984375,
+              88.47992706298828,
+              502.4638671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "“Yes,” cried Cinderella, with a great sigh.",
+            "content": "ronfist stepped out of his cottage and squinted against the morning sun. The sky above Wil-lowmere was a vast canvas of the most brilliant blue he had ever seen, stretching endlesslyfrom the misty hills in the east to the dark line of the Whispering Woods in the west. Paintedacross the clouds, as if by some playful god with a brush made of wind, were the words:",
             "bbox": [
-              72.0,
-              112.16402435302734,
-              252.17030334472656,
-              125.42402648925781
+              70.86600494384766,
+              442.7086486816406,
+              526.4566650390625,
+              508.44586181640625
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "“Well,” said her godmother, “be but a good girl, and I will contrive15 that you shall go.” Then she tookher into her chamber, and said to her, “Run into the garden, and bring me a pumpkin.”",
+            "content": "“IT WAS A BEAUTIFUL DAY.”",
             "bbox": [
-              72.0,
-              135.27304077148438,
-              523.6734008789062,
-              167.39405822753906
+              158.02999877929688,
+              516.5172119140625,
+              437.22332763671875,
+              536.4425659179688
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 19.92530059814453,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "He took a deep breath. The air smelled of honeysuckle and damp earth, and somewhere inthe distance, a meadowlark was singing its heart out from the top of old Mr. Grumbleton’sweathervane.",
+            "bbox": [
+              70.43599700927734,
+              548.527587890625,
+              524.458251953125,
+              596.3367919921875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Cinderella went immediately to gather the finest she could get, and brought it to her godmother, notbeing able to imagine how this pumpkin could help her go to the ball. Her godmother scooped out allthe inside of it, leaving nothing but the rind. Having done this, she struck the pumpkin with her wand,and it was instantly turned into a fine coach,16 gilded all over with gold.17",
+            "content": "He was very excited about today’s adventure. He had been waiting for this moment his entirelife — ever since his grandfather, the legendary warrior Steelfist, had told him stories about theancient Kingdom beyond the mountains. Those tales of dragons and enchanted forests had filledyoung Ironfist’s dreams for as long as he could remember.",
             "bbox": [
-              72.0,
-              182.45407104492188,
-              530.2987670898438,
-              236.6641387939453
+              70.86599731445312,
+              610.4005737304688,
+              524.4702758789062,
+              676.1367797851562
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "She then went to look into her mousetrap, where she found six mice, all alive, and ordered Cinderellato lift up a little the trapdoor. She gave each mouse, as it went out, a little tap with her wand, and themouse was that moment turned into a fine horse, which altogether made a very fine set of six horsesof a beautiful mouse colored dapple gray.",
+            "content": "“Oh my God!”Ironfist shouted, looking at the dark cloudsrolling in from the west like a stampede of angry grey horses.The morning had been so beautiful just moments ago, but nowthe wind was picking up, sending leaves spiraling across the gar-den path. “It’s raining cats and dogs already! I haven’t even left",
             "bbox": [
-              71.9990234375,
-              251.72415161132812,
-              530.3465576171875,
-              305.93414306640625
+              70.49600219726562,
+              690.2006225585938,
+              374.8269348144531,
+              773.8648071289062
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Being at a loss for a coachman,18 Cinderella said, “I will go and see if there is not a rat in the rat trapthat we can turn into a coachman.”",
+            "content": "3",
             "bbox": [
-              71.9990234375,
-              315.7831726074219,
-              521.1900634765625,
-              347.9041442871094
+              294.64898681640625,
+              791.797607421875,
+              300.6265869140625,
+              803.7528076171875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "“You are right,” replied her godmother, “Go and look.”",
-            "bbox": [
-              71.99903869628906,
-              362.96417236328125,
-              314.5010986328125,
-              376.2241516113281
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "Cinderella brought the trap to her, and in it there were three huge rats. The fairy chose the one whichhad the largest beard, touched him with her wand, and turned him into a fat, jolly coachman, who hadthe smartest whiskers that eyes ever beheld.",
-            "bbox": [
-              71.99903869628906,
-              391.2841796875,
-              534.5194091796875,
-              431.8441467285156
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "After that, she said to her, “Go again into the garden, and you will find six lizards behind the wateringpot. Bring them to me.”",
-            "bbox": [
-              71.99903869628906,
-              446.9041748046875,
-              527.7627563476562,
-              473.81414794921875
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "She had no sooner done so but her godmother turned them into six footmen, who skipped upimmediately behind the coach, with their liveries19 all bedaubed20 with gold and silver, and clung asclose behind each other as if they had done nothing else their whole lives. The fairy then said toCinderella, “Well, you see here an equipage21 fit to go to the ball with; are you not pleased with it?”",
-            "bbox": [
-              71.9990234375,
-              488.8741760253906,
-              521.38720703125,
-              543.0841674804688
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "“Oh, yes,” she cried; “but must I go in these nasty rags?”",
-            "bbox": [
-              71.99903869628906,
-              558.1441040039062,
-              321.8525695800781,
-              571.4041137695312
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[15]",
-            "bbox": [
-              45.74903869628906,
-              70.17913818359375,
-              61.94903564453125,
-              82.41913604736328
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[20]",
-            "bbox": [
-              45.74903869628906,
-              320.9791259765625,
-              61.94903564453125,
-              333.2191162109375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[25]",
-            "bbox": [
-              45.74903869628906,
-              558.1290893554688,
-              61.94903564453125,
-              570.3690795898438
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "15.Contrive (verb): to bring about or create; to plan16.a horse-drawn carriage17.covered thinly with gold leaf or gold paint18.someone who drives a coach19.special uniforms20.covered21.the equipment for a particular purpose or, historically, a carriage and horses with attendants",
-            "bbox": [
-              69.47699737548828,
-              671.3140258789062,
-              446.0207214355469,
-              751.833984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 8.25,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           }
         ],
-        "image_blocks": []
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              223.29135131835938,
+              479.05694580078125,
+              425.80499267578125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [
+              {
+                "content": "WAS A",
+                "bbox_in_image": [
+                  278.0,
+                  62.0,
+                  562.0,
+                  188.0
+                ],
+                "confidence": 0.9765314380698151,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "BEAUIIFUL",
+                "bbox_in_image": [
+                  100.0,
+                  167.0,
+                  650.0,
+                  325.0
+                ],
+                "confidence": 0.5551905012943469,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "DAY?",
+                "bbox_in_image": [
+                  258.0,
+                  292.0,
+                  524.0,
+                  412.0
+                ],
+                "confidence": 0.44410693645477295,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "\"Iv",
+                "bbox_in_image": [
+                  118.96308413307236,
+                  57.062357146904176,
+                  293.03691586692764,
+                  206.93764285309584
+                ],
+                "confidence": 0.10728955957557959,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          },
+          {
+            "bbox": [
+              382.677001953125,
+              705.7764282226562,
+              524.40966796875,
+              784.8829956054688
+            ],
+            "image_index": 1,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
       },
       {
         "page_id": 4,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "Her godmother then touched her with her wand, and, at the same instant, her clothes turned into clothof gold and silver, all beset with jewels. This done, she gave her a pair of glass slippers, the prettiest inthe whole world. Being thus decked out, she got up into her coach; but her godmother, above allthings, commanded her not to stay past midnight, telling her, at the same time, that if she stayed onemoment longer, the coach would be a pumpkin again, her horses mice, her coachman a rat, herfootmen lizards, and that her clothes would become just as they were before.",
+            "content": "Ironfist’s Grand Adventure",
             "bbox": [
-              72.0,
-              70.1939926147461,
-              539.2296142578125,
-              151.70411682128906
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "the garden yet!”",
+            "bbox": [
+              70.86599731445312,
+              73.7066421508789,
+              147.8813934326172,
+              85.66183471679688
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "She promised her godmother to leave the ball before midnight; and then drove away, scarcely22 able tocontain herself for joy. The king’s son, who was told that a great princess, whom nobody knew, hadarrived, ran out to receive her. He gave her his hand as she alighted23 from the coach, and led her intothe hall, among all the company. There was immediately a profound24 silence. Everyone stoppeddancing, and the violins ceased25 to play, so entranced was everyone with the singular beauties of theunknown newcomer.",
+            "content": "His mother appeared at the cottage door, wiping flour from herhands onto her apron. She was a kind woman with laugh lines around her eyes and silver streaksin her dark hair.",
             "bbox": [
-              71.9990234375,
-              161.55313110351562,
-              539.8057250976562,
-              248.2742462158203
+              70.86599731445312,
+              98.85664367675781,
+              524.4343872070312,
+              146.66683959960938
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Nothing was then heard but a confused noise of, “How beautiful she is! How beautiful she is!”",
+            "content": "“Take your cloak, dear,” she called out. “And don’t forget — your sister Lily is waiting for youat the crossroads. She’s been up since dawn, that girl. More excited than a squirrel in a nutfactory.”",
             "bbox": [
-              71.9990234375,
-              263.3342590332031,
-              493.5013122558594,
-              276.59423828125
+              69.2760009765625,
+              159.8616485595703,
+              524.4583129882812,
+              207.67184448242188
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "The king himself, old as he was, could not help watching her, and telling the queen softly that it was along time since he had seen so beautiful and lovely a creature.",
+            "content": "Ironfist grabbed his leather satchel, threw his heavy wool cloak over his shoulders, and set offdown the cobblestone lane that wound through the village of Willowmere. The rain was comingdown harder now, great fat drops that splattered against the stone walls and turned the guttersinto tiny rushing rivers.",
             "bbox": [
-              71.9990234375,
-              291.6542663574219,
-              529.1862182617188,
-              318.5642395019531
+              70.86599731445312,
+              220.86663818359375,
+              524.4583129882812,
+              286.6028747558594
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "All the ladies were busied in considering her clothes and headdress, hoping to have some made nextday after the same pattern, provided they could find such fine materials and as able hands to makethem.",
+            "content": "As he passed the village square, he noticed old Mrs. Pembury’s cat sitting on her windowsill,watching the world go by with an expression of supreme feline indifference. The cat opened itsmouth wide and let out a tremendous:",
             "bbox": [
-              71.9990234375,
-              333.624267578125,
-              527.9188232421875,
-              374.1842346191406
+              70.43599700927734,
+              299.7986755371094,
+              525.9290771484375,
+              347.60784912109375
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "The king’s son led her to the most honorable seat, and afterwards took her out to dance with him. Shedanced so very gracefully that they all more and more admired her. A fine meal was served up, but theyoung prince ate not a morsel,26 so intently was he busied in gazing on her.",
+            "content": "MEOW!",
             "bbox": [
-              71.9990234375,
-              389.2442626953125,
-              536.4988403320312,
-              429.8042297363281
+              245.72900390625,
+              350.89398193359375,
+              349.5556640625,
+              378.78936767578125
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 27.89539909362793,
+            "color": 9323693,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Good morning to you too, Whiskers,” Ironfist muttered, pulling his hood tighter against therain.",
+            "bbox": [
+              69.2760009765625,
+              388.07763671875,
+              524.4462890625,
+              417.9598388671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "She went and sat down by her sisters, showing them a thousand civilities,27 giving them part of theoranges and citrons28 which the prince had presented her with, which very much surprised them, forthey did not know her. While Cinderella was thus amusing her sisters, she heard the clock strike elevenand three-quarters, whereupon she immediately made a curtsy to the company and hurried away asfast as she could.",
+            "content": "4",
             "bbox": [
-              71.99801635742188,
-              439.65325927734375,
-              537.2094116210938,
-              512.7242431640625
+              294.5,
+              791.797607421875,
+              300.47760009765625,
+              803.7528076171875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "Arriving home, she ran to seek out her godmother, and, after having thanked her, she said she couldnot but heartily wish she might go to the ball the next day as well, because the king’s son had invitedher.",
-            "bbox": [
-              71.99801635742188,
-              527.7842407226562,
-              526.7672119140625,
-              568.3441772460938
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "As she was eagerly telling her godmother everything that had happened at the ball, her two sistersknocked at the door, which Cinderella ran and opened.",
-            "bbox": [
-              71.99801635742188,
-              583.4042358398438,
-              517.8362426757812,
-              610.314208984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[30]",
-            "bbox": [
-              45.748016357421875,
-              333.6092224121094,
-              61.94801330566406,
-              345.8492126464844
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "22.Scarcely (adverb ): barely, hardly23.to exit from a train, bus, or other form of transportation24.Profound (adjective): very great or intense25.Cease (verb): to stop26.Morsel (noun): a small piece27.formal politeness and courtesy in behavior or speech28.fruits such as lemons and limes",
-            "bbox": [
-              69.47699737548828,
-              671.3140258789062,
-              305.09307861328125,
-              751.833984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 8.25,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
@@ -781,363 +626,274 @@
       },
       {
         "page_id": 5,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "“You stayed such a long time!” she cried, gaping, rubbing her eyes and stretching herself as if she hadbeen sleeping; she had not, however, had any manner of inclination29 to sleep while they were awayfrom home.",
+            "content": "Chapter 2",
             "bbox": [
-              72.0,
-              70.1939926147461,
-              529.5869750976562,
-              110.75404357910156
+              70.86599731445312,
+              89.28643798828125,
+              177.574462890625,
+              114.07353973388672
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The Goblin in the Woods",
+            "bbox": [
+              70.86599731445312,
+              154.3934326171875,
+              335.3443908691406,
+              179.18052673339844
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "D",
+            "bbox": [
+              70.86599731445312,
+              440.23583984375,
+              115.79461669921875,
+              502.4638671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "“If you had been at the ball,” said one of her sisters, “you would not have been tired with it. The finestprincess was there, the most beautiful that mortal eyes have ever seen. She showed us a thousandcivilities, and gave us oranges and citrons.”",
+            "content": "eep in the Whispering Woods, where the ancient oaks grew so close together that theirbranches wove into a living canopy overhead, the shadows danced and whisperedsecrets in a language only the trees could understand. Ironfist walked along the narrowtrail with careful, deliberate steps, his boots crunching softly on the carpet of fallen leaves. Everyfew paces, he would stop and listen, his hand resting on the pommel of his grandfather’s sword.",
             "bbox": [
-              72.00003051757812,
-              125.81404876708984,
-              528.8265380859375,
-              166.3740997314453
+              70.86599731445312,
+              442.7086486816406,
+              526.5264892578125,
+              526.372802734375
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Cinderella seemed very indifferent30 in the matter. Indeed, she asked them the name of that princess;but they told her they did not know it, and that the king’s son was very uneasy on her account andwould give all the world to know who she was. At this Cinderella, smiling, replied, “She must, then, bevery beautiful indeed; how happy you have been! Could not I see her? Ah, dear Charlotte, do lend meyour yellow dress which you wear every day.”",
+            "content": "The forest was unnaturally quiet. No birdsong. No rustling of small creatures in the undergrowth.Even the wind seemed to hold its breath.",
             "bbox": [
-              72.00003051757812,
-              176.22311401367188,
-              532.8214721679688,
-              249.29420471191406
+              70.4959945678711,
+              540.4356689453125,
+              526.5509033203125,
+              570.31884765625
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "“Yes, to be sure!” cried Charlotte; “lend my clothes to such a dirty Cinderwench as you are! I should besuch a fool.”",
+            "content": "“Something isn’t right,” Ironfist whispered to himself, scanning the treeline with narrowed eyes.",
             "bbox": [
-              72.00003051757812,
-              264.3542175292969,
-              531.07861328125,
-              291.2641906738281
+              69.2760009765625,
+              584.3816528320312,
+              526.5504150390625,
+              596.3368530273438
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Cinderella, indeed, well expected such an answer, and was very glad of the refusal; for she would havebeen sadly put to it, if her sister had lent her what she asked for jestingly.31",
+            "content": "Then he heard it — a low, guttural cackle that seemed to come from everywhere and nowhereat once.",
             "bbox": [
-              72.00003051757812,
-              306.32421875,
-              534.5984497070312,
-              333.23419189453125
+              70.4959945678711,
+              610.400634765625,
+              524.4708251953125,
+              640.2828369140625
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "The next day the two sisters were at the ball, and so was Cinderella, but dressed even moremagnificently than before. The king’s son was always by her, and never ceased his compliments andkind speeches to her. All this was so far from being tiresome to her, and, indeed, she quite forgot whather godmother had told her. She thought that it was no later than eleven when she counted the clockstriking twelve. She jumped up and fled, as nimble as a deer. The prince followed, but could notovertake her. She left behind one of her glass slippers, which the prince picked up most carefully. Shereached home, but quite out of breath, and in her nasty old clothes, having nothing left of all her finerybut one of the little slippers, the mate to the one that she had dropped.",
+            "content": "Suddenly, a Goblin leaped out from behind a twisted oak! Itwas a wretched creature, no taller than Ironfist’s waist, withmottled green skin, pointed ears that twitched like a bat’s,and yellow eyes that glowed with a malevolent inner light.It wore a patchwork vest made from what appeared to bestolen curtain fabric, and it clutched a gnarled staff carvedfrom blackthorn.",
             "bbox": [
-              72.00003051757812,
-              348.2942199707031,
-              537.1626586914062,
-              457.1041564941406
+              236.30398559570312,
+              654.3456420898438,
+              526.5400390625,
+              773.8648071289062
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "The guards at the palace gate were asked if they had not seen a princess go out. They replied that theyhad seen nobody leave but a young girl, very shabbily32 dressed, and who had more the air of a poorcountry wench than a gentlewoman.",
+            "content": "5",
             "bbox": [
-              72.00003051757812,
-              472.1641845703125,
-              536.2755126953125,
-              512.7241821289062
+              294.64898681640625,
+              791.797607421875,
+              300.6265869140625,
+              803.7528076171875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "When the two sisters returned from the ball Cinderella asked them if they had been well entertained,and if the fine lady had been there.",
-            "bbox": [
-              72.00004577636719,
-              527.7841186523438,
-              529.1969604492188,
-              554.6941528320312
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "They told her, yes, but that she hurried away immediately when it struck twelve, and with so muchhaste33 that she dropped one of her little glass slippers, the prettiest in the world, which the king’s sonhad picked up; that he had done nothing but look at her all the time at the ball, and that most certainlyhe was very much in love with the beautiful person who owned the glass slipper.",
-            "bbox": [
-              72.00004577636719,
-              569.754150390625,
-              536.54833984375,
-              623.9641723632812
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[35]",
-            "bbox": [
-              45.75004577636719,
-              70.17913818359375,
-              61.950042724609375,
-              82.41913604736328
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[40]",
-            "bbox": [
-              45.75004577636719,
-              348.2791442871094,
-              61.950042724609375,
-              360.5191345214844
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "29.Inclination (noun): a desire, interest, or natural attitude towards something30.Indifferent (adjective): having no particular interest in or sympathy towards something31.Jestingly (adverb): jokingly32.Shabbily (adverb): showing signs of wear and tear33.Haste (noun): speed or hurry, often made with urgency",
-            "bbox": [
-              69.47699737548828,
-              694.4140014648438,
-              425.0279235839844,
-              751.833984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 8.25,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           }
         ],
-        "image_blocks": []
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              223.29135131835938,
+              479.05694580078125,
+              425.80499267578125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          },
+          {
+            "bbox": [
+              70.86599731445312,
+              669.9237060546875,
+              226.77188110351562,
+              756.94091796875
+            ],
+            "image_index": 1,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
       },
       {
         "page_id": 6,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "“Cinderella” by Charles Perrault (1697) is in the public domain.",
+            "content": "Ironfist’s Grand Adventure",
             "bbox": [
-              334.29901123046875,
-              615.9099731445312,
-              539.731689453125,
-              626.1099853515625
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
             ],
-            "font": "OpenSans-Italic",
-            "size": 7.5,
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 6,
             "editability_tag": "editable"
           },
           {
-            "content": "What they said was very true; for a few days later, the king’s son had it proclaimed,34 by sound oftrumpet, that he would marry her whose foot this slipper would just fit. They began to try it on theprincesses, then the duchesses and all the court, but in vain; it was brought to the two sisters, who didall they possibly could to force their foot into the slipper, but they did not succeed.",
+            "content": "“I will destroy you, foolish boy!” the Goblin snarled, baring its crooked yellow teeth. “Thisforest belongs to the Goblin King! No human walks through our territory and lives to tell thetale!”",
             "bbox": [
-              72.0,
-              64.98397064208984,
-              534.286376953125,
-              124.40504455566406
+              69.2760009765625,
+              73.7066421508789,
+              524.4463500976562,
+              121.516845703125
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Cinderella, who saw all this, and knew that it was her slipper, said to them, laughing, “Let me see if itwill not fit me.”",
+            "content": "Ironfist drew his blade. The steel sang as it cleared the scabbard, catching the faint moonlightand throwing silver reflections across the dark tree trunks.",
             "bbox": [
-              72.0,
-              139.46505737304688,
-              523.7661743164062,
-              166.3750762939453
+              70.86599731445312,
+              134.71163940429688,
+              524.4701538085938,
+              164.59384155273438
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Her sisters burst out laughing, and began to banter35 with her. The gentleman who was sent to try theslipper looked earnestly36 at Cinderella, and, finding her very handsome, said that it was only just thatshe should try as well, and that he had orders to let everyone try.",
+            "content": "What followed was brief and brutal. He brutally killed the beast with his sword, slashing throughthe darkness like a bolt of lightning. The creature let out a terrible shriek that echoed throughthe woods, sending a murder of crows bursting from the treetops in a flurry of black wings andpanicked cawing.",
             "bbox": [
-              71.9990005493164,
-              176.22409057617188,
-              533.30615234375,
-              221.99513244628906
+              70.30400085449219,
+              177.7886505126953,
+              524.47021484375,
+              243.52584838867188
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "He had Cinderella sit down, and, putting the slipper to her foot, he found that it went on very easily,fitting her as if it had been made of wax. Her two sisters were greatly astonished, but then even moreso, when Cinderella pulled out of her pocket the other slipper, and put it on her other foot. Then incame her godmother and touched her wand to Cinderella’s clothes, making them richer and moremagnificent than any of those she had worn before.",
+            "content": "When it was over, Ironfist stood panting in the clearing, his sword dripping with the strangesilvery ichor that passed for Goblin blood. He felt sick to his stomach — not from fear, but fromthe violence of what he had been forced to do. He was only sixteen, after all. He cleaned hisblade on the mossy trunk of a fallen tree and sheathed it with trembling hands.",
             "bbox": [
-              71.9990005493164,
-              237.05514526367188,
-              530.658447265625,
-              304.9151611328125
+              70.30400085449219,
+              256.7206726074219,
+              524.4581909179688,
+              322.4578552246094
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "And now her two sisters found her to be that fine, beautiful lady whom they had seen at the ball. Theythrew themselves at her feet to beg pardon for all the ill treatment they had made her undergo.Cinderella took them up, and, as she embraced them, said that she forgave them with all her heart,and wanted them always to love her.",
+            "content": "“I’m sorry,” he murmured to the silent forest. “I didn’t want to hurt you. But you gave me nochoice.”",
             "bbox": [
-              71.9990005493164,
-              319.9751892089844,
-              533.6906127929688,
-              374.1851501464844
+              69.2760009765625,
+              335.65264892578125,
+              524.4462890625,
+              365.53485107421875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "She was taken to the young prince, dressed as she was. He thought she was more charming thanbefore, and, a few days after, married her. Cinderella, who was no less good than beautiful, gave hertwo sisters lodgings37 in the palace, and that very same day matched them with two great lords of thecourt.",
+            "content": "The woods remained quiet, but somewhere in the distance, he thought he heard the sound ofother Goblins retreating through the underbrush.",
             "bbox": [
-              71.9990005493164,
-              389.24517822265625,
-              531.4658813476562,
-              443.45513916015625
+              70.49600219726562,
+              378.7296447753906,
+              524.4468994140625,
+              408.61285400390625
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "Moral: Beauty in a woman is a rare treasure that will always be admired. Graciousness,38 however, ispriceless and of even greater value. This is what Cinderella’s godmother gave to her when she taughther to behave like a queen. Young women, in the winning of a heart, graciousness is more importantthan a beautiful hairdo. It is a true gift of the fairies. Without it nothing is possible; with it, one can doanything.",
+            "content": "6",
             "bbox": [
-              71.99901580810547,
-              453.3041687011719,
-              528.0162353515625,
-              526.3751220703125
+              294.64898681640625,
+              791.797607421875,
+              300.6265869140625,
+              803.7528076171875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "Another moral: Without doubt it is a great advantage to have intelligence, courage, good breeding,39",
-            "bbox": [
-              71.9990234375,
-              539.323486328125,
-              525.00146484375,
-              554.6951293945312
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "and common sense. These, and similar talents come only from heaven, and it is good to have them.However, even these may fail to bring you success, without the blessing of a godfather or a godmother.",
-            "bbox": [
-              71.9990234375,
-              555.0851440429688,
-              539.3457641601562,
-              581.9951171875
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[45]",
-            "bbox": [
-              45.7490234375,
-              139.45013427734375,
-              61.94902038574219,
-              151.6901397705078
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "[50]",
-            "bbox": [
-              45.7490234375,
-              458.5001220703125,
-              61.94902038574219,
-              470.7401123046875
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.0,
-            "color": 3355443,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "34.Proclaim (verb): to announce35.Banter (verb): to speak in a friendly and teasing way36.Earnest (adjective): serious and sincere37.a room or place to sleep; a form of shelter38.kindness39.upbringing",
-            "bbox": [
-              69.47699737548828,
-              682.864013671875,
-              290.9490051269531,
-              751.833984375
-            ],
-            "font": "OpenSans-Regular",
-            "size": 8.25,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
@@ -1147,153 +903,519 @@
       },
       {
         "page_id": 7,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "Text-Dependent Questions",
+            "content": "Chapter 3",
             "bbox": [
-              205.91799926757812,
-              83.7989730834961,
-              405.9281005859375,
-              104.19896697998047
+              70.86599731445312,
+              90.78943634033203,
+              177.574462890625,
+              115.5765380859375
             ],
-            "font": "OpenSans-Bold",
-            "size": 15.0,
-            "color": 0,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
             "flags": 20,
             "editability_tag": "editable"
           },
           {
-            "content": "Directions: For the following questions, choose the best answer or respond in complete sentences.",
+            "content": "Downtown Express",
             "bbox": [
-              72.0,
-              113.46895599365234,
-              522.7717895507812,
-              126.72895812988281
+              70.86599731445312,
+              157.39944458007812,
+              274.9134216308594,
+              182.18653869628906
             ],
-            "font": "OpenSans-BoldItalic",
-            "size": 9.75,
-            "color": 0,
-            "flags": 22,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
             "editability_tag": "editable"
           },
           {
-            "content": "1.Part A: At the beginning of the story, how is Cinderella treated differently than herstepsisters?",
+            "content": "T",
             "bbox": [
-              95.83100128173828,
-              142.35897827148438,
-              493.34088134765625,
-              167.31898498535156
+              70.86599731445312,
+              446.246826171875,
+              108.8873062133789,
+              508.474853515625
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "A.Cinderella is forced by her stepmother to live in a smaller room and do harderwork.B.Cinderella lives and works in a different city.C.Cinderella and her stepsisters are all treated the same.D.Cinderella is forced by her stepmother to live in a smaller room and wear a glassslipper.",
-            "bbox": [
-              145.54800415039062,
-              169.50900268554688,
-              538.6824340820312,
-              245.76905822753906
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "2.PART B: Which phrase from the text best supports the answer to Part A?",
+            "content": "he Whispering Woods eventually gave way to rolling farmland, and the rolling farmlandgave way to the outskirts of Ashenmere City — a bustling metropolis of cobblestonestreets, towering brick buildings, and more people than Ironfist had ever seen gath-ered in one place. He had heard stories about the city from traveling merchants who visitedWillowmere, but nothing could have prepared him for the sheer noise of it all. Street vendorshawking roasted chestnuts, carriages clattering over cobblestones, dogs barking, children laugh-ing, and somewhere a street musician playing a merry tune on a battered accordion.",
             "bbox": [
-              95.83100128173828,
-              268.2090759277344,
-              448.92962646484375,
-              281.46905517578125
+              70.30400848388672,
+              448.7186584472656,
+              526.4547119140625,
+              568.2378540039062
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "A.“She employed her in the meanest work of the house.” (Paragraph 2)B.“It happened that the king’s son gave a ball” (Paragraph 4)C.“They sent for the best hairdresser they could get to make up their headpiecesand adjust their hairdos…” (Paragraph 7)D.“she dropped one of her little glass slippers, the prettiest in the world, which theking’s son had picked up” (Paragraph 43)",
+            "content": "He checked the crumpled map his grandfather had drawn for him years ago. The next stage ofhis journey required crossing the city to reach the Northern Mountains, and the fastest way todo that was underground.",
             "bbox": [
-              145.54800415039062,
-              283.6590881347656,
-              537.0347290039062,
-              359.91912841796875
+              70.86602783203125,
+              583.8036499023438,
+              524.458251953125,
+              631.6128540039062
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "3.What does paragraph 18 contribute to the structure of the overall story?",
+            "content": "He took the Subway downtown — the rumbling train carrying him through dark tunnels beneaththe streets. The carriage was warm and smelled of damp wool and engine oil. An old womanacross from him was knitting something enormous and shapeless from bright purple yarn, anda man in a bowler hat was reading a newspaper with the headline: “GOBLIN SIGHTINGS ONTHE RISE — MAYOR URGES CALM.”",
             "bbox": [
-              95.83100128173828,
-              382.3591613769531,
-              450.13861083984375,
-              395.619140625
+              70.53103637695312,
+              647.1786499023438,
+              524.4463500976562,
+              730.8397216796875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "A.It explains why Cinderella wants to go to the ball.B.It explains how Cinderella’s stepsisters get to the ball in a magic carriage.C.It explains how the fairy godmother’s magic is used to help Cinderella get to theball.D.It explains why Cinderella lives in an attic instead of a nicer room.",
+            "content": "“Let’s go!”",
             "bbox": [
-              145.54800415039062,
-              397.8091735839844,
-              534.753173828125,
-              462.36920166015625
+              270.9169921875,
+              751.5136108398438,
+              324.3567199707031,
+              763.4688110351562
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "4.At the end of the story, how does Cinderella treat her stepsisters? What does this revealabout her character?",
+            "content": "7",
             "bbox": [
-              95.83100891113281,
-              484.8092346191406,
-              519.7926635742188,
-              509.76922607421875
+              294.64898681640625,
+              791.797607421875,
+              300.6265869140625,
+              803.7528076171875
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           }
         ],
-        "image_blocks": []
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              227.79837036132812,
+              479.05694580078125,
+              430.31201171875
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [
+              {
+                "content": "SUBWAY",
+                "bbox_in_image": [
+                  239.0,
+                  73.0,
+                  550.0,
+                  176.0
+                ],
+                "confidence": 0.9785284418994662,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Let's",
+                "bbox_in_image": [
+                  567.0,
+                  231.0,
+                  651.0,
+                  273.0
+                ],
+                "confidence": 0.9755210862136884,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "go!",
+                "bbox_in_image": [
+                  579.6107425767057,
+                  271.5012198097823,
+                  640.3892574232943,
+                  316.4987801902177
+                ],
+                "confidence": 0.7309795941913446,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          }
+        ]
       },
       {
         "page_id": 8,
-        "width": 612.0,
-        "height": 792.0,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "5.What is the author’s purpose in the final two paragraphs?",
+            "content": "Ironfist’s Grand Adventure",
             "bbox": [
-              95.83100128173828,
-              69.2190170288086,
-              382.8538818359375,
-              82.47901916503906
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist murmured to himself as the train lurched forward into the tunnel. Through the grimywindow, he caught one last glimpse of the street above.",
+            "bbox": [
+              70.43599700927734,
+              73.7066421508789,
+              524.7571411132812,
+              103.58984375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Outside the station, a group of children had built a Snowman.It wore a top hat and had a bright orange carrot for a nose, withtwo lumps of coal for eyes that seemed to stare at passersbywith a cheerful, frozen grin. A tattered red scarf was wrappedaround its neck, fluttering gently in the icy breeze. The childrenlaughed and threw snowballs at each other, their cheeks red asapples, their breath forming little white clouds in the frigid air.",
+            "bbox": [
+              70.43599700927734,
+              116.7846450805664,
+              374.8067932128906,
+              236.30284118652344
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist smiled at the scene. It reminded him of winters back in Willowmere, when he and Lilywould build snow forts in the meadow behind their cottage and wage epic snowball battles thatlasted until their mother called them in for hot cocoa.",
+            "bbox": [
+              70.43599700927734,
+              249.4976348876953,
+              524.76904296875,
+              297.3078308105469
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "But he couldn’t linger. The mountains were calling.",
+            "bbox": [
+              70.86599731445312,
+              310.5026550292969,
+              318.3625183105469,
+              322.4578552246094
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "8",
+            "bbox": [
+              294.64898681640625,
+              791.797607421875,
+              300.6265869140625,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              382.677001953125,
+              132.36041259765625,
+              524.40966796875,
+              211.46701049804688
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 9,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Chapter 4",
+            "bbox": [
+              70.86599731445312,
+              90.37944030761719,
+              177.574462890625,
+              115.16654205322266
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The Shadow",
+            "bbox": [
+              70.86599731445312,
+              156.57943725585938,
+              202.41114807128906,
+              181.3665313720703
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "T",
+            "bbox": [
+              70.86599731445312,
+              444.60784912109375,
+              108.8873062133789,
+              506.83587646484375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "he city streets grew quiet as evening fell like a heavy velvet curtain over Ashenmere. Thegas lamps flickered to life one by one along the boulevard, casting pools of amber lightthat barely penetrated the thickening fog. Most sensible people had retreated indoorsby now — Ironfist could see their silhouettes moving behind curtained windows, warm and safein their homes. The smell of cooking — roast meat, baking bread, something with cinnamon —drifted out of the houses and made his stomach growl.",
+            "bbox": [
+              70.86599731445312,
+              447.0806579589844,
+              526.2515869140625,
+              548.671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "He was searching for an inn where he could spend the night before setting out for the mountainsat dawn. His map indicated there should be one on Cobbler’s Lane, just past the old fountainwith the stone mermaid.",
+            "bbox": [
+              70.43600463867188,
+              563.82763671875,
+              524.4583129882812,
+              611.6378173828125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "But as he turned the corner, he saw something that made him freeze mid-step.",
+            "bbox": [
+              70.86599731445312,
+              626.7936401367188,
+              442.5770568847656,
+              638.7488403320312
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "From the dark alley ahead, a shape emerged — neither man nor woman, neither young nor old.Just a presence. A figure wrapped in a cloak so dark it seemed to swallow the lamplight aroundit. Where a face should have been, there was only shadow, and within that shadow, two pointsof pale light that might have been eyes.",
+            "bbox": [
+              70.63899993896484,
+              653.9046630859375,
+              526.55029296875,
+              719.641845703125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They are coming closer.",
+            "bbox": [
+              70.47200012207031,
+              734.7976684570312,
+              186.68777465820312,
+              746.8037719726562
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist pressed his back against the cold brick wall and held his breath. His heart was hammering",
+            "bbox": [
+              70.86599731445312,
+              761.90966796875,
+              524.458251953125,
+              773.8648681640625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "9",
+            "bbox": [
+              294.64898681640625,
+              791.797607421875,
+              300.6265869140625,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              226.56936645507812,
+              479.05694580078125,
+              429.0830078125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 10,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Ironfist’s Grand Adventure",
+            "bbox": [
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "so loud he was certain the creature could hear it. The figure moved with an unsettling fluidity,as if it were not walking but gliding across the cobblestones, its dark cloak trailing behind likeink bleeding through water.",
+            "bbox": [
+              70.86599731445312,
+              73.7066421508789,
+              525.9765625,
+              121.516845703125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Who are you?” he whispered into the fog. His voice came out thin and reedy, nothing like thebrave warrior he fancied himself to be.",
+            "bbox": [
+              69.2760009765625,
+              134.71163940429688,
+              524.458251953125,
+              164.59384155273438
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "But they did not answer. They simply watched, those pale eyes unblinking, and then — like acandle flame snuffed out by a sudden breeze — the figure dissolved into the mist and was gone.",
+            "bbox": [
+              70.86599731445312,
+              177.7886505126953,
+              526.5504150390625,
+              207.67184448242188
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist stood there for a long time, shaking, before he found the courage to move again.",
+            "bbox": [
+              70.86601257324219,
+              220.86663818359375,
+              492.537841796875,
+              232.82183837890625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "10",
+            "bbox": [
+              291.510986328125,
+              791.797607421875,
+              303.4661865234375,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
@@ -1302,82 +1424,2162 @@
         "image_blocks": []
       },
       {
-        "page_id": 9,
-        "width": 612.0,
-        "height": 792.0,
+        "page_id": 11,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
         "text_blocks": [
           {
-            "content": "Discussion Questions",
+            "content": "Chapter 5",
             "bbox": [
-              226.4770050048828,
-              83.7989730834961,
-              385.4470520019531,
-              104.19896697998047
+              70.86599731445312,
+              90.44243621826172,
+              177.574462890625,
+              115.22953796386719
             ],
-            "font": "OpenSans-Bold",
-            "size": 15.0,
-            "color": 0,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
             "flags": 20,
             "editability_tag": "editable"
           },
           {
-            "content": "Directions: Brainstorm your answers to the following questions in the space provided. Be prepared toshare your original ideas in a class discussion.",
+            "content": "The Grand Feast",
             "bbox": [
-              72.0,
-              113.46895599365234,
-              537.114013671875,
-              138.42897033691406
+              70.86599731445312,
+              156.7054443359375,
+              251.2665252685547,
+              181.49253845214844
             ],
-            "font": "OpenSans-BoldItalic",
-            "size": 9.75,
-            "color": 0,
-            "flags": 22,
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
             "editability_tag": "editable"
           },
           {
-            "content": "1.Why do you think the stepsisters were mean to Cinderella? Did the stepsisters get whatthey deserved in the end? Do you think they have learned a lesson? Why or why not?",
+            "content": "T",
             "bbox": [
-              95.83100128173828,
-              150.30899047851562,
-              517.4526977539062,
-              175.2689971923828
+              70.86599731445312,
+              444.85986328125,
+              108.8873062133789,
+              507.0878601074219
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
-            "color": 0,
-            "flags": 4,
-            "editability_tag": "editable"
-          },
-          {
-            "content": "2.Based on the story, what are the characteristics of a good person? After reading the story,which characters do you consider good and why?",
-            "bbox": [
-              95.83100128173828,
-              353.7090148925781,
-              529.2793579101562,
-              378.66900634765625
-            ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           },
           {
-            "content": "3.According to the morals described by the author in the story, how should we respond toadversity? Do you agree with the author? Why or why not? Cite evidence from this text, yourown experience, and other literature, art, or history in your answer.",
+            "content": "he shadow turned out to be a friend. Well, perhaps “friend” was too strong a word —it turned out to be the old innkeeper of the Silver Stag Tavern, a stooped, mysteriousfigure named Mr. Greycloak, who had a peculiar habit of skulking about in the fog to“check on the neighborhood,” as he put it. He was eccentric, certainly, but harmless, and heinvited Ironfist inside with a toothless grin and a promise of the finest Christmas feast this sideof the Northern Mountains.",
             "bbox": [
-              95.83100128173828,
-              557.1090087890625,
-              538.5413208007812,
-              593.7689819335938
+              69.2760009765625,
+              447.3326416015625,
+              526.2325439453125,
+              548.923828125
             ],
-            "font": "OpenSans-Regular",
-            "size": 9.75,
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "And what a feast it was.",
+            "bbox": [
+              70.43600463867188,
+              564.1426391601562,
+              185.30157470703125,
+              576.0978393554688
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They enjoyed a big roasted Turkey for Christmas dinner.The golden bird sat at the center of the long oak table, itscrispy skin glistening with rendered fat and rosemary, sur-rounded by mountains of roasted potatoes, boats of steam-ing gravy, bowls of cranberry sauce, and platters of roastedroot vegetables. The hall was decked with boughs of hollyand ivy, and dozens of candles cast a warm, flickering glowacross the faces of the assembled guests — farmers, merchants, traveling performers, and onerather bewildered-looking teenager from Willowmere.",
+            "bbox": [
+              70.86599731445312,
+              591.316650390625,
+              526.51318359375,
+              746.6898193359375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist held a juicy Hamburger in his other hand — his favorite comfort food, even at a fancy",
+            "bbox": [
+              70.86599731445312,
+              761.9096069335938,
+              524.7315063476562,
+              773.9157104492188
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "11",
+            "bbox": [
+              291.88201904296875,
+              791.797607421875,
+              303.3948669433594,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              226.75836181640625,
+              479.05694580078125,
+              429.2720031738281
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [
+              {
+                "content": "{BAKCRy",
+                "bbox_in_image": [
+                  272.1506902579803,
+                  88.04282171347032,
+                  580.8493097420197,
+                  222.95717828652968
+                ],
+                "confidence": 0.8373997176017974,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          },
+          {
+            "bbox": [
+              70.86599731445312,
+              606.894775390625,
+              226.77188110351562,
+              693.9119873046875
+            ],
+            "image_index": 1,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 12,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Ironfist’s Grand Adventure",
+            "bbox": [
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "feast. The innkeeper had prepared it specially for him after learning that the boy had a peculiarfondness for ground beef patties between two halves of a sesame-seed bun. It was, Ironfistreflected as he took an enormous bite, possibly the best Hamburger he had ever eaten.",
+            "bbox": [
+              70.86599731445312,
+              73.7066421508789,
+              524.6854248046875,
+              121.516845703125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "BAKERY",
+            "bbox": [
+              261.42401123046875,
+              140.41268920898438,
+              334.4689636230469,
+              157.62808227539062
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 17.21540069580078,
+            "color": 16777215,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "On the wall behind the head table hung a wooden signboard that read “BAKERY” in ornategolden letters — a relic from the tavern’s previous life as the village bakehouse. Mr. Greycloakwas rather proud of it.",
+            "bbox": [
+              70.43596649169922,
+              174.6746368408203,
+              524.7571411132812,
+              222.4838409423828
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“My grandmother baked the finest sourdough in three counties,” he told Ironfist, gesturing at thesign with a gnarled finger. “People came from miles around. That sign hung above her door forfifty years.”",
+            "bbox": [
+              69.27597045898438,
+              235.6786346435547,
+              524.6494750976562,
+              283.4888610839844
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Through the tall arched windows, fireworks exploded in the starry December sky — great bloom-ing chrysanthemums of red, gold, and green that lit up the snow-covered rooftops and cast danc-ing shadows across the feast.",
+            "bbox": [
+              70.49596405029297,
+              296.6836242675781,
+              526.443359375,
+              344.4928283691406
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "BOOM!",
+            "bbox": [
+              248.8280029296875,
+              350.19598388671875,
+              346.4618835449219,
+              378.09136962890625
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 27.89539909362793,
+            "color": 15158332,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The children at the far end of the table squealed with delight. An old man spilled his soup.And Ironfist grinned from ear to ear, thinking that perhaps adventures weren’t only about fight-ing Goblins and chasing shadows — sometimes they were about sitting in a warm room withstrangers who felt like family, eating too much food, and watching the sky catch fire.",
+            "bbox": [
+              70.43599700927734,
+              387.379638671875,
+              526.551025390625,
+              453.1158447265625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "12",
+            "bbox": [
+              291.510986328125,
+              791.797607421875,
+              303.4661865234375,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
             "color": 0,
             "flags": 4,
             "editability_tag": "editable"
           }
         ],
         "image_blocks": []
+      },
+      {
+        "page_id": 13,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Chapter 6",
+            "bbox": [
+              70.86599731445312,
+              89.28643798828125,
+              177.574462890625,
+              114.07353973388672
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The Mountain Trail",
+            "bbox": [
+              70.86599731445312,
+              154.3934326171875,
+              281.1349792480469,
+              179.18052673339844
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "T",
+            "bbox": [
+              70.86599731445312,
+              440.23583984375,
+              108.8873062133789,
+              502.4638671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "he next morning, Ironfist and his little sister Lily set out for the Rocky Mountains. Shehad been waiting for him at the crossroads just outside town, bouncing on her heelswith barely contained excitement, her cheeks rosy from the cold and a knitted hat pulleddown over her pigtails.",
+            "bbox": [
+              70.86600494384766,
+              442.7086486816406,
+              524.476318359375,
+              508.44586181640625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“You should be careful,” Ironfist warned his sister as they began the steep ascent up the Thorn-back Ridge. “The trail can be dangerous. One wrong step and you’ll tumble down into thevalley. And I’d rather not explain to Mother how I lost her youngest daughter.”",
+            "bbox": [
+              69.2760009765625,
+              522.5086669921875,
+              526.44287109375,
+              570.31884765625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“You worry too much,” Lily replied cheerfully, skipping ahead over the loose stones with thefearless agility of a mountain goat. “Race you to the top!”",
+            "bbox": [
+              69.2760009765625,
+              584.3816528320312,
+              524.458251953125,
+              614.2638549804688
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The old mountain guide was waiting for them at the Shepherd’sCairn — a weathered man with a beard like a snowdrift and eyesthe color of glacier ice. He’d been guiding travelers throughthese mountains for forty years, and he knew every ridge, everyravine, every treacherous patch of black ice that could send theunwary sliding a thousand feet to their doom.",
+            "bbox": [
+              70.86599731445312,
+              628.32763671875,
+              373.0336608886719,
+              729.9188232421875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "He squinted at his ancient map through a pair of spectacles heldtogether with string and hope, and said in a voice like gravel rolling downhill:",
+            "bbox": [
+              70.86599731445312,
+              743.9816284179688,
+              443.4378662109375,
+              773.8648071289062
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "13",
+            "bbox": [
+              291.6600036621094,
+              791.797607421875,
+              303.6152038574219,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              223.29135131835938,
+              479.05694580078125,
+              425.80499267578125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [
+              {
+                "content": "MT:",
+                "bbox_in_image": [
+                  870.0,
+                  162.0,
+                  908.0,
+                  192.0
+                ],
+                "confidence": 0.9379210313029624,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "TRAIL",
+                "bbox_in_image": [
+                  972.0,
+                  152.0,
+                  1034.0,
+                  182.0
+                ],
+                "confidence": 0.9993587388103122,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "ALT: 2150M",
+                "bbox_in_image": [
+                  900.0,
+                  184.0,
+                  1004.0,
+                  214.0
+                ],
+                "confidence": 0.7349058963277864,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "PEAK 6KM",
+                "bbox_in_image": [
+                  914.0,
+                  232.0,
+                  1018.0,
+                  262.0
+                ],
+                "confidence": 0.9987197449605343,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "VALLEY 8KM",
+                "bbox_in_image": [
+                  898.0,
+                  260.0,
+                  1024.0,
+                  290.0
+                ],
+                "confidence": 0.984490198570536,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "ELARA",
+                "bbox_in_image": [
+                  903.6583592135001,
+                  153.5394252313179,
+                  973.3416407864999,
+                  190.4605747686821
+                ],
+                "confidence": 0.999968545852762,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          },
+          {
+            "bbox": [
+              382.677001953125,
+              643.9044189453125,
+              524.40966796875,
+              723.010986328125
+            ],
+            "image_index": 1,
+            "ocr_text_blocks": [
+              {
+                "content": "OW",
+                "bbox_in_image": [
+                  808.0,
+                  586.0,
+                  846.0,
+                  610.0
+                ],
+                "confidence": 0.3101621647493008,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 14,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Ironfist’s Grand Adventure",
+            "bbox": [
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Walk 15 miles to the North. Bring 3 pounds of dried food and plenty of water. It’s nearly 100degrees Fahrenheit out there in the sun, believe it or not. The altitude plays tricks. You’ll freezein the shadows and roast on the ridgeline.”",
+            "bbox": [
+              69.2760009765625,
+              73.7066421508789,
+              524.47021484375,
+              121.516845703125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist converted the figures in his head — that was roughly 24 kilometers, about 1.4 kilogramsof food, and nearly 38 degrees Celsius. The old Imperial measurements still confused himsometimes.",
+            "bbox": [
+              70.86599731445312,
+              134.71163940429688,
+              524.458251953125,
+              182.52084350585938
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“How long will the crossing take?” Lily asked, peering up at the towering peaks with wide eyes.",
+            "bbox": [
+              69.2760009765625,
+              195.71664428710938,
+              526.5504150390625,
+              207.67184448242188
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Two days if the weather holds. Three if it doesn’t. A lifetime if you take a wrong turn.” Theguide chuckled darkly. “But don’t worry, little one. I haven’t lost a traveler yet. Well... notrecently, anyway.”",
+            "bbox": [
+              69.2760009765625,
+              220.86663818359375,
+              524.4702758789062,
+              268.6758728027344
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Lily looked worried, but Ironfist squeezed her hand.",
+            "bbox": [
+              70.86599731445312,
+              281.8706359863281,
+              320.2156066894531,
+              293.8258361816406
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Don’t worry,” he said gently. “I’ll protect you. That’s what big brothers are for.”",
+            "bbox": [
+              69.2760009765625,
+              307.0206604003906,
+              459.6252136230469,
+              318.9758605957031
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They set off up the mountain as the sun climbed higher, painting the snow-covered peaks inshades of rose and gold. The air was thin and sharp, tasting of pine resin and glacial meltwater,and every breath felt like drinking ice.",
+            "bbox": [
+              70.49600219726562,
+              332.171630859375,
+              525.964599609375,
+              379.9808349609375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "14",
+            "bbox": [
+              291.510986328125,
+              791.797607421875,
+              303.4661865234375,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 15,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Chapter 7",
+            "bbox": [
+              70.86599731445312,
+              89.28643798828125,
+              177.574462890625,
+              114.07353973388672
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Campfire Stories",
+            "bbox": [
+              70.86599731445312,
+              154.3934326171875,
+              251.44003295898438,
+              179.18052673339844
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "T",
+            "bbox": [
+              70.86599731445312,
+              440.23583984375,
+              108.8873062133789,
+              502.4638671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "hey set up camp near a quiet stream that gurgled over smooth stones on its way down tothe valley far below. The stars blazed overhead like diamonds scattered across blackvelvet — more stars than Ironfist had ever seen, even on the clearest nights in Wil-lowmere. Without the glow of city lights, the Milky Way was visible as a vast, luminous riverof light flowing from one horizon to the other. It was, Ironfist thought, the most beautiful thinghe had ever seen.",
+            "bbox": [
+              70.86599731445312,
+              442.7086486816406,
+              526.46044921875,
+              544.2998046875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "As they roasted marshmallows — Lily liked hers barely toasted,Ironfist preferred his charred black on the outside and moltenin the middle — Ironfist tried to make his sister laugh with ariddle.",
+            "bbox": [
+              222.56100463867188,
+              558.3636474609375,
+              525.9361572265625,
+              624.0997924804688
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Here’s one Grandfather used to tell me,” he said, turning hismarshmallow slowly over the flames. “Time flies like an arrow;fruit flies like a banana!”",
+            "bbox": [
+              220.97100830078125,
+              638.16357421875,
+              525.4340209960938,
+              685.9727783203125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Lily giggled so hard she nearly dropped her marshmallow into the fire. “That doesn’t even makesense!” she exclaimed.",
+            "bbox": [
+              70.86599731445312,
+              700.0365600585938,
+              524.4581909179688,
+              729.9187622070312
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“That’s the whole point,” said Ironfist, poking the fire with a long stick and sending a shower oforange sparks spiraling up into the starry sky. “Some things are funnier when they don’t make",
+            "bbox": [
+              69.2760009765625,
+              743.9815673828125,
+              524.4462890625,
+              773.86474609375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "15",
+            "bbox": [
+              291.6600036621094,
+              791.797607421875,
+              303.6152038574219,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              223.29135131835938,
+              479.05694580078125,
+              425.80499267578125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          },
+          {
+            "bbox": [
+              70.86599731445312,
+              573.939453125,
+              212.5986328125,
+              653.0460205078125
+            ],
+            "image_index": 1,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 16,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Ironfist’s Grand Adventure",
+            "bbox": [
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "sense. Grandfather always said that the best jokes are the ones that make you think twice.”",
+            "bbox": [
+              70.86599731445312,
+              73.7066421508789,
+              504.4810791015625,
+              85.66183471679688
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They sat in comfortable silence for a while, listening to the crackle of the fire and the distanthooting of an owl. The mountain air was cold enough to see their breath, but the fire was warm,and Lily had snuggled into her sleeping bag with only her face poking out, like a caterpillar ina very colorful cocoon.",
+            "bbox": [
+              70.49600219726562,
+              98.85664367675781,
+              525.95263671875,
+              164.59384155273438
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Ironfist?” she said sleepily.",
+            "bbox": [
+              69.2760009765625,
+              177.7886505126953,
+              204.967529296875,
+              189.7438507080078
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Yes?”",
+            "bbox": [
+              69.2760009765625,
+              202.9386444091797,
+              102.59513854980469,
+              214.8938446044922
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Do you think we’ll really find the Kingdom? The one in Grandfather’s stories?”",
+            "bbox": [
+              69.2760009765625,
+              228.0896453857422,
+              457.8558654785156,
+              240.0448455810547
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist stared into the flames, watching them dance and leap and die and be reborn, endlessly,tirelessly.",
+            "bbox": [
+              70.86599731445312,
+              253.23963928222656,
+              525.964599609375,
+              283.1218566894531
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“I don’t know,” he admitted. “But I think the journey is worth taking, regardless of what we findat the end.”",
+            "bbox": [
+              69.2760009765625,
+              296.316650390625,
+              524.4462280273438,
+              326.1988525390625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "But Lily was already asleep, her breathing slow and steady, a faint smile on her lips.",
+            "bbox": [
+              70.86599731445312,
+              339.3946533203125,
+              473.1823425292969,
+              351.349853515625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "16",
+            "bbox": [
+              291.510986328125,
+              791.797607421875,
+              303.4661865234375,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 17,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Chapter 8",
+            "bbox": [
+              70.86599731445312,
+              89.28643798828125,
+              177.574462890625,
+              114.07353973388672
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The Enchanted Door",
+            "bbox": [
+              70.86599731445312,
+              154.3934326171875,
+              292.5866394042969,
+              179.18052673339844
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "I",
+            "bbox": [
+              70.86599731445312,
+              440.23583984375,
+              91.58792114257812,
+              502.4638671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "nside the mountain cave, past columns of glittering quartz and curtains of crystalline stalac-tites that chimed softly when the wind passed through them, they found a door. Not justany door — this was a door that clearly did not want to be found. It was set deep into theliving rock, its surface carved with runes so old that even the mountain guide (who claimed tospeak fourteen languages, including three that were technically extinct) could not decipher them.The wood was dark and ancient, harder than iron, and bound with bands of tarnished silver. Andat its center, gleaming like a tiny golden eye, was the most intricate keyhole Ironfist had everseen.",
+            "bbox": [
+              70.49600219726562,
+              442.7086486816406,
+              526.5743408203125,
+              580.1548461914062
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“It’s locked,” said Lily, stating the obvious with the unshakeable confidence of a ten-year-old.",
+            "bbox": [
+              69.2760009765625,
+              594.2176513671875,
+              518.4925537109375,
+              606.1728515625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Clearly,” Ironfist replied, pushing against the door with his shoulder. It didn’t budge a millime-ter. He might as well have been pushing against the mountain itself.",
+            "bbox": [
+              69.2760009765625,
+              620.2366333007812,
+              526.454833984375,
+              650.1188354492188
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Then, from a crevice in the cave wall, there came a brilliant flash of silver light — so bright thatIronfist and Lily both threw their arms over their eyes. When they lowered them again, a tinyfairy was hovering before the door on wings of iridescent glass. She was no bigger than Ironfist’shand, and she wore a dress that appeared to be made from woven moonlight and morning dew.",
+            "bbox": [
+              70.49600219726562,
+              664.181640625,
+              524.757080078125,
+              729.9188232421875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "She pulled out her Wand — long, thin, and shimmering like asliver of captured starlight — and carefully inserted it into the",
+            "bbox": [
+              222.56100463867188,
+              743.9816284179688,
+              524.4537353515625,
+              773.8648071289062
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "17",
+            "bbox": [
+              291.6600036621094,
+              791.797607421875,
+              303.6152038574219,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              223.29135131835938,
+              479.05694580078125,
+              425.80499267578125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [
+              {
+                "content": "MEOW",
+                "bbox_in_image": [
+                  1105.0,
+                  463.0,
+                  1153.0,
+                  481.0
+                ],
+                "confidence": 0.9901641011238098,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "7",
+                "bbox_in_image": [
+                  703.0064985989292,
+                  -12.964911602730538,
+                  771.9935014010708,
+                  69.96491160273054
+                ],
+                "confidence": 0.15967908754322835,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "1",
+                "bbox_in_image": [
+                  362.7282988810475,
+                  29.01336991507075,
+                  436.2717011189525,
+                  158.98663008492926
+                ],
+                "confidence": 0.261808987961615,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Iz B",
+                "bbox_in_image": [
+                  599.2448296563452,
+                  636.1190646990802,
+                  688.7551703436548,
+                  690.8809353009198
+                ],
+                "confidence": 0.32180075093407295,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          },
+          {
+            "bbox": [
+              70.86599731445312,
+              759.5584106445312,
+              212.5986328125,
+              838.6649780273438
+            ],
+            "image_index": 1,
+            "ocr_text_blocks": [
+              {
+                "content": "NKS\"",
+                "bbox_in_image": [
+                  533.0,
+                  180.0,
+                  643.0,
+                  224.0
+                ],
+                "confidence": 0.3172700107097626,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Tn &",
+                "bbox_in_image": [
+                  556.0,
+                  232.0,
+                  618.0,
+                  256.0
+                ],
+                "confidence": 0.08953750167880858,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "3",
+                "bbox_in_image": [
+                  449.0,
+                  336.0,
+                  485.0,
+                  435.0
+                ],
+                "confidence": 0.35257714344574254,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "444X",
+                "bbox_in_image": [
+                  570.0,
+                  538.0,
+                  642.0,
+                  566.0
+                ],
+                "confidence": 0.13939449191093445,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "4",
+                "bbox_in_image": [
+                  544.0,
+                  586.0,
+                  572.0,
+                  618.0
+                ],
+                "confidence": 0.8424677103647392,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "7",
+                "bbox_in_image": [
+                  262.0,
+                  704.0,
+                  310.0,
+                  762.0
+                ],
+                "confidence": 0.21822363974480652,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "1",
+                "bbox_in_image": [
+                  67.6422754816938,
+                  125.14580955388038,
+                  280.3577245183062,
+                  757.8541904461197
+                ],
+                "confidence": 0.1909274104648695,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "KTA",
+                "bbox_in_image": [
+                  626.0238772906075,
+                  186.04513798310094,
+                  715.9761227093925,
+                  259.9548620168991
+                ],
+                "confidence": 0.0743146346877885,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Mt,",
+                "bbox_in_image": [
+                  626.0,
+                  235.09400840186785,
+                  676.0,
+                  279.9059915981321
+                ],
+                "confidence": 0.03727409922953235,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "3",
+                "bbox_in_image": [
+                  681.6960372667223,
+                  232.05268933957785,
+                  738.3039627332777,
+                  300.94731066042215
+                ],
+                "confidence": 0.506670750500021,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "42+S;",
+                "bbox_in_image": [
+                  629.3447882227953,
+                  487.9005399169125,
+                  728.6552117772047,
+                  570.0994600830875
+                ],
+                "confidence": 0.1329853666407824,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Sikl",
+                "bbox_in_image": [
+                  523.0079025491236,
+                  514.0815813559439,
+                  583.9920974508764,
+                  561.9184186440561
+                ],
+                "confidence": 0.5644925832748413,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Ii W44A",
+                "bbox_in_image": [
+                  563.7639320225002,
+                  571.7159765750368,
+                  691.2360679774998,
+                  633.2840234249632
+                ],
+                "confidence": 0.09234701860927465,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 18,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Ironfist’s Grand Adventure",
+            "bbox": [
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "tiny keyhole. The Wand fit perfectly, its slender form slidinginto the narrow opening as if it had been made for exactly thispurpose.",
+            "bbox": [
+              222.56100463867188,
+              73.7066421508789,
+              524.4417724609375,
+              121.516845703125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "*Click.* The lock turned. Ancient dust cascaded from the doorframe, and the runes carved into the wood began to glow with asoft blue light, pulsing gently like a heartbeat. Slowly, with a groan that seemed to come fromthe very bones of the mountain, the door swung open.",
+            "bbox": [
+              70.86599731445312,
+              134.70852661132812,
+              524.6398315429688,
+              200.44883728027344
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "A small fluffy white cat sat by the door, watching the proceedings with the politely bemusedexpression that cats reserve for events they consider beneath their dignity but mildly interestingnonetheless. It blinked its luminous green eyes, yawned enormously, and said:",
+            "bbox": [
+              70.43599700927734,
+              213.64364624023438,
+              524.4702758789062,
+              261.4528503417969
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "MEOWMEOW!",
+            "bbox": [
+              245.72900390625,
+              276.6531677246094,
+              349.5556640625,
+              323.6213684082031
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 10.909099578857422,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“I think it wants to come with us,” said Lily, scooping the cat up into her arms. The cat purredlike a small, furry engine and settled against her chest with an air of absolute proprietorship.",
+            "bbox": [
+              69.2760009765625,
+              332.91064453125,
+              524.4581909179688,
+              362.7928466796875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Fine,” said Ironfist, stepping through the enchanted doorway into the light beyond. “But if itgets us into trouble, you’re explaining it to Mother.”",
+            "bbox": [
+              69.2760009765625,
+              375.9876403808594,
+              524.458251953125,
+              405.8698425292969
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "18",
+            "bbox": [
+              291.510986328125,
+              791.797607421875,
+              303.4661865234375,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 19,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Chapter 9",
+            "bbox": [
+              70.86599731445312,
+              89.28643798828125,
+              177.574462890625,
+              114.07353973388672
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The City Park",
+            "bbox": [
+              70.86599731445312,
+              154.3934326171875,
+              222.33998107910156,
+              179.18052673339844
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "T",
+            "bbox": [
+              70.86599731445312,
+              440.23583984375,
+              108.8873062133789,
+              502.4638671875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "he enchanted door — as enchanted doors are wont to do — deposited them somewhereentirely unexpected. Instead of the treasure vault or dragon’s lair that Ironfist had beenbracing himself for, they found themselves standing in the middle of a sun-drenchedcity park, surrounded by neatly trimmed hedges, flowering rose bushes, and the distant soundof an ice cream van playing a tinny rendition of “Greensleeves.”",
+            "bbox": [
+              70.86600494384766,
+              442.7086486816406,
+              524.464111328125,
+              526.372802734375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Where are we?” Lily asked, blinking in the sudden brightness, still clutching the cat.",
+            "bbox": [
+              69.2760009765625,
+              540.4356689453125,
+              479.3393859863281,
+              552.390869140625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“I have absolutely no idea,” Ironfist admitted.",
+            "bbox": [
+              69.2760009765625,
+              566.4546508789062,
+              288.4148254394531,
+              578.4098510742188
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Let’s play baseball after school!” shouted a group of childrenrunning across the green field with bats and gloves. They wereplaying on a wide, flat stretch of grass, taking turns batting,pitching, and chasing fly balls with the carefree abandon of kidswho have absolutely nothing to worry about except whether it’stheir turn at bat.",
+            "bbox": [
+              70.43599700927734,
+              592.4725952148438,
+              374.24114990234375,
+              694.0637817382812
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Behind them, a red double-decker bus rumbled down the cob-blestone street, its upper deck packed with tourists snapping photographs. An old red telephonebooth stood on the corner like a silent guardian from another era, its glass panels clouded withage.",
+            "bbox": [
+              70.86599731445312,
+              708.1275634765625,
+              524.4581909179688,
+              773.86474609375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "19",
+            "bbox": [
+              291.6600036621094,
+              791.797607421875,
+              303.6152038574219,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              223.29135131835938,
+              479.05694580078125,
+              425.80499267578125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [
+              {
+                "content": "Tratecanr",
+                "bbox_in_image": [
+                  62.0,
+                  298.0,
+                  98.0,
+                  304.0
+                ],
+                "confidence": 0.006168825743065159,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "eren",
+                "bbox_in_image": [
+                  110.0,
+                  298.0,
+                  142.0,
+                  304.0
+                ],
+                "confidence": 0.010667232796549797,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Pimlico",
+                "bbox_in_image": [
+                  468.0,
+                  288.0,
+                  513.0,
+                  307.0
+                ],
+                "confidence": 0.9997559172826572,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          },
+          {
+            "bbox": [
+              382.677001953125,
+              608.0494384765625,
+              524.40966796875,
+              687.156005859375
+            ],
+            "image_index": 1,
+            "ocr_text_blocks": [
+              {
+                "content": "[uxhatat",
+                "bbox_in_image": [
+                  386.0,
+                  177.0,
+                  998.0,
+                  291.0
+                ],
+                "confidence": 0.0008606832472840382,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "DELEPHONE",
+                "bbox_in_image": [
+                  107.0,
+                  403.0,
+                  203.0,
+                  423.0
+                ],
+                "confidence": 0.4278086554758502,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "15",
+                "bbox_in_image": [
+                  910.0,
+                  400.0,
+                  934.0,
+                  426.0
+                ],
+                "confidence": 0.9794636337325905,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "2",
+                "bbox_in_image": [
+                  945.0,
+                  403.0,
+                  977.0,
+                  421.0
+                ],
+                "confidence": 0.47587275489837566,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "TRATALGAR 50",
+                "bbox_in_image": [
+                  915.0,
+                  431.0,
+                  985.0,
+                  445.0
+                ],
+                "confidence": 0.6891187658137459,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "@MMWNN",
+                "bbox_in_image": [
+                  739.0,
+                  540.0,
+                  801.0,
+                  558.0
+                ],
+                "confidence": 0.01274097733305464,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "Uttt",
+                "bbox_in_image": [
+                  940.0,
+                  620.0,
+                  972.0,
+                  626.0
+                ],
+                "confidence": 0.02340778149664402,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "HaH@ETY",
+                "bbox_in_image": [
+                  105.08322156079912,
+                  138.03892883042758,
+                  409.91677843920087,
+                  270.96107116957245
+                ],
+                "confidence": 0.004133621210525773,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "T4 HIHIT",
+                "bbox_in_image": [
+                  105.63343685400051,
+                  217.410237425342,
+                  322.3665631459995,
+                  311.589762574658
+                ],
+                "confidence": 0.026748827757145915,
+                "editability_tag": "editable"
+              },
+              {
+                "content": "London",
+                "bbox_in_image": [
+                  729.9719194937464,
+                  415.93461364942027,
+                  811.0280805062536,
+                  461.06538635057973
+                ],
+                "confidence": 0.3215764824017888,
+                "editability_tag": "editable"
+              }
+            ],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 20,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Ironfist’s Grand Adventure",
+            "bbox": [
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist noticed something in the trees — a familiar pair of yellow eyes peering out from behind athick oak trunk. Another Goblin! But this one seemed different from the savage creature he hadfought in the Whispering Woods. This one was smaller, rounder, almost comical in appearance,and it was watching the children play baseball with an expression of undisguised fascination. Itheld an apple in one green hand and was munching on it contentedly, juice dribbling down itschin.",
+            "bbox": [
+              70.86599731445312,
+              73.7066421508789,
+              525.95263671875,
+              175.29783630371094
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Look,” Ironfist whispered to Lily, nodding toward the tree. “Not all Goblins are bad, it seems.”",
+            "bbox": [
+              69.2760009765625,
+              188.49363708496094,
+              526.0484008789062,
+              200.44883728027344
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The Goblin caught Ironfist’s eye, froze for a moment, then gave a tiny, almost sheepish wavebefore disappearing behind the tree with a rustle of leaves.",
+            "bbox": [
+              70.4959945678711,
+              213.64364624023438,
+              524.4588623046875,
+              243.52584838867188
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "20",
+            "bbox": [
+              291.6600036621094,
+              791.797607421875,
+              303.6152038574219,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": []
+      },
+      {
+        "page_id": 21,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Chapter 10",
+            "bbox": [
+              70.86599731445312,
+              90.37944030761719,
+              189.968017578125,
+              115.16654205322266
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Coming Home",
+            "bbox": [
+              70.86599731445312,
+              156.57943725585938,
+              224.39730834960938,
+              181.3665313720703
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 24.787099838256836,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "T",
+            "bbox": [
+              70.86599731445312,
+              444.60784912109375,
+              108.8873062133789,
+              506.83587646484375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 62.22800064086914,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "he enchanted door, having delivered them to the park, had one final trick up its sleeve.After they spent a pleasant afternoon watching the baseball game, feeding the ducksin the pond, and sharing fish and chips on a park bench (Ironfist would later maintainthat the chips were almost as good as his mother’s), they found the door again — standingincongruously between two park benches, invisible to everyone except them.",
+            "bbox": [
+              70.86599731445312,
+              447.0806579589844,
+              526.550537109375,
+              530.7438354492188
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "This time, when they stepped through, they were home.",
+            "bbox": [
+              70.49600219726562,
+              545.900634765625,
+              336.45135498046875,
+              557.8558349609375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Willowmere had never looked so beautiful. The sunset was painting the sky in shades of amber,rose, and violet, and the smoke from their cottage chimney curled up into the golden light likea question mark.",
+            "bbox": [
+              70.30400085449219,
+              573.0115966796875,
+              525.952392578125,
+              620.82177734375
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“I told you to be careful,” said Ironfist, grinning at Lily as they walked through the garden gate.The garden was exactly as they had left it — Mother’s roses blooming in defiant abundance,the old apple tree leaning tiredly against the stone wall, and the birdbath where the sparrowscongregated every evening to gossip about the day’s events.",
+            "bbox": [
+              69.2760009765625,
+              635.9776000976562,
+              526.5504150390625,
+              701.7147827148438
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Did you enjoy the Bakery we visited?” asked Lily, swinging her arms happily. “The one withthe golden sign? I keep thinking about those pastries.”",
+            "bbox": [
+              69.2760009765625,
+              716.87060546875,
+              524.4583129882812,
+              746.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Of course!” Ironfist laughed, the sound echoing across the quiet village green. “Best pastries",
+            "bbox": [
+              69.2760009765625,
+              761.9096069335938,
+              524.4581909179688,
+              773.8648071289062
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "21",
+            "bbox": [
+              291.6600036621094,
+              791.797607421875,
+              303.6152038574219,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              116.22000122070312,
+              226.56936645507812,
+              479.05694580078125,
+              429.0830078125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
+      },
+      {
+        "page_id": 22,
+        "width": 595.280029296875,
+        "height": 841.8900146484375,
+        "text_blocks": [
+          {
+            "content": "Ironfist’s Grand Adventure",
+            "bbox": [
+              70.86599731445312,
+              40.10551834106445,
+              198.60731506347656,
+              52.06071853637695
+            ],
+            "font": "TimesNewRomanPS-ItalicMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 6,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "in the Kingdom.”",
+            "bbox": [
+              70.86599731445312,
+              73.7066421508789,
+              154.2176513671875,
+              85.66183471679688
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "He paused, realizing what he had said. The Kingdom. Was it real? Had any of it been real?The Goblin in the woods, the Subway ride, the Christmas feast, the mountains, the enchanteddoor … or had it all been some extraordinary dream conjured by the morning mist and a boy’soveractive imagination?",
+            "bbox": [
+              70.49600219726562,
+              98.853515625,
+              524.9644775390625,
+              164.59384155273438
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "They passed by the old train station at the edge of the village.Ironfist remembered taking the Subway at the start of his journey— it felt like a lifetime ago. The spot where children had built aSnowman was now bare, the snow melted away, leaving only amuddy circle on the grass and a slightly sad-looking carrot lyingin the dirt.",
+            "bbox": [
+              220.76800537109375,
+              177.78863525390625,
+              526.5457763671875,
+              279.3798522949219
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Inside the house, Grandmother was waiting in her rocking chairby the fireplace, knitting something enormous and shapeless from bright purple yarn (it occurredto Ironfist that she bore a striking resemblance to the old woman on the Subway — but surelythat was just coincidence. Surely.).",
+            "bbox": [
+              70.86599731445312,
+              292.5756530761719,
+              524.7451782226562,
+              358.3118591308594
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Old Mr. Henderson kicked the bucket last winter,” she whispered sadly, setting down her knit-ting. “He was a kind man. Always brought me eggs from his chickens on Sunday mornings.The village won’t be the same without him.”",
+            "bbox": [
+              69.2760009765625,
+              371.50665283203125,
+              526.5264892578125,
+              419.3168640136719
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "Ironfist hugged his grandmother, breathing in the familiar scent of lavender soap and pepperminttea. Then he walked to the window and looked out.",
+            "bbox": [
+              70.86599731445312,
+              432.51165771484375,
+              524.4581909179688,
+              462.39385986328125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The Kingdom stretched before him — peaceful, golden, and full of promise. Fields of wheatrippled in the evening breeze like an ocean of liquid gold. The mountains rose in the distance,purple and majestic against the fading sky. And somewhere out there, beyond the horizon, ad-ventures were waiting.",
+            "bbox": [
+              70.4959945678711,
+              475.5886535644531,
+              526.4547119140625,
+              541.3258056640625
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "“Tomorrow,” he whispered to himself. “Tomorrow will bring a new adventure.”",
+            "bbox": [
+              69.2760009765625,
+              554.5206298828125,
+              451.9619140625,
+              566.475830078125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "The cat — which had followed them all the way from the enchanted cave — jumped onto thewindowsill, settled itself into a comfortable loaf, and began to purr.",
+            "bbox": [
+              70.43599700927734,
+              579.670654296875,
+              524.4708251953125,
+              609.5538330078125
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "THE END",
+            "bbox": [
+              257.6400146484375,
+              647.1576538085938,
+              334.6272888183594,
+              664.373046875
+            ],
+            "font": "TimesNewRomanPS-BoldMT",
+            "size": 17.21540069580078,
+            "color": 2899536,
+            "flags": 20,
+            "editability_tag": "editable"
+          },
+          {
+            "content": "22",
+            "bbox": [
+              291.6600036621094,
+              791.797607421875,
+              303.6152038574219,
+              803.7528076171875
+            ],
+            "font": "TimesNewRomanPSMT",
+            "size": 11.9552001953125,
+            "color": 0,
+            "flags": 4,
+            "editability_tag": "editable"
+          }
+        ],
+        "image_blocks": [
+          {
+            "bbox": [
+              70.86599731445312,
+              193.36538696289062,
+              212.5986328125,
+              272.47198486328125
+            ],
+            "image_index": 0,
+            "ocr_text_blocks": [],
+            "editability_tag": "semi-editable"
+          }
+        ]
       }
     ]
   },

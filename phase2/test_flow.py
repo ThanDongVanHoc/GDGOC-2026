@@ -105,11 +105,11 @@ async def main():
         print(f"\n[Test] Phase 2 responded: {response.status_code} {response.json()}")
 
     # ── Step 3: Wait for webhook ─────────────────────────────────
-    print("\n[Test] Waiting for webhook callback (this may take 30-90s)...")
-    result_event.wait(timeout=180)
+    print("\n[Test] Waiting for webhook callback (this may take 1-5 minutes)...")
+    result_event.wait(timeout=600)
 
     if not received_result:
-        print("\n[Test] ❌ TIMEOUT — no webhook received in 180 seconds!")
+        print("\n[Test] ❌ TIMEOUT — no webhook received in 600 seconds!")
         return
 
     # ── Step 4: Print results ────────────────────────────────────

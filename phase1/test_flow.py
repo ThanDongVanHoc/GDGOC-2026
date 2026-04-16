@@ -35,35 +35,25 @@ WEBHOOK_URL = f"http://localhost:{WEBHOOK_PORT}/webhook"
 
 # Path to test PDF — adjust if needed
 TEST_PDF_PATH = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "uploads", "test.pdf")
+    os.path.join(os.path.dirname(__file__), "..", "uploads", "bookwithimg.pdf")
 )
 
 # Sample project brief text (simulates client email)
 SAMPLE_BRIEF_TEXT = """
-Project Brief — Children's Book Localization
+Project Brief — Fantasy Book Localization
 
-Book Title: "Cinderella: The Enchanted Ball"
+Book Title: "The Chronicles of Floria Book One: A Hero's Journey" 
 Source Language: English (EN)
 Target Language: Vietnamese (VI)
 
-Translation Style: Use simple, warm language suitable for children under 10 years old.
+Translation Style: Use engaging, warm language suitable for young fantasy readers.
 
 Copyright Constraints:
 - The book is legally licensed for Vietnamese translation.
-- Author credit: "Written by Charles Perrault"
-- Do NOT change the plot or storyline in any way.
-- Cultural localization is NOT allowed — keep all cultural references as-is.
+- Author credit: "Written by Elara J. Thornberry" 
 
 Character & Brand Rules:
-- Keep the following character names untranslated: Cinderella, Prince Charming, Fairy Godmother, Lady Tremaine
-- Do NOT retouch or redraw any character illustrations.
-- Character colors MUST remain exactly as in the original (locked).
-- Never change: Cinderella's glass slippers, the Fairy Godmother's sparkling wand.
-
-Editorial Guidelines:
-- Glossary strict mode is ON — use provided terminology consistently.
-- SFX (sound effects like BONG, SWISH): Add small Vietnamese subtitle next to the original.
-- The original publisher has the right to review and veto the final translation.
+- Keep the following character names untranslated: Ironfist, Lily, Steelfist, Mr. Greycloak, Whiskers .
 
 Technical Notes:
 - Allow background editing for text placement adjustments.
@@ -123,11 +113,11 @@ async def main():
         print(f"\n[Test] Phase 1 responded: {response.status_code} {response.json()}")
 
     # ── Step 3: Wait for webhook ─────────────────────────────────
-    print("\n[Test] Waiting for webhook callback (this may take 30-60s)...")
-    result_event.wait(timeout=120)
+    print("\n[Test] Waiting for webhook callback (this may take 1-5 minutes)...")
+    result_event.wait(timeout=600)
 
     if not received_result:
-        print("\n[Test] ❌ TIMEOUT — no webhook received in 120 seconds!")
+        print("\n[Test] ❌ TIMEOUT — no webhook received in 600 seconds!")
         return
 
     # ── Step 4: Print results ────────────────────────────────────

@@ -4,11 +4,11 @@ OmniLocal — Phase 1 Worker: Ingestion & Structural Parsing.
 This worker implements the complete Phase 1 pipeline:
     1. Parse project brief → extract GlobalMetadata via Gemini 2.5 Flash.
     2. Parse PDF (PyMuPDF) → extract text/image blocks with bbox coordinates.
-    3. OCR embedded images (PaddleOCR) → extract in-image text (SFX, speech bubbles).
+    3. OCR embedded images (EasyOCR) → extract in-image text (SFX, speech bubbles).
     4. Tag editability for every block using Gemini semantic analysis.
 
 Parallelism & Optimization:
-    - ProcessPoolExecutor for CPU-bound PyMuPDF + PaddleOCR work.
+    - ProcessPoolExecutor for CPU-bound PyMuPDF + EasyOCR work.
     - asyncio.gather for concurrent Gemini editability-tagging calls.
     - Batching: all blocks on one page sent as a single Gemini call.
     - In-memory processing: PDF bytes stream + numpy arrays (zero disk I/O).
@@ -127,7 +127,7 @@ class GlobalMetadata(BaseModel):
 
 
 class OcrTextBlock(BaseModel):
-    """A text region detected inside an image by PaddleOCR."""
+    """A text region detected inside an image by EasyOCR."""
 
     content: str = Field(description="Recognized text content")
     bbox_in_image: list[float] = Field(
@@ -178,7 +178,7 @@ async def run(payload: dict) -> dict:
     Main entry point for Phase 1 processing.
 
     Orchestrates the full ingestion pipeline: brief parsing, PDF structural
-    extraction, PaddleOCR on embedded images, and editability tagging.
+    extraction, EasyOCR on embedded images, and editability tagging.
     Leverages ProcessPoolExecutor for CPU-bound work and asyncio.gather
     for concurrent Gemini API calls.
 
@@ -221,7 +221,7 @@ async def run(payload: dict) -> dict:
         # ── Step 2b: OCR on extracted images (ProcessPoolExecutor) ──
         if images_data:
             logger.info(
-                "[#p1.2b] Running PaddleOCR on %d images...", len(images_data)
+                "[#p1.2b] Running EasyOCR on %d images...", len(images_data)
             )
             ocr_results = await loop.run_in_executor(
                 pool, _run_ocr_on_images, images_data
@@ -399,22 +399,35 @@ def _parse_pdf_sync(pdf_bytes: bytes) -> tuple[list[dict], dict]:
                         }
                     )
 
-            elif block["type"] == 1:  # Image block
+        seen_boxes = set()
+        img_counter = 0
+
+        for image_info in page.get_images(full=True):
+            xref = image_info[0]
+
+            for rect, _matrix in page.get_image_rects(xref, transform=True):
+                key = (
+                    round(rect.x0, 4),
+                    round(rect.y0, 4),
+                    round(rect.x1, 4),
+                    round(rect.y1, 4),
+                )
+                if key in seen_boxes:
+                    continue
+                seen_boxes.add(key)
+
                 image_blocks.append(
                     {
-                        "bbox": list(block["bbox"]),
+                        "bbox": [rect.x0, rect.y0, rect.x1, rect.y1],
                         "image_index": img_counter,
                     }
                 )
 
                 # Extract image bytes for OCR — keep in RAM
                 try:
-                    img_list = page.get_images(full=True)
-                    if img_counter < len(img_list):
-                        xref = img_list[img_counter][0]
-                        img_data = doc.extract_image(xref)
-                        if img_data and img_data.get("image"):
-                            images_data[(page_idx, img_counter)] = img_data["image"]
+                    img_data = doc.extract_image(xref)
+                    if img_data and img_data.get("image"):
+                        images_data[(page_idx, img_counter)] = img_data["image"]
                 except Exception:
                     pass  # Skip images that cannot be extracted
 
@@ -441,10 +454,11 @@ def _parse_pdf_sync(pdf_bytes: bytes) -> tuple[list[dict], dict]:
 
 def _run_ocr_on_images(images_data: dict) -> dict:
     """
-    Run PaddleOCR on extracted images entirely in-memory (no disk I/O).
+    Run EasyOCR on extracted images entirely in-memory (no disk I/O).
 
-    Initializes PaddleOCR once and processes all images sequentially within
-    the worker process. Images are decoded from raw bytes into numpy arrays.
+    Initializes EasyOCR Reader once and processes all images sequentially
+    within the worker process. Images are decoded from raw bytes into
+    numpy arrays.
 
     Args:
         images_data: Dict mapping (page_idx, img_idx) → raw image bytes.
@@ -452,46 +466,43 @@ def _run_ocr_on_images(images_data: dict) -> dict:
     Returns:
         dict: Mapping (page_idx, img_idx) → list of OcrTextBlock dicts.
     """
-    from paddleocr import PaddleOCR
+    import easyocr
+    import cv2
 
     # Initialize once, reuse for all images
-    ocr_engine = PaddleOCR(use_angle_cls=True, lang="en", show_log=False)
+    # gpu=False for broad compatibility; set gpu=True if CUDA is available
+    reader = easyocr.Reader(["en"], gpu=True)
     results = {}
 
     for (page_idx, img_idx), img_bytes in images_data.items():
         try:
             # Decode image bytes → numpy array (in-memory, no temp file)
             img_array = np.frombuffer(img_bytes, dtype=np.uint8)
-            import cv2
-
             image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 
             if image is None:
                 continue
 
-            ocr_result = ocr_engine.ocr(image, cls=True)
+            # EasyOCR returns list of (bbox, text, confidence)
+            # bbox format: [[x0,y0],[x1,y0],[x1,y1],[x0,y1]]
+            ocr_result = reader.readtext(image)
 
             ocr_blocks = []
-            if ocr_result and ocr_result[0]:
-                for line in ocr_result[0]:
-                    polygon = line[0]  # [[x1,y1],[x2,y2],[x3,y3],[x4,y4]]
-                    text = line[1][0]
-                    confidence = float(line[1][1])
+            for (polygon, text, confidence) in ocr_result:
+                # Convert polygon to bbox [x0, y0, x1, y1]
+                xs = [p[0] for p in polygon]
+                ys = [p[1] for p in polygon]
+                bbox = [min(xs), min(ys), max(xs), max(ys)]
 
-                    # Convert polygon to bbox [x0, y0, x1, y1]
-                    xs = [p[0] for p in polygon]
-                    ys = [p[1] for p in polygon]
-                    bbox = [min(xs), min(ys), max(xs), max(ys)]
-
-                    if text.strip():
-                        ocr_blocks.append(
-                            {
-                                "content": text.strip(),
-                                "bbox_in_image": bbox,
-                                "confidence": confidence,
-                                "editability_tag": "editable",
-                            }
-                        )
+                if text.strip():
+                    ocr_blocks.append(
+                        {
+                            "content": text.strip(),
+                            "bbox_in_image": bbox,
+                            "confidence": float(confidence),
+                            "editability_tag": "editable",
+                        }
+                    )
 
             if ocr_blocks:
                 results[(page_idx, img_idx)] = ocr_blocks
