@@ -9,3 +9,4 @@ python-dotenv>=1.0.0
 easyocr>=1.7.0
 opencv-python-headless>=4.8.0
 numpy>=1.24.0
+openai>=1.0.0

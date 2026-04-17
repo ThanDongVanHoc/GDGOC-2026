@@ -27,15 +27,14 @@ from typing import Optional
 import fitz  # PyMuPDF
 import numpy as np
 from dotenv import load_dotenv
-from google import genai
-from google.genai import types
+import openai
 from pydantic import BaseModel, Field
 
 # ── Environment & Constants ──────────────────────────────────────
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
+load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-MODEL = "gemini-2.5-flash"
+MODEL = "SaoLa4-medium"
 MAX_POOL_WORKERS = 4
 
 logging.basicConfig(level=logging.INFO, format="[Phase1] %(message)s")
@@ -174,33 +173,76 @@ class PageLayout(BaseModel):
 
 
 async def run(payload: dict) -> dict:
-    logger.info("[Mock] Returning fake Phase 1 data instantly")
-    
+    """
+    Main entry point for Phase 1 processing.
+
+    Orchestrates the full ingestion pipeline: brief parsing, PDF structural
+    extraction, EasyOCR on embedded images, and editability tagging.
+    Leverages ProcessPoolExecutor for CPU-bound work and asyncio.gather
+    for concurrent Gemini API calls.
+
+    Args:
+        payload: Job data from the Orchestrator containing:
+            - source_pdf_path (str): Absolute path to the source PDF file.
+            - brief_path (str): Path to the project brief file (.txt/.docx)
+              OR brief_text (str): Raw brief text content.
+            - thread_id (str): Unique pipeline run identifier.
+
+    Returns:
+        dict: Contains 'global_metadata' and 'standardized_pack' (list of pages).
+    """
+    source_pdf_path = payload["source_pdf_path"]
+    brief_path = payload.get("brief_path", "")
+    brief_text = payload.get("brief_text", "")
+
+    logger.info("Starting Phase 1 pipeline for thread=%s", payload.get("thread_id"))
+
+    # ── Initialize OpenAI client for FPT AI ──────────────────────
+    client = openai.AsyncOpenAI(
+        api_key=GEMINI_API_KEY,
+        base_url="https://mkp-api.fptcloud.com/v1"
+    )
+
+    # ── Step 1: Parse brief → GlobalMetadata (Gemini) ────────────
+    logger.info("[#p1.1] Parsing project brief...")
+    global_metadata = await _parse_brief(client, brief_path, brief_text)
+    logger.info("[#p1.1] GlobalMetadata extracted: %s", global_metadata.model_dump())
+
+    # ── Step 2: Parse PDF structure (ProcessPoolExecutor + in-memory) ──
+    logger.info("[#p1.2] Parsing PDF structure...")
+    pdf_bytes = Path(source_pdf_path).read_bytes()
+
+    loop = asyncio.get_event_loop()
+    with ProcessPoolExecutor(max_workers=MAX_POOL_WORKERS) as pool:
+        # Offload CPU-bound PyMuPDF parsing to a separate process
+        pages_raw, images_data = await loop.run_in_executor(
+            pool, _parse_pdf_sync, pdf_bytes
+        )
+        logger.info("[#p1.2] Extracted %d pages from PDF", len(pages_raw))
+
+        # ── Step 2b: OCR on extracted images (ProcessPoolExecutor) ──
+        if images_data:
+            logger.info(
+                "[#p1.2b] Running EasyOCR on %d images...", len(images_data)
+            )
+            ocr_results = await loop.run_in_executor(
+                pool, _run_ocr_on_images, images_data
+            )
+        else:
+            ocr_results = {}
+
+    # ── Merge OCR results into page layouts ──────────────────────
+    pages = _build_page_layouts(pages_raw, ocr_results)
+    logger.info("[#p1.2b] OCR complete. Total images with text: %d", len(ocr_results))
+
+    # ── Step 4: Assemble Standardized Pack ───────────────────────
+    standardized_pack = [page.model_dump() for page in pages]
+
+    logger.info("Phase 1 pipeline complete. %d pages processed.", len(standardized_pack))
+
     return {
-        "global_metadata": {
-            "source_language": "EN",
-            "target_language": "VI",
-            "license_status": True,
-            "author_attribution": "mock",
-            "integrity_protection": True,
-            "adaptation_rights": False,
-            "translation_fidelity": "Strict",
-            "plot_alteration": False,
-            "cultural_localization": False,
-            "preserve_main_names": True,
-            "protected_names": [],
-            "no_retouching": True,
-            "lock_character_color": True,
-            "never_change_rules": [],
-            "style_register": "children_under_10",
-            "target_age_tone": 10,
-            "glossary_strict_mode": False,
-            "sfx_handling": "In_panel_subs",
-            "satisfaction_clause": False,
-            "allow_bg_edit": True,
-            "max_drift_ratio": 0.15
-        },
-        "standardized_pack": []
+        "global_metadata": global_metadata.model_dump(),
+        "standardized_pack": standardized_pack,
     }
 
 
@@ -238,7 +280,7 @@ Return ONLY valid JSON, no markdown fences, no explanation."""
 
 
 async def _parse_brief(
-    client: genai.Client, brief_path: str, brief_text: str
+    client: openai.AsyncOpenAI, brief_path: str, brief_text: str
 ) -> GlobalMetadata:
     """
     Parse the project brief and extract global metadata constraints via Gemini.
@@ -277,16 +319,13 @@ async def _parse_brief(
     # ── Call Gemini to extract structured metadata ────────────────
     prompt = f"{BRIEF_EXTRACTION_PROMPT}\n\n--- PROJECT BRIEF ---\n{content}"
 
-    response = await client.aio.models.generate_content(
+    response = await client.chat.completions.create(
         model=MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            temperature=0.1,
-            response_mime_type="application/json",
-        ),
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.1
     )
 
-    raw_json = response.text.strip()
+    raw_json = response.choices[0].message.content.strip()
     # Remove markdown fences if the model wraps them
     if raw_json.startswith("```"):
         raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
