@@ -27,3 +27,10 @@ data/
 # OS specific
 .DS_Store
 Thumbs.db
+
+# Secrets & Keys
+*.pem
+
+# Large Assets & Mocking
+test_cases/
+orchestrator/mock_workers.py

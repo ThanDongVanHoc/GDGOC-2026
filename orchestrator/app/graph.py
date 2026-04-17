@@ -1,7 +1,7 @@
 """
 OmniLocal Orchestrator — LangGraph Definition.
 
-The entire pipeline graph: 5 linear edges + 1 conditional edge (QA feedback).
+The entire pipeline graph: 4 linear edges + 1 conditional edge (QA feedback).
 """
 
 from langgraph.graph import END, StateGraph
@@ -17,9 +17,8 @@ def build_graph(checkpointer=None) -> StateGraph:
 
     Graph structure:
         phase1 → phase2 → phase3 → phase4 → phase5 → qa_router
-        qa_router → END              (if pass)
-        qa_router → phase3           (if fail_typo / fail_butterfly / fail_constraint_text)
-        qa_router → phase4           (if fail_constraint_visual)
+        qa_router → END              (if APPROVED)
+        qa_router → phase3           (if REJECT_LOCALIZATION)
     """
     graph = StateGraph(OmniLocalState)
 
@@ -42,11 +41,8 @@ def build_graph(checkpointer=None) -> StateGraph:
         "phase5",
         qa_router,
         {
-            "pass": END,
-            "fail_typo": "phase3",
-            "fail_butterfly": "phase3",
-            "fail_constraint_text": "phase3",
-            "fail_constraint_visual": "phase4",
+            "APPROVED": END,
+            "REJECT_LOCALIZATION": "phase3",
         },
     )
 

@@ -33,3 +33,5 @@ class PipelineStatusResponse(BaseModel):
     pipeline_iteration: int = 0
     qa_status: str | None = None
     final_pdf_path: str | None = None
+    dispatch_info: dict = {}
+
