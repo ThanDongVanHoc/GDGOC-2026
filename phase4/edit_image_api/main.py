@@ -11,9 +11,11 @@ import logging
 
 from fastapi import FastAPI
 
-from routes.ocr_routes import router as ocr_router
 from routes.image_edit_routes import router as image_edit_router
 from routes.pipeline_routes import router as pipeline_router
+from pipeline.step1.routes import router as step1_router
+from pipeline.step2.routes import router as step2_router
+from pipeline.step3.routes import router as step3_router
 
 import os
 from logging.handlers import RotatingFileHandler
@@ -45,6 +47,8 @@ app = FastAPI(
     version="2.0.0",
 )
 
-app.include_router(ocr_router)
 app.include_router(image_edit_router)
 app.include_router(pipeline_router)
+app.include_router(step1_router)
+app.include_router(step2_router)
+app.include_router(step3_router)

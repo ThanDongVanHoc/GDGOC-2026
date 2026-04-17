@@ -13,17 +13,17 @@ import httpx
 
 from config import OUTPUTS_DIR
 
-COMFYUI_BASE_URL = os.getenv("COMFYUI_BASE_URL", "http://0.0.0.0:8888")
-WORKFLOW_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "workflows", "qwen-image-edit.json")
+COMFYUI_BASE_URL = os.getenv("COMFYUI_BASE_URL", "http://127.0.0.1:1234")
 
 # Polling settings
 POLL_INTERVAL = 1.0  # seconds
 POLL_TIMEOUT = 300   # max seconds to wait
 
 
-def _load_workflow() -> dict:
+def _load_workflow(workflow_filename: str) -> dict:
     """Load the base workflow JSON from disk."""
-    with open(WORKFLOW_PATH, "r") as f:
+    workflow_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "workflows", workflow_filename)
+    with open(workflow_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -101,13 +101,14 @@ async def download_output_image(
         return resp.content
 
 
-async def edit_image(image_bytes: bytes, filename: str, prompt: str, seed: int | None = None) -> bytes:
+async def edit_image(image_bytes: bytes, filename: str, prompt: str, workflow_filename: str = "qwen-image-edit.json", seed: int | None = None) -> bytes:
     """Full pipeline: upload image → build workflow → queue → poll → download result.
 
     Args:
         image_bytes: Raw bytes of the input image.
         filename:    Original filename of the image.
         prompt:      Edit instruction (e.g. "Replace the sky with sunset").
+        workflow_filename: Name of the workflow JSON file (default: qwen-image-edit.json).
         seed:        Optional random seed. If None a random one is generated.
 
     Returns:
@@ -117,7 +118,7 @@ async def edit_image(image_bytes: bytes, filename: str, prompt: str, seed: int |
     uploaded_name = await upload_image_to_comfyui(image_bytes, filename)
 
     # 2. Load and customise the workflow
-    workflow = _load_workflow()
+    workflow = _load_workflow(workflow_filename)
 
     # Set input image (node "78")
     workflow["78"]["inputs"]["image"] = uploaded_name

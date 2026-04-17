@@ -22,9 +22,9 @@ from models.schemas import (
     TextReplacement,
 )
 from pipeline.localize_pipeline import run_localize_pipeline
-from pipeline.step1_object_replace import run_object_replacement
-from pipeline.step2_context_transform import run_context_transformation
-from pipeline.step3_text_replace import run_text_replacement
+from pipeline.step1.service import run_object_replacement
+from pipeline.step2.service import run_context_transformation
+from pipeline.step3.service import run_text_replacement
 
 logger = logging.getLogger(__name__)
 
@@ -231,89 +231,4 @@ async def localize_image_json(
     return pipeline_response
 
 
-# ── Individual Step Endpoints ───────────────────────────────────────────────
-
-@router.post(
-    "/step1/object-replace",
-    summary="Run Step 1: Object Replacement independently",
-    responses={200: {"content": {"image/png": {}}}},
-)
-async def step1_object_replace(
-    image: UploadFile = File(...),
-    objects_json: str = Form(
-        ...,
-        description='JSON array of objects to replace.\n\nExample:\n```json\n[{"bbox": [100, 200, 300, 400], "original": "hamburger", "replacement": "bánh chưng"}]\n```',
-        json_schema_extra={"example": '[{"bbox": [100, 200, 300, 400], "original": "hamburger", "replacement": "bánh chưng"}]'}
-    ),
-    seed: Optional[int] = Form(default=None),
-):
-    objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
-    
-    contents = await image.read()
-    if not contents:
-        raise HTTPException(status_code=400, detail="Empty image file.")
-        
-    try:
-        result = await run_object_replacement(contents, image.filename or "input.png", objects, seed)
-        return Response(content=result, media_type="image/png")
-    except Exception as e:
-        logger.error(f"Step 1 error: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@router.post(
-    "/step2/context-transform",
-    summary="Run Step 2: Context Transformation independently",
-    responses={200: {"content": {"image/png": {}}}},
-)
-async def step2_context_transform(
-    image: UploadFile = File(...),
-    target_culture: str = Form(
-        default="Vietnamese",
-        description='Target culture for localization.',
-    ),
-    description: Optional[str] = Form(
-        default=None,
-        description='Optional extra description.',
-    ),
-    seed: Optional[int] = Form(default=None),
-):
-    context = ContextTransformation(target_culture=target_culture, description=description)
-    
-    contents = await image.read()
-    if not contents:
-        raise HTTPException(status_code=400, detail="Empty image file.")
-        
-    try:
-        result = await run_context_transformation(contents, image.filename or "input.png", context, seed)
-        return Response(content=result, media_type="image/png")
-    except Exception as e:
-        logger.error(f"Step 2 error: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@router.post(
-    "/step3/text-replace",
-    summary="Run Step 3: Text Replacement independently",
-    responses={200: {"content": {"image/png": {}}}},
-)
-async def step3_text_replace(
-    image: UploadFile = File(...),
-    texts_json: str = Form(
-        ...,
-        description='JSON array of text replacements.\n\nExample:\n```json\n[{"bbox": [50, 50, 250, 80], "original_text": "Hello World", "new_text": "Xin chào"}]\n```',
-        json_schema_extra={"example": '[{"bbox": [50, 50, 250, 80], "original_text": "Hello World", "new_text": "Xin chào"}]'}
-    ),
-):
-    texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
-    
-    contents = await image.read()
-    if not contents:
-        raise HTTPException(status_code=400, detail="Empty image file.")
-        
-    try:
-        result = await run_text_replacement(contents, texts)
-        return Response(content=result, media_type="image/png")
-    except Exception as e:
-        logger.error(f"Step 3 error: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
+# ── Individual step endpoints have been moved to their respective step routes.

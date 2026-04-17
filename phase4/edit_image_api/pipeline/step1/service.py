@@ -28,13 +28,13 @@ logger = logging.getLogger(__name__)
 import os
 from pathlib import Path
 
-PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
+STEP1_DIR = Path(__file__).parent
 
 def _build_object_prompt(obj: ObjectReplacement) -> str:
     """Build a focused inpainting prompt for a single object replacement."""
     x1, y1, x2, y2 = obj.bbox
     
-    with open(PROMPTS_DIR / "step1_object_positive.txt", "r", encoding="utf-8") as f:
+    with open(STEP1_DIR / "prompt_positive.txt", "r", encoding="utf-8") as f:
         template = f.read().strip()
         
     return template.format(
@@ -45,7 +45,7 @@ def _build_object_prompt(obj: ObjectReplacement) -> str:
 
 def _build_negative_prompt() -> str:
     """Negative prompt to avoid common artifacts."""
-    with open(PROMPTS_DIR / "step1_object_negative.txt", "r", encoding="utf-8") as f:
+    with open(STEP1_DIR / "prompt_negative.txt", "r", encoding="utf-8") as f:
         return f.read().strip()
 
 
@@ -86,7 +86,7 @@ async def run_object_replacement(
         )
 
         # Build workflow with focused prompt
-        workflow = _load_workflow()
+        workflow = _load_workflow("qwen-image-edit.json")
         workflow["78"]["inputs"]["image"] = uploaded_name
         workflow["115:111"]["inputs"]["prompt"] = _build_object_prompt(obj)
         workflow["115:110"]["inputs"]["prompt"] = _build_negative_prompt()

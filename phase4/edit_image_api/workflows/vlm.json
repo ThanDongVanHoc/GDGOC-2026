@@ -1,0 +1,58 @@
+{
+  "1": {
+    "inputs": {
+      "image": "screenshot from 2026-04-17 15-55-54.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "model_name": "Qwen3-VL-2B-Instruct",
+      "quantization": "8-bit (Balanced)",
+      "attention_mode": "flash_attention_2",
+      "preset_prompt": "🖼️ Detailed Description",
+      "custom_prompt": [
+        "4",
+        0
+      ],
+      "max_tokens": 512,
+      "keep_model_loaded": true,
+      "seed": 1715060542,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "AILab_QwenVL",
+    "_meta": {
+      "title": "QwenVL"
+    }
+  },
+  "4": {
+    "inputs": {
+      "value": "[prompt-here]"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "String (Multiline)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "preview_markdown": "",
+      "preview_text": "",
+      "previewMode": null,
+      "source": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "Preview as Text"
+    }
+  }
+}

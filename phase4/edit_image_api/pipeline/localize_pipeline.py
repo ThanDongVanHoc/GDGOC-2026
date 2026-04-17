@@ -22,9 +22,9 @@ from models.schemas import (
     LocalizePipelineResponse,
     StepResult,
 )
-from pipeline.step1_object_replace import run_object_replacement
-from pipeline.step2_context_transform import run_context_transformation
-from pipeline.step3_text_replace import run_text_replacement
+from pipeline.step1.service import run_object_replacement
+from pipeline.step2.service import run_context_transformation
+from pipeline.step3.service import run_text_replacement
 
 logger = logging.getLogger(__name__)
 
