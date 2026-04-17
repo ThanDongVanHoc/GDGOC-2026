@@ -8,4 +8,29 @@ All text in the image must remain completely unchanged, with identical pixels, f
 Do not modify any text regions. 
 Do not add any overlays, annotations, bounding boxes, or visual markers. 
 Do not add any other objects. 
-Output only the final edited image.
+Output only the final edited image., resize, rotate, recolor, replace, or remove any of these objects.
+- Maintain exact positions and spatial relationships.
+
+preservation_rules:
+- {preservation_rules}.
+
+Editing scope (BACKGROUND ONLY):
+- Only modify: {background_elements}.
+- Remove: {background_mismatch}.
+
+Vietnamese localization:
+- Apply background style: {vietnamese_background_suggestions}.
+- Ensure Vietnamese indoor context (authentic materials, layout, lighting).
+
+Consistency constraints:
+- Match lighting direction, intensity, and color temperature.
+- Preserve shadows and reflections on foreground.
+- Keep perspective and depth consistent.
+
+Hard constraints:
+- Do NOT alter any foreground object.
+- Do NOT introduce new foreground objects.
+- Do NOT blur, crop, or distort the scene.
+
+Output:
+- Photorealistic result with seamless foreground-background integration.
