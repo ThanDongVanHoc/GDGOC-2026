@@ -12,6 +12,7 @@ import uuid
 
 from fastapi import FastAPI, File, Form, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.schemas.pipeline import PipelineStartRequest, DemoStartRequest, PipelineStatusResponse
 from app.state import OmniLocalState
@@ -35,6 +36,9 @@ app.add_middleware(
 
 # Register webhook routes
 app.include_router(webhook_router)
+
+# Expose uploaded PDFs for remote workers
+app.mount("/uploads", StaticFiles(directory="data/uploads"), name="uploads")
 
 # In-memory pipeline store (for quick lookups alongside SQLite state)
 _pipelines: dict[str, OmniLocalState] = {}

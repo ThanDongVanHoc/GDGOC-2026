@@ -11,6 +11,7 @@ Design:
     - Phase 1 is special: it PRODUCES global_metadata (extracted and stored separately).
 """
 
+import os
 import httpx
 from langgraph.types import interrupt
 
@@ -23,6 +24,11 @@ async def _dispatch(phase: int, payload: dict) -> None:
     """
     Send a job to a Phase Worker. Returns immediately (Worker processes async).
     """
+    # Auto-inject source_pdf_url for remote workers
+    if "source_pdf_path" in payload and payload["source_pdf_path"]:
+        filename = os.path.basename(payload["source_pdf_path"])
+        payload["source_pdf_url"] = f"{WEBHOOK_BASE_URL}/uploads/{filename}"
+
     url = f"{PHASE_URLS[phase]}/api/v1/phase{phase}/run"
     print(f"[Dispatch] POST {url}")
     async with httpx.AsyncClient(timeout=DISPATCH_TIMEOUT_SECONDS) as client:

@@ -21,6 +21,7 @@ import logging
 import os
 from concurrent.futures import ProcessPoolExecutor
 from enum import Enum
+import httpx
 from pathlib import Path
 from typing import Optional
 
@@ -167,6 +168,20 @@ class PageLayout(BaseModel):
     image_blocks: list[ImageBlock] = Field(default_factory=list)
 
 
+def _download_if_needed(pdf_path: str, pdf_url: str = None) -> bytes:
+    """Read local PDF bytes if present, otherwise download from URL."""
+    if os.path.exists(pdf_path):
+        return Path(pdf_path).read_bytes()
+        
+    if pdf_url:
+        logger.info("[Download File] File missing locally; fetching from %s", pdf_url)
+        # Using sync httpx request to maintain simple flow, or we could just use it directly
+        r = httpx.get(pdf_url, timeout=120)
+        r.raise_for_status()
+        return r.content
+        
+    raise FileNotFoundError(f"PDF not found locally and no download URL provided: {pdf_path}")
+
 # ═══════════════════════════════════════════════════════════════════
 #  MAIN ENTRY POINT
 # ═══════════════════════════════════════════════════════════════════
@@ -210,7 +225,7 @@ async def run(payload: dict) -> dict:
 
     # ── Step 2: Parse PDF structure (ProcessPoolExecutor + in-memory) ──
     logger.info("[#p1.2] Parsing PDF structure...")
-    pdf_bytes = Path(source_pdf_path).read_bytes()
+    pdf_bytes = _download_if_needed(source_pdf_path, payload.get("source_pdf_url"))
 
     loop = asyncio.get_event_loop()
     with ProcessPoolExecutor(max_workers=MAX_POOL_WORKERS) as pool:
