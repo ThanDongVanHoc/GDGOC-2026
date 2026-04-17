@@ -36,6 +36,7 @@ _FPT_API_KEY: str = os.environ.get("FPT_API_KEY", "")
 _FPT_BASE_URL: str = "https://mkp-api.fptcloud.com"
 _FPT_MODEL: str = "gemma-4-31B-it"
 _FPT_VLM_MODEL: str = "Qwen2.5-VL-7B-Instruct"
+_VLM_SYSTEM_PROMPT_PATH = os.path.join(os.path.dirname(__file__), "vlm_system_prompt.txt")
 
 # ---------------------------------------------------------------------------
 # System prompt for the localization agent
@@ -385,30 +386,22 @@ def process_images_vlm(
         replacements = {}
         if _FPT_API_KEY:
             try:
+                # Load VLM system prompt from file
+                vlm_system_prompt = ""
+                if os.path.exists(_VLM_SYSTEM_PROMPT_PATH):
+                    with open(_VLM_SYSTEM_PROMPT_PATH, "r", encoding="utf-8") as f:
+                        vlm_system_prompt = f.read().strip()
+                else:
+                    logger.warning("[Agent] VLM system prompt file not found: %s. Using basic fallback.", _VLM_SYSTEM_PROMPT_PATH)
+                    vlm_system_prompt = "You are an expert Cultural Localization Assistant."
+
                 client = OpenAI(api_key=_FPT_API_KEY, base_url=_FPT_BASE_URL)
                 response = client.chat.completions.create(
                     model=_FPT_VLM_MODEL,
                     messages=[
                         {
                             "role": "system",
-                            "content": (
-                                "You are a cultural localization assistant for children's picture books.\n"
-                                "Analyze the image and identify ALL elements that need cultural localization:\n"
-                                "1. TEXT IN IMAGE: Find any readable text. Extract and translate it into Vietnamese language.\n"
-                                "2. VISUAL CONTENT: Find Westerm/unfamiliar objects and suggest a culturally appropriate Vietnamese replacement.\n\n"
-                                "Return ONE SINGLE JSON object mapping original elements to localized replacements.\n"
-                                "STRICT OUTPUT FORMAT RULES:\n"
-                                "- For TEXT IN IMAGE: Prefix the key with 'OCR:'. The value MUST be a string in VIETNAMESE language.\n"
-                                "- For VISUAL CONTENT: Prefix the key with 'visual:'. The value MUST be a nested object containing 'vietnamese' and 'english_translation' keys.\n\n"
-                                "Example JSON Output:\n"
-                                "{\n"
-                                "  \"OCR:Welcome\": \"Chào mừng\",\n"
-                                "  \"OCR:Book Shop\": \"Cửa hàng sách\",\n"
-                                "  \"visual:hot dog\": {\"vietnamese\": \"bánh mì\", \"english_translation\": \"vietnamese baguette\"},\n"
-                                "  \"visual:castle\": {\"vietnamese\": \"thành trì\", \"english_translation\": \"citadel\"}\n"
-                                "}\n"
-                                
-                            )
+                            "content": vlm_system_prompt
                         },
                         {"role": "user", "content": user_messages},
                     ],

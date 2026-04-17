@@ -149,10 +149,37 @@ async def run(payload: dict) -> dict:
     t_start = time.perf_counter()
 
     # --- Extract images from output_phase_1 if available ---
+    # Each Phase 1 page has image_blocks nested under it, but the blocks
+    # themselves do NOT carry page_id.  We must inject it so that
+    # process_images_vlm can extract the correct PDF page later.
+    # We also deduplicate images here to avoid redundant VLM processing.
     image_blocks = []
+    seen_images = set()
+    duplicate_count = 0
+    
     if validated_payload.output_phase_1:
         for page in validated_payload.output_phase_1:
-            image_blocks.extend(page.get("image_blocks", []))
+            page_id = page.get("page_id", 0)
+            for img_block in page.get("image_blocks", []):
+                raw_bbox = img_block.get("bbox", [0.0, 0.0, 0.0, 0.0])
+                # Round coordinates to 2 decimal places to handle float noise
+                rounded_bbox = tuple(round(coord, 2) for coord in raw_bbox)
+                
+                # Use (page_id, bbox) as key. index is often unreliable for deduplication.
+                img_key = (page_id, rounded_bbox)
+                if img_key in seen_images:
+                    duplicate_count += 1
+                    continue
+                
+                seen_images.add(img_key)
+                image_blocks.append({**img_block, "page_id": page_id})
+
+    if duplicate_count > 0:
+        logger.info(
+            "[Phase3] Deduplicated image_blocks: removed %d redundant images. "
+            "Remaining: %d", 
+            duplicate_count, len(image_blocks)
+        )
 
     # ==================================================================
     # PARALLEL BLOCK 1: Entity Graph + AMR Enrichment + ViAMR Load
