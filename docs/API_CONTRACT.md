@@ -91,7 +91,7 @@ stateDiagram-v2
                       "size": 0.0,
                       "color": 0,
                       "flags": 0,
-                      "editability_tag": "editable"
+                      "editability_tag": "editable | non-editable"
                   }
               ],
               "image_blocks": [
@@ -103,10 +103,10 @@ stateDiagram-v2
                               "content": "string",
                               "bbox_in_image": [0.0, 0.0, 0.0, 0.0],
                               "confidence": 0.0,
-                              "editability_tag": "editable"
+                              "editability_tag": "editable | non-editable"
                           }
                       ],
-                      "editability_tag": "semi-editable"
+                      "editability_tag": "semi-editable | non-editable"
                   }
               ]
           }
@@ -162,16 +162,72 @@ stateDiagram-v2
       "thread_id": "uuid-string-of-current-run",
       "webhook_url": "http://localhost:8000/webhook/phase3",
       "global_metadata": { ... },
-      "output_phase_2": [ ... ]
+      "output_phase_2": {
+          "verified_text_pack": [ ... ],
+          "translation_warnings": [ ... ]
+      }
   }
   ```
 - **Output Required (Sent to Webhook):**
   ```json
   {
-      "output_phase_3": [
-          // TUAN ANH: Define Phase 3's exact Output JSON fields/arrays here
-      ],
-      "translation_warnings": []
+      "output_phase_3": {
+          "context_safe_localized_text_pack": [
+              {
+                  "original_content": "string",
+                  "localized_content": "string",
+                  "bbox": [0.0, 0.0, 0.0, 0.0],
+                  "page_id": 1,
+                  "source_type": "text | ocr",
+                  "font": "string",
+                  "size": 0.0,
+                  "color": 0,
+                  "flags": 0,
+                  "warning": "string | null"
+              }
+          ],
+          "entity_graph": {
+              "EntityName": {
+                  "type": "string",
+                  "pages": [1],
+                  "related": ["string"],
+                  "contexts": [
+                      {
+                          "page": 1,
+                          "sentence": "string"
+                      }
+                  ]
+              }
+          },
+          "localization_log": [
+              {
+                  "proposal_id": "string",
+                  "original": "string",
+                  "proposed": "string",
+                  "affected_pages": [1],
+                  "rationale": "string",
+                  "status": "ACCEPT | REJECT",
+                  "conflicts": [
+                      {
+                          "entity": "string",
+                          "page": [1],
+                          "reason": "string"
+                      }
+                  ]
+              }
+          ]
+      },
+      "localization_warnings": [
+          {
+              "page_id": 1,
+              "block_index": 0,
+              "original_content": "string",
+              "localized_content": "string",
+              "max_estimated_chars": 0,
+              "actual_chars": 0,
+              "overflow_ratio": 0.0
+          }
+      ]
   }
   ```
 
@@ -183,6 +239,7 @@ stateDiagram-v2
       "thread_id": "uuid-string-of-current-run",
       "webhook_url": "http://localhost:8000/webhook/phase4",
       "global_metadata": { ... },
+      "layout_map": [ ... ],        // From Phase 1
       "output_phase_3": [ ... ]
   }
   ```
@@ -190,8 +247,16 @@ stateDiagram-v2
   ```json
   {
       "output_phase_4": {
-          // KIET: Add any image processing logs/paths if needed
-          "composited_pdf_path": "data/output/rendered_file.pdf"
+          "composited_pdf_path": "data/output/rendered_file.pdf",
+          "status": "COMPLETED | REVISION_REQUIRED",
+          "summary_feedback": {
+              "should_summary": true,
+              "message": "string | null"
+          },
+          "repaint_feedback": {
+              "should_repaint": false,
+              "message": "string | null"
+          }
       }
   }
   ```
@@ -211,10 +276,15 @@ stateDiagram-v2
 - **Output Required (Sent to Webhook):**
   ```json
   {
-      "qa_status": "APPROVED", // Or "REJECT_LOCALIZATION"
-      "qa_feedback": {
-          // TUAN ANH: Define the error context array/object to feed back to Phase 3 here
-      },
+      "qa_status": "APPROVED | REJECT_LOCALIZATION",
+      "qa_feedback": [
+          {
+              "error_type": "fail_typo | fail_butterfly | fail_constraint_visual | fail_constraint_text",
+              "description": "string",
+              "affected_pages": [1],
+              "conflicting_entities": ["string"]
+          }
+      ],
       "final_pdf_path": "data/output/final_approved.pdf"
   }
   ```
