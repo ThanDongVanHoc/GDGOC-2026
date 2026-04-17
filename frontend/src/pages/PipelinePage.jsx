@@ -15,6 +15,7 @@ export default function PipelinePage() {
   const navigate = useNavigate()
   const [pipeline, setPipeline] = useState(INITIAL_PIPELINE)
   const [overallStatus, setOverallStatus] = useState("STARTING...")
+  const [selectedPayload, setSelectedPayload] = useState(null)
   
   // Dữ liệu từ UploadPage
   const { threadId, pdfName = 'document.pdf', brief = 'No brief provided' } = location.state || {}
@@ -159,9 +160,14 @@ export default function PipelinePage() {
                           <strong>POST</strong> <code>{node.dispatch.url}</code>
                           <div className="url-note">*(Can be changed in <code>orchestrator/app/config.py</code>)*</div>
                         </div>
-                        <pre className="dispatch-payload">
-                          {JSON.stringify(node.dispatch.payload, null, 2)}
-                        </pre>
+                        <div className="dispatch-payload-wrapper">
+                          <pre className="dispatch-payload">
+                            {JSON.stringify(node.dispatch.payload, null, 2)}
+                          </pre>
+                          <button className="view-payload-btn" onClick={() => setSelectedPayload(node.dispatch.payload)}>
+                            View Payload Modal ↗
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -191,6 +197,21 @@ export default function PipelinePage() {
           </div>
         </main>
       </div>
+
+      {/* ── Payload Modal ────────────────────────────────────── */}
+      {selectedPayload && (
+        <div className="payload-modal-overlay" onClick={() => setSelectedPayload(null)}>
+          <div className="payload-modal-content" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>API Payload JSON</h2>
+              <button className="close-btn" onClick={() => setSelectedPayload(null)}>✖</button>
+            </div>
+            <div className="modal-body">
+              <pre>{JSON.stringify(selectedPayload, null, 2)}</pre>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
