@@ -8,7 +8,7 @@ fires webhook when complete.
 import httpx
 from fastapi import BackgroundTasks, FastAPI
 
-from app.worker import run as run_worker
+from app.worker_remote import run as run_worker
 
 app = FastAPI(title="OmniLocal Phase 2 — Translation & Review")
 

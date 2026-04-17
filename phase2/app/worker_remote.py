@@ -23,19 +23,18 @@ from pathlib import Path
 from typing import Optional
 
 from dotenv import load_dotenv
-from google import genai
-from google.genai import types
+import openai
 from pydantic import BaseModel, Field
 
 # ── Environment & Constants ──────────────────────────────────────
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-MODEL = "gemini-2.5-flash"
+MODEL = "SaoLa4-medium"
+BASE_URL = "https://mkp-api.fptcloud.com/v1"
 CHUNK_SIZE = 6  # Pages per translation chunk
 MAX_RETRIES = 3  # Circuit breaker threshold
 PASS_SCORE = 8   # Minimum score to pass review
-CACHE_TTL = "3600s"  # Context cache time-to-live (1 hour)
 
 logging.basicConfig(level=logging.INFO, format="[Phase2] %(message)s")
 logger = logging.getLogger(__name__)
@@ -113,8 +112,8 @@ async def run(payload: dict) -> dict:
 
     logger.info("Starting Phase 2 pipeline for thread=%s", thread_id)
 
-    # ── Initialize Gemini client ─────────────────────────────────
-    client = genai.Client(api_key=GEMINI_API_KEY)
+    # ── Initialize OpenAI client for FPT AI ──────────────────────
+    client = openai.AsyncOpenAI(api_key=GEMINI_API_KEY, base_url=BASE_URL)
 
     # ── Step 1: Semantic Chunking ────────────────────────────────
     logger.info("[#p2.1] Chunking text blocks (chunk_size=%d pages)...", CHUNK_SIZE)
@@ -125,15 +124,7 @@ async def run(payload: dict) -> dict:
         logger.warning("No translatable text blocks found. Returning empty pack.")
         return {"verified_text_pack": [], "translation_warnings": []}
 
-    # ── Step 2: Create Context Cache (optimization #5) ───────────
-    logger.info("[Cache] Creating Gemini context cache for global_metadata...")
-    translator_cache, reviser_cache = await _create_context_caches(
-        client, global_metadata, thread_id
-    )
-    logger.info("[Cache] Context caches created successfully")
-
-    # ── Step 3: Concurrent Translation + Feedback Loop ───────────
-    # All chunks processed in parallel via asyncio.gather
+    # ── Step 2: Concurrent Translation + Feedback Loop ───────────
     logger.info(
         "[#p2.4] Starting feedback loop for %d chunks (asyncio.gather)...",
         len(chunks),
@@ -141,13 +132,13 @@ async def run(payload: dict) -> dict:
     chunk_results = await asyncio.gather(
         *[
             _translate_with_feedback_loop(
-                chunk, global_metadata, client, translator_cache, reviser_cache
+                chunk, global_metadata, client
             )
             for chunk in chunks
         ]
     )
 
-    # ── Step 4: Assemble verified text pack ──────────────────────
+    # ── Step 3: Assemble verified text pack ──────────────────────
     verified_text_pack = []
     translation_warnings = []
 
@@ -160,16 +151,6 @@ async def run(payload: dict) -> dict:
         len(verified_text_pack),
         len(translation_warnings),
     )
-
-    # ── Cleanup: delete context caches ───────────────────────────
-    try:
-        if translator_cache:
-            await client.aio.caches.delete(name=translator_cache)
-        if reviser_cache:
-            await client.aio.caches.delete(name=reviser_cache)
-        logger.info("[Cache] Context caches cleaned up")
-    except Exception as e:
-        logger.warning("Cache cleanup failed (non-critical): %s", e)
 
     return {
         "verified_text_pack": verified_text_pack,
@@ -364,69 +345,33 @@ Example:
 Return ONLY valid JSON, no markdown fences."""
 
 
-async def _create_context_caches(
-    client: genai.Client, global_metadata: dict, thread_id: str
-) -> tuple[Optional[str], Optional[str]]:
+async def _call_llm(
+    client: openai.AsyncOpenAI,
+    system_prompt: str,
+    user_message: str,
+    temperature: float = 0.3,
+) -> str:
     """
-    Create Gemini context caches for Translator and Reviser system prompts.
-
-    Caches the system prompt (which contains global_metadata constraints) so it
-    doesn't need to be re-sent on every API call. This saves tokens and reduces
-    latency across multiple translation + review calls.
+    Call FPT AI Factory (SaoLa4) via OpenAI-compatible API.
 
     Args:
-        client: Initialized Gemini API client.
-        global_metadata: Global constraints dict.
-        thread_id: Pipeline run ID for cache naming.
+        client: Initialized AsyncOpenAI client.
+        system_prompt: System instruction for the LLM.
+        user_message: User content to process.
+        temperature: Sampling temperature.
 
     Returns:
-        tuple: (translator_cache_name, reviser_cache_name) or (None, None) if
-               caching fails (falls back to inline system prompts).
+        str: Raw response content from the LLM.
     """
-    translator_prompt = _build_translator_system_prompt(global_metadata)
-    reviser_prompt = _build_reviser_system_prompt(global_metadata)
-
-    # Gemini context caching requires min 1024 tokens (~4 chars/token).
-    # Skip the API call entirely if prompts are too short to avoid a 400 error.
-    MIN_CACHE_TOKENS = 1024
-    CHARS_PER_TOKEN = 4  # Conservative estimate
-    min_chars = MIN_CACHE_TOKENS * CHARS_PER_TOKEN
-
-    if len(translator_prompt) < min_chars or len(reviser_prompt) < min_chars:
-        logger.info(
-            "[Cache] Prompts too short for context caching "
-            "(translator=%d chars, reviser=%d chars, min≈%d chars). "
-            "Using inline prompts instead.",
-            len(translator_prompt),
-            len(reviser_prompt),
-            min_chars,
-        )
-        return None, None
-
-    try:
-        translator_cache = client.caches.create(
-            model=MODEL,
-            config=types.CreateCachedContentConfig(
-                system_instruction=translator_prompt,
-                display_name=f"p2-translator-{thread_id[:8]}",
-                ttl=CACHE_TTL,
-            ),
-        )
-        reviser_cache = client.caches.create(
-            model=MODEL,
-            config=types.CreateCachedContentConfig(
-                system_instruction=reviser_prompt,
-                display_name=f"p2-reviser-{thread_id[:8]}",
-                ttl=CACHE_TTL,
-            ),
-        )
-        return translator_cache.name, reviser_cache.name
-
-    except Exception as e:
-        logger.warning(
-            "Context cache creation failed: %s. Falling back to inline prompts.", e
-        )
-        return None, None
+    response = await client.chat.completions.create(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_message},
+        ],
+        temperature=temperature,
+    )
+    return response.choices[0].message.content.strip()
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -437,27 +382,21 @@ async def _create_context_caches(
 async def _translate_chunk(
     chunk: TranslationChunk,
     global_metadata: dict,
-    client: genai.Client,
-    cache_name: Optional[str],
+    client: openai.AsyncOpenAI,
     feedback: Optional[str] = None,
 ) -> list[dict]:
     """
-    Translate a chunk of text blocks via Gemini 2.5 Flash Translator Agent.
-
-    Uses context caching if available, otherwise falls back to inline system
-    prompt. Batches all blocks in the chunk into a single API call.
+    Translate a chunk of text blocks via FPT AI Saola4 Translator Agent.
 
     Args:
         chunk: TranslationChunk with source text blocks.
         global_metadata: Global constraints dict.
-        client: Initialized Gemini API client.
-        cache_name: Gemini context cache name (or None for inline prompt).
+        client: Initialized AsyncOpenAI client.
         feedback: Optional revision feedback from previous attempt.
 
     Returns:
         list[dict]: Translated blocks with original_content and translated_content.
     """
-    # Build the user message with source text blocks
     source_blocks = []
     for i, block in enumerate(chunk.blocks):
         source_blocks.append(
@@ -478,29 +417,13 @@ async def _translate_chunk(
             "Please fix the issues mentioned above in your new translation."
         )
 
-    # ── Call Gemini with cache or inline prompt ──────────────────
-    config = types.GenerateContentConfig(
-        temperature=0.3,
-        response_mime_type="application/json",
-    )
+    system_prompt = _build_translator_system_prompt(global_metadata)
+    raw_json = await _call_llm(client, system_prompt, user_message, temperature=0.3)
 
-    if cache_name:
-        config.cached_content = cache_name
-    else:
-        config.system_instruction = _build_translator_system_prompt(global_metadata)
-
-    response = await client.aio.models.generate_content(
-        model=MODEL,
-        contents=user_message,
-        config=config,
-    )
-
-    raw_json = response.text.strip()
     if raw_json.startswith("```"):
         raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
-    translations = json.loads(raw_json)
-    return translations
+    return json.loads(raw_json)
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -512,23 +435,17 @@ async def _retranslate_blocks(
     chunk: TranslationChunk,
     failed_indices: list[int],
     global_metadata: dict,
-    client: genai.Client,
-    cache_name: Optional[str],
+    client: openai.AsyncOpenAI,
     feedback: str,
 ) -> list[dict]:
     """
     Re-translate only the specific blocks that failed review.
 
-    Instead of re-translating an entire chunk (up to 15 pages), this sends
-    only the problematic blocks to the Translator Agent with targeted
-    feedback, then returns just the corrected translations.
-
     Args:
         chunk: The full TranslationChunk (used to look up source blocks).
         failed_indices: 0-based block indices that need re-translation.
         global_metadata: Global constraints dict.
-        client: Initialized Gemini API client.
-        cache_name: Gemini context cache name (or None for inline prompt).
+        client: Initialized AsyncOpenAI client.
         feedback: Revision feedback explaining what went wrong.
 
     Returns:
@@ -558,23 +475,9 @@ async def _retranslate_blocks(
         "Fix the issues mentioned above. Keep block_index values unchanged."
     )
 
-    config = types.GenerateContentConfig(
-        temperature=0.3,
-        response_mime_type="application/json",
-    )
+    system_prompt = _build_translator_system_prompt(global_metadata)
+    raw_json = await _call_llm(client, system_prompt, user_message, temperature=0.3)
 
-    if cache_name:
-        config.cached_content = cache_name
-    else:
-        config.system_instruction = _build_translator_system_prompt(global_metadata)
-
-    response = await client.aio.models.generate_content(
-        model=MODEL,
-        contents=user_message,
-        config=config,
-    )
-
-    raw_json = response.text.strip()
     if raw_json.startswith("```"):
         raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
@@ -590,26 +493,20 @@ async def _review_translation(
     chunk: TranslationChunk,
     translations: list[dict],
     global_metadata: dict,
-    client: genai.Client,
-    cache_name: Optional[str],
+    client: openai.AsyncOpenAI,
 ) -> RevisionResult:
     """
-    Review a translated chunk via Gemini 2.5 Flash Reviser Agent.
-
-    Sends source text, draft translation, and constraints to the Reviser for
-    quality scoring. Uses context caching if available.
+    Review a translated chunk via FPT AI Saola4 Reviser Agent.
 
     Args:
         chunk: Original source chunk with text blocks.
         translations: Draft translated blocks from Translator Agent.
         global_metadata: Global constraints dict.
-        client: Initialized Gemini API client.
-        cache_name: Gemini context cache name (or None for inline prompt).
+        client: Initialized AsyncOpenAI client.
 
     Returns:
         RevisionResult: Score (1-10) and reason if score < 8.
     """
-    # Build review payload — source + draft side by side
     review_pairs = []
     for i, block in enumerate(chunk.blocks):
         translated_content = ""
@@ -632,28 +529,13 @@ async def _review_translation(
         + json.dumps(review_pairs, ensure_ascii=False)
     )
 
-    config = types.GenerateContentConfig(
-        temperature=0.1,
-        response_mime_type="application/json",
-    )
+    system_prompt = _build_reviser_system_prompt(global_metadata)
+    raw_json = await _call_llm(client, system_prompt, user_message, temperature=0.1)
 
-    if cache_name:
-        config.cached_content = cache_name
-    else:
-        config.system_instruction = _build_reviser_system_prompt(global_metadata)
-
-    response = await client.aio.models.generate_content(
-        model=MODEL,
-        contents=user_message,
-        config=config,
-    )
-
-    raw_json = response.text.strip()
     if raw_json.startswith("```"):
         raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
     result_dict = json.loads(raw_json)
-    # Ensure failed_block_indices exists for backward compatibility
     if "failed_block_indices" not in result_dict:
         result_dict["failed_block_indices"] = []
     return RevisionResult(**result_dict)
@@ -664,23 +546,17 @@ async def _review_blocks(
     translations: list[dict],
     block_indices: list[int],
     global_metadata: dict,
-    client: genai.Client,
-    cache_name: Optional[str],
+    client: openai.AsyncOpenAI,
 ) -> RevisionResult:
     """
-    Review only specific re-translated blocks, not the entire chunk.
-
-    After a targeted re-translation, this sends only the corrected blocks
-    to the Reviser Agent for focused quality scoring. This avoids the cost
-    of re-reviewing blocks that already passed.
+    Review only specific re-translated blocks.
 
     Args:
         chunk: Full TranslationChunk (used to look up source text).
-        translations: Complete translations list (used to pick block content).
+        translations: Complete translations list.
         block_indices: 0-based indices of blocks to review.
         global_metadata: Global constraints dict.
-        client: Initialized Gemini API client.
-        cache_name: Gemini context cache name (or None for inline prompt).
+        client: Initialized AsyncOpenAI client.
 
     Returns:
         RevisionResult: Score, reason, and any still-failing block indices.
@@ -709,23 +585,9 @@ async def _review_blocks(
         + json.dumps(review_pairs, ensure_ascii=False)
     )
 
-    config = types.GenerateContentConfig(
-        temperature=0.1,
-        response_mime_type="application/json",
-    )
+    system_prompt = _build_reviser_system_prompt(global_metadata)
+    raw_json = await _call_llm(client, system_prompt, user_message, temperature=0.1)
 
-    if cache_name:
-        config.cached_content = cache_name
-    else:
-        config.system_instruction = _build_reviser_system_prompt(global_metadata)
-
-    response = await client.aio.models.generate_content(
-        model=MODEL,
-        contents=user_message,
-        config=config,
-    )
-
-    raw_json = response.text.strip()
     if raw_json.startswith("```"):
         raw_json = raw_json.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
@@ -743,26 +605,15 @@ async def _review_blocks(
 async def _translate_with_feedback_loop(
     chunk: TranslationChunk,
     global_metadata: dict,
-    client: genai.Client,
-    translator_cache: Optional[str],
-    reviser_cache: Optional[str],
+    client: openai.AsyncOpenAI,
 ) -> tuple[list[TranslatedBlock], list[dict]]:
     """
     Run the full Translator ↔ Reviser feedback loop for a single chunk.
 
-    Implements a **block-level** circuit breaker pattern:
-        1. Translate the full chunk once.
-        2. Reviser scores the full chunk AND returns failed_block_indices.
-        3. On retry, ONLY the failed blocks are re-translated.
-        4. Fixed blocks are merged back, then ONLY those blocks are re-reviewed.
-        5. Circuit breaks after MAX_RETRIES attempts.
-
     Args:
         chunk: TranslationChunk to translate.
         global_metadata: Global constraints dict.
-        client: Initialized Gemini API client.
-        translator_cache: Context cache name for Translator Agent.
-        reviser_cache: Context cache name for Reviser Agent.
+        client: Initialized AsyncOpenAI client.
 
     Returns:
         tuple: (list[TranslatedBlock], list[warning_dicts])
@@ -783,20 +634,19 @@ async def _translate_with_feedback_loop(
     # ── Initial full-chunk translation ───────────────────────────
     try:
         translations = await _translate_chunk(
-            chunk, global_metadata, client, translator_cache, feedback=None
+            chunk, global_metadata, client, feedback=None
         )
     except Exception as e:
         logger.error("[Chunk %d] Initial translation failed: %s", chunk.chunk_id, e)
         translations = []
 
     if not translations:
-        # Nothing to review — skip straight to assembly
         pass
     else:
         # ── First full-chunk review ──────────────────────────────
         try:
             revision = await _review_translation(
-                chunk, translations, global_metadata, client, reviser_cache
+                chunk, translations, global_metadata, client
             )
             final_score = revision.score
             final_reason = revision.reason
@@ -835,7 +685,7 @@ async def _translate_with_feedback_loop(
             try:
                 fixed = await _retranslate_blocks(
                     chunk, failed_indices, global_metadata, client,
-                    translator_cache, final_reason,
+                    final_reason,
                 )
                 # Merge fixed translations back into the main list
                 fixed_map = {f["block_index"]: f for f in fixed}
@@ -853,7 +703,7 @@ async def _translate_with_feedback_loop(
             try:
                 revision = await _review_blocks(
                     chunk, translations, failed_indices,
-                    global_metadata, client, reviser_cache,
+                    global_metadata, client,
                 )
                 final_score = revision.score
                 final_reason = revision.reason
