@@ -53,6 +53,7 @@ def _build_payload() -> dict:
                 "translation_warnings", []
             ),
         },
+        "source_pdf_path": os.path.join(os.path.dirname(__file__), "data", "uploads", "source.pdf"),
         "use_llm": True,
     }
 

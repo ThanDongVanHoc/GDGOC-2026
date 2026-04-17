@@ -165,6 +165,8 @@ async def main() -> None:
         payload = json.load(f)
 
     payload["use_llm"] = args.use_llm
+    if "source_pdf_path" not in payload or not payload["source_pdf_path"]:
+        payload["source_pdf_path"] = str(Path(__file__).parent / "data" / "uploads" / "source.pdf")
 
     thread_id = payload["thread_id"]
     text_pack = payload["output_phase_2"]["verified_text_pack"]

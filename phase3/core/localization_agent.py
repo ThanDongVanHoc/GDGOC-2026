@@ -309,12 +309,31 @@ def process_images_vlm(
     output_images = []
     
     # Map page texts for context
+    # Handle both nested 'pages' format and flat list format
     page_texts: dict[int, str] = {}
-    for page in localized_pack.get("pages", []):
-        pid = page.get("page_id", 0)
-        lines = [b.get("text", "") for b in page.get("text_blocks", [])]
-        page_texts[pid] = " ".join(lines)
     
+    if isinstance(localized_pack, list):
+        # Flat list format
+        for block in localized_pack:
+            pid = block.get("page_id", 0)
+            text = block.get("localized_content", block.get("translated_content", block.get("text", "")))
+            if text:
+                if pid not in page_texts:
+                    page_texts[pid] = []
+                page_texts[pid].append(text)
+    elif isinstance(localized_pack, dict) and "pages" in localized_pack:
+        # Nested format
+        for page in localized_pack.get("pages", []):
+            pid = page.get("page_id", 0)
+            lines = [b.get("localized_content", b.get("translated_content", b.get("text", ""))) for b in page.get("text_blocks", [])]
+            if pid not in page_texts:
+                page_texts[pid] = []
+            page_texts[pid].extend([l for l in lines if l])
+            
+    # Join text blocks into one string per page
+    for pid in page_texts:
+        page_texts[pid] = " ".join(page_texts[pid])
+        
     for block in image_blocks:
         image_index = block.get("image_index", 0)
         bbox = block.get("bbox", [0.0, 0.0, 0.0, 0.0])
@@ -372,7 +391,24 @@ def process_images_vlm(
                     messages=[
                         {
                             "role": "system",
-                            "content": "You are a Vietnamese localization assistant. Analyze the image to identify text or elements that need to be localized to Vietnamese culture based on the provided context. Return a JSON object mapped {original_english: vietnamese_translation}. ONLY output JSON."
+                            "content": (
+                                "You are a cultural localization assistant for children's picture books.\n"
+                                "Analyze the image and identify ALL elements that need cultural localization:\n"
+                                "1. TEXT IN IMAGE: Find any readable text. Extract and translate it into Vietnamese language.\n"
+                                "2. VISUAL CONTENT: Find Westerm/unfamiliar objects and suggest a culturally appropriate Vietnamese replacement.\n\n"
+                                "Return ONE SINGLE JSON object mapping original elements to localized replacements.\n"
+                                "STRICT OUTPUT FORMAT RULES:\n"
+                                "- For TEXT IN IMAGE: Prefix the key with 'OCR:'. The value MUST be a string in VIETNAMESE language.\n"
+                                "- For VISUAL CONTENT: Prefix the key with 'visual:'. The value MUST be a nested object containing 'vietnamese' and 'english_translation' keys.\n\n"
+                                "Example JSON Output:\n"
+                                "{\n"
+                                "  \"OCR:Welcome\": \"Chào mừng\",\n"
+                                "  \"OCR:Book Shop\": \"Cửa hàng sách\",\n"
+                                "  \"visual:hot dog\": {\"vietnamese\": \"bánh mì\", \"english_translation\": \"vietnamese baguette\"},\n"
+                                "  \"visual:castle\": {\"vietnamese\": \"thành trì\", \"english_translation\": \"citadel\"}\n"
+                                "}\n"
+                                
+                            )
                         },
                         {"role": "user", "content": user_messages},
                     ],
@@ -389,7 +425,16 @@ def process_images_vlm(
                         raw_response = raw_response[3:-3].strip()
                     parsed = json.loads(raw_response)
                     if isinstance(parsed, dict):
-                        replacements = parsed
+                        # Flatten the nested visual format to just the english translation
+                        flattened = {}
+                        for k, v in parsed.items():
+                            if k.startswith("visual:") and isinstance(v, dict) and "english_translation" in v:
+                                flattened[k] = v["english_translation"]
+                            else:
+                                flattened[k] = v
+                        replacements = flattened
+                    else:
+                        logger.warning("[Agent] VLM returned non-dict JSON: %s", raw_response)
                 except json.JSONDecodeError:
                     logger.warning("[Agent] VLM returned non-JSON: %s", raw_response)
             except Exception as e:
@@ -406,6 +451,94 @@ def process_images_vlm(
         ])
         
     return output_images
+
+
+def rewrite_sentence_llm(
+    vietnamese_sentence: str,
+    english_entity: str,
+    proposed_replacement: str,
+    english_source: str = "",
+) -> str:
+    """Rewrite a Vietnamese sentence replacing a cultural entity using Gemma 4.
+
+    Instead of naive string replacement (which fails because the entity
+    name is English but the sentence is Vietnamese), this function sends
+    the full Vietnamese sentence to the LLM and asks it to recreate the
+    sentence with the cultural replacement naturally integrated.
+
+    Args:
+        vietnamese_sentence: The current Vietnamese sentence to rewrite.
+        english_entity: The original English entity name (e.g., 'cottage').
+        proposed_replacement: The Vietnamese cultural replacement (e.g., 'nhà tranh').
+        english_source: The original English sentence for additional context.
+
+    Returns:
+        The rewritten Vietnamese sentence with the replacement applied.
+        Returns the original sentence unchanged if the LLM call fails.
+    """
+    if not _FPT_API_KEY:
+        logger.warning("[Agent] No FPT API key — skipping LLM rewrite.")
+        return vietnamese_sentence
+
+    system_prompt = (
+        "You are a Vietnamese language expert for children's picture books.\n"
+        "Your task: Translate the given English sentence into Vietnamese from scratch, "
+        "intentionally replacing a specific cultural concept with the provided Vietnamese-appropriate equivalent.\n\n"
+        "Rules:\n"
+        "1. Do NOT just loosely modify the existing Vietnamese sentence. You must recreate/translate the English sentence entirely in Vietnamese.\n"
+        "2. Ensure the requested replacement is naturally integrated into the new translation.\n"
+        "3. Output ONLY the newly translated Vietnamese sentence. No explanation.\n"
+    )
+
+    user_prompt = (
+        f"English source sentence: {english_source}\n"
+        f"Old Vietnamese sentence (for reference only, create a fresh translation): {vietnamese_sentence}\n\n"
+        f"Instructions:\n"
+        f"- Translate the English source sentence into Vietnamese.\n"
+        f"- Find the concept '{english_entity}' in the English source, and translate it as '{proposed_replacement}' instead of its literal translation.\n\n"
+        f"Output ONLY the new translated Vietnamese sentence:"
+    )
+
+    try:
+        client = OpenAI(api_key=_FPT_API_KEY, base_url=_FPT_BASE_URL)
+        response = client.chat.completions.create(
+            model=_FPT_MODEL,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            temperature=0.2,
+            max_tokens=512,
+        )
+
+        result = response.choices[0].message.content.strip()
+
+        # Basic sanity: if the LLM returned something extremely short
+        # or suspiciously different, fall back to the original.
+        if len(result) < 3:
+            logger.warning(
+                "[Agent] LLM rewrite too short (%d chars), keeping original.",
+                len(result),
+            )
+            return vietnamese_sentence
+
+        # Strip any surrounding quotes the LLM may have added
+        if (result.startswith('"') and result.endswith('"')) or \
+           (result.startswith("'") and result.endswith("'")):
+            result = result[1:-1]
+
+        logger.info(
+            "[Agent] Rewrote sentence: '%s' -> '%s'",
+            vietnamese_sentence[:60],
+            result[:60],
+        )
+        return result
+
+    except Exception as e:
+        logger.warning(
+            "[Agent] LLM sentence rewrite failed: %s. Keeping original.", e
+        )
+        return vietnamese_sentence
 
 
 def generate_proposals_fallback(
