@@ -4,6 +4,9 @@ OmniLocal Orchestrator — Pipeline State.
 Central state schema for the OmniLocal pipeline.
 Each Phase reads its inputs from state and writes its outputs back.
 The Orchestrator manages this state; Partners never modify it directly.
+
+Design: Phase outputs are stored as opaque blobs (output_phase_N).
+The Orchestrator does NOT peek inside — it simply relays them.
 """
 
 from typing import Optional, TypedDict
@@ -14,9 +17,11 @@ class OmniLocalState(TypedDict):
     Central pipeline state passed between all LangGraph nodes.
 
     Convention:
-        - Each Phase reads fields written by the previous Phase.
-        - Each Phase writes its own output fields.
-        - Internal Partner state is NOT stored here.
+        - Each Phase receives the previous Phase's output blob + global_metadata.
+        - Each Phase writes its own output blob (output_phase_N).
+        - The Orchestrator treats output blobs as opaque — no peeking inside.
+        - global_metadata is extracted from Phase 1's output and stored separately
+          because ALL subsequent phases need it.
     """
 
     # ── Pipeline Control ───────────────────────────────────────
@@ -25,30 +30,28 @@ class OmniLocalState(TypedDict):
     status: str  # IDLE | PROCESSING | COMPLETED | FAILED
     pipeline_iteration: int  # QA feedback cycle count (max 2)
 
-    # ── Initial Inputs ─────────────────────────────────────────
+    # ── Initial Inputs (from user) ─────────────────────────────
     source_pdf_path: str
     brief_path: str
 
-    # ── Phase 0 Outputs (Demo Only) ────────────────────────────
+    # ── Global Metadata (produced by Phase 1, consumed by ALL) ─
+    global_metadata: dict
+
+    # ── Phase 0 (Demo Only) ────────────────────────────────────
     camera_image_path: str
     phase0_results: Optional[dict]
 
-    # ── Phase 1 → Phase 2 ─────────────────────────────────────
-    global_metadata: dict
-    standardized_pack: list[dict]
+    # ── Phase Output Blobs (opaque — Orchestrator doesn't peek) ─
+    output_phase_1: Optional[dict]
+    output_phase_2: Optional[dict]
+    output_phase_3: Optional[dict]
+    output_phase_4: Optional[dict]
 
-    # ── Phase 2 → Phase 3 ─────────────────────────────────────
-    verified_text_pack: list[dict]
-    translation_warnings: list[dict]
-
-    # ── Phase 3 → Phase 4 ─────────────────────────────────────
-    localized_text_pack: list[dict]
-    localization_log: list[dict]
-
-    # ── Phase 4 → Phase 5 ─────────────────────────────────────
-    composited_pdf_path: str
-
-    # ── Phase 5 Output ─────────────────────────────────────────
-    qa_status: str
-    qa_feedback: Optional[dict]
+    # ── Phase 5 Output (QA — tách riêng vì router cần đọc) ────
+    qa_status: str  # APPROVED | REJECT_LOCALIZATION
+    qa_feedback: Optional[list]
     final_pdf_path: str
+
+    # ── Debug / Tracing ────────────────────────────────────────
+    dispatch_info: dict  # Records URL and Payload sent to each phase
+
