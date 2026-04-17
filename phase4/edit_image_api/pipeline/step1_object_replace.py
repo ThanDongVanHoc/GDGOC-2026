@@ -25,26 +25,28 @@ from services.comfyui_service import (
 logger = logging.getLogger(__name__)
 
 
+import os
+from pathlib import Path
+
+PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
+
 def _build_object_prompt(obj: ObjectReplacement) -> str:
     """Build a focused inpainting prompt for a single object replacement."""
     x1, y1, x2, y2 = obj.bbox
-    return (
-        f"Replace the {obj.original} in the region [{x1}, {y1}, {x2}, {y2}] "
-        f"with {obj.replacement}. "
-        f"Make the replacement look natural and consistent with the surrounding scene. "
-        f"Keep everything else exactly the same — do not modify any other part of the image. "
-        f"Do not add any overlays, annotations, bounding boxes, or visual markers."
+    
+    with open(PROMPTS_DIR / "step1_object_positive.txt", "r", encoding="utf-8") as f:
+        template = f.read().strip()
+        
+    return template.format(
+        original=obj.original,
+        replacement=obj.replacement,
+        x1=x1, y1=y1, x2=x2, y2=y2
     )
-
 
 def _build_negative_prompt() -> str:
     """Negative prompt to avoid common artifacts."""
-    return (
-        "blurry, low resolution, low quality, unnatural, "
-        "changing existing text, altering original typography, "
-        "distorting faces, changing poses, adding extra objects, "
-        "overlays, annotations, bounding boxes, visual markers"
-    )
+    with open(PROMPTS_DIR / "step1_object_negative.txt", "r", encoding="utf-8") as f:
+        return f.read().strip()
 
 
 async def run_object_replacement(

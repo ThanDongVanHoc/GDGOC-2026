@@ -5,7 +5,6 @@ to match the target culture (Vietnamese) using ComfyUI (Qwen Image Edit).
 Strategy:
   - Use a gentle prompt to shift the scene context while preserving characters,
     composition, and overall layout.
-  - The `strength` parameter controls how aggressively to transform.
   - Characters/people are explicitly protected in the prompt.
 """
 
@@ -25,36 +24,27 @@ from services.comfyui_service import (
 logger = logging.getLogger(__name__)
 
 
+import os
+from pathlib import Path
+
+PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
+
 def _build_context_prompt(ctx: ContextTransformation) -> str:
     """Build a prompt for context transformation."""
-    base = (
-        f"Adjust the background and environment to look like a {ctx.target_culture} setting. "
+    with open(PROMPTS_DIR / "step2_context_positive.txt", "r", encoding="utf-8") as f:
+        template = f.read().strip()
+        
+    description_text = f"Specifically: {ctx.description}. " if ctx.description else ""
+        
+    return template.format(
+        target_culture=ctx.target_culture,
+        description_text=description_text
     )
-
-    if ctx.description:
-        base += f"Specifically: {ctx.description}. "
-
-    base += (
-        "Keep all people/characters exactly unchanged — same faces, poses, expressions, "
-        "and clothing. Preserve the original composition and camera angle. "
-        "Do not change any objects that were already placed. "
-        "Only modify the background environment and ambient details. "
-        "Do not add overlays, annotations, bounding boxes, or visual markers. "
-        "Output only the final edited image."
-    )
-
-    return base
-
 
 def _build_negative_prompt() -> str:
     """Negative prompt for context transformation."""
-    return (
-        "blurry, low resolution, low quality, unnatural, "
-        "changing faces, changing poses, changing clothing, "
-        "changing text, altering typography, "
-        "completely different scene, different composition, "
-        "overlays, annotations, bounding boxes, visual markers"
-    )
+    with open(PROMPTS_DIR / "step2_context_negative.txt", "r", encoding="utf-8") as f:
+        return f.read().strip()
 
 
 async def run_context_transformation(
@@ -79,8 +69,7 @@ async def run_context_transformation(
         return image_bytes
 
     logger.info(
-        f"Step 2: Transforming context to '{context.target_culture}' "
-        f"(strength={context.strength})"
+        f"Step 2: Transforming context to '{context.target_culture}'"
     )
 
     # Upload current image
@@ -94,16 +83,6 @@ async def run_context_transformation(
     workflow["78"]["inputs"]["image"] = uploaded_name
     workflow["115:111"]["inputs"]["prompt"] = _build_context_prompt(context)
     workflow["115:110"]["inputs"]["prompt"] = _build_negative_prompt()
-
-    # Use denoise strength to control transformation intensity
-    # Lower denoise = more faithful to original, higher = more creative
-    denoise_value = max(0.3, min(0.8, context.strength))
-    workflow["115:3"]["inputs"]["denoise"] = denoise_value
-
-    # Set seed
-    if seed is None:
-        seed = random.randint(0, 2**53)
-    workflow["115:3"]["inputs"]["seed"] = seed
 
     # Queue and wait
     client_id = uuid.uuid4().hex

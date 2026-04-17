@@ -1,0 +1,4 @@
+blurry, low resolution, low quality, unnatural, 
+changing existing text, altering original typography, 
+distorting faces, changing poses, 
+adding extra objects, overlays, annotations, bounding boxes, visual markers

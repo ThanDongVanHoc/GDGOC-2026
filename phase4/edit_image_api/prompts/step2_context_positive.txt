@@ -1,0 +1,6 @@
+Adjust the background and environment to look like a {target_culture} setting. 
+{description_text}Keep all people/characters exactly unchanged — same faces, poses, expressions, and clothing. 
+Preserve the original composition and camera angle. Do not change any objects that were already placed. 
+Only modify the background environment and ambient details.
+Do not add overlays, annotations, bounding boxes, or visual markers. 
+Output only the final edited image.

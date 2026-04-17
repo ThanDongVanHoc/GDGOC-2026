@@ -14,17 +14,12 @@ from services.comfyui_service import edit_image
 
 router = APIRouter(prefix="/image-edit", tags=["Image Edit"])
 
-PROMPT_TEMPLATE = (
-    "You are an exprt in image editing. "
-    "Edit the image realistically by localizing the scene to Vietnam. "
-    "Adjust the background to a simple Vietnamese environment"
-    "{REPLACEMENTS} "
-    "Keep all people exactly unchanged, including faces, pose, and expressions. "
-    "Preserve the original composition, camera angle, and warm lighting.   "
-    "All text in the image must remain completely unchanged, with identical pixels, font, spacing, and position. "
-    "Do not modify any text regions. Do not add any overlays, annotations, bounding boxes, or visual markers.  "
-    "Do not add any other objects. Output only the final edited image."
-)
+from pathlib import Path
+
+PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
+
+with open(PROMPTS_DIR / "image_edit_positive.txt", "r", encoding="utf-8") as f:
+    PROMPT_TEMPLATE = f.read().strip()
 
 @router.post(
     "/",

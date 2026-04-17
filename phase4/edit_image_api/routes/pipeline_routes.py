@@ -80,9 +80,14 @@ Each step can be independently skipped by leaving its field empty or null.
 ]
 ```
 
-`context_json`:
-```json
-{"target_culture": "Vietnamese", "description": "Vietnamese street food stall", "strength": 0.5}
+`target_culture`:
+```
+Vietnamese
+```
+
+`description`:
+```
+Vietnamese street food stall
 ```
 
 `texts_json`:
@@ -106,10 +111,15 @@ async def localize_image(
         description='JSON array of objects to replace.',
         openapi_examples={"example": {"value": '[{"bbox": [100, 200, 300, 400], "original": "hamburger", "replacement": "bánh chưng"}]'}},
     ),
-    context_json: Optional[str] = Form(
+    target_culture: Optional[str] = Form(
         default=None,
-        description='JSON object for context transformation.',
-        openapi_examples={"example": {"value": '{"target_culture": "Vietnamese", "description": "street food stall", "strength": 0.5}'}},
+        description='Target culture for localization.',
+        openapi_examples={"example": {"value": "Vietnamese"}},
+    ),
+    description: Optional[str] = Form(
+        default=None,
+        description='Optional extra description for context transformation.',
+        openapi_examples={"example": {"value": "street food stall"}},
     ),
     texts_json: Optional[str] = Form(
         default=None,
@@ -121,7 +131,7 @@ async def localize_image(
     """Run the full localization pipeline on an uploaded image."""
 
     objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
-    context = _parse_models(context_json, "context_json", ContextTransformation, is_list=False)
+    context = ContextTransformation(target_culture=target_culture, description=description) if target_culture else None
     texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
 
     request = LocalizePipelineRequest(
@@ -177,10 +187,14 @@ async def localize_image_json(
         description='JSON array of objects to replace.',
         openapi_examples={"example": {"value": '[{"bbox": [100, 200, 300, 400], "original": "hamburger", "replacement": "bánh chưng"}]'}},
     ),
-    context_json: Optional[str] = Form(
+    target_culture: Optional[str] = Form(
         default=None,
-        description='JSON object for context transformation.',
-        openapi_examples={"example": {"value": '{"target_culture": "Vietnamese", "strength": 0.5}'}},
+        description='Target culture for localization.',
+        openapi_examples={"example": {"value": "Vietnamese"}},
+    ),
+    description: Optional[str] = Form(
+        default=None,
+        description='Optional extra description for context transformation.',
     ),
     texts_json: Optional[str] = Form(
         default=None,
@@ -192,7 +206,7 @@ async def localize_image_json(
     """Same as /pipeline/localize but returns JSON metadata instead of image bytes."""
 
     objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
-    context = _parse_models(context_json, "context_json", ContextTransformation, is_list=False)
+    context = ContextTransformation(target_culture=target_culture, description=description) if target_culture else None
     texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
 
     request = LocalizePipelineRequest(objects=objects, context=context, texts=texts, seed=seed)
@@ -254,14 +268,17 @@ async def step1_object_replace(
 )
 async def step2_context_transform(
     image: UploadFile = File(...),
-    context_json: str = Form(
-        ...,
-        description='JSON object for context transformation.\n\nExample:\n```json\n{"target_culture": "Vietnamese", "description": "street stall", "strength": 0.5}\n```',
-        json_schema_extra={"example": '{"target_culture": "Vietnamese", "description": "street stall", "strength": 0.5}'}
+    target_culture: str = Form(
+        default="Vietnamese",
+        description='Target culture for localization.',
+    ),
+    description: Optional[str] = Form(
+        default=None,
+        description='Optional extra description.',
     ),
     seed: Optional[int] = Form(default=None),
 ):
-    context = _parse_models(context_json, "context_json", ContextTransformation, is_list=False)
+    context = ContextTransformation(target_culture=target_culture, description=description)
     
     contents = await image.read()
     if not contents:

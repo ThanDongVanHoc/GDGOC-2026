@@ -15,11 +15,23 @@ from routes.ocr_routes import router as ocr_router
 from routes.image_edit_routes import router as image_edit_router
 from routes.pipeline_routes import router as pipeline_router
 
-# Configure logging
+import os
+from logging.handlers import RotatingFileHandler
+
+# Configure root logger for console
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
 )
+
+# Configure dedicated file handler for pipeline logs
+os.makedirs("logs", exist_ok=True)
+pipeline_file_handler = RotatingFileHandler("logs/pipeline.log", maxBytes=5*1024*1024, backupCount=2)
+pipeline_file_handler.setFormatter(logging.Formatter("%(asctime)s | %(name)s | %(levelname)s | %(message)s"))
+
+# Attach file handler to pipeline-related loggers
+logging.getLogger("pipeline").addHandler(pipeline_file_handler)
+logging.getLogger("routes.pipeline_routes").addHandler(pipeline_file_handler)
 
 app = FastAPI(
     title="Phase 4 — Image Localization API",

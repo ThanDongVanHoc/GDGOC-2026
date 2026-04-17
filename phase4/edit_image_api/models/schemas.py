@@ -39,13 +39,6 @@ class ContextTransformation(BaseModel):
         description="Optional extra description for context transformation "
                     "(e.g. 'rural Vietnamese village with rice paddies').",
     )
-    strength: float = Field(
-        default=0.5,
-        ge=0.0,
-        le=1.0,
-        description="How strongly to transform the context. "
-                    "0.0 = no change, 1.0 = maximum change.",
-    )
 
 
 # ── Step 3: Text Replacement ────────────────────────────────────────────────
