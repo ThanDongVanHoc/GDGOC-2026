@@ -154,10 +154,10 @@ async def run_vlm_analysis(
     url = "https://mkp-api.fptcloud.com/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {fpt_api_key}"
+        "Authorization": f"Bearer sk-6UBOn8g614T1RT8G4RiHtJ6ZD7bJj2LJ_J75hXx64VQ="
     }
     payload = {
-        "model": "FPT.AI-KIE-v1.7",
+        "model": "Qwen2.5-VL-7B-Instruct",
         "messages": [
             {
                 "role": "user",

@@ -1,11 +1,29 @@
-You are an expert in image editing. 
-Edit the image realistically by localizing the scene to {target_culture}. 
-Adjust the background to a simple {target_culture} environment.
-{description_text}.
-Keep all people exactly unchanged, including faces, pose, and expressions. 
-Preserve the original composition, camera angle, and warm lighting. 
-All text in the image must remain completely unchanged, with identical pixels, font, spacing, and position. 
-Do not modify any text regions. 
-Do not add any overlays, annotations, bounding boxes, or visual markers. 
-Do not add any other objects. 
-Output only the final edited image.
+Task: Change ONLY the background to a Vietnamese setting.
+
+Scene lock:
+- The scene is a {scene_type}.
+- Keep this scene unchanged.
+
+Foreground preservation:
+- Preserve 100% of: {foreground}
+- Do NOT move, modify, replace, or remove these elements.
+
+Editing scope:
+- Only modify background elements: {background}
+
+Vietnamese adaptation (background only):
+- {vn_background}
+
+Consistency:
+- Match original lighting, shadows, and perspective.
+- Keep camera angle unchanged.
+
+Hard constraints:
+- If any change affects foreground → DO NOT APPLY
+- If unsure → keep original
+
+Style:
+- Photorealistic, natural blending
+
+Output:
+- Single edited image
