@@ -1,0 +1,4004 @@
+{
+  "thread_id": "c35e1f9a-f514-49fc-b0e3-6ff6cd58bb1a",
+  "result": {
+    "verified_text_pack": [
+      {
+        "original_content": "IRONFIST’SGRAND ADVENTURE",
+        "translated_content": "CUỘC PHIÊU LƯU VĨ ĐẠI CỦA IRONFIST",
+        "bbox": [
+          83.18199920654297,
+          413.44195556640625,
+          511.99017333984375,
+          491.2720642089844
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 41.843101501464844,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "A tale of bravery, friendship, and magic",
+        "translated_content": "Một câu chuyện về lòng dũng cảm, tình bạn và phép thuật",
+        "bbox": [
+          160.14300537109375,
+          515.8489379882812,
+          434.6081848144531,
+          533.0643310546875
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 17.21540069580078,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "Written by Elara J. Thornberry",
+        "translated_content": "Viết bởi Elara J. Thornberry",
+        "bbox": [
+          202.33799743652344,
+          585.7108154296875,
+          392.6282958984375,
+          600.1181030273438
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 14.346199989318848,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Illustrations by Marcus T. Ashwood",
+        "translated_content": "Minh họa bởi Marcus T. Ashwood",
+        "bbox": [
+          209.02200317382812,
+          611.4386596679688,
+          386.2381286621094,
+          623.4447631835938
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Thornberry Publishing Ltd. · First Edition · 2024",
+        "translated_content": "Thornberry Publishing Ltd. · Ấn Bản Đầu Tiên · 2024",
+        "bbox": [
+          190.48699951171875,
+          702.3797607421875,
+          404.7232360839844,
+          713.6993408203125
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 10.909099578857422,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "© 2024 Thornberry Publishing Ltd. All rights reserved.",
+        "translated_content": "© 2024 Thornberry Publishing Ltd. Mọi quyền được bảo lưu.",
+        "bbox": [
+          187.64199829101562,
+          725.4237670898438,
+          409.3894348144531,
+          735.3864135742188
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 9.962599754333496,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "No part of this publication may be reproduced, stored in a retrieval system,",
+        "translated_content": "Không phần nào của ấn phẩm này được phép sao chép, lưu trữ trong hệ thống truy xuất,",
+        "bbox": [
+          148.864990234375,
+          743.3507690429688,
+          447.6832275390625,
+          753.3134155273438
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 9.962599754333496,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "or transmitted in any form without the prior written permission of the publisher.",
+        "translated_content": "hoặc truyền tải dưới bất kỳ hình thức nào mà không có sự cho phép bằng văn bản trước của nhà xuất bản.",
+        "bbox": [
+          139.54998779296875,
+          761.2787475585938,
+          457.5062255859375,
+          771.2413940429688
+        ],
+        "page_id": 1,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 9.962599754333496,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "A",
+        "translated_content": "MỘT",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "THRILLING FANTASY ADVENTURE",
+        "translated_content": "CUỘC PHIÊU LƯU KỲ THÚ ĐẦY HỒI HỘP",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "THE",
+        "translated_content": "CÁC",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "(HRONICLES",
+        "translated_content": "BIÊN NIÊN SỬ",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "OF",
+        "translated_content": "CỦA",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "FLoRi4:",
+        "translated_content": "FLoRi4:",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "BooK ONE: A HERO S JOURNEY",
+        "translated_content": "TẬP MỘT: HÀNH TRÌNH CỦA MỘT ANH HÙNG",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "BY [SOBEL FAIRWEATHER",
+        "translated_content": "BỞI [SOBEL FAIRWEATHER",
+        "bbox": [
+          116.22000122070312,
+          147.73635864257812,
+          479.05694580078125,
+          350.25
+        ],
+        "page_id": 1,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của IRONFIST",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 2,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "2",
+        "translated_content": "2",
+        "bbox": [
+          294.64898681640625,
+          791.797607421875,
+          300.6265869140625,
+          803.7528076171875
+        ],
+        "page_id": 2,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 1",
+        "translated_content": "Chương 1",
+        "bbox": [
+          70.86599731445312,
+          89.28643798828125,
+          177.574462890625,
+          114.07353973388672
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The Beginning",
+        "translated_content": "Khởi Đầu",
+        "bbox": [
+          70.86599731445312,
+          154.3934326171875,
+          225.8349609375,
+          179.18052673339844
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "I",
+        "translated_content": "I",
+        "bbox": [
+          67.75800323486328,
+          440.23583984375,
+          88.47992706298828,
+          502.4638671875
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "ronfist stepped out of his cottage and squinted against the morning sun. The sky above Wil-lowmere was a vast canvas of the most brilliant blue he had ever seen, stretching endlesslyfrom the misty hills in the east to the dark line of the Whispering Woods in the west. Paintedacross the clouds, as if by some playful god with a brush made of wind, were the words:",
+        "translated_content": "RONFIST bước ra khỏi căn nhà nhỏ của mình và nheo mắt nhìn mặt trời buổi sáng. Bầu trời phía trên Willowmere là một bức tranh rộng lớn với màu xanh rực rỡ nhất mà cậu từng thấy, trải dài vô tận từ những ngọn đồi mờ sương ở phía đông đến đường ranh tối tăm của Whispering Woods ở phía tây. Như thể được vẽ trên những đám mây bởi một vị thần tinh nghịch với cây cọ làm bằng gió, những dòng chữ hiện ra:",
+        "bbox": [
+          70.86600494384766,
+          442.7086486816406,
+          526.4566650390625,
+          508.44586181640625
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“IT WAS A BEAUTIFUL DAY.”",
+        "translated_content": "“ĐÓ LÀ MỘT NGÀY ĐẸP TRỜI.”",
+        "bbox": [
+          158.02999877929688,
+          516.5172119140625,
+          437.22332763671875,
+          536.4425659179688
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 19.92530059814453,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "He took a deep breath. The air smelled of honeysuckle and damp earth, and somewhere inthe distance, a meadowlark was singing its heart out from the top of old Mr. Grumbleton’sweathervane.",
+        "translated_content": "Cậu hít một hơi thật sâu. Không khí thoang thoảng mùi kim ngân và đất ẩm, và ở đâu đó phía xa, một chú chim chiền chiện đang hót vang từ đỉnh chong chóng gió của ông Grumbleton già.",
+        "bbox": [
+          70.43599700927734,
+          548.527587890625,
+          524.458251953125,
+          596.3367919921875
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "He was very excited about today’s adventure. He had been waiting for this moment his entirelife — ever since his grandfather, the legendary warrior Steelfist, had told him stories about theancient Kingdom beyond the mountains. Those tales of dragons and enchanted forests had filledyoung Ironfist’s dreams for as long as he could remember.",
+        "translated_content": "Cậu rất háo hức về cuộc phiêu lưu hôm nay. Cậu đã chờ đợi khoảnh khắc này suốt cả cuộc đời mình — kể từ khi ông nội cậu, chiến binh huyền thoại Steelfist, kể cho cậu nghe những câu chuyện về Vương quốc cổ xưa bên kia núi. Những câu chuyện về rồng và rừng mê hoặc đã lấp đầy giấc mơ của IRONFIST bé bỏng từ rất lâu rồi.",
+        "bbox": [
+          70.86599731445312,
+          610.4005737304688,
+          524.4702758789062,
+          676.1367797851562
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Oh my God!”Ironfist shouted, looking at the dark cloudsrolling in from the west like a stampede of angry grey horses.The morning had been so beautiful just moments ago, but nowthe wind was picking up, sending leaves spiraling across the gar-den path. “It’s raining cats and dogs already! I haven’t even left",
+        "translated_content": "“Ôi trời ơi!” IRONFIST hét lên, nhìn những đám mây đen đang kéo đến từ phía tây như một đàn ngựa xám giận dữ. Buổi sáng vừa mới đẹp đẽ cách đây vài khoảnh khắc, nhưng giờ đây gió đã bắt đầu mạnh lên, cuốn lá xoáy tròn trên lối đi trong vườn. “Trời đã mưa như trút nước rồi! Mình còn chưa rời khỏi",
+        "bbox": [
+          70.49600219726562,
+          690.2006225585938,
+          374.8269348144531,
+          773.8648071289062
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "3",
+        "translated_content": "3",
+        "bbox": [
+          294.64898681640625,
+          791.797607421875,
+          300.6265869140625,
+          803.7528076171875
+        ],
+        "page_id": 3,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "WAS A",
+        "translated_content": "LÀ MỘT",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 3,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "BEAUIIFUL",
+        "translated_content": "ĐẸP",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 3,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "DAY?",
+        "translated_content": "NGÀY?",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 3,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "\"Iv",
+        "translated_content": "\"Iv",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 3,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của IRONFIST",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "the garden yet!”",
+        "translated_content": "khu vườn nữa!”",
+        "bbox": [
+          70.86599731445312,
+          73.7066421508789,
+          147.8813934326172,
+          85.66183471679688
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "His mother appeared at the cottage door, wiping flour from herhands onto her apron. She was a kind woman with laugh lines around her eyes and silver streaksin her dark hair.",
+        "translated_content": "Mẹ cậu xuất hiện ở cửa căn nhà nhỏ, lau bột từ tay lên tạp dề. Bà là một người phụ nữ tốt bụng với những nếp nhăn cười quanh mắt và những sợi tóc bạc lấp lánh trong mái tóc đen.",
+        "bbox": [
+          70.86599731445312,
+          98.85664367675781,
+          524.4343872070312,
+          146.66683959960938
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Take your cloak, dear,” she called out. “And don’t forget — your sister Lily is waiting for youat the crossroads. She’s been up since dawn, that girl. More excited than a squirrel in a nutfactory.”",
+        "translated_content": "“Con mang áo choàng đi, con trai,” bà gọi với ra. “Và đừng quên — em gái Lily của con đang đợi con ở ngã tư đấy. Con bé đã thức dậy từ lúc bình minh rồi. Háo hức hơn cả một con sóc trong nhà máy hạt dẻ.”",
+        "bbox": [
+          69.2760009765625,
+          159.8616485595703,
+          524.4583129882812,
+          207.67184448242188
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist grabbed his leather satchel, threw his heavy wool cloak over his shoulders, and set offdown the cobblestone lane that wound through the village of Willowmere. The rain was comingdown harder now, great fat drops that splattered against the stone walls and turned the guttersinto tiny rushing rivers.",
+        "translated_content": "IRONFIST vớ lấy chiếc túi da của mình, khoác chiếc áo choàng len nặng trịch lên vai, rồi lên đường xuống con đường lát đá cuội uốn lượn qua làng Willowmere. Mưa giờ đã nặng hạt hơn, những hạt mưa lớn bắn tung tóe vào những bức tường đá và biến các máng xối thành những con sông nhỏ chảy xiết.",
+        "bbox": [
+          70.86599731445312,
+          220.86663818359375,
+          524.4583129882812,
+          286.6028747558594
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "As he passed the village square, he noticed old Mrs. Pembury’s cat sitting on her windowsill,watching the world go by with an expression of supreme feline indifference. The cat opened itsmouth wide and let out a tremendous:",
+        "translated_content": "Khi đi qua quảng trường làng, cậu để ý thấy con mèo của bà Pembury già đang ngồi trên bệ cửa sổ, nhìn thế giới trôi qua với vẻ thờ ơ tối thượng của loài mèo. Con mèo há miệng rộng và kêu một tiếng thật lớn:",
+        "bbox": [
+          70.43599700927734,
+          299.7986755371094,
+          525.9290771484375,
+          347.60784912109375
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "MEOW!",
+        "translated_content": "MEOW!",
+        "bbox": [
+          245.72900390625,
+          350.89398193359375,
+          349.5556640625,
+          378.78936767578125
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 27.89539909362793,
+        "color": 9323693,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "“Good morning to you too, Whiskers,” Ironfist muttered, pulling his hood tighter against therain.",
+        "translated_content": "“Chào buổi sáng, Whiskers,” IRONFIST lẩm bẩm, kéo mũ trùm đầu chặt hơn để che mưa.",
+        "bbox": [
+          69.2760009765625,
+          388.07763671875,
+          524.4462890625,
+          417.9598388671875
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "4",
+        "translated_content": "4",
+        "bbox": [
+          294.5,
+          791.797607421875,
+          300.47760009765625,
+          803.7528076171875
+        ],
+        "page_id": 4,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 2",
+        "translated_content": "Chương 2",
+        "bbox": [
+          70.86599731445312,
+          89.28643798828125,
+          177.574462890625,
+          114.07353973388672
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The Goblin in the Woods",
+        "translated_content": "Yêu Tinh Trong Rừng",
+        "bbox": [
+          70.86599731445312,
+          154.3934326171875,
+          335.3443908691406,
+          179.18052673339844
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "D",
+        "translated_content": "D",
+        "bbox": [
+          70.86599731445312,
+          440.23583984375,
+          115.79461669921875,
+          502.4638671875
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "eep in the Whispering Woods, where the ancient oaks grew so close together that theirbranches wove into a living canopy overhead, the shadows danced and whisperedsecrets in a language only the trees could understand. Ironfist walked along the narrowtrail with careful, deliberate steps, his boots crunching softly on the carpet of fallen leaves. Everyfew paces, he would stop and listen, his hand resting on the pommel of his grandfather’s sword.",
+        "translated_content": "EEP trong Whispering Woods, nơi những cây sồi cổ thụ mọc sát nhau đến nỗi cành của chúng đan vào nhau thành một tán cây sống phía trên, những bóng tối nhảy múa và thì thầm những bí mật bằng một ngôn ngữ chỉ cây cối mới hiểu. IRONFIST bước đi trên con đường mòn hẹp với những bước chân cẩn trọng, có chủ ý, đôi ủng của cậu nghiền nhẹ trên thảm lá rụng. Cứ vài bước, cậu lại dừng lại lắng nghe, tay đặt trên quả chuôi thanh kiếm của ông nội mình.",
+        "bbox": [
+          70.86599731445312,
+          442.7086486816406,
+          526.5264892578125,
+          526.372802734375
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "The forest was unnaturally quiet. No birdsong. No rustling of small creatures in the undergrowth.Even the wind seemed to hold its breath.",
+        "translated_content": "Khu rừng im lặng một cách bất thường. Không tiếng chim hót. Không tiếng sột soạt của những sinh vật nhỏ trong bụi rậm. Ngay cả gió cũng dường như nín thở.",
+        "bbox": [
+          70.4959945678711,
+          540.4356689453125,
+          526.5509033203125,
+          570.31884765625
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Something isn’t right,” Ironfist whispered to himself, scanning the treeline with narrowed eyes.",
+        "translated_content": "“Có gì đó không ổn,” IRONFIST thì thầm với chính mình, quét mắt nhìn hàng cây với đôi mắt nheo lại.",
+        "bbox": [
+          69.2760009765625,
+          584.3816528320312,
+          526.5504150390625,
+          596.3368530273438
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Then he heard it — a low, guttural cackle that seemed to come from everywhere and nowhereat once.",
+        "translated_content": "Rồi cậu nghe thấy nó — một tiếng cười khẩy trầm thấp, khàn khàn dường như đến từ khắp mọi nơi và không nơi nào cùng một lúc.",
+        "bbox": [
+          70.4959945678711,
+          610.400634765625,
+          524.4708251953125,
+          640.2828369140625
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Suddenly, a Goblin leaped out from behind a twisted oak! Itwas a wretched creature, no taller than Ironfist’s waist, withmottled green skin, pointed ears that twitched like a bat’s,and yellow eyes that glowed with a malevolent inner light.It wore a patchwork vest made from what appeared to bestolen curtain fabric, and it clutched a gnarled staff carvedfrom blackthorn.",
+        "translated_content": "Đột nhiên, một Goblin nhảy xổ ra từ phía sau một cây sồi xoắn vặn! Đó là một sinh vật đáng ghét, không cao hơn eo của IRONFIST, với làn da xanh loang lổ, đôi tai nhọn vểnh lên như tai dơi, và đôi mắt vàng rực sáng với ánh sáng độc ác bên trong. Nó mặc một chiếc áo gi lê chắp vá làm từ thứ dường như là vải rèm bị đánh cắp, và nó nắm chặt một cây trượng sần sùi được chạm khắc từ cây gai đen.",
+        "bbox": [
+          236.30398559570312,
+          654.3456420898438,
+          526.5400390625,
+          773.8648071289062
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "5",
+        "translated_content": "5",
+        "bbox": [
+          294.64898681640625,
+          791.797607421875,
+          300.6265869140625,
+          803.7528076171875
+        ],
+        "page_id": 5,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của IRONFIST",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "“I will destroy you, foolish boy!” the Goblin snarled, baring its crooked yellow teeth. “Thisforest belongs to the Goblin King! No human walks through our territory and lives to tell thetale!”",
+        "translated_content": "“Ta sẽ tiêu diệt ngươi, thằng nhóc ngu ngốc!” con Goblin gầm gừ, nhe hàm răng vàng ố, cong queo. “Khu rừng này thuộc về Vua Goblin! Không một con người nào đi qua lãnh thổ của chúng ta mà còn sống sót để kể chuyện!”",
+        "bbox": [
+          69.2760009765625,
+          73.7066421508789,
+          524.4463500976562,
+          121.516845703125
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist drew his blade. The steel sang as it cleared the scabbard, catching the faint moonlightand throwing silver reflections across the dark tree trunks.",
+        "translated_content": "IRONFIST rút kiếm. Lưỡi thép ngân vang khi rời khỏi vỏ, bắt lấy ánh trăng mờ ảo và hắt những phản chiếu bạc lên những thân cây tối màu.",
+        "bbox": [
+          70.86599731445312,
+          134.71163940429688,
+          524.4701538085938,
+          164.59384155273438
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "What followed was brief and brutal. He brutally killed the beast with his sword, slashing throughthe darkness like a bolt of lightning. The creature let out a terrible shriek that echoed throughthe woods, sending a murder of crows bursting from the treetops in a flurry of black wings andpanicked cawing.",
+        "translated_content": "Những gì diễn ra sau đó thật ngắn ngủi và tàn khốc. Cậu tàn nhẫn giết chết con quái vật bằng thanh kiếm của mình, chém xuyên bóng tối như một tia sét. Sinh vật đó phát ra một tiếng thét kinh hoàng vang vọng khắp khu rừng, khiến một đàn quạ bay tán loạn khỏi ngọn cây trong một tràng cánh đen và tiếng quạ kêu hoảng loạn.",
+        "bbox": [
+          70.30400085449219,
+          177.7886505126953,
+          524.47021484375,
+          243.52584838867188
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "When it was over, Ironfist stood panting in the clearing, his sword dripping with the strangesilvery ichor that passed for Goblin blood. He felt sick to his stomach — not from fear, but fromthe violence of what he had been forced to do. He was only sixteen, after all. He cleaned hisblade on the mossy trunk of a fallen tree and sheathed it with trembling hands.",
+        "translated_content": "Khi mọi chuyện kết thúc, IRONFIST đứng thở hổn hển trong khoảng trống, thanh kiếm của cậu nhỏ giọt thứ dịch bạc kỳ lạ được coi là máu Goblin. Cậu cảm thấy buồn nôn — không phải vì sợ hãi, mà vì sự bạo lực của những gì cậu buộc phải làm. Dù sao thì cậu cũng mới mười sáu tuổi. Cậu lau lưỡi kiếm vào thân cây đổ đầy rêu và tra kiếm vào vỏ với đôi tay run rẩy.",
+        "bbox": [
+          70.30400085449219,
+          256.7206726074219,
+          524.4581909179688,
+          322.4578552246094
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“I’m sorry,” he murmured to the silent forest. “I didn’t want to hurt you. But you gave me nochoice.”",
+        "translated_content": "“Tôi xin lỗi,” cậu lẩm bẩm với khu rừng im lặng. “Tôi không muốn làm hại các bạn. Nhưng các bạn không cho tôi lựa chọn nào khác.”",
+        "bbox": [
+          69.2760009765625,
+          335.65264892578125,
+          524.4462890625,
+          365.53485107421875
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "The woods remained quiet, but somewhere in the distance, he thought he heard the sound ofother Goblins retreating through the underbrush.",
+        "translated_content": "Khu rừng vẫn im lặng, nhưng ở đâu đó phía xa, cậu nghĩ mình nghe thấy tiếng những Goblin khác đang rút lui qua bụi rậm.",
+        "bbox": [
+          70.49600219726562,
+          378.7296447753906,
+          524.4468994140625,
+          408.61285400390625
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "6",
+        "translated_content": "6",
+        "bbox": [
+          294.64898681640625,
+          791.797607421875,
+          300.6265869140625,
+          803.7528076171875
+        ],
+        "page_id": 6,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 3",
+        "translated_content": "Chương 3",
+        "bbox": [
+          70.86599731445312,
+          90.78943634033203,
+          177.574462890625,
+          115.5765380859375
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "Downtown Express",
+        "translated_content": "Tàu Tốc Hành Trung Tâm",
+        "bbox": [
+          70.86599731445312,
+          157.39944458007812,
+          274.9134216308594,
+          182.18653869628906
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "T",
+        "translated_content": "T",
+        "bbox": [
+          70.86599731445312,
+          446.246826171875,
+          108.8873062133789,
+          508.474853515625
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "he Whispering Woods eventually gave way to rolling farmland, and the rolling farmlandgave way to the outskirts of Ashenmere City — a bustling metropolis of cobblestonestreets, towering brick buildings, and more people than Ironfist had ever seen gath-ered in one place. He had heard stories about the city from traveling merchants who visitedWillowmere, but nothing could have prepared him for the sheer noise of it all. Street vendorshawking roasted chestnuts, carriages clattering over cobblestones, dogs barking, children laugh-ing, and somewhere a street musician playing a merry tune on a battered accordion.",
+        "translated_content": "ừng Lá Xì Xào cuối cùng nhường chỗ cho những cánh đồng uốn lượn, và những cánh đồng uốn lượn lại nhường chỗ cho vùng ngoại ô thành phố Ashenmere — một đô thị nhộn nhịp với những con phố lát đá cuội, những tòa nhà gạch cao chót vót, và nhiều người hơn bất cứ nơi nào Ironfist từng thấy tụ tập. Cậu đã nghe những câu chuyện về thành phố từ những thương nhân du hành ghé thăm Willowmere, nhưng không gì có thể chuẩn bị cho cậu về sự ồn ào náo nhiệt ở đây. Những người bán hàng rong rao bán hạt dẻ rang, những cỗ xe ngựa lạch cạch trên đường lát đá, chó sủa, trẻ con cười đùa, và đâu đó một nhạc công đường phố đang chơi một giai điệu vui tươi trên chiếc đàn accordion cũ kỹ.",
+        "bbox": [
+          70.30400848388672,
+          448.7186584472656,
+          526.4547119140625,
+          568.2378540039062
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "He checked the crumpled map his grandfather had drawn for him years ago. The next stage ofhis journey required crossing the city to reach the Northern Mountains, and the fastest way todo that was underground.",
+        "translated_content": "Cậu kiểm tra tấm bản đồ nhàu nát mà ông nội đã vẽ cho cậu nhiều năm trước. Chặng tiếp theo của hành trình yêu cầu cậu phải băng qua thành phố để đến Dãy Núi Phía Bắc, và cách nhanh nhất để làm điều đó là đi dưới lòng đất.",
+        "bbox": [
+          70.86602783203125,
+          583.8036499023438,
+          524.458251953125,
+          631.6128540039062
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "He took the Subway downtown — the rumbling train carrying him through dark tunnels beneaththe streets. The carriage was warm and smelled of damp wool and engine oil. An old womanacross from him was knitting something enormous and shapeless from bright purple yarn, anda man in a bowler hat was reading a newspaper with the headline: “GOBLIN SIGHTINGS ONTHE RISE — MAYOR URGES CALM.”",
+        "translated_content": "Cậu đi Tàu điện ngầm vào trung tâm thành phố — chuyến tàu ầm ầm đưa cậu qua những đường hầm tối tăm bên dưới đường phố. Toa tàu ấm áp và có mùi len ẩm cùng dầu máy. Một bà lão ngồi đối diện cậu đang đan một thứ gì đó to lớn và không định hình từ sợi len màu tím sáng, và một người đàn ông đội mũ quả dưa đang đọc tờ báo với tiêu đề: “YÊU TINH XUẤT HIỆN NGÀY CÀNG NHIỀU — THỊ TRƯỞNG KÊU GỌI BÌNH TĨNH.”",
+        "bbox": [
+          70.53103637695312,
+          647.1786499023438,
+          524.4463500976562,
+          730.8397216796875
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Let’s go!”",
+        "translated_content": "“Đi thôi!”",
+        "bbox": [
+          270.9169921875,
+          751.5136108398438,
+          324.3567199707031,
+          763.4688110351562
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "7",
+        "translated_content": "7",
+        "bbox": [
+          294.64898681640625,
+          791.797607421875,
+          300.6265869140625,
+          803.7528076171875
+        ],
+        "page_id": 7,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "SUBWAY",
+        "translated_content": "TÀU ĐIỆN NGẦM",
+        "bbox": [
+          116.22000122070312,
+          227.79837036132812,
+          479.05694580078125,
+          430.31201171875
+        ],
+        "page_id": 7,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Let's",
+        "translated_content": "Đi",
+        "bbox": [
+          116.22000122070312,
+          227.79837036132812,
+          479.05694580078125,
+          430.31201171875
+        ],
+        "page_id": 7,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "go!",
+        "translated_content": "thôi!",
+        "bbox": [
+          116.22000122070312,
+          227.79837036132812,
+          479.05694580078125,
+          430.31201171875
+        ],
+        "page_id": 7,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist murmured to himself as the train lurched forward into the tunnel. Through the grimywindow, he caught one last glimpse of the street above.",
+        "translated_content": "Ironfist lẩm bẩm một mình khi chuyến tàu giật mình lao vào đường hầm. Qua ô cửa sổ bẩn thỉu, cậu kịp nhìn thoáng qua con phố phía trên lần cuối.",
+        "bbox": [
+          70.43599700927734,
+          73.7066421508789,
+          524.7571411132812,
+          103.58984375
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Outside the station, a group of children had built a Snowman.It wore a top hat and had a bright orange carrot for a nose, withtwo lumps of coal for eyes that seemed to stare at passersbywith a cheerful, frozen grin. A tattered red scarf was wrappedaround its neck, fluttering gently in the icy breeze. The childrenlaughed and threw snowballs at each other, their cheeks red asapples, their breath forming little white clouds in the frigid air.",
+        "translated_content": "Bên ngoài nhà ga, một nhóm trẻ em đã đắp một Người Tuyết. Nó đội một chiếc mũ chóp cao và có một củ cà rốt màu cam sáng làm mũi, với hai cục than làm mắt dường như đang nhìn chằm chằm vào những người qua đường với nụ cười tươi tắn, đông cứng. Một chiếc khăn quàng cổ màu đỏ rách rưới quấn quanh cổ nó, khẽ bay phấp phới trong làn gió lạnh buốt. Bọn trẻ cười đùa và ném tuyết vào nhau, má chúng đỏ như táo, hơi thở tạo thành những đám mây trắng nhỏ trong không khí giá lạnh.",
+        "bbox": [
+          70.43599700927734,
+          116.7846450805664,
+          374.8067932128906,
+          236.30284118652344
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist smiled at the scene. It reminded him of winters back in Willowmere, when he and Lilywould build snow forts in the meadow behind their cottage and wage epic snowball battles thatlasted until their mother called them in for hot cocoa.",
+        "translated_content": "Ironfist mỉm cười nhìn cảnh tượng đó. Nó gợi cho cậu nhớ về những mùa đông ở Willowmere, khi cậu và Lily thường xây pháo đài tuyết trên đồng cỏ phía sau ngôi nhà nhỏ của họ và tổ chức những trận chiến ném tuyết hoành tráng kéo dài cho đến khi mẹ gọi họ vào uống sô cô la nóng.",
+        "bbox": [
+          70.43599700927734,
+          249.4976348876953,
+          524.76904296875,
+          297.3078308105469
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "But he couldn’t linger. The mountains were calling.",
+        "translated_content": "Nhưng cậu không thể nán lại. Những ngọn núi đang vẫy gọi.",
+        "bbox": [
+          70.86599731445312,
+          310.5026550292969,
+          318.3625183105469,
+          322.4578552246094
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "8",
+        "translated_content": "8",
+        "bbox": [
+          294.64898681640625,
+          791.797607421875,
+          300.6265869140625,
+          803.7528076171875
+        ],
+        "page_id": 8,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 4",
+        "translated_content": "Chương 4",
+        "bbox": [
+          70.86599731445312,
+          90.37944030761719,
+          177.574462890625,
+          115.16654205322266
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The Shadow",
+        "translated_content": "Bóng Tối",
+        "bbox": [
+          70.86599731445312,
+          156.57943725585938,
+          202.41114807128906,
+          181.3665313720703
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "T",
+        "translated_content": "T",
+        "bbox": [
+          70.86599731445312,
+          444.60784912109375,
+          108.8873062133789,
+          506.83587646484375
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "he city streets grew quiet as evening fell like a heavy velvet curtain over Ashenmere. Thegas lamps flickered to life one by one along the boulevard, casting pools of amber lightthat barely penetrated the thickening fog. Most sensible people had retreated indoorsby now — Ironfist could see their silhouettes moving behind curtained windows, warm and safein their homes. The smell of cooking — roast meat, baking bread, something with cinnamon —drifted out of the houses and made his stomach growl.",
+        "translated_content": "ường phố thành phố trở nên yên tĩnh khi màn đêm buông xuống như một tấm màn nhung nặng nề bao phủ Ashenmere. Những ngọn đèn khí ga lần lượt bập bùng sáng dọc theo đại lộ, tạo thành những vũng ánh sáng hổ phách hầu như không xuyên qua được lớp sương mù dày đặc. Hầu hết những người tỉnh táo đã rút vào trong nhà — Ironfist có thể nhìn thấy bóng dáng họ di chuyển phía sau những ô cửa sổ có rèm che, ấm áp và an toàn trong tổ ấm của mình. Mùi thức ăn nấu nướng — thịt quay, bánh mì nướng, thứ gì đó có quế — thoảng ra từ những ngôi nhà và khiến bụng cậu réo lên.",
+        "bbox": [
+          70.86599731445312,
+          447.0806579589844,
+          526.2515869140625,
+          548.671875
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "He was searching for an inn where he could spend the night before setting out for the mountainsat dawn. His map indicated there should be one on Cobbler’s Lane, just past the old fountainwith the stone mermaid.",
+        "translated_content": "Cậu đang tìm một quán trọ để nghỉ qua đêm trước khi lên đường đến những ngọn núi vào lúc bình minh. Tấm bản đồ của cậu chỉ ra rằng có một quán trọ trên Phố Thợ Giày, ngay sau đài phun nước cũ có nàng tiên cá bằng đá.",
+        "bbox": [
+          70.43600463867188,
+          563.82763671875,
+          524.4583129882812,
+          611.6378173828125
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "But as he turned the corner, he saw something that made him freeze mid-step.",
+        "translated_content": "Nhưng khi cậu rẽ qua góc phố, cậu nhìn thấy một thứ khiến cậu đứng sững lại giữa bước chân.",
+        "bbox": [
+          70.86599731445312,
+          626.7936401367188,
+          442.5770568847656,
+          638.7488403320312
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "From the dark alley ahead, a shape emerged — neither man nor woman, neither young nor old.Just a presence. A figure wrapped in a cloak so dark it seemed to swallow the lamplight aroundit. Where a face should have been, there was only shadow, and within that shadow, two pointsof pale light that might have been eyes.",
+        "translated_content": "Từ con hẻm tối phía trước, một hình dáng xuất hiện — không phải đàn ông cũng không phải phụ nữ, không trẻ cũng không già. Chỉ là một sự hiện diện. Một hình bóng khoác áo choàng tối đến mức dường như nuốt chửng ánh đèn đường xung quanh nó. Nơi lẽ ra là một khuôn mặt, chỉ có bóng tối, và trong bóng tối đó, hai điểm sáng nhạt có thể là đôi mắt.",
+        "bbox": [
+          70.63899993896484,
+          653.9046630859375,
+          526.55029296875,
+          719.641845703125
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "They are coming closer.",
+        "translated_content": "Họ đang đến gần.",
+        "bbox": [
+          70.47200012207031,
+          734.7976684570312,
+          186.68777465820312,
+          746.8037719726562
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist pressed his back against the cold brick wall and held his breath. His heart was hammering",
+        "translated_content": "Ironfist áp lưng vào bức tường gạch lạnh lẽo và nín thở. Tim cậu đập thình thịch",
+        "bbox": [
+          70.86599731445312,
+          761.90966796875,
+          524.458251953125,
+          773.8648681640625
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "9",
+        "translated_content": "9",
+        "bbox": [
+          294.64898681640625,
+          791.797607421875,
+          300.6265869140625,
+          803.7528076171875
+        ],
+        "page_id": 9,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 10,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "so loud he was certain the creature could hear it. The figure moved with an unsettling fluidity,as if it were not walking but gliding across the cobblestones, its dark cloak trailing behind likeink bleeding through water.",
+        "translated_content": "quá lớn đến nỗi cậu chắc chắn sinh vật đó có thể nghe thấy. Hình bóng di chuyển với một sự uyển chuyển đáng sợ, như thể nó không đi mà đang lướt trên những viên đá cuội, chiếc áo choàng tối màu của nó lướt theo sau như mực loang trong nước.",
+        "bbox": [
+          70.86599731445312,
+          73.7066421508789,
+          525.9765625,
+          121.516845703125
+        ],
+        "page_id": 10,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Who are you?” he whispered into the fog. His voice came out thin and reedy, nothing like thebrave warrior he fancied himself to be.",
+        "translated_content": "“Ngươi là ai?” cậu thì thầm vào màn sương. Giọng cậu yếu ớt và run rẩy, chẳng giống chút nào với chiến binh dũng cảm mà cậu tự tưởng tượng mình là.",
+        "bbox": [
+          69.2760009765625,
+          134.71163940429688,
+          524.458251953125,
+          164.59384155273438
+        ],
+        "page_id": 10,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "But they did not answer. They simply watched, those pale eyes unblinking, and then — like acandle flame snuffed out by a sudden breeze — the figure dissolved into the mist and was gone.",
+        "translated_content": "Nhưng chúng không trả lời. Chúng chỉ đơn giản là nhìn chằm chằm, đôi mắt nhợt nhạt ấy không hề chớp, và rồi — như ngọn nến bị gió thổi tắt đột ngột — bóng hình đó tan biến vào màn sương và biến mất.",
+        "bbox": [
+          70.86599731445312,
+          177.7886505126953,
+          526.5504150390625,
+          207.67184448242188
+        ],
+        "page_id": 10,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist stood there for a long time, shaking, before he found the courage to move again.",
+        "translated_content": "Ironfist đứng đó rất lâu, run rẩy, trước khi cậu tìm thấy đủ dũng khí để di chuyển trở lại.",
+        "bbox": [
+          70.86601257324219,
+          220.86663818359375,
+          492.537841796875,
+          232.82183837890625
+        ],
+        "page_id": 10,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "10",
+        "translated_content": "10",
+        "bbox": [
+          291.510986328125,
+          791.797607421875,
+          303.4661865234375,
+          803.7528076171875
+        ],
+        "page_id": 10,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 5",
+        "translated_content": "Chương 5",
+        "bbox": [
+          70.86599731445312,
+          90.44243621826172,
+          177.574462890625,
+          115.22953796386719
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The Grand Feast",
+        "translated_content": "Bữa Tiệc Lớn",
+        "bbox": [
+          70.86599731445312,
+          156.7054443359375,
+          251.2665252685547,
+          181.49253845214844
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "T",
+        "translated_content": "T",
+        "bbox": [
+          70.86599731445312,
+          444.85986328125,
+          108.8873062133789,
+          507.0878601074219
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "he shadow turned out to be a friend. Well, perhaps “friend” was too strong a word —it turned out to be the old innkeeper of the Silver Stag Tavern, a stooped, mysteriousfigure named Mr. Greycloak, who had a peculiar habit of skulking about in the fog to“check on the neighborhood,” as he put it. He was eccentric, certainly, but harmless, and heinvited Ironfist inside with a toothless grin and a promise of the finest Christmas feast this sideof the Northern Mountains.",
+        "translated_content": "óng tối hóa ra lại là một người bạn. Chà, có lẽ “bạn” là một từ quá mạnh — hóa ra đó là ông chủ quán trọ già của Quán Rượu Hươu Bạc, một nhân vật bí ẩn, lưng còng tên là Mr. Greycloak, người có thói quen kỳ lạ là lảng vảng trong sương mù để “kiểm tra khu phố,” như ông ta nói. Ông ta chắc chắn là lập dị, nhưng vô hại, và ông ta mời Ironfist vào trong với một nụ cười móm mém và lời hứa về bữa tiệc Giáng sinh ngon nhất vùng này của Dãy Núi Phía Bắc.",
+        "bbox": [
+          69.2760009765625,
+          447.3326416015625,
+          526.2325439453125,
+          548.923828125
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "And what a feast it was.",
+        "translated_content": "Và quả là một bữa tiệc thịnh soạn.",
+        "bbox": [
+          70.43600463867188,
+          564.1426391601562,
+          185.30157470703125,
+          576.0978393554688
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "They enjoyed a big roasted Turkey for Christmas dinner.The golden bird sat at the center of the long oak table, itscrispy skin glistening with rendered fat and rosemary, sur-rounded by mountains of roasted potatoes, boats of steam-ing gravy, bowls of cranberry sauce, and platters of roastedroot vegetables. The hall was decked with boughs of hollyand ivy, and dozens of candles cast a warm, flickering glowacross the faces of the assembled guests — farmers, merchants, traveling performers, and onerather bewildered-looking teenager from Willowmere.",
+        "translated_content": "Họ thưởng thức một con Gà Tây quay lớn cho bữa tối Giáng sinh. Con chim vàng óng nằm giữa chiếc bàn gỗ sồi dài, lớp da giòn tan óng ánh mỡ và hương thảo, bao quanh bởi những núi khoai tây nướng, những thuyền nước sốt thịt bốc hơi, những bát sốt nam việt quất, và những đĩa rau củ nướng. Sảnh được trang trí bằng những cành cây nhựa ruồi và thường xuân, và hàng chục ngọn nến tỏa ra ánh sáng ấm áp, lung linh trên khuôn mặt của những vị khách tụ họp — nông dân, thương nhân, nghệ sĩ du hành, và một thiếu niên trông khá bối rối đến từ Willowmere.",
+        "bbox": [
+          70.86599731445312,
+          591.316650390625,
+          526.51318359375,
+          746.6898193359375
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist held a juicy Hamburger in his other hand — his favorite comfort food, even at a fancy",
+        "translated_content": "Ironfist cầm một chiếc Hamburger mọng nước trên tay kia — món ăn yêu thích của cậu, ngay cả trong một bữa tiệc sang trọng",
+        "bbox": [
+          70.86599731445312,
+          761.9096069335938,
+          524.7315063476562,
+          773.9157104492188
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "11",
+        "translated_content": "11",
+        "bbox": [
+          291.88201904296875,
+          791.797607421875,
+          303.3948669433594,
+          803.7528076171875
+        ],
+        "page_id": 11,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "{BAKCRy",
+        "translated_content": "TIỆM BÁNH",
+        "bbox": [
+          116.22000122070312,
+          226.75836181640625,
+          479.05694580078125,
+          429.2720031738281
+        ],
+        "page_id": 11,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "feast. The innkeeper had prepared it specially for him after learning that the boy had a peculiarfondness for ground beef patties between two halves of a sesame-seed bun. It was, Ironfistreflected as he took an enormous bite, possibly the best Hamburger he had ever eaten.",
+        "translated_content": "tiệc. Ông chủ quán trọ đã đặc biệt chuẩn bị món này cho cậu sau khi biết cậu bé có niềm yêu thích đặc biệt với những miếng thịt bò xay kẹp giữa hai nửa chiếc bánh mì mè. Ironfist suy ngẫm khi cắn một miếng lớn, đây có lẽ là chiếc Hamburger ngon nhất mà cậu từng ăn.",
+        "bbox": [
+          70.86599731445312,
+          73.7066421508789,
+          524.6854248046875,
+          121.516845703125
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "BAKERY",
+        "translated_content": "TIỆM BÁNH",
+        "bbox": [
+          261.42401123046875,
+          140.41268920898438,
+          334.4689636230469,
+          157.62808227539062
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 17.21540069580078,
+        "color": 16777215,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "On the wall behind the head table hung a wooden signboard that read “BAKERY” in ornategolden letters — a relic from the tavern’s previous life as the village bakehouse. Mr. Greycloakwas rather proud of it.",
+        "translated_content": "Trên bức tường phía sau bàn chính treo một tấm biển gỗ có chữ “TIỆM BÁNH” bằng những chữ vàng trang trí công phu — một di vật từ cuộc đời trước của quán rượu khi nó còn là lò bánh của làng. Mr. Greycloak khá tự hào về nó.",
+        "bbox": [
+          70.43596649169922,
+          174.6746368408203,
+          524.7571411132812,
+          222.4838409423828
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“My grandmother baked the finest sourdough in three counties,” he told Ironfist, gesturing at thesign with a gnarled finger. “People came from miles around. That sign hung above her door forfifty years.”",
+        "translated_content": "“Bà tôi đã nướng loại bánh mì sourdough ngon nhất trong ba hạt,” ông nói với Ironfist, chỉ tay vào tấm biển bằng ngón tay chai sần. “Người ta đến từ khắp nơi. Tấm biển đó đã treo trên cửa nhà bà tôi suốt năm mươi năm.”",
+        "bbox": [
+          69.27597045898438,
+          235.6786346435547,
+          524.6494750976562,
+          283.4888610839844
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Through the tall arched windows, fireworks exploded in the starry December sky — great bloom-ing chrysanthemums of red, gold, and green that lit up the snow-covered rooftops and cast danc-ing shadows across the feast.",
+        "translated_content": "Qua những ô cửa sổ vòm cao, pháo hoa nổ tung trên bầu trời đầy sao tháng Mười Hai — những bông cúc nở rộ rực rỡ màu đỏ, vàng và xanh lá cây thắp sáng những mái nhà phủ tuyết và đổ bóng nhảy múa khắp bữa tiệc.",
+        "bbox": [
+          70.49596405029297,
+          296.6836242675781,
+          526.443359375,
+          344.4928283691406
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "BOOM!",
+        "translated_content": "BÙM!",
+        "bbox": [
+          248.8280029296875,
+          350.19598388671875,
+          346.4618835449219,
+          378.09136962890625
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 27.89539909362793,
+        "color": 15158332,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The children at the far end of the table squealed with delight. An old man spilled his soup.And Ironfist grinned from ear to ear, thinking that perhaps adventures weren’t only about fight-ing Goblins and chasing shadows — sometimes they were about sitting in a warm room withstrangers who felt like family, eating too much food, and watching the sky catch fire.",
+        "translated_content": "Những đứa trẻ ở cuối bàn reo hò thích thú. Một ông lão làm đổ bát súp của mình. Và Ironfist cười toe toét, nghĩ rằng có lẽ những cuộc phiêu lưu không chỉ là về việc chiến đấu với Yêu Tinh và đuổi theo bóng tối — đôi khi chúng là về việc ngồi trong một căn phòng ấm áp với những người lạ mà cảm thấy như gia đình, ăn quá nhiều thức ăn, và ngắm nhìn bầu trời bốc cháy.",
+        "bbox": [
+          70.43599700927734,
+          387.379638671875,
+          526.551025390625,
+          453.1158447265625
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "12",
+        "translated_content": "12",
+        "bbox": [
+          291.510986328125,
+          791.797607421875,
+          303.4661865234375,
+          803.7528076171875
+        ],
+        "page_id": 12,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 6",
+        "translated_content": "Chương 6",
+        "bbox": [
+          70.86599731445312,
+          89.28643798828125,
+          177.574462890625,
+          114.07353973388672
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The Mountain Trail",
+        "translated_content": "Đường Mòn Núi",
+        "bbox": [
+          70.86599731445312,
+          154.3934326171875,
+          281.1349792480469,
+          179.18052673339844
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "T",
+        "translated_content": "T",
+        "bbox": [
+          70.86599731445312,
+          440.23583984375,
+          108.8873062133789,
+          502.4638671875
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "he next morning, Ironfist and his little sister Lily set out for the Rocky Mountains. Shehad been waiting for him at the crossroads just outside town, bouncing on her heelswith barely contained excitement, her cheeks rosy from the cold and a knitted hat pulleddown over her pigtails.",
+        "translated_content": "Sáng hôm sau, Ironfist và em gái nhỏ Lily lên đường đến Dãy núi Rocky. Cô bé đã đợi anh ở ngã tư ngay bên ngoài thị trấn, nhún nhảy trên gót chân với sự phấn khích khó kìm nén, má hồng vì lạnh và chiếc mũ len kéo sụp xuống che bím tóc.",
+        "bbox": [
+          70.86600494384766,
+          442.7086486816406,
+          524.476318359375,
+          508.44586181640625
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“You should be careful,” Ironfist warned his sister as they began the steep ascent up the Thorn-back Ridge. “The trail can be dangerous. One wrong step and you’ll tumble down into thevalley. And I’d rather not explain to Mother how I lost her youngest daughter.”",
+        "translated_content": "“Em phải cẩn thận,” Ironfist cảnh báo em gái khi họ bắt đầu leo dốc lên Sườn núi Thorn-back. “Đường mòn có thể nguy hiểm. Chỉ cần một bước sai là em sẽ lăn xuống thung lũng. Và anh không muốn phải giải thích với Mẹ rằng anh đã làm mất cô con gái út của bà như thế nào.”",
+        "bbox": [
+          69.2760009765625,
+          522.5086669921875,
+          526.44287109375,
+          570.31884765625
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“You worry too much,” Lily replied cheerfully, skipping ahead over the loose stones with thefearless agility of a mountain goat. “Race you to the top!”",
+        "translated_content": "“Anh lo lắng quá nhiều rồi,” Lily vui vẻ đáp, nhảy nhót phía trước qua những viên đá lỏng lẻo với sự nhanh nhẹn không sợ hãi của một con dê núi. “Đua xem ai lên đỉnh trước nhé!”",
+        "bbox": [
+          69.2760009765625,
+          584.3816528320312,
+          524.458251953125,
+          614.2638549804688
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "The old mountain guide was waiting for them at the Shepherd’sCairn — a weathered man with a beard like a snowdrift and eyesthe color of glacier ice. He’d been guiding travelers throughthese mountains for forty years, and he knew every ridge, everyravine, every treacherous patch of black ice that could send theunwary sliding a thousand feet to their doom.",
+        "translated_content": "Người dẫn đường núi già đang đợi họ ở Mốc Đá Mục Đồng — một người đàn ông phong trần với bộ râu trắng như tuyết đọng và đôi mắt màu băng sông băng. Ông đã dẫn đường cho du khách qua những ngọn núi này suốt bốn mươi năm, và ông biết rõ từng sườn núi, từng khe núi, từng mảng băng đen nguy hiểm có thể khiến người bất cẩn trượt ngã hàng ngàn mét xuống vực sâu.",
+        "bbox": [
+          70.86599731445312,
+          628.32763671875,
+          373.0336608886719,
+          729.9188232421875
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "He squinted at his ancient map through a pair of spectacles heldtogether with string and hope, and said in a voice like gravel rolling downhill:",
+        "translated_content": "Ông nheo mắt nhìn tấm bản đồ cổ của mình qua cặp kính được giữ chặt bằng dây và hy vọng, rồi nói bằng giọng như sỏi đá lăn xuống dốc:",
+        "bbox": [
+          70.86599731445312,
+          743.9816284179688,
+          443.4378662109375,
+          773.8648071289062
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "13",
+        "translated_content": "13",
+        "bbox": [
+          291.6600036621094,
+          791.797607421875,
+          303.6152038574219,
+          803.7528076171875
+        ],
+        "page_id": 13,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "MT:",
+        "translated_content": "MT:",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 13,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "TRAIL",
+        "translated_content": "TRAIL",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 13,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "ALT: 2150M",
+        "translated_content": "ALT: 2150M",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 13,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "PEAK 6KM",
+        "translated_content": "PEAK 6KM",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 13,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "VALLEY 8KM",
+        "translated_content": "VALLEY 8KM",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 13,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "ELARA",
+        "translated_content": "ELARA",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 13,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "OW",
+        "translated_content": "OW",
+        "bbox": [
+          382.677001953125,
+          643.9044189453125,
+          524.40966796875,
+          723.010986328125
+        ],
+        "page_id": 13,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "“Walk 15 miles to the North. Bring 3 pounds of dried food and plenty of water. It’s nearly 100degrees Fahrenheit out there in the sun, believe it or not. The altitude plays tricks. You’ll freezein the shadows and roast on the ridgeline.”",
+        "translated_content": "“Đi bộ 15 dặm về phía Bắc. Mang theo 3 pound thức ăn khô và nhiều nước. Ngoài trời nắng nóng gần 100 độ Fahrenheit đấy, tin hay không tùy. Độ cao sẽ đánh lừa cảm giác. Con sẽ đóng băng trong bóng râm và cháy nắng trên sườn núi.”",
+        "bbox": [
+          69.2760009765625,
+          73.7066421508789,
+          524.47021484375,
+          121.516845703125
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist converted the figures in his head — that was roughly 24 kilometers, about 1.4 kilogramsof food, and nearly 38 degrees Celsius. The old Imperial measurements still confused himsometimes.",
+        "translated_content": "Ironfist nhẩm tính các con số trong đầu — đó là khoảng 24 kilômét, khoảng 1.4 kilôgam thức ăn, và gần 38 độ C. Các đơn vị đo lường cũ của Đế quốc đôi khi vẫn làm anh bối rối.",
+        "bbox": [
+          70.86599731445312,
+          134.71163940429688,
+          524.458251953125,
+          182.52084350585938
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“How long will the crossing take?” Lily asked, peering up at the towering peaks with wide eyes.",
+        "translated_content": "“Việc băng qua sẽ mất bao lâu ạ?” Lily hỏi, ngước nhìn những đỉnh núi cao chót vót với đôi mắt mở to.",
+        "bbox": [
+          69.2760009765625,
+          195.71664428710938,
+          526.5504150390625,
+          207.67184448242188
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Two days if the weather holds. Three if it doesn’t. A lifetime if you take a wrong turn.” Theguide chuckled darkly. “But don’t worry, little one. I haven’t lost a traveler yet. Well... notrecently, anyway.”",
+        "translated_content": "“Hai ngày nếu thời tiết thuận lợi. Ba ngày nếu không. Cả đời nếu con đi sai đường.” Người dẫn đường cười khẩy. “Nhưng đừng lo, cô bé. Ta chưa làm mất du khách nào cả. À... không phải gần đây thôi.”",
+        "bbox": [
+          69.2760009765625,
+          220.86663818359375,
+          524.4702758789062,
+          268.6758728027344
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Lily looked worried, but Ironfist squeezed her hand.",
+        "translated_content": "Lily trông có vẻ lo lắng, nhưng Ironfist siết chặt tay cô bé.",
+        "bbox": [
+          70.86599731445312,
+          281.8706359863281,
+          320.2156066894531,
+          293.8258361816406
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Don’t worry,” he said gently. “I’ll protect you. That’s what big brothers are for.”",
+        "translated_content": "“Đừng lo,” anh nhẹ nhàng nói. “Anh sẽ bảo vệ em. Đó là việc của các anh trai mà.”",
+        "bbox": [
+          69.2760009765625,
+          307.0206604003906,
+          459.6252136230469,
+          318.9758605957031
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "They set off up the mountain as the sun climbed higher, painting the snow-covered peaks inshades of rose and gold. The air was thin and sharp, tasting of pine resin and glacial meltwater,and every breath felt like drinking ice.",
+        "translated_content": "Họ lên đường leo núi khi mặt trời lên cao hơn, nhuộm những đỉnh núi phủ tuyết trong sắc hồng và vàng. Không khí loãng và sắc lạnh, mang vị nhựa thông và nước tan từ sông băng, và mỗi hơi thở như uống băng.",
+        "bbox": [
+          70.49600219726562,
+          332.171630859375,
+          525.964599609375,
+          379.9808349609375
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "14",
+        "translated_content": "14",
+        "bbox": [
+          291.510986328125,
+          791.797607421875,
+          303.4661865234375,
+          803.7528076171875
+        ],
+        "page_id": 14,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 7",
+        "translated_content": "Chương 7",
+        "bbox": [
+          70.86599731445312,
+          89.28643798828125,
+          177.574462890625,
+          114.07353973388672
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "Campfire Stories",
+        "translated_content": "Những Câu Chuyện Bên Lửa Trại",
+        "bbox": [
+          70.86599731445312,
+          154.3934326171875,
+          251.44003295898438,
+          179.18052673339844
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "T",
+        "translated_content": "T",
+        "bbox": [
+          70.86599731445312,
+          440.23583984375,
+          108.8873062133789,
+          502.4638671875
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "hey set up camp near a quiet stream that gurgled over smooth stones on its way down tothe valley far below. The stars blazed overhead like diamonds scattered across blackvelvet — more stars than Ironfist had ever seen, even on the clearest nights in Wil-lowmere. Without the glow of city lights, the Milky Way was visible as a vast, luminous riverof light flowing from one horizon to the other. It was, Ironfist thought, the most beautiful thinghe had ever seen.",
+        "translated_content": "Họ dựng trại gần một con suối yên tĩnh róc rách chảy qua những viên đá trơn nhẵn trên đường xuống thung lũng xa tít bên dưới. Những vì sao rực sáng trên cao như kim cương rải trên nhung đen — nhiều sao hơn cả Ironfist từng thấy, ngay cả trong những đêm quang đãng nhất ở Willowmere. Không có ánh đèn thành phố, Dải Ngân Hà hiện ra như một dòng sông ánh sáng rộng lớn, rực rỡ chảy từ chân trời này sang chân trời khác. Ironfist nghĩ, đó là điều đẹp nhất anh từng thấy.",
+        "bbox": [
+          70.86599731445312,
+          442.7086486816406,
+          526.46044921875,
+          544.2998046875
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "As they roasted marshmallows — Lily liked hers barely toasted,Ironfist preferred his charred black on the outside and moltenin the middle — Ironfist tried to make his sister laugh with ariddle.",
+        "translated_content": "Khi họ nướng kẹo dẻo — Lily thích kẹo của mình chỉ hơi nướng vàng, Ironfist thích kẹo của mình cháy đen bên ngoài và tan chảy bên trong — Ironfist cố gắng làm em gái cười bằng một câu đố.",
+        "bbox": [
+          222.56100463867188,
+          558.3636474609375,
+          525.9361572265625,
+          624.0997924804688
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Here’s one Grandfather used to tell me,” he said, turning hismarshmallow slowly over the flames. “Time flies like an arrow;fruit flies like a banana!”",
+        "translated_content": "“Đây là một câu ông nội từng kể cho cháu,” cậu nói, từ từ xoay miếng kẹo dẻo của mình trên ngọn lửa. “Thời gian bay như tên bắn; ruồi giấm thì bay tới chuối!”",
+        "bbox": [
+          220.97100830078125,
+          638.16357421875,
+          525.4340209960938,
+          685.9727783203125
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Lily giggled so hard she nearly dropped her marshmallow into the fire. “That doesn’t even makesense!” she exclaimed.",
+        "translated_content": "Lily cười khúc khích đến nỗi suýt làm rơi viên kẹo dẻo vào lửa. “Cái đó thậm chí còn không có nghĩa gì cả!” cô bé thốt lên.",
+        "bbox": [
+          70.86599731445312,
+          700.0365600585938,
+          524.4581909179688,
+          729.9187622070312
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“That’s the whole point,” said Ironfist, poking the fire with a long stick and sending a shower oforange sparks spiraling up into the starry sky. “Some things are funnier when they don’t make",
+        "translated_content": "“Đó chính là điểm mấu chốt,” Ironfist nói, chọc lửa bằng một cây gậy dài và làm một trận mưa tia lửa cam xoáy lên bầu trời đầy sao. “Một số thứ sẽ buồn cười hơn khi chúng không có",
+        "bbox": [
+          69.2760009765625,
+          743.9815673828125,
+          524.4462890625,
+          773.86474609375
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "15",
+        "translated_content": "15",
+        "bbox": [
+          291.6600036621094,
+          791.797607421875,
+          303.6152038574219,
+          803.7528076171875
+        ],
+        "page_id": 15,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "sense. Grandfather always said that the best jokes are the ones that make you think twice.”",
+        "translated_content": "nghĩa. Ông nội luôn nói rằng những câu chuyện cười hay nhất là những câu khiến con phải suy nghĩ hai lần.”",
+        "bbox": [
+          70.86599731445312,
+          73.7066421508789,
+          504.4810791015625,
+          85.66183471679688
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "They sat in comfortable silence for a while, listening to the crackle of the fire and the distanthooting of an owl. The mountain air was cold enough to see their breath, but the fire was warm,and Lily had snuggled into her sleeping bag with only her face poking out, like a caterpillar ina very colorful cocoon.",
+        "translated_content": "Họ ngồi im lặng thoải mái một lúc, lắng nghe tiếng lửa reo tí tách và tiếng cú kêu từ xa. Không khí núi lạnh đến mức có thể nhìn thấy hơi thở, nhưng ngọn lửa thì ấm áp, và Lily đã cuộn mình trong túi ngủ chỉ để lộ khuôn mặt ra ngoài, giống như một con sâu bướm trong một cái kén rất nhiều màu sắc.",
+        "bbox": [
+          70.49600219726562,
+          98.85664367675781,
+          525.95263671875,
+          164.59384155273438
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Ironfist?” she said sleepily.",
+        "translated_content": "“Ironfist?” cô bé nói một cách ngái ngủ.",
+        "bbox": [
+          69.2760009765625,
+          177.7886505126953,
+          204.967529296875,
+          189.7438507080078
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Yes?”",
+        "translated_content": "“Gì vậy?”",
+        "bbox": [
+          69.2760009765625,
+          202.9386444091797,
+          102.59513854980469,
+          214.8938446044922
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Do you think we’ll really find the Kingdom? The one in Grandfather’s stories?”",
+        "translated_content": "“Anh có nghĩ chúng ta sẽ thực sự tìm thấy Vương quốc không? Cái vương quốc trong những câu chuyện của ông nội ấy?”",
+        "bbox": [
+          69.2760009765625,
+          228.0896453857422,
+          457.8558654785156,
+          240.0448455810547
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist stared into the flames, watching them dance and leap and die and be reborn, endlessly,tirelessly.",
+        "translated_content": "Ironfist nhìn chằm chằm vào ngọn lửa, ngắm chúng nhảy múa, bùng lên rồi tàn lụi và tái sinh, không ngừng nghỉ, không mệt mỏi.",
+        "bbox": [
+          70.86599731445312,
+          253.23963928222656,
+          525.964599609375,
+          283.1218566894531
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“I don’t know,” he admitted. “But I think the journey is worth taking, regardless of what we findat the end.”",
+        "translated_content": "“Anh không biết,” anh thừa nhận. “Nhưng anh nghĩ cuộc hành trình này đáng giá, bất kể chúng ta tìm thấy gì ở cuối con đường.”",
+        "bbox": [
+          69.2760009765625,
+          296.316650390625,
+          524.4462280273438,
+          326.1988525390625
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "But Lily was already asleep, her breathing slow and steady, a faint smile on her lips.",
+        "translated_content": "Nhưng Lily đã ngủ thiếp đi, hơi thở chậm rãi và đều đặn, một nụ cười mờ nhạt trên môi cô bé.",
+        "bbox": [
+          70.86599731445312,
+          339.3946533203125,
+          473.1823425292969,
+          351.349853515625
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "16",
+        "translated_content": "16",
+        "bbox": [
+          291.510986328125,
+          791.797607421875,
+          303.4661865234375,
+          803.7528076171875
+        ],
+        "page_id": 16,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 8",
+        "translated_content": "Chương 8",
+        "bbox": [
+          70.86599731445312,
+          89.28643798828125,
+          177.574462890625,
+          114.07353973388672
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The Enchanted Door",
+        "translated_content": "Cánh Cửa Mê Hoặc",
+        "bbox": [
+          70.86599731445312,
+          154.3934326171875,
+          292.5866394042969,
+          179.18052673339844
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "I",
+        "translated_content": "I",
+        "bbox": [
+          70.86599731445312,
+          440.23583984375,
+          91.58792114257812,
+          502.4638671875
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "nside the mountain cave, past columns of glittering quartz and curtains of crystalline stalac-tites that chimed softly when the wind passed through them, they found a door. Not justany door — this was a door that clearly did not want to be found. It was set deep into theliving rock, its surface carved with runes so old that even the mountain guide (who claimed tospeak fourteen languages, including three that were technically extinct) could not decipher them.The wood was dark and ancient, harder than iron, and bound with bands of tarnished silver. Andat its center, gleaming like a tiny golden eye, was the most intricate keyhole Ironfist had everseen.",
+        "translated_content": "Bên trong hang núi, qua những cột thạch anh lấp lánh và những bức màn thạch nhũ pha lê khẽ ngân vang khi gió thổi qua, họ tìm thấy một cánh cửa. Không phải một cánh cửa bình thường — đây là một cánh cửa rõ ràng không muốn bị tìm thấy. Nó được đặt sâu vào trong khối đá sống, bề mặt được chạm khắc những chữ rune cổ đến mức ngay cả người dẫn đường núi (người tự nhận nói được mười bốn ngôn ngữ, bao gồm ba ngôn ngữ về mặt kỹ thuật đã tuyệt chủng) cũng không thể giải mã. Gỗ tối màu và cổ kính, cứng hơn sắt, được buộc bằng những dải bạc xỉn màu. Và ở giữa, lấp lánh như một con mắt vàng nhỏ xíu, là ổ khóa phức tạp nhất mà Ironfist từng thấy.",
+        "bbox": [
+          70.49600219726562,
+          442.7086486816406,
+          526.5743408203125,
+          580.1548461914062
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“It’s locked,” said Lily, stating the obvious with the unshakeable confidence of a ten-year-old.",
+        "translated_content": "“Nó bị khóa rồi,” Lily nói, khẳng định điều hiển nhiên với sự tự tin không lay chuyển của một đứa trẻ mười tuổi.",
+        "bbox": [
+          69.2760009765625,
+          594.2176513671875,
+          518.4925537109375,
+          606.1728515625
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Clearly,” Ironfist replied, pushing against the door with his shoulder. It didn’t budge a millime-ter. He might as well have been pushing against the mountain itself.",
+        "translated_content": "“Rõ ràng rồi,” Ironfist đáp, dùng vai đẩy cánh cửa. Nó không nhúc nhích một milimét nào. Anh có thể đã đẩy cả ngọn núi vậy.",
+        "bbox": [
+          69.2760009765625,
+          620.2366333007812,
+          526.454833984375,
+          650.1188354492188
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Then, from a crevice in the cave wall, there came a brilliant flash of silver light — so bright thatIronfist and Lily both threw their arms over their eyes. When they lowered them again, a tinyfairy was hovering before the door on wings of iridescent glass. She was no bigger than Ironfist’shand, and she wore a dress that appeared to be made from woven moonlight and morning dew.",
+        "translated_content": "Sau đó, từ một khe nứt trên vách hang, một tia sáng bạc rực rỡ lóe lên — sáng đến nỗi Ironfist và Lily đều đưa tay che mắt. Khi họ hạ tay xuống, một nàng tiên nhỏ xíu đang lơ lửng trước cánh cửa trên đôi cánh thủy tinh óng ánh. Nàng không lớn hơn bàn tay của Ironfist, và nàng mặc một chiếc váy dường như được dệt từ ánh trăng và sương sớm.",
+        "bbox": [
+          70.49600219726562,
+          664.181640625,
+          524.757080078125,
+          729.9188232421875
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "She pulled out her Wand — long, thin, and shimmering like asliver of captured starlight — and carefully inserted it into the",
+        "translated_content": "Nàng rút ra Cây Đũa Thần của mình — dài, mảnh và lấp lánh như một mảnh ánh sao bị bắt giữ — rồi cẩn thận đưa nó vào",
+        "bbox": [
+          222.56100463867188,
+          743.9816284179688,
+          524.4537353515625,
+          773.8648071289062
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "17",
+        "translated_content": "17",
+        "bbox": [
+          291.6600036621094,
+          791.797607421875,
+          303.6152038574219,
+          803.7528076171875
+        ],
+        "page_id": 17,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "MEOW",
+        "translated_content": "MEOW",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "7",
+        "translated_content": "7",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "1",
+        "translated_content": "1",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Iz B",
+        "translated_content": "Iz B",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "NKS\"",
+        "translated_content": "NKS\"",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Tn &",
+        "translated_content": "Tn &",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "3",
+        "translated_content": "3",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "444X",
+        "translated_content": "444X",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "4",
+        "translated_content": "4",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "7",
+        "translated_content": "7",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "1",
+        "translated_content": "1",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "KTA",
+        "translated_content": "KTA",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Mt,",
+        "translated_content": "Mt,",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "3",
+        "translated_content": "3",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "42+S;",
+        "translated_content": "42+S;",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Sikl",
+        "translated_content": "Sikl",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ii W44A",
+        "translated_content": "Ii W44A",
+        "bbox": [
+          70.86599731445312,
+          759.5584106445312,
+          212.5986328125,
+          838.6649780273438
+        ],
+        "page_id": 17,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc Phiêu Lưu Vĩ Đại Của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "tiny keyhole. The Wand fit perfectly, its slender form slidinginto the narrow opening as if it had been made for exactly thispurpose.",
+        "translated_content": "ổ khóa nhỏ xíu. Cây Đũa Thần vừa vặn hoàn hảo, hình dáng mảnh mai của nó trượt vào khe hẹp như thể nó được tạo ra chính xác cho mục đích này.",
+        "bbox": [
+          222.56100463867188,
+          73.7066421508789,
+          524.4417724609375,
+          121.516845703125
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "*Click.* The lock turned. Ancient dust cascaded from the doorframe, and the runes carved into the wood began to glow with asoft blue light, pulsing gently like a heartbeat. Slowly, with a groan that seemed to come fromthe very bones of the mountain, the door swung open.",
+        "translated_content": "*Cạch.* Ổ khóa xoay. Bụi cổ xưa rơi xuống từ khung cửa, và những chữ rune chạm khắc trên gỗ bắt đầu phát sáng với ánh xanh dịu nhẹ, nhấp nháy nhẹ nhàng như nhịp tim. Chậm rãi, với một tiếng rên rỉ dường như phát ra từ chính xương cốt của ngọn núi, cánh cửa từ từ mở ra.",
+        "bbox": [
+          70.86599731445312,
+          134.70852661132812,
+          524.6398315429688,
+          200.44883728027344
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "A small fluffy white cat sat by the door, watching the proceedings with the politely bemusedexpression that cats reserve for events they consider beneath their dignity but mildly interestingnonetheless. It blinked its luminous green eyes, yawned enormously, and said:",
+        "translated_content": "Một con mèo trắng nhỏ xù lông ngồi cạnh cánh cửa, quan sát mọi việc với vẻ mặt lịch sự nhưng có phần bối rối mà mèo thường dành cho những sự kiện chúng coi là dưới tầm nhưng dù sao cũng hơi thú vị. Nó chớp đôi mắt xanh lục phát sáng, ngáp một cái thật lớn, và nói:",
+        "bbox": [
+          70.43599700927734,
+          213.64364624023438,
+          524.4702758789062,
+          261.4528503417969
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "MEOWMEOW!",
+        "translated_content": "MEOWMEOW!",
+        "bbox": [
+          245.72900390625,
+          276.6531677246094,
+          349.5556640625,
+          323.6213684082031
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 10.909099578857422,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“I think it wants to come with us,” said Lily, scooping the cat up into her arms. The cat purredlike a small, furry engine and settled against her chest with an air of absolute proprietorship.",
+        "translated_content": "“Em nghĩ nó muốn đi cùng chúng ta,” Lily nói, bế con mèo lên tay. Con mèo kêu gừ gừ như một động cơ nhỏ, đầy lông và nằm gọn vào ngực cô bé với vẻ sở hữu tuyệt đối.",
+        "bbox": [
+          69.2760009765625,
+          332.91064453125,
+          524.4581909179688,
+          362.7928466796875
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Fine,” said Ironfist, stepping through the enchanted doorway into the light beyond. “But if itgets us into trouble, you’re explaining it to Mother.”",
+        "translated_content": "“Được thôi,” Ironfist nói, bước qua cánh cửa mê hoặc vào ánh sáng phía bên kia. “Nhưng nếu nó gây rắc rối cho chúng ta, em sẽ phải giải thích với Mẹ đấy.”",
+        "bbox": [
+          69.2760009765625,
+          375.9876403808594,
+          524.458251953125,
+          405.8698425292969
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "18",
+        "translated_content": "18",
+        "bbox": [
+          291.510986328125,
+          791.797607421875,
+          303.4661865234375,
+          803.7528076171875
+        ],
+        "page_id": 18,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 9",
+        "translated_content": "Chương 9",
+        "bbox": [
+          70.86599731445312,
+          89.28643798828125,
+          177.574462890625,
+          114.07353973388672
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "The City Park",
+        "translated_content": "Công viên thành phố",
+        "bbox": [
+          70.86599731445312,
+          154.3934326171875,
+          222.33998107910156,
+          179.18052673339844
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "T",
+        "translated_content": "C",
+        "bbox": [
+          70.86599731445312,
+          440.23583984375,
+          108.8873062133789,
+          502.4638671875
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "he enchanted door — as enchanted doors are wont to do — deposited them somewhereentirely unexpected. Instead of the treasure vault or dragon’s lair that Ironfist had beenbracing himself for, they found themselves standing in the middle of a sun-drenchedcity park, surrounded by neatly trimmed hedges, flowering rose bushes, and the distant soundof an ice cream van playing a tinny rendition of “Greensleeves.”",
+        "translated_content": "ánh cửa ma thuật — như những cánh cửa ma thuật thường làm — đưa họ đến một nơi hoàn toàn bất ngờ. Thay vì hầm kho báu hay hang rồng mà Ironfist đã chuẩn bị tinh thần, họ thấy mình đang đứng giữa một công viên thành phố ngập nắng, bao quanh bởi những hàng rào cắt tỉa gọn gàng, những bụi hồng đang nở hoa, và tiếng xe kem từ xa văng vẳng giai điệu “Greensleeves” nghe hơi chói tai.",
+        "bbox": [
+          70.86600494384766,
+          442.7086486816406,
+          524.464111328125,
+          526.372802734375
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Where are we?” Lily asked, blinking in the sudden brightness, still clutching the cat.",
+        "translated_content": "“Chúng ta đang ở đâu vậy?” Lily hỏi, chớp mắt trước ánh sáng chói chang bất ngờ, tay vẫn ôm chặt con mèo.",
+        "bbox": [
+          69.2760009765625,
+          540.4356689453125,
+          479.3393859863281,
+          552.390869140625
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“I have absolutely no idea,” Ironfist admitted.",
+        "translated_content": "“Ta hoàn toàn không biết,” Ironfist thừa nhận.",
+        "bbox": [
+          69.2760009765625,
+          566.4546508789062,
+          288.4148254394531,
+          578.4098510742188
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Let’s play baseball after school!” shouted a group of childrenrunning across the green field with bats and gloves. They wereplaying on a wide, flat stretch of grass, taking turns batting,pitching, and chasing fly balls with the carefree abandon of kidswho have absolutely nothing to worry about except whether it’stheir turn at bat.",
+        "translated_content": "“Tan học mình chơi bóng chày nhé!” một nhóm trẻ con reo lên, chạy băng qua bãi cỏ xanh với gậy và găng tay. Chúng đang chơi trên một bãi cỏ rộng, bằng phẳng, thay phiên nhau đánh bóng, ném bóng và đuổi theo những quả bóng bay lên cao với sự vô tư của những đứa trẻ chẳng có gì phải lo lắng ngoài việc liệu có đến lượt mình đánh bóng hay chưa.",
+        "bbox": [
+          70.43599700927734,
+          592.4725952148438,
+          374.24114990234375,
+          694.0637817382812
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Behind them, a red double-decker bus rumbled down the cob-blestone street, its upper deck packed with tourists snapping photographs. An old red telephonebooth stood on the corner like a silent guardian from another era, its glass panels clouded withage.",
+        "translated_content": "Phía sau họ, một chiếc xe buýt hai tầng màu đỏ chạy ầm ầm trên con phố lát đá cuội, tầng trên chật kín khách du lịch đang chụp ảnh. Một bốt điện thoại cũ màu đỏ đứng ở góc phố như một người bảo vệ thầm lặng từ một thời đại khác, những tấm kính của nó đã mờ đục theo thời gian.",
+        "bbox": [
+          70.86599731445312,
+          708.1275634765625,
+          524.4581909179688,
+          773.86474609375
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "19",
+        "translated_content": "19",
+        "bbox": [
+          291.6600036621094,
+          791.797607421875,
+          303.6152038574219,
+          803.7528076171875
+        ],
+        "page_id": 19,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Tratecanr",
+        "translated_content": "Tratecanr",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "eren",
+        "translated_content": "eren",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Pimlico",
+        "translated_content": "Pimlico",
+        "bbox": [
+          116.22000122070312,
+          223.29135131835938,
+          479.05694580078125,
+          425.80499267578125
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "[uxhatat",
+        "translated_content": "[uxhatat",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "DELEPHONE",
+        "translated_content": "DELEPHONE",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "15",
+        "translated_content": "15",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "2",
+        "translated_content": "2",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "TRATALGAR 50",
+        "translated_content": "TRATALGAR 50",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "@MMWNN",
+        "translated_content": "@MMWNN",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Uttt",
+        "translated_content": "Uttt",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "HaH@ETY",
+        "translated_content": "HaH@ETY",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "T4 HIHIT",
+        "translated_content": "T4 HIHIT",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "London",
+        "translated_content": "London",
+        "bbox": [
+          382.677001953125,
+          608.0494384765625,
+          524.40966796875,
+          687.156005859375
+        ],
+        "page_id": 19,
+        "source_type": "ocr",
+        "font": "",
+        "size": 0.0,
+        "color": 0,
+        "flags": 0,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc phiêu lưu vĩ đại của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 20,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist noticed something in the trees — a familiar pair of yellow eyes peering out from behind athick oak trunk. Another Goblin! But this one seemed different from the savage creature he hadfought in the Whispering Woods. This one was smaller, rounder, almost comical in appearance,and it was watching the children play baseball with an expression of undisguised fascination. Itheld an apple in one green hand and was munching on it contentedly, juice dribbling down itschin.",
+        "translated_content": "Ironfist nhận thấy điều gì đó trong những tán cây — một đôi mắt vàng quen thuộc đang nhìn ra từ phía sau thân cây sồi dày. Lại một Goblin nữa! Nhưng con này có vẻ khác với sinh vật hung dữ mà cậu đã chiến đấu trong Rừng Thì Thầm. Con này nhỏ hơn, tròn hơn, trông gần như hài hước, và nó đang xem lũ trẻ chơi bóng chày với vẻ mặt say mê không che giấu. Nó cầm một quả táo trong bàn tay xanh lá và đang nhấm nháp một cách mãn nguyện, nước ép chảy ròng ròng xuống cằm.",
+        "bbox": [
+          70.86599731445312,
+          73.7066421508789,
+          525.95263671875,
+          175.29783630371094
+        ],
+        "page_id": 20,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Look,” Ironfist whispered to Lily, nodding toward the tree. “Not all Goblins are bad, it seems.”",
+        "translated_content": "“Nhìn kìa,” Ironfist thì thầm với Lily, gật đầu về phía cái cây. “Có vẻ không phải Goblin nào cũng xấu.”",
+        "bbox": [
+          69.2760009765625,
+          188.49363708496094,
+          526.0484008789062,
+          200.44883728027344
+        ],
+        "page_id": 20,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "The Goblin caught Ironfist’s eye, froze for a moment, then gave a tiny, almost sheepish wavebefore disappearing behind the tree with a rustle of leaves.",
+        "translated_content": "Con Goblin bắt gặp ánh mắt của Ironfist, đứng sững lại một lúc, rồi khẽ vẫy tay một cách gần như ngượng ngùng trước khi biến mất sau cái cây với tiếng lá xào xạc.",
+        "bbox": [
+          70.4959945678711,
+          213.64364624023438,
+          524.4588623046875,
+          243.52584838867188
+        ],
+        "page_id": 20,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "20",
+        "translated_content": "20",
+        "bbox": [
+          291.6600036621094,
+          791.797607421875,
+          303.6152038574219,
+          803.7528076171875
+        ],
+        "page_id": 20,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Chapter 10",
+        "translated_content": "Chương 10",
+        "bbox": [
+          70.86599731445312,
+          90.37944030761719,
+          189.968017578125,
+          115.16654205322266
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "Coming Home",
+        "translated_content": "Trở về nhà",
+        "bbox": [
+          70.86599731445312,
+          156.57943725585938,
+          224.39730834960938,
+          181.3665313720703
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 24.787099838256836,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "T",
+        "translated_content": "C",
+        "bbox": [
+          70.86599731445312,
+          444.60784912109375,
+          108.8873062133789,
+          506.83587646484375
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 62.22800064086914,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "he enchanted door, having delivered them to the park, had one final trick up its sleeve.After they spent a pleasant afternoon watching the baseball game, feeding the ducksin the pond, and sharing fish and chips on a park bench (Ironfist would later maintainthat the chips were almost as good as his mother’s), they found the door again — standingincongruously between two park benches, invisible to everyone except them.",
+        "translated_content": "ánh cửa ma thuật, sau khi đưa họ đến công viên, còn có một trò cuối cùng. Sau khi họ trải qua một buổi chiều dễ chịu xem trận bóng chày, cho vịt ăn trong ao, và cùng nhau ăn cá và khoai tây chiên trên ghế công viên (Ironfist sau này vẫn khẳng định rằng món khoai tây chiên gần ngon bằng của mẹ cậu), họ lại tìm thấy cánh cửa — đứng lạc lõng giữa hai chiếc ghế công viên, vô hình với mọi người trừ họ.",
+        "bbox": [
+          70.86599731445312,
+          447.0806579589844,
+          526.550537109375,
+          530.7438354492188
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "This time, when they stepped through, they were home.",
+        "translated_content": "Lần này, khi bước qua, họ đã về nhà.",
+        "bbox": [
+          70.49600219726562,
+          545.900634765625,
+          336.45135498046875,
+          557.8558349609375
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Willowmere had never looked so beautiful. The sunset was painting the sky in shades of amber,rose, and violet, and the smoke from their cottage chimney curled up into the golden light likea question mark.",
+        "translated_content": "Willowmere chưa bao giờ trông đẹp đến thế. Hoàng hôn đang nhuộm bầu trời bằng những sắc hổ phách, hồng và tím, và khói từ ống khói ngôi nhà nhỏ của họ cuộn lên trong ánh sáng vàng như một dấu hỏi.",
+        "bbox": [
+          70.30400085449219,
+          573.0115966796875,
+          525.952392578125,
+          620.82177734375
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“I told you to be careful,” said Ironfist, grinning at Lily as they walked through the garden gate.The garden was exactly as they had left it — Mother’s roses blooming in defiant abundance,the old apple tree leaning tiredly against the stone wall, and the birdbath where the sparrowscongregated every evening to gossip about the day’s events.",
+        "translated_content": "“Ta đã bảo con phải cẩn thận mà,” Ironfist nói, cười toe toét với Lily khi họ bước qua cổng vườn. Khu vườn vẫn y nguyên như khi họ rời đi — những bông hồng của Mẹ nở rộ đầy kiêu hãnh, cây táo già tựa mình mệt mỏi vào bức tường đá, và bồn tắm chim nơi những chú chim sẻ tụ tập mỗi tối để buôn chuyện về những sự kiện trong ngày.",
+        "bbox": [
+          69.2760009765625,
+          635.9776000976562,
+          526.5504150390625,
+          701.7147827148438
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Did you enjoy the Bakery we visited?” asked Lily, swinging her arms happily. “The one withthe golden sign? I keep thinking about those pastries.”",
+        "translated_content": "“Con có thích tiệm bánh chúng ta đã ghé thăm không?” Lily hỏi, vung tay vui vẻ. “Cái tiệm có biển hiệu vàng ấy? Con cứ nghĩ mãi về mấy món bánh ngọt đó.”",
+        "bbox": [
+          69.2760009765625,
+          716.87060546875,
+          524.4583129882812,
+          746.7528076171875
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Of course!” Ironfist laughed, the sound echoing across the quiet village green. “Best pastries",
+        "translated_content": "“Tất nhiên rồi!” Ironfist cười lớn, tiếng cười vang vọng khắp bãi cỏ làng yên tĩnh. “Những chiếc bánh ngọt ngon nhất",
+        "bbox": [
+          69.2760009765625,
+          761.9096069335938,
+          524.4581909179688,
+          773.8648071289062
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "21",
+        "translated_content": "21",
+        "bbox": [
+          291.6600036621094,
+          791.797607421875,
+          303.6152038574219,
+          803.7528076171875
+        ],
+        "page_id": 21,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist’s Grand Adventure",
+        "translated_content": "Cuộc phiêu lưu vĩ đại của Ironfist",
+        "bbox": [
+          70.86599731445312,
+          40.10551834106445,
+          198.60731506347656,
+          52.06071853637695
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-ItalicMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 6,
+        "warning": null
+      },
+      {
+        "original_content": "in the Kingdom.”",
+        "translated_content": "trong Vương quốc.”",
+        "bbox": [
+          70.86599731445312,
+          73.7066421508789,
+          154.2176513671875,
+          85.66183471679688
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "He paused, realizing what he had said. The Kingdom. Was it real? Had any of it been real?The Goblin in the woods, the Subway ride, the Christmas feast, the mountains, the enchanteddoor … or had it all been some extraordinary dream conjured by the morning mist and a boy’soveractive imagination?",
+        "translated_content": "Cậu dừng lại, nhận ra mình vừa nói gì. Vương quốc. Nó có thật không? Có bất cứ điều gì là thật không? Con Goblin trong rừng, chuyến đi Subway, bữa tiệc Giáng sinh, những ngọn núi, cánh cửa ma thuật… hay tất cả chỉ là một giấc mơ phi thường được tạo ra bởi sương sớm và trí tưởng tượng quá phong phú của một cậu bé?",
+        "bbox": [
+          70.49600219726562,
+          98.853515625,
+          524.9644775390625,
+          164.59384155273438
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "They passed by the old train station at the edge of the village.Ironfist remembered taking the Subway at the start of his journey— it felt like a lifetime ago. The spot where children had built aSnowman was now bare, the snow melted away, leaving only amuddy circle on the grass and a slightly sad-looking carrot lyingin the dirt.",
+        "translated_content": "Họ đi ngang qua nhà ga xe lửa cũ ở rìa làng. Ironfist nhớ lại việc đi Subway vào đầu cuộc hành trình của mình — cảm giác như đã lâu lắm rồi. Nơi lũ trẻ từng đắp Người Tuyết giờ đã trống trơn, tuyết tan hết, chỉ còn lại một vòng tròn lầy lội trên cỏ và một củ cà rốt trông hơi buồn nằm trong đất.",
+        "bbox": [
+          220.76800537109375,
+          177.78863525390625,
+          526.5457763671875,
+          279.3798522949219
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Inside the house, Grandmother was waiting in her rocking chairby the fireplace, knitting something enormous and shapeless from bright purple yarn (it occurredto Ironfist that she bore a striking resemblance to the old woman on the Subway — but surelythat was just coincidence. Surely.).",
+        "translated_content": "Trong nhà, Bà đang ngồi đợi trên chiếc ghế bập bênh bên lò sưởi, đan một thứ gì đó to lớn và không định hình từ sợi len màu tím tươi (Ironfist chợt nghĩ rằng Bà có một sự giống nhau kỳ lạ với bà lão trên Subway — nhưng chắc chắn đó chỉ là sự trùng hợp. Chắc chắn rồi.).",
+        "bbox": [
+          70.86599731445312,
+          292.5756530761719,
+          524.7451782226562,
+          358.3118591308594
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Old Mr. Henderson kicked the bucket last winter,” she whispered sadly, setting down her knit-ting. “He was a kind man. Always brought me eggs from his chickens on Sunday mornings.The village won’t be the same without him.”",
+        "translated_content": "“Ông Henderson già đã qua đời vào mùa đông năm ngoái,” Bà thì thầm buồn bã, đặt đồ đan xuống. “Ông ấy là một người tốt bụng. Luôn mang trứng gà từ đàn gà của ông ấy cho ta vào mỗi sáng Chủ nhật. Ngôi làng sẽ không còn như xưa nếu thiếu ông ấy.”",
+        "bbox": [
+          69.2760009765625,
+          371.50665283203125,
+          526.5264892578125,
+          419.3168640136719
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "Ironfist hugged his grandmother, breathing in the familiar scent of lavender soap and pepperminttea. Then he walked to the window and looked out.",
+        "translated_content": "Ironfist ôm Bà, hít hà mùi xà phòng oải hương và trà bạc hà quen thuộc. Sau đó cậu đi đến cửa sổ và nhìn ra ngoài.",
+        "bbox": [
+          70.86599731445312,
+          432.51165771484375,
+          524.4581909179688,
+          462.39385986328125
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "The Kingdom stretched before him — peaceful, golden, and full of promise. Fields of wheatrippled in the evening breeze like an ocean of liquid gold. The mountains rose in the distance,purple and majestic against the fading sky. And somewhere out there, beyond the horizon, ad-ventures were waiting.",
+        "translated_content": "Vương quốc trải dài trước mắt cậu — yên bình, vàng óng và đầy hứa hẹn. Những cánh đồng lúa mì gợn sóng trong làn gió chiều như một đại dương vàng lỏng. Những ngọn núi sừng sững ở phía xa, tím biếc và hùng vĩ trước bầu trời đang nhạt dần. Và ở đâu đó ngoài kia, phía chân trời, những cuộc phiêu lưu đang chờ đợi.",
+        "bbox": [
+          70.4959945678711,
+          475.5886535644531,
+          526.4547119140625,
+          541.3258056640625
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "“Tomorrow,” he whispered to himself. “Tomorrow will bring a new adventure.”",
+        "translated_content": "“Ngày mai,” cậu thì thầm với chính mình. “Ngày mai sẽ mang đến một cuộc phiêu lưu mới.”",
+        "bbox": [
+          69.2760009765625,
+          554.5206298828125,
+          451.9619140625,
+          566.475830078125
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "The cat — which had followed them all the way from the enchanted cave — jumped onto thewindowsill, settled itself into a comfortable loaf, and began to purr.",
+        "translated_content": "Con mèo — đã đi theo họ suốt từ hang động ma thuật — nhảy lên bệ cửa sổ, cuộn mình thành một cục bánh mì thoải mái, và bắt đầu rừ rừ.",
+        "bbox": [
+          70.43599700927734,
+          579.670654296875,
+          524.4708251953125,
+          609.5538330078125
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      },
+      {
+        "original_content": "THE END",
+        "translated_content": "HẾT",
+        "bbox": [
+          257.6400146484375,
+          647.1576538085938,
+          334.6272888183594,
+          664.373046875
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPS-BoldMT",
+        "size": 17.21540069580078,
+        "color": 2899536,
+        "flags": 20,
+        "warning": null
+      },
+      {
+        "original_content": "22",
+        "translated_content": "22",
+        "bbox": [
+          291.6600036621094,
+          791.797607421875,
+          303.6152038574219,
+          803.7528076171875
+        ],
+        "page_id": 22,
+        "source_type": "text",
+        "font": "TimesNewRomanPSMT",
+        "size": 11.9552001953125,
+        "color": 0,
+        "flags": 4,
+        "warning": null
+      }
+    ],
+    "translation_warnings": []
+  },
+  "error": null
+}

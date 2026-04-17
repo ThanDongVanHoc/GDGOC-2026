@@ -16,7 +16,7 @@
 | # | Tên | Mô tả | Định dạng |
 |---|-----|-------|-----------|
 | 1 | Tài nguyên vật lý (Assets) | File PDF xuất bản hoặc file InDesign (IDML) kèm thư mục ảnh (Links) và Font chữ | PDF / IDML |
-| 2 | Yêu cầu dự án (Project Brief) | Cặp ngôn ngữ, phong cách dịch, ràng buộc bản quyền — thường ở dạng email, Word, hoặc Excel | DOCX / XLSX / Email |
+| 2 | Yêu cầu dự án (Project Brief) | Cặp ngôn ngữ, phong cách dịch, ràng buộc bản quyền — thường ở dạng email, Word, hoặc Excel | DOCX / XLSX / Email / txt|
 
 **Đầu ra (Outputs):**
 
@@ -51,6 +51,7 @@ Khách hàng **không bao giờ** giao cho đội ngũ một file JSON hay bộ 
 **Subtask 2 — Xây dựng Global Constraints:**
 
 Dựa trên kết quả Subtask 1, xây dựng các tham số:
+Ví dụ:
 
 | Tham số | Kiểu | Mô tả |
 |---------|------|-------|
@@ -60,7 +61,6 @@ Dựa trên kết quả Subtask 1, xây dựng các tham số:
 | `allow_bg_edit` | `boolean` | Cho phép chỉnh sửa background hay không |
 | `lock_character_color` | `boolean` | Khóa màu sắc nhân vật |
 | `protected_names` | `string[]` | Danh sách tên riêng không được dịch |
-| `max_drift_ratio` | `float` | Ngưỡng từ chối tại Phase 2 |
 
 - **Đầu ra:** `global_metadata.json`
 
@@ -75,7 +75,7 @@ Dựa trên kết quả Subtask 1, xây dựng các tham số:
 Dùng thư viện **PyMuPDF** (`fitz`) đọc file PDF đầu vào:
 
 1. Quét từng trang, sử dụng `page.get_text("dict")` để trích xuất:
-   - Mảng **`Text_Blocks`**: nội dung chữ kèm tọa độ `[x0, y0, x1, y1]`
+   - Mảng **`Text_Blocks`**: nội dung chữ kèm tọa độ `[x0, y0, x1, y1]`+ Font+ Size+ Color+Flags.
    - Mảng **`Image_Blocks`**: tọa độ hình ảnh `[x0, y0, x1, y1]`
 
 **Đầu ra:** JSON tọa độ layout của từng trang sách.
@@ -101,7 +101,7 @@ Dùng thư viện **PyMuPDF** (`fitz`) đọc file PDF đầu vào:
 **Vấn đề:** Các Phase sau cần biết vùng nào được sửa, vùng nào cấm đụng vào để không vi phạm bản quyền.
 
 **Nhiệm vụ:**  
-Kết hợp `global_metadata.json` (Task #p1.1) và JSON tọa độ (Task #p1.2), gán **3 tag** cho từng block:
+Kết hợp `global_metadata.json` (Task #p1.1) và JSON tọa độ (Task #p1.2), Ví dụ gán **3 tag** cho từng block (này tôi chỉ ví dụ bạn được phép sáng tạo để cho nó chuẩn hơn):
 
 | Tag | Ý nghĩa | Ví dụ |
 |-----|---------|-------|
@@ -179,3 +179,48 @@ Task #p1.2 (Structural Parsing)┘         │
 ```
 
 > **Lưu ý:** Task #p1.1 và Task #p1.2 có thể thực hiện **song song** vì không phụ thuộc lẫn nhau.
+
+## 5.Example Global Constraints (Ràng buộc Toàn cục)
+
+### Nhóm 1: Legal Parameters (Ràng buộc Pháp lý cứng)
+
+Dựa trên nền tảng Quyền Nhân thân (Moral Rights), đặc biệt là Quyền đứng tên (Right of Paternity) và Quyền bảo vệ sự toàn vẹn của tác phẩm (Right of Integrity).
+
+| **Tham số** | **Kiểu dữ liệu** | **Mô tả & Ràng buộc Thực tế** |
+| --- | --- | --- |
+| `license_status` | `boolean` | Trạng thái cấp phép hợp pháp. Nếu `false`, mọi hành vi dịch thuật/bóc tách text đều bị chặn để tránh vi phạm phái sinh. |
+| `author_attribution` | `string` | Cú pháp bắt buộc để ghi nhận danh tính tác giả (Right of Paternity) trên bìa và trang bản quyền. |
+| `integrity_protection` | `boolean` | Khóa tuyệt đối việc cắt xén, xuyên tạc nội dung có thể gây phương hại đến danh dự tác giả (Right of Integrity). |
+| `adaptation_rights` | `boolean` | Quyền chuyển thể. Thường là `false` (chỉ được dịch, không được phóng tác, đổi bối cảnh, hay transcreation). |
+
+### Nhóm 2: Content Parameters (Kiểm soát Nội dung)
+
+Bảo đảm tính trung thành tuyệt đối với nguyên tác theo yêu cầu của hợp đồng.
+
+| **Tham số** | **Kiểu dữ liệu** | **Mô tả & Ràng buộc Thực tế** |
+| --- | --- | --- |
+| `translation_fidelity` | `enum` | `Strict` (không thêm bớt), `Explanatory` (cho phép thêm các chú thích cực nhỏ để làm rõ nghĩa nhưng không đổi văn bản). |
+| `plot_alteration` | `boolean` | Thay đổi cốt truyện.|
+| `cultural_localization` | `boolean` | Cho phép "Việt hóa" các yếu tố văn hóa (ví dụ: đổi Hamburger thành Bánh mì). Thường là `false` để bảo toàn IP. |
+
+### Nhóm 3: IP / Brand Parameters (Bảo toàn Nhận diện Thương quyền)
+
+Bảo vệ "Kinh thánh Nhân vật" (Character Bible) và ranh giới đồ họa.
+
+| **Tham số** | **Kiểu dữ liệu** | **Mô tả & Ràng buộc Thực tế** |
+| --- | --- | --- |
+| `preserve_main_names` | `boolean` | Bắt buộc giữ nguyên (chỉ phiên âm) tên nhân vật chính để bảo vệ tài sản thương hiệu và hoạt động bán đồ chơi ăn theo (Merchandising), tương tự cách xử lý tên Harry Potter. |
+| `no_retouching` | `boolean` | Cấm vẽ đè, tẩy xóa hình ảnh gốc. Nếu hệ thống OCR bóc text làm mất hình, không được tự ý cho họa sĩ vẽ lại (redraw) hậu cảnh. |
+| `lock_character_color` | `boolean` | Khóa màu sắc nhân vật theo thông số tuyệt đối (ví dụ: in đúng mã CMYK hoặc Pantone được chỉ định). |
+| `never_change_rules` | `string[]` | Danh sách các đặc điểm ngoại hình bất di bất dịch (ví dụ: nốt ruồi dưới mắt trái, cấu trúc viền mũ) không được phép chỉnh sửa. |
+
+### Nhóm 4: Editorial Parameters (Kiểm duyệt Biên tập)
+
+Ràng buộc về văn phong và luồng công việc phê duyệt (Approval workflow).
+
+| **Tham số** | **Kiểu dữ liệu** | **Mô tả & Ràng buộc Thực tế** |
+| --- | --- | --- |
+| `target_age_tone` | `integer` | Định hướng văn phong theo độ tuổi (ví dụ: `< 10` để thiết lập "giọng điệu" phù hợp cho trẻ em). |
+| `glossary_strict_mode` | `boolean` | Ép buộc sử dụng 100% Cẩm nang Văn phong (Style Guides) và Danh mục thuật ngữ (Glossary) do bản gốc cung cấp. |
+| `sfx_handling` | `enum` | Cách xử lý từ tượng thanh đồ họa: `In_panel_subs` (để phụ đề mờ bên cạnh), `Footnotes` (xuống cước chú), hoặc giữ nguyên. |
+| `satisfaction_clause` | `boolean` | Điều khoản "Hài lòng": Bên cấp phép gốc có quyền phủ quyết toàn bộ bản dịch nếu họ đánh giá văn phong không "hoàn chỉnh và thỏa đáng" trước khi in. |

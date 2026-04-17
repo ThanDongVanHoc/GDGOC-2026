@@ -153,6 +153,7 @@ stateDiagram-v2
       ]
   }
   ```
+
 ### [Phase 3: Localization & Butterfly Effect]
 **Source:** Receives data processed by Phase 2.
 - **Input Received:**

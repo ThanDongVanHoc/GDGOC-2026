@@ -1,0 +1,141 @@
+{
+  "verified_text_pack": [
+    {
+      "original_content": "The Adventures of Luna and Friends",
+      "translated_content": "Những cuộc phiêu lưu của Luna và những người bạn",
+      "bbox": [
+        72.0,
+        50.0,
+        523.0,
+        80.0
+      ],
+      "page_id": 1,
+      "source_type": "text",
+      "font": "Arial-Bold",
+      "size": 24.0,
+      "color": 0,
+      "flags": 1,
+      "warning": null
+    },
+    {
+      "original_content": "Once upon a time, in a land far away, there lived a brave little girl named Luna.",
+      "translated_content": "Ngày xửa ngày xưa, ở một vùng đất xa xôi, có một cô bé dũng cảm tên là Luna.",
+      "bbox": [
+        72.0,
+        100.0,
+        523.0,
+        130.0
+      ],
+      "page_id": 2,
+      "source_type": "text",
+      "font": "Georgia",
+      "size": 12.0,
+      "color": 0,
+      "flags": 0,
+      "warning": null
+    },
+    {
+      "original_content": "Luna had a magical star-shaped birthmark on her left cheek that glowed whenever she felt brave.",
+      "translated_content": "Luna có một vết bớt hình ngôi sao kỳ diệu trên má trái, nó phát sáng mỗi khi cô bé cảm thấy dũng cảm.",
+      "bbox": [
+        72.0,
+        140.0,
+        523.0,
+        170.0
+      ],
+      "page_id": 2,
+      "source_type": "text",
+      "font": "Georgia",
+      "size": 12.0,
+      "color": 0,
+      "flags": 0,
+      "warning": null
+    },
+    {
+      "original_content": "Her best friend Max always wore his favorite red scarf, even on the hottest days.",
+      "translated_content": "Người bạn thân nhất của cô bé, Max, luôn đeo chiếc khăn quàng cổ màu đỏ yêu thích của mình, ngay cả vào những ngày nóng nhất.",
+      "bbox": [
+        72.0,
+        180.0,
+        523.0,
+        210.0
+      ],
+      "page_id": 2,
+      "source_type": "text",
+      "font": "Georgia",
+      "size": 12.0,
+      "color": 0,
+      "flags": 0,
+      "warning": null
+    },
+    {
+      "original_content": "BOOM!",
+      "translated_content": "BÙM!",
+      "bbox": [
+        50.0,
+        250.0,
+        545.0,
+        600.0
+      ],
+      "page_id": 2,
+      "source_type": "ocr",
+      "font": "",
+      "size": 0.0,
+      "color": 0,
+      "flags": 0,
+      "warning": null
+    },
+    {
+      "original_content": "Let's go, Max!",
+      "translated_content": "Đi thôi, Max!",
+      "bbox": [
+        50.0,
+        250.0,
+        545.0,
+        600.0
+      ],
+      "page_id": 2,
+      "source_type": "ocr",
+      "font": "",
+      "size": 0.0,
+      "color": 0,
+      "flags": 0,
+      "warning": null
+    },
+    {
+      "original_content": "\"We must find Professor Whiskers before sunset!\" Luna exclaimed.",
+      "translated_content": "\"Chúng ta phải tìm Professor Whiskers trước khi mặt trời lặn!\" Luna reo lên.",
+      "bbox": [
+        72.0,
+        100.0,
+        523.0,
+        130.0
+      ],
+      "page_id": 3,
+      "source_type": "text",
+      "font": "Georgia",
+      "size": 12.0,
+      "color": 0,
+      "flags": 0,
+      "warning": null
+    },
+    {
+      "original_content": "Captain Starlight appeared from behind the clouds, his armor shining like a thousand suns.",
+      "translated_content": "Captain Starlight xuất hiện từ sau những đám mây, bộ giáp của anh ấy sáng chói như hàng ngàn mặt trời.",
+      "bbox": [
+        72.0,
+        140.0,
+        523.0,
+        170.0
+      ],
+      "page_id": 3,
+      "source_type": "text",
+      "font": "Georgia",
+      "size": 12.0,
+      "color": 0,
+      "flags": 0,
+      "warning": null
+    }
+  ],
+  "translation_warnings": []
+}
