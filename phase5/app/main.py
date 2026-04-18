@@ -31,11 +31,18 @@ async def run_phase(payload: dict, background_tasks: BackgroundTasks) -> dict:
 
 
 async def _process_and_callback(payload: dict) -> None:
+    # Bulletproof file logging
+    with open("phase5_debug.log", "a") as f:
+        f.write(f"Started callback for thread_id: {payload.get('thread_id')}\n")
+
     thread_id = payload["thread_id"]
     webhook_url = payload.get("webhook_url")
 
     try:
         result = rebuild_localized_pdf(payload)
+        with open("phase5_debug.log", "a") as f:
+            f.write(f"Rebuild completed for thread_id: {thread_id}\n")
+
         webhook_body = {
             "thread_id": thread_id,
             "result": {
@@ -46,6 +53,19 @@ async def _process_and_callback(payload: dict) -> None:
             "error": None,
         }
     except Exception as e:
+        import traceback
+        with open("phase5_debug.log", "a") as f:
+            f.write(f"Exception: {e}\n{traceback.format_exc()}\n")
+        traceback.print_exc()
+        webhook_body = {
+            "thread_id": thread_id,
+            "result": {
+                "output_phase_5": {},
+                "qa_status": "APPROVED",
+                "final_pdf_path": "",
+            },
+            "error": str(e),
+        }
         import traceback
         traceback.print_exc()
         webhook_body = {
