@@ -1,5 +1,6 @@
 You are an expert in image editing.
 {replacement_instructions}
 Make all replacements look natural and consistent with the surrounding scene.
+Ensure realistic lighting, shadows, and proper scale for the new objects.
 Keep everything else exactly the same — do not modify any other part of the image.
-Do not add any overlays, annotations, bounding boxes, or visual markers.
+The output must be a clean, photorealistic image without any drawn lines or frames.

@@ -29,21 +29,27 @@ from pathlib import Path
 
 CONTEXT_TRANSFORM_DIR = Path(__file__).parent
 
+def _format_section(title: str, items: list[str] | None) -> str:
+    if not items:
+        return ""
+    return f"\n\n{title}\n" + "\n".join(f"- {item}" for item in items)
+
+
 def _build_context_prompt(bg: BackgroundData) -> str:
     """Build a prompt for context transformation."""
     with open(CONTEXT_TRANSFORM_DIR / "prompt_positive.txt", "r", encoding="utf-8") as f:
         template = f.read().strip()
         
-    preserved = "\n- ".join(bg.preserved_foreground) if bg.preserved_foreground else "None"
-    modified = "\n- ".join(bg.modified_background_elements) if bg.modified_background_elements else "None"
-    suggestions = "\n- ".join(bg.vietnamese_setting_suggestions) if bg.vietnamese_setting_suggestions else "None"
-    constraints = "\n- ".join(bg.constraints) if bg.constraints else "None"
+    suggestions = _format_section("Vietnamese Setting Suggestions:", bg.vietnamese_setting_suggestions)
+    modified = _format_section("Editing Scope (BACKGROUND ONLY):\nModify these background elements:", bg.modified_background_elements)
+    preserved = _format_section("Preservation Rules (DO NOT MODIFY THESE):", bg.preserved_foreground)
+    constraints = _format_section("Constraints:", bg.constraints)
 
     return template.format(
         scene_type=bg.scene_type,
-        preserved_foreground=preserved,
-        modified_background_elements=modified,
         vietnamese_setting_suggestions=suggestions,
+        modified_background_elements=modified,
+        preserved_foreground=preserved,
         constraints=constraints
     )
 

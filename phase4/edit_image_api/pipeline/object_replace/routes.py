@@ -26,10 +26,15 @@ async def object_replace(
     ),
     seed: Optional[int] = Form(default=None),
 ):
-    try:
-        objects = json.loads(objects_json)
-    except json.JSONDecodeError:
-        raise HTTPException(status_code=400, detail="Invalid JSON format for 'objects_json'.")
+    if not objects_json or objects_json.strip() in ("", "null", "{}"):
+        objects = {}
+    else:
+        try:
+            objects = json.loads(objects_json)
+            if not isinstance(objects, dict):
+                objects = {}
+        except json.JSONDecodeError:
+            raise HTTPException(status_code=400, detail="Invalid JSON format for 'objects_json'.")
     
     contents = await image.read()
     if not contents:
