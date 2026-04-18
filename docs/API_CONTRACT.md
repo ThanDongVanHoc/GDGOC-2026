@@ -161,11 +161,13 @@ stateDiagram-v2
   {
       "thread_id": "uuid-string-of-current-run",
       "webhook_url": "http://localhost:8000/webhook/phase3",
+      "source_pdf_path": "data/uploads/source.pdf",
       "global_metadata": { ... },
       "output_phase_2": {
           "verified_text_pack": [ ... ],
           "translation_warnings": [ ... ]
-      }
+      },
+      "output_phase_1": [ ... ]
   }
   ```
 - **Output Required (Sent to Webhook):**
@@ -215,6 +217,20 @@ stateDiagram-v2
                       }
                   ]
               }
+          ],
+          "Images": [
+                [
+                    {
+                        "bbox": [0.0, 0.0, 0.0, 0.0],
+                        "image_index": 0
+                    },
+                    {
+                        "replacements_json": {
+                            "hot dog": "hamburger",
+                            "hat": "helmet"
+                        }
+                    }
+                ]
           ]
       },
       "localization_warnings": [
