@@ -26,7 +26,7 @@ export default function PipelinePage() {
 
       const fetchStatus = async () => {
       try {
-        const API_BASE = "https://yellow-hired-starter-peninsula.trycloudflare.com";
+        const API_BASE = "https://strips-proxy-medicines-perfect.trycloudflare.com";
         const res = await fetch(`${API_BASE}/api/v1/pipeline/${threadId}`)
         if (!res.ok) return
         const data = await res.json()
