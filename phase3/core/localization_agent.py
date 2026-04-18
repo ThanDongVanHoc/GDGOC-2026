@@ -14,6 +14,7 @@ import base64
 import json
 import logging
 import os
+from pathlib import Path
 from typing import Any
 
 from openai import OpenAI
@@ -292,6 +293,45 @@ def extract_entities_llm(texts: list[dict[str, Any]]) -> list[dict[str, Any]]:
         return []
 
 
+def _resolve_pdf_path(path_str: str) -> str:
+    """Resolve the PDF path by checking absolute, relative, and local fallbacks.
+
+    Args:
+        path_str: The raw path string from the payload.
+
+    Returns:
+        The verified absolute path to the PDF, or the original string if not found.
+    """
+    if not path_str:
+        return ""
+
+    # 1. Try path as is (works for absolute paths or CWD-relative)
+    p = Path(path_str)
+    if p.exists():
+        return str(p.absolute())
+
+    # 2. Try relative to the current working directory
+    # (FastAPI usually starts at project root or phase3/)
+    cwd_p = Path.cwd() / path_str
+    if cwd_p.exists():
+        return str(cwd_p.absolute())
+
+    # 3. Try fallback inside phase3/data/uploads/
+    # (Useful if payload only sends 'source.pdf')
+    local_p = Path(__file__).parent.parent / "data" / "uploads" / Path(path_str).name
+    if local_p.exists():
+        logger.info(f"[Agent] Path fallback successful: {local_p}")
+        return str(local_p.absolute())
+
+    # 4. Try root data/uploads/ (if running from root)
+    root_p = Path.cwd() / "phase3" / "data" / "uploads" / Path(path_str).name
+    if root_p.exists():
+        return str(root_p.absolute())
+
+    logger.warning(f"[Agent] Could not resolve PDF path: {path_str}")
+    return path_str
+
+
 def process_images_vlm(
     image_blocks: list[dict[str, Any]],
     localized_pack: dict[str, Any],
@@ -309,6 +349,10 @@ def process_images_vlm(
     """
     output_images = []
     
+    # Resolve the path handle absolute/relative/fallback
+    resolved_path = _resolve_pdf_path(source_pdf_path)
+    logger.info(f"[Agent] Source PDF resolved to: {resolved_path}")
+
     # Map page texts for context
     # Handle both nested 'pages' format and flat list format
     page_texts: dict[int, str] = {}
@@ -350,10 +394,10 @@ def process_images_vlm(
         context = " ".join(ctx_parts)
         
         try:
-            if not source_pdf_path or not os.path.exists(source_pdf_path):
-                raise FileNotFoundError(f"Missing or invalid source_pdf_path: {source_pdf_path}")
+            if not resolved_path or not os.path.exists(resolved_path):
+                raise FileNotFoundError(f"Missing or invalid source_pdf_path: {resolved_path}")
             import fitz
-            doc = fitz.open(source_pdf_path)
+            doc = fitz.open(resolved_path)
             # Default to extracting from the matching page_id
             # Assuming page_id is 1-indexed in our data
             page_idx = max(0, page_id - 1)
@@ -433,8 +477,12 @@ def process_images_vlm(
             except Exception as e:
                 logger.warning("[Agent] VLM call failed: %s", e)
             
+        # Final formatting for this image's output
+        # Each image corresponds to a single dictionary in the resulting list
+        # We ALWAYS append a record even if replacements are empty to ensure consistency
         output_images.append([
             {
+                "page_id": page_id,
                 "bbox": bbox,
                 "image_index": image_index
             },
@@ -443,6 +491,7 @@ def process_images_vlm(
             }
         ])
         
+    logger.info(f"[Agent] Image processing complete. Extracted {len(output_images)} records.")
     return output_images
 
 
