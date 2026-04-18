@@ -226,11 +226,13 @@ async def wait_phase4(state: OmniLocalState) -> dict:
 # ═══════════════════════════════════════════════════════════════════
 
 async def dispatch_phase5(state: OmniLocalState) -> dict:
-    """Send job to Phase 5 Worker."""
+    """Send job to Phase 5 Worker (PDF Rebuild + QA)."""
     payload = {
         "thread_id": state["thread_id"],
         "source_pdf_path": state["source_pdf_path"],
         "global_metadata": state["global_metadata"],
+        "output_phase_2": state["output_phase_2"],
+        "output_phase_3": state["output_phase_3"],
         "output_phase_4": state["output_phase_4"],
         "webhook_url": f"{WEBHOOK_BASE_URL}/webhook/phase5",
     }
@@ -253,7 +255,10 @@ async def wait_phase5(state: OmniLocalState) -> dict:
     }
 
     if qa_status == "APPROVED":
-        update["final_pdf_path"] = result.get("final_pdf_path", "") if isinstance(result, dict) else ""
+        if "output_phase_5" in result and isinstance(result["output_phase_5"], dict):
+            update["final_pdf_path"] = result["output_phase_5"].get("output_pdf_path", "")
+        else:
+            update["final_pdf_path"] = result.get("final_pdf_path", "") if isinstance(result, dict) else ""
     else:
         update["qa_feedback"] = result.get("qa_feedback") if isinstance(result, dict) else None
         update["pipeline_iteration"] = state.get("pipeline_iteration", 0) + 1

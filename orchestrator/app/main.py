@@ -30,7 +30,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -233,3 +233,23 @@ async def get_pipeline_status(thread_id: str) -> PipelineStatusResponse:
         final_pdf_path=state.get("final_pdf_path") or None,
         dispatch_info=state.get("dispatch_info", {}),
     )
+
+
+from fastapi.responses import FileResponse
+import os
+
+@app.get("/api/v1/download/{thread_id}")
+async def download_pdf(thread_id: str):
+    """
+    Download the final localized PDF once the pipeline is completed.
+    """
+    state = _pipelines.get(thread_id)
+    if not state or not state.get("final_pdf_path"):
+        return {"error": "Final PDF not ready or thread not found"}
+        
+    file_path = state["final_pdf_path"]
+    if not os.path.exists(file_path):
+        return {"error": "File not found on server"}
+        
+    filename = f"omnilocal_{thread_id}.pdf"
+    return FileResponse(path=file_path, filename=filename, media_type="application/pdf")

@@ -117,6 +117,34 @@ export default function PipelinePage() {
               <li><span className="meta-key">Safety</span><span className="meta-val">Strict</span></li>
             </ul>
           </div>
+
+          <div className="context-section" style={{ marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <h4>Output Artifact</h4>
+            {overallStatus === 'COMPLETED' ? (
+              <div style={{ textAlign: 'center' }}>
+                <p style={{ fontSize: '0.85rem', color: 'var(--emerald)', marginBottom: '0.75rem' }}>✓ Ready for Download</p>
+                <a 
+                  href={`https://strips-proxy-medicines-perfect.trycloudflare.com/api/v1/download/${threadId}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-primary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  Download PDF
+                </a>
+              </div>
+            ) : (
+              <div style={{ textAlign: 'center', opacity: 0.5 }}>
+                <div className="spinner" style={{ margin: '0 auto 0.5rem', width: '20px', height: '20px', borderWidth: '2px' }}></div>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', margin: 0 }}>Processing PDF...</p>
+                <button className="btn-primary" disabled style={{ width: '100%', justifyContent: 'center', marginTop: '0.75rem', background: '#333', color: '#666' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  Download PDF
+                </button>
+              </div>
+            )}
+          </div>
         </aside>
 
         {/* ── Visual Graph (n8n style) ───────────────────── */}
