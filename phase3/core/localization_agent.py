@@ -610,9 +610,9 @@ def _build_user_prompt(
         f"Here are the cultural entities found in a Vietnamese children's book "
         f"Propose Vietnamese replacements for entities "
         f"that are culturally unfamiliar to Vietnamese children.\n\n"
-        "The contain need to be as familar as possible to Vietnamese culture.\n",
-        "The meaning of the content can be changed to match the culture of Vietnamese.\n",
-        "Vietnamese words could be changed into another vietnamese word.\n",
+        "The contain need to be as familar as possible to Vietnamese culture.\n"
+        "The meaning of the content can be changed to match the culture of Vietnamese.\n"
+        "Vietnamese words could be changed into another vietnamese word.\n"
         f"Entities:\n{entity_list_str}"
     )
 

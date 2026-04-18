@@ -140,7 +140,7 @@ async def run_phase(payload: dict, background_tasks: BackgroundTasks) -> dict:
 
 async def _process_and_callback(payload: dict) -> None:
     thread_id = payload["thread_id"]
-    webhook_url = payload["webhook_url"]
+    webhook_url = payload.get("webhook_url")
     try:
         result = await run_worker(payload)
         webhook_body = {
@@ -156,5 +156,12 @@ async def _process_and_callback(payload: dict) -> None:
             "localization_warnings": [],
             "error": str(e),
         }
-    async with httpx.AsyncClient(timeout=30) as client:
-        await client.post(webhook_url, json=webhook_body)
+    
+    if webhook_url:
+        async with httpx.AsyncClient(timeout=30) as client:
+            await client.post(webhook_url, json=webhook_body)
+    else:
+        import json
+        # Log the result if no webhook is provided to help with debugging
+        print(f"[Phase3] No webhook_url provided for thread {thread_id}. Results:")
+        print(json.dumps(webhook_body, indent=2))
