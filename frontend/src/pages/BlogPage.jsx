@@ -41,7 +41,7 @@ export default function BlogPage() {
                 />
               </div>
               <div>
-                <p className="font-headline font-bold text-sm text-white">Dr. Elias Vance</p>
+                <p className="font-headline font-bold text-sm text-white">Trịnh Võ Nam Kiệt</p>
                 <p className="font-mono text-xs text-[#FA500F]">Lead AI Architect</p>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function BlogPage() {
             </div>
             <div className="flex items-center gap-2 pt-4 border-t border-[#1a1a1a]">
               <span className="material-symbols-outlined text-[#FA500F] text-sm">person</span>
-              <span className="font-mono text-xs text-white">SARAH CHEN</span>
+              <span className="font-mono text-xs text-white">NGUYỄN CHÍ TÍNH</span>
             </div>
           </article>
           {/* Article Card 2 */}
@@ -107,7 +107,7 @@ export default function BlogPage() {
             </div>
             <div className="flex items-center gap-2 pt-4 border-t border-[#1a1a1a]">
               <span className="material-symbols-outlined text-[#FA500F] text-sm">person</span>
-              <span className="font-mono text-xs text-white">DR. AMINA YUSUF</span>
+              <span className="font-mono text-xs text-white">ĐOÀN TUẤN ANH</span>
             </div>
           </article>
           {/* Article Card 3 (Image focus) */}
@@ -144,7 +144,7 @@ export default function BlogPage() {
             </div>
             <div className="flex items-center gap-2 pt-4 border-t border-[#1a1a1a]">
               <span className="material-symbols-outlined text-[#FA500F] text-sm">person</span>
-              <span className="font-mono text-xs text-white">MARCUS TRENT</span>
+              <span className="font-mono text-xs text-white">DƯƠNG GIA KHƯƠNG</span>
             </div>
           </article>
           {/* Article Card 5 */}
@@ -159,7 +159,7 @@ export default function BlogPage() {
             </div>
             <div className="flex items-center gap-2 pt-4 border-t border-[#1a1a1a]">
               <span className="material-symbols-outlined text-[#FA500F] text-sm">person</span>
-              <span className="font-mono text-xs text-white">PRODUCT TEAM</span>
+              <span className="font-mono text-xs text-white">TEAM 24A01</span>
             </div>
           </article>
         </section>

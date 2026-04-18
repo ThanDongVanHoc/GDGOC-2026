@@ -144,7 +144,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
               <div className="relative z-10">
                 <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>DATA.LEAD // 002</div>
-                <h4 className="font-headline text-xl font-bold text-white mb-1">Lê Thị Mai Trang</h4>
+                <h4 className="font-headline text-xl font-bold text-white mb-1">Nguyễn Chí Tính</h4>
                 <p className="font-body text-neutral-400 text-sm">Head of AI Research</p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
               <div className="relative z-10">
                 <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>OPS.CORE // 003</div>
-                <h4 className="font-headline text-xl font-bold text-white mb-1">Nguyễn Hải Đăng</h4>
+                <h4 className="font-headline text-xl font-bold text-white mb-1">Đoàn Tuấn Anh</h4>
                 <p className="font-body text-neutral-400 text-sm">VP of Operations</p>
               </div>
             </div>
