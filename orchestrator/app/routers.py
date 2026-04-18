@@ -17,13 +17,12 @@ def qa_router(state: OmniLocalState) -> str:
         state: Current pipeline state containing qa_status.
 
     Returns:
-        Routing key: "pass", "fail_typo", "fail_butterfly",
-        "fail_constraint_text", or "fail_constraint_visual".
+        Routing key: "APPROVED" or "REJECT_LOCALIZATION".
     """
     iteration = state.get("pipeline_iteration", 0)
 
     # Safety: prevent infinite feedback loops
-    if iteration >= MAX_PIPELINE_ITERATIONS and state["qa_status"] != "pass":
-        return "pass"
+    if iteration >= MAX_PIPELINE_ITERATIONS and state["qa_status"] != "APPROVED":
+        return "APPROVED"
 
     return state["qa_status"]

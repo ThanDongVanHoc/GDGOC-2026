@@ -1,5 +1,40 @@
-fastapi>=0.115.0
-uvicorn>=0.30.0
-httpx>=0.27.0
-pydantic>=2.0.0
-google-genai>=1.0.0
+# OmniLocal — Phase 3 Dependencies
+# ==================================
+
+# --- FastAPI microservice stack ---
+fastapi>=0.115.0,<1.0.0
+uvicorn>=0.30.0,<1.0.0
+httpx>=0.27.0,<1.0.0
+
+# --- Data validation ---
+pydantic>=2.0.0,<3.0.0
+python-dotenv>=1.0.0,<2.0.0
+
+# --- LLM / Agent (localization agent) ---
+google-genai>=1.0.0,<2.0.0
+
+# --- AMR semantic parsing ---
+amrlib>=0.8.0,<1.0.0
+penman>=1.2.0,<2.0.0
+
+# --- AMR model dependency (PyTorch-based) ---
+# Pin to a specific minor to avoid combinatorial explosion
+torch>=2.2.0,<2.7.0
+
+# --- Transformers for amrlib neural models ---
+transformers>=4.30.0,<5.0.0
+
+# --- HuggingFace datasets for ViAMR-v1.0 Vietnamese AMR corpus ---
+datasets>=2.14.0,<3.0.0
+
+# --- FPT Marketplace LLM (OpenAI-compatible SDK) ---
+openai>=1.30.0,<2.0.0
+
+# --- MinerU PDF parsing (PDF -> Markdown + structured JSON) ---
+# Use mineru[core] for CPU-only / lighter install (~2GB)
+# Pin tightly — MinerU's transitive deps (gradio, ffmpy, starlette) cause
+# severe pip backtracking when left open-ended.
+mineru[core]>=3.0.0,<4.0.0
+
+# --- PDF handling ---
+PyMuPDF>=1.24.0,<2.0.0
