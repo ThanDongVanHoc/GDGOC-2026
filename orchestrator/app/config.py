@@ -12,7 +12,7 @@ import os
 # Phase Worker service URLs (override via environment variables)
 PHASE_URLS: dict[int, str] = {
     0: os.getenv("PHASE0_URL", "http://localhost:8010"),
-    1: os.getenv("PHASE1_URL", "https://one-steal-relations-recycling.trycloudflare.com"),
+    1: os.getenv("PHASE1_URL", "https://seal-ada-fog-cedar.trycloudflare.com"),
     2: os.getenv("PHASE2_URL", "http://localhost:8010"),
     3: os.getenv("PHASE3_URL", "http://localhost:8010"),
     4: os.getenv("PHASE4_URL", "http://localhost:8010"),
