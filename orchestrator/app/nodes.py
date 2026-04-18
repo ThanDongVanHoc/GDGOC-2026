@@ -255,7 +255,10 @@ async def wait_phase5(state: OmniLocalState) -> dict:
     }
 
     if qa_status == "APPROVED":
-        update["final_pdf_path"] = result.get("final_pdf_path", "") if isinstance(result, dict) else ""
+        if "output_phase_5" in result and isinstance(result["output_phase_5"], dict):
+            update["final_pdf_path"] = result["output_phase_5"].get("output_pdf_path", "")
+        else:
+            update["final_pdf_path"] = result.get("final_pdf_path", "") if isinstance(result, dict) else ""
     else:
         update["qa_feedback"] = result.get("qa_feedback") if isinstance(result, dict) else None
         update["pipeline_iteration"] = state.get("pipeline_iteration", 0) + 1

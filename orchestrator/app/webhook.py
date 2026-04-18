@@ -70,7 +70,14 @@ async def receive_webhook(phase_id: int, payload: dict, background_tasks: Backgr
     Receive results from a Phase Worker.
     """
     thread_id = payload["thread_id"]
-    result = payload["result"]
+
+    # Phase workers use different key formats:
+    #   Phase 1/2: {"result": {...}}
+    #   Phase 3:   {"output_phase_3": {...}, "localization_warnings": [...]}
+    result = payload.get("result")
+    if result is None:
+        # Build result from phase-specific keys (Phase 3+ format)
+        result = {k: v for k, v in payload.items() if k != "thread_id"}
 
     background_tasks.add_task(_resume_pipeline, thread_id, phase_id, result)
 
