@@ -1,0 +1,34 @@
+{
+    "tasks": [
+        {
+            "image_url": "CLOUD_IMAGE_URL",
+            "replacements_json": {
+                "Background": {
+                    "scene_type": "fantasy landscape",
+                    "preserved_foreground": [
+                        "the protagonist",
+                        "the magical portal"
+                    ],
+                    "modified_background_elements": [
+                        "the mountains",
+                        "the forest",
+                        "the castle"
+                    ],
+                    "vietnamese_setting_suggestions": [
+                        "a lush jungle with ancient ruins",
+                        "a mystical temple surrounded by fog",
+                        "a serene village with traditional houses"
+                    ],
+                    "constraints": [
+                        "the protagonist must remain central",
+                        "the magical portal must stay intact",
+                        "the overall fantasy theme must be preserved"
+                    ]
+                },
+                "Object_Replacement": {
+                    "snowman": "sandcastle"
+                }
+            }
+        }
+    ]
+}

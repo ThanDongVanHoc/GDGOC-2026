@@ -16,7 +16,6 @@ import os
 import time
 from datetime import datetime
 
-from config import OUTPUTS_DIR
 from models.schemas import (
     LocalizePipelineRequest,
     LocalizePipelineResponse,
@@ -28,19 +27,8 @@ from pipeline.text_replace.service import run_text_replacement
 
 logger = logging.getLogger(__name__)
 
-# Directory for intermediate pipeline results (debugging)
-INTERMEDIATE_DIR = os.path.join(OUTPUTS_DIR, "pipeline_intermediate")
-os.makedirs(INTERMEDIATE_DIR, exist_ok=True)
-
-
 def _save_intermediate(image_bytes: bytes, step_name: str, run_id: str) -> str:
-    """Save intermediate result for debugging."""
-    filename = f"{run_id}_{step_name}.png"
-    path = os.path.join(INTERMEDIATE_DIR, filename)
-    with open(path, "wb") as f:
-        f.write(image_bytes)
-    logger.info(f"Saved intermediate: {path}")
-    return path
+    pass
 
 
 async def run_localize_pipeline(
@@ -68,10 +56,6 @@ async def run_localize_pipeline(
     steps: list[StepResult] = []
     current_bytes = image_bytes
 
-    # Save original for reference
-    if save_intermediates:
-        _save_intermediate(current_bytes, "0_original", run_id)
-
     # ──────────────────────────────────────────────────────────────────────
     # Context Transformation (Background First)
     # ──────────────────────────────────────────────────────────────────────
@@ -91,8 +75,6 @@ async def run_localize_pipeline(
                 message=f"Context transformed to '{request.background.scene_type}'.",
                 duration_seconds=round(step_duration, 2),
             ))
-            if save_intermediates:
-                _save_intermediate(current_bytes, "after_context", run_id)
         else:
             steps.append(StepResult(
                 step="context_transformation",
@@ -129,8 +111,6 @@ async def run_localize_pipeline(
                 message=f"Replaced {len(request.object_replacements)} object(s).",
                 duration_seconds=round(step_duration, 2),
             ))
-            if save_intermediates:
-                _save_intermediate(current_bytes, "after_objects", run_id)
         else:
             steps.append(StepResult(
                 step="object_replacement",
@@ -165,8 +145,6 @@ async def run_localize_pipeline(
                 message=f"Replaced {len(request.texts)} text region(s).",
                 duration_seconds=round(step_duration, 2),
             ))
-            if save_intermediates:
-                _save_intermediate(current_bytes, "after_text", run_id)
         else:
             steps.append(StepResult(
                 step="text_replacement",
@@ -185,12 +163,9 @@ async def run_localize_pipeline(
         ))
 
     # ──────────────────────────────────────────────────────────────────────
-    # Save final output
+    # Output path not saved here anymore
     # ──────────────────────────────────────────────────────────────────────
-    output_filename = f"{run_id}_final.png"
-    output_path = os.path.join(OUTPUTS_DIR, output_filename)
-    with open(output_path, "wb") as f:
-        f.write(current_bytes)
+    output_path = ""
 
     total_duration = round(time.time() - pipeline_start, 2)
 

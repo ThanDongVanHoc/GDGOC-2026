@@ -41,7 +41,7 @@ cd ComfyUI
 echo "[3/5] Cài đặt Python Virtual Environment..."
 if [ ! -d "venv" ]; then
     python3.12 -m venv venv
-zfi
+fi
 source venv/bin/activate
 
 # 4. Cài đặt PyTorch và các thư viện
@@ -56,7 +56,7 @@ pip install --no-cache-dir -r requirements.txt
 # Cài đặt ComfyUI-Manager
 echo "Đang cài đặt ComfyUI-Manager..."
 if [ ! -d "custom_nodes/ComfyUI-Manager" ]; then
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/ComfyUI-Manager
+    git clone https://github.com/Comfy-Org/ComfyUI-Manager.git custom_nodes/ComfyUI-Manager
     if [ -f "custom_nodes/ComfyUI-Manager/requirements.txt" ]; then
         pip install --no-cache-dir -r custom_nodes/ComfyUI-Manager/requirements.txt
     fi

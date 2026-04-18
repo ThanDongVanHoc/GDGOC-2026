@@ -11,8 +11,6 @@ import uuid
 
 import httpx
 
-from config import OUTPUTS_DIR
-
 COMFYUI_BASE_URL = os.getenv("COMFYUI_BASE_URL", "http://127.0.0.1:1234")
 
 # Polling settings
