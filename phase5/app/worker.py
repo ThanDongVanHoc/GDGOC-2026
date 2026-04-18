@@ -87,18 +87,18 @@ def fit_text_in_bbox(bbox: fitz.Rect, text: str, font: fitz.Font,
 
 def rebuild_localized_pdf(payload: dict) -> dict:
     source_pdf_path = payload.get("source_pdf_path")
-    print(f"\n[Phase 5] Starting PDF Rebuild for: {source_pdf_path}")
+    print(f"\n[Phase 5] Starting PDF Rebuild for: {source_pdf_path}", flush=True)
     if not source_pdf_path or not os.path.exists(source_pdf_path):
-        print(f"[Phase 5 ERROR] Source PDF not found: {source_pdf_path}")
+        print(f"[Phase 5 ERROR] Source PDF not found: {source_pdf_path}", flush=True)
         raise ValueError(f"Source PDF not found: {source_pdf_path}")
 
     # Phase 3 sends 'context_safe_localized_text_pack' (fully culturally adapted)
     # If not present for some reason, fallback to Phase 2 'verified_text_pack'
-    p3_output = payload.get("output_phase_3", {})
+    p3_output = payload.get("output_phase_3") or {}
     text_blocks = p3_output.get("context_safe_localized_text_pack", [])
     if not text_blocks:
-        print("[Phase 5] No Phase 3 context pack found, falling back to Phase 2 data...")
-        p2_output = payload.get("output_phase_2", {})
+        print("[Phase 5] No Phase 3 context pack found, falling back to Phase 2 data...", flush=True)
+        p2_output = payload.get("output_phase_2") or {}
         # Phase 2 format could be a flat list or nested dict
         p2_pack = p2_output.get("verified_text_pack", [])
         if isinstance(p2_pack, dict) and "pages" in p2_pack:
@@ -108,7 +108,7 @@ def rebuild_localized_pdf(payload: dict) -> dict:
         elif isinstance(p2_pack, list):
             text_blocks = p2_pack
 
-    print(f"[Phase 5] Loaded {len(text_blocks)} candidate blocks for replacement")
+    print(f"[Phase 5] Loaded {len(text_blocks)} candidate blocks for replacement", flush=True)
 
     pages_map = {}
     for block in text_blocks:
