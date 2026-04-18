@@ -25,3 +25,122 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-04-17 13:02:03,622 | pipeline.step2.service | INFO | Step 2: Running VLM analysis workflow via FPT AI API...
 2026-04-17 13:07:52,806 | pipeline.step2.service | INFO | Step 2: Running VLM analysis workflow via FPT AI API...
 2026-04-17 13:08:17,302 | pipeline.step2.service | INFO | Step 2: Running VLM analysis workflow via FPT AI API...
+2026-04-18 16:34:10,900 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor'
+2026-04-18 16:34:10,959 | pipeline.context_transform.routes | ERROR | Context Transformation error: All connection attempts failed
+Traceback (most recent call last):
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/pipeline/context_transform/routes.py", line 57, in context_transform
+    result = await run_context_transformation(contents, image.filename or "input.png", context, seed)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/pipeline/context_transform/service.py", line 82, in run_context_transformation
+    uploaded_name = await upload_image_to_comfyui(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/services/comfyui_service.py", line 36, in upload_image_to_comfyui
+    resp = await client.post(
+           ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+    )
+    ^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/kiet/git/GDGOC-2026/phase4/edit_image_api/venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+2026-04-18 17:22:11,394 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor dining room'
+2026-04-18 17:22:49,516 | pipeline.context_transform.service | INFO | [Context Transformation] Context transformation completed successfully.
+2026-04-18 17:23:33,663 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor dining room'
+2026-04-18 17:23:38,022 | pipeline.context_transform.service | INFO | [Context Transformation] Context transformation completed successfully.
+2026-04-18 17:26:18,291 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor dining room'
+2026-04-18 17:26:23,769 | pipeline.context_transform.service | INFO | [Context Transformation] Context transformation completed successfully.
+2026-04-18 17:29:54,517 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor dining room'
+2026-04-18 17:30:26,639 | pipeline.context_transform.service | INFO | [Context Transformation] Context transformation completed successfully.
+2026-04-18 17:31:57,686 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor dining room'
+2026-04-18 17:32:28,738 | pipeline.context_transform.service | INFO | [Context Transformation] Context transformation completed successfully.
+2026-04-18 17:32:46,311 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor dining room'
+2026-04-18 17:32:47,586 | pipeline.context_transform.service | INFO | [Context Transformation] Context transformation completed successfully.
+2026-04-18 17:33:03,250 | pipeline.context_transform.service | INFO | [Context Transformation] Transforming context to 'indoor dining room'
+2026-04-18 17:33:04,542 | pipeline.context_transform.service | INFO | [Context Transformation] Context transformation completed successfully.
+2026-04-18 17:33:45,809 | pipeline.object_replace.service | INFO | [Object Replacement] Replacing 1 object(s) in one pass: 'turkey' → 'boiled chicken'
+2026-04-18 17:33:51,276 | pipeline.object_replace.service | INFO | [Object Replacement] All objects replaced successfully in one pass.
+2026-04-18 17:34:15,280 | pipeline.object_replace.service | INFO | [Object Replacement] Replacing 2 object(s) in one pass: 'turkey' → 'boiled chicken', 'red wine' → 'beer'
+2026-04-18 17:34:20,206 | pipeline.object_replace.service | INFO | [Object Replacement] All objects replaced successfully in one pass.
+2026-04-18 17:35:02,093 | pipeline.object_replace.service | INFO | [Object Replacement] Replacing 3 object(s) in one pass: 'turkey' → 'boiled chicken', 'red wine' → 'beer', 'candle' → 'nothing'
+2026-04-18 17:35:06,726 | pipeline.object_replace.service | INFO | [Object Replacement] All objects replaced successfully in one pass.
+2026-04-18 17:35:39,837 | pipeline.object_replace.service | INFO | [Object Replacement] Replacing 4 object(s) in one pass: 'turkey' → 'boiled chicken', 'red wine' → 'beer', 'candle' → 'nothing', 'garlic' → 'nothing'
+2026-04-18 17:35:45,876 | pipeline.object_replace.service | INFO | [Object Replacement] All objects replaced successfully in one pass.
+2026-04-18 17:36:14,064 | pipeline.object_replace.service | INFO | [Object Replacement] Replacing 4 object(s) in one pass: 'turkey' → 'boiled chicken', 'red wine' → 'beer', 'candle' → 'nothing', 'garlic cloves' → 'lemon leaf'
+2026-04-18 17:36:19,062 | pipeline.object_replace.service | INFO | [Object Replacement] All objects replaced successfully in one pass.

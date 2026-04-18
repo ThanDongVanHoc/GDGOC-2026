@@ -2,7 +2,7 @@
 Pipeline routes — endpoints for the 3-step localization pipeline.
 
 POST /pipeline/localize
-  - Accepts: image file + 3 separate JSON fields (objects, context, texts)
+  - Accepts: image file + explicit background/object/text fields
   - Returns: edited image (PNG) + pipeline metadata in headers
 """
 
@@ -17,14 +17,10 @@ from config import OUTPUTS_DIR
 from models.schemas import (
     LocalizePipelineRequest,
     LocalizePipelineResponse,
-    ObjectReplacement,
-    ContextTransformation,
+    BackgroundData,
     TextReplacement,
 )
 from pipeline.localize_pipeline import run_localize_pipeline
-from pipeline.step1.service import run_object_replacement
-from pipeline.step2.service import run_context_transformation
-from pipeline.step3.service import run_text_replacement
 
 logger = logging.getLogger(__name__)
 
@@ -62,40 +58,20 @@ def _parse_models(raw: str | None, field_name: str, model_class: Type[T], is_lis
 @router.post(
     "/localize",
     summary="Run 3-step image localization pipeline",
-    description="""
+    description="""\
 **3-Step Image Localization Pipeline:**
 
-1. **Object Replacement** — Replace specific objects using AI inpainting
-2. **Context Transformation** — Adjust background/scene to Vietnamese setting
+1. **Context Transformation** — Adjust background/scene to Vietnamese setting
+2. **Object Replacement** — Replace specific objects using AI inpainting
 3. **Text Replacement** — Remove original text and render Vietnamese text
 
-Each step can be independently skipped by leaving its field empty or null.
+Each step can be independently skipped by leaving its fields empty.
 
-**Example fields:**
+**Background fields:** Fill in `scene_type` and the list fields to run context transformation.
 
-`objects_json`:
-```json
-[
-    {"bbox": [100, 200, 300, 400], "original": "hamburger", "replacement": "bánh chưng"}
-]
-```
+**Object replacement fields:** Fill `original_objects` and `replacement_objects` (parallel lists).
 
-`target_culture`:
-```
-Vietnamese
-```
-
-`description`:
-```
-Vietnamese street food stall
-```
-
-`texts_json`:
-```json
-[
-    {"bbox": [50, 50, 250, 80], "original_text": "Hello World", "new_text": "Xin chào thế giới"}
-]
-```
+**Text replacement:** Provide `texts_json` as a JSON array string.
     """,
     responses={
         200: {
@@ -106,37 +82,70 @@ Vietnamese street food stall
 )
 async def localize_image(
     image: UploadFile = File(..., description="The source image to localize."),
-    objects_json: Optional[str] = Form(
+    # ── Context Transformation fields ──
+    scene_type: Optional[str] = Form(
         default=None,
-        description='JSON array of objects to replace.',
-        openapi_examples={"example": {"value": '[{"bbox": [100, 200, 300, 400], "original": "hamburger", "replacement": "bánh chưng"}]'}},
+        description="Target scene type (e.g. 'indoor dining room'). Leave empty to skip context transformation.",
     ),
-    target_culture: Optional[str] = Form(
-        default=None,
-        description='Target culture for localization.',
-        openapi_examples={"example": {"value": "Vietnamese"}},
+    preserved_foreground: list[str] = Form(
+        default=[],
+        description="Foreground elements to preserve (one per field).",
     ),
-    description: Optional[str] = Form(
-        default=None,
-        description='Optional extra description for context transformation.',
-        openapi_examples={"example": {"value": "street food stall"}},
+    modified_background_elements: list[str] = Form(
+        default=[],
+        description="Background elements to modify (one per field).",
     ),
+    vietnamese_setting_suggestions: list[str] = Form(
+        default=[],
+        description="Vietnamese setting suggestions (one per field).",
+    ),
+    constraints: list[str] = Form(
+        default=[],
+        description="Hard generation constraints (one per field).",
+    ),
+    # ── Object Replacement fields ──
+    original_objects: list[str] = Form(
+        default=[],
+        description="Original object names to replace (one per field). Must pair with replacement_objects.",
+    ),
+    replacement_objects: list[str] = Form(
+        default=[],
+        description="Replacement object names (one per field). Must pair with original_objects.",
+    ),
+    # ── Text Replacement (JSON) ──
     texts_json: Optional[str] = Form(
         default=None,
-        description='JSON array of text replacements.',
-        openapi_examples={"example": {"value": '[{"bbox": [50, 50, 250, 80], "original_text": "Hello World", "new_text": "Xin chào"}]'}},
+        description='JSON array of text replacements. Example: [{"bbox": [50,50,250,80], "original_text": "Hello", "new_text": "Xin chào"}]',
     ),
     seed: Optional[int] = Form(default=None, description="Random seed for reproducibility."),
 ):
     """Run the full localization pipeline on an uploaded image."""
 
-    objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
-    context = ContextTransformation(target_culture=target_culture, description=description) if target_culture else None
+    # Build BackgroundData if scene_type is provided
+    background = None
+    if scene_type:
+        background = BackgroundData(
+            scene_type=scene_type,
+            preserved_foreground=preserved_foreground,
+            modified_background_elements=modified_background_elements,
+            vietnamese_setting_suggestions=vietnamese_setting_suggestions,
+            constraints=constraints,
+        )
+
+    # Build object_replacements dict from parallel lists
+    if len(original_objects) != len(replacement_objects):
+        raise HTTPException(
+            status_code=400,
+            detail=f"original_objects ({len(original_objects)}) and replacement_objects ({len(replacement_objects)}) must have the same length.",
+        )
+    object_replacements = dict(zip(original_objects, replacement_objects))
+
+    # Parse texts
     texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
 
     request = LocalizePipelineRequest(
-        objects=objects,
-        context=context,
+        background=background,
+        object_replacements=object_replacements,
         texts=texts,
         seed=seed,
     )
@@ -182,34 +191,70 @@ async def localize_image(
 )
 async def localize_image_json(
     image: UploadFile = File(..., description="The source image to localize."),
-    objects_json: Optional[str] = Form(
+    # ── Context Transformation fields ──
+    scene_type: Optional[str] = Form(
         default=None,
-        description='JSON array of objects to replace.',
-        openapi_examples={"example": {"value": '[{"bbox": [100, 200, 300, 400], "original": "hamburger", "replacement": "bánh chưng"}]'}},
+        description="Target scene type. Leave empty to skip context transformation.",
     ),
-    target_culture: Optional[str] = Form(
-        default=None,
-        description='Target culture for localization.',
-        openapi_examples={"example": {"value": "Vietnamese"}},
+    preserved_foreground: list[str] = Form(
+        default=[],
+        description="Foreground elements to preserve (one per field).",
     ),
-    description: Optional[str] = Form(
-        default=None,
-        description='Optional extra description for context transformation.',
+    modified_background_elements: list[str] = Form(
+        default=[],
+        description="Background elements to modify (one per field).",
     ),
+    vietnamese_setting_suggestions: list[str] = Form(
+        default=[],
+        description="Vietnamese setting suggestions (one per field).",
+    ),
+    constraints: list[str] = Form(
+        default=[],
+        description="Hard generation constraints (one per field).",
+    ),
+    # ── Object Replacement fields ──
+    original_objects: list[str] = Form(
+        default=[],
+        description="Original object names to replace (one per field).",
+    ),
+    replacement_objects: list[str] = Form(
+        default=[],
+        description="Replacement object names (one per field).",
+    ),
+    # ── Text Replacement (JSON) ──
     texts_json: Optional[str] = Form(
         default=None,
         description='JSON array of text replacements.',
-        openapi_examples={"example": {"value": '[{"bbox": [50, 50, 250, 80], "original_text": "Hello", "new_text": "Xin chào"}]'}},
     ),
     seed: Optional[int] = Form(default=None, description="Random seed for reproducibility."),
 ):
     """Same as /pipeline/localize but returns JSON metadata instead of image bytes."""
 
-    objects = _parse_models(objects_json, "objects_json", ObjectReplacement, is_list=True)
-    context = ContextTransformation(target_culture=target_culture, description=description) if target_culture else None
+    background = None
+    if scene_type:
+        background = BackgroundData(
+            scene_type=scene_type,
+            preserved_foreground=preserved_foreground,
+            modified_background_elements=modified_background_elements,
+            vietnamese_setting_suggestions=vietnamese_setting_suggestions,
+            constraints=constraints,
+        )
+
+    if len(original_objects) != len(replacement_objects):
+        raise HTTPException(
+            status_code=400,
+            detail=f"original_objects ({len(original_objects)}) and replacement_objects ({len(replacement_objects)}) must have the same length.",
+        )
+    object_replacements = dict(zip(original_objects, replacement_objects))
+
     texts = _parse_models(texts_json, "texts_json", TextReplacement, is_list=True)
 
-    request = LocalizePipelineRequest(objects=objects, context=context, texts=texts, seed=seed)
+    request = LocalizePipelineRequest(
+        background=background,
+        object_replacements=object_replacements,
+        texts=texts,
+        seed=seed,
+    )
 
     contents = await image.read()
     if not contents:

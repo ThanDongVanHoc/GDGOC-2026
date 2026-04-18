@@ -6,18 +6,18 @@ from fastapi.responses import Response
 
 from models.schemas import TextReplacement
 from routes.pipeline_routes import _parse_models
-from pipeline.step3.service import run_text_replacement
+from pipeline.text_replace.service import run_text_replacement
 
 logger = logging.getLogger(__name__)
 
-router = APIRouter(prefix="/pipeline/step3", tags=["Localization Pipeline"])
+router = APIRouter(prefix="/pipeline", tags=["Localization Pipeline"])
 
 @router.post(
     "/text-replace",
-    summary="Run Step 3: Text Replacement independently",
+    summary="Run Text Replacement independently",
     responses={200: {"content": {"image/png": {}}}},
 )
-async def step3_text_replace(
+async def text_replace(
     image: UploadFile = File(...),
     texts_json: str = Form(
         ...,
@@ -35,5 +35,5 @@ async def step3_text_replace(
         result = await run_text_replacement(contents, texts)
         return Response(content=result, media_type="image/png")
     except Exception as e:
-        logger.error(f"Step 3 error: {e}", exc_info=True)
+        logger.error(f"Text Replacement error: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))

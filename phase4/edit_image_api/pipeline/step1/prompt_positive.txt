@@ -1,5 +1,0 @@
-You are an exprt in image editing. 
-Replace the {original} in the region [{x1}, {y1}, {x2}, {y2}] with {replacement}. 
-Make the replacement look natural and consistent with the surrounding scene. 
-Keep everything else exactly the same — do not modify any other part of the image. 
-Do not add any overlays, annotations, bounding boxes, or visual markers.

@@ -88,18 +88,18 @@ async def run_text_replacement(
         Updated image bytes with Vietnamese text rendered.
     """
     if not texts:
-        logger.info("Step 3: No text replacements — skipping.")
+        logger.info("[Text Replacement] No text replacements — skipping.")
         return image_bytes
 
     img = _bytes_to_cv2(image_bytes)
     original_img = img.copy()
 
-    logger.info(f"Step 3: Replacing {len(texts)} text region(s).")
+    logger.info(f"[Text Replacement] Replacing {len(texts)} text region(s).")
 
     for i, text_item in enumerate(texts):
         x1, y1, x2, y2 = text_item.bbox
         logger.info(
-            f"Step 3: Text {i + 1}/{len(texts)}: "
+            f"[Text Replacement] Text {i + 1}/{len(texts)}: "
             f"'{text_item.original_text}' → '{text_item.new_text}' "
             f"at [{x1}, {y1}, {x2}, {y2}]"
         )
@@ -125,6 +125,6 @@ async def run_text_replacement(
             font_color=props["font_color"],
         )
 
-        logger.info(f"Step 3: Text {i + 1}/{len(texts)} replaced successfully.")
+        logger.info(f"[Text Replacement] Text {i + 1}/{len(texts)} replaced successfully.")
 
     return _cv2_to_bytes(img)

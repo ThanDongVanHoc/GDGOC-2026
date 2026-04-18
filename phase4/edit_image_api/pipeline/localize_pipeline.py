@@ -22,9 +22,9 @@ from models.schemas import (
     LocalizePipelineResponse,
     StepResult,
 )
-from pipeline.step1.service import run_object_replacement
-from pipeline.step2.service import run_context_transformation
-from pipeline.step3.service import run_text_replacement
+from pipeline.object_replace.service import run_object_replacement
+from pipeline.context_transform.service import run_context_transformation
+from pipeline.text_replace.service import run_text_replacement
 
 logger = logging.getLogger(__name__)
 
@@ -73,84 +73,83 @@ async def run_localize_pipeline(
         _save_intermediate(current_bytes, "0_original", run_id)
 
     # ──────────────────────────────────────────────────────────────────────
-    # Step 1: Object Replacement
+    # Context Transformation (Background First)
     # ──────────────────────────────────────────────────────────────────────
     step_start = time.time()
     try:
-        if request.objects:
-            current_bytes = await run_object_replacement(
-                image_bytes=current_bytes,
-                filename=filename,
-                objects=request.objects,
-                seed=request.seed,
-            )
-            step_duration = time.time() - step_start
-            steps.append(StepResult(
-                step="1_object_replacement",
-                status="success",
-                message=f"Replaced {len(request.objects)} object(s).",
-                duration_seconds=round(step_duration, 2),
-            ))
-            if save_intermediates:
-                _save_intermediate(current_bytes, "1_after_objects", run_id)
-        else:
-            steps.append(StepResult(
-                step="1_object_replacement",
-                status="skipped",
-                message="No objects to replace.",
-                duration_seconds=0.0,
-            ))
-    except Exception as e:
-        step_duration = time.time() - step_start
-        logger.error(f"Step 1 failed: {e}", exc_info=True)
-        steps.append(StepResult(
-            step="1_object_replacement",
-            status="error",
-            message=str(e),
-            duration_seconds=round(step_duration, 2),
-        ))
-        # Continue with current image even if step 1 fails
-
-    # ──────────────────────────────────────────────────────────────────────
-    # Step 2: Context Transformation
-    # ──────────────────────────────────────────────────────────────────────
-    step_start = time.time()
-    try:
-        if request.context is not None:
+        if request.background:
             current_bytes = await run_context_transformation(
                 image_bytes=current_bytes,
                 filename=filename,
-                context=request.context,
+                context=request.background,
                 seed=(request.seed + 1000) if request.seed else None,
             )
             step_duration = time.time() - step_start
             steps.append(StepResult(
-                step="2_context_transformation",
+                step="context_transformation",
                 status="success",
-                message=f"Context transformed to '{request.context.target_culture}'.",
+                message=f"Context transformed to '{request.background.scene_type}'.",
                 duration_seconds=round(step_duration, 2),
             ))
             if save_intermediates:
-                _save_intermediate(current_bytes, "2_after_context", run_id)
+                _save_intermediate(current_bytes, "after_context", run_id)
         else:
             steps.append(StepResult(
-                step="2_context_transformation",
+                step="context_transformation",
                 status="skipped",
                 message="No context transformation requested.",
                 duration_seconds=0.0,
             ))
     except Exception as e:
         step_duration = time.time() - step_start
-        logger.error(f"Step 2 failed: {e}", exc_info=True)
+        logger.error(f"Context transformation failed: {e}", exc_info=True)
         steps.append(StepResult(
-            step="2_context_transformation",
+            step="context_transformation",
             status="error",
             message=str(e),
             duration_seconds=round(step_duration, 2),
         ))
 
     # ──────────────────────────────────────────────────────────────────────
-    # Step 3: Text Replacement
+    # Object Replacement (Foreground Second)
+    # ──────────────────────────────────────────────────────────────────────
+    step_start = time.time()
+    try:
+        if request.object_replacements:
+            current_bytes = await run_object_replacement(
+                image_bytes=current_bytes,
+                filename=filename,
+                object_replacements=request.object_replacements,
+                seed=request.seed,
+            )
+            step_duration = time.time() - step_start
+            steps.append(StepResult(
+                step="object_replacement",
+                status="success",
+                message=f"Replaced {len(request.object_replacements)} object(s).",
+                duration_seconds=round(step_duration, 2),
+            ))
+            if save_intermediates:
+                _save_intermediate(current_bytes, "after_objects", run_id)
+        else:
+            steps.append(StepResult(
+                step="object_replacement",
+                status="skipped",
+                message="No objects to replace.",
+                duration_seconds=0.0,
+            ))
+    except Exception as e:
+        step_duration = time.time() - step_start
+        logger.error(f"Object replacement failed: {e}", exc_info=True)
+        steps.append(StepResult(
+            step="object_replacement",
+            status="error",
+            message=str(e),
+            duration_seconds=round(step_duration, 2),
+        ))
+
+    # ──────────────────────────────────────────────────────────────────────
+    # Text Replacement
     # ──────────────────────────────────────────────────────────────────────
     step_start = time.time()
     try:
@@ -161,25 +160,25 @@ async def run_localize_pipeline(
             )
             step_duration = time.time() - step_start
             steps.append(StepResult(
-                step="3_text_replacement",
+                step="text_replacement",
                 status="success",
                 message=f"Replaced {len(request.texts)} text region(s).",
                 duration_seconds=round(step_duration, 2),
             ))
             if save_intermediates:
-                _save_intermediate(current_bytes, "3_after_text", run_id)
+                _save_intermediate(current_bytes, "after_text", run_id)
         else:
             steps.append(StepResult(
-                step="3_text_replacement",
+                step="text_replacement",
                 status="skipped",
                 message="No text replacements.",
                 duration_seconds=0.0,
             ))
     except Exception as e:
         step_duration = time.time() - step_start
-        logger.error(f"Step 3 failed: {e}", exc_info=True)
+        logger.error(f"Text replacement failed: {e}", exc_info=True)
         steps.append(StepResult(
-            step="3_text_replacement",
+            step="text_replacement",
             status="error",
             message=str(e),
             duration_seconds=round(step_duration, 2),

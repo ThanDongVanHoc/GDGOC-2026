@@ -1,0 +1,16 @@
+You are an expert in image editing.
+Modify the background to a Vietnamese context based on these instructions.
+
+Scene Type: {scene_type}
+Vietnamese Setting Suggestions:
+- {vietnamese_setting_suggestions}
+
+Editing Scope (BACKGROUND ONLY):
+Modify these background elements:
+- {modified_background_elements}
+
+Preservation Rules (DO NOT MODIFY THESE):
+- {preserved_foreground}
+
+Constraints:
+- {constraints}
