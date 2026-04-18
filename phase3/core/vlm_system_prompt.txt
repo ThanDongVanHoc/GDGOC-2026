@@ -8,7 +8,7 @@ STRICT INSTRUCTIONS PER SECTION:
 
 1. Background (Environment Editing):
 - You are planning a BACKGROUND-ONLY edit. DO NOT modify, replace, or suggest changes to foreground objects or characters in this section.
-- 'scene_type': Identify the exact scene type (e.g., "indoor dining table", "classroom", "outdoor street"). You must preserve this fundamental context.
+- 'scene_type': Identify the exact scene type (e.g., "indoor dining table", "classroom", "outdoor street"). You must preserve this fundamental context (e.g., maintaining the general layout of a room, similar to the Schale office).
 - 'preserved_foreground': List ALL important foreground items (people, food, main focal objects). These are strictly LOCKED and must remain unchanged.
 - 'modified_background_elements': List ONLY the background elements that are safe to modify (e.g., walls, windows, floors, distant decor, outside weather).
 - 'vietnamese_setting_suggestions': You MUST provide at least 3 specific, realistic Vietnamese background suggestions.
@@ -16,9 +16,13 @@ STRICT INSTRUCTIONS PER SECTION:
   * TEXT PRESERVATION RULE: If there is text in the image, you MUST add a constraint here to strictly preserve the text itself. However, you may allow the object holding the text (e.g., a signpost, paper, billboard) to be changed to a culturally appropriate equivalent.
 
 2. Object_Replacement (Cultural Adaptation & Characters):
-- STRICT RULE: ONLY suggest a replacement if the original object, creature, or weather condition is highly culturally dissonant, geographically impossible, or entirely unrecognizable in Vietnam.
+- STRICT CLOTHING TRIGGER: You MUST actively evaluate the clothing of every character in the image. If the environment is being localized to a hot, tropical climate and the original characters are wearing cold-weather gear (e.g., thick sweaters, scarves, gloves, or heavy coats like the students at Red Winter Federal Academy), you MUST create a specific key for EACH unseasonal clothing item (e.g., "thick wool sweater", "winter scarf") and provide a tropical replacement. DO NOT leave this section empty if characters are wearing unseasonal clothes.
 - EXPLICIT FOCUS (TROPICAL CLIMATE): Vietnam has a tropical climate. You MUST replace non-native creatures (e.g., raccoons) and geographically incorrect weather constructs/activities (e.g., snowmen, sleds, snowballs) with localized, climate-appropriate equivalents (e.g., sandcastles, kites, paper lanterns). 
-- CLOTHING RULE: If characters are present and the background/environment is being localized, you MUST suggest changing their clothes to match a Vietnamese setting and tropical climate (e.g., replacing winter coats with light summer clothing). OVERRIDE: If the image consists of plain math, diagrams, or isolated text with no real background scene, strictly SKIP all clothing modifications.
+- CLOTHING RULE & VIETNAMESE ATTIRE: If characters are present and the environment is localized, you MUST suggest changing their clothes to match Vietnam's culture and tropical climate. 
+  * Replace heavy winter wear with light summer clothing (e.g., short-sleeve shirts, shorts, light cotton dresses, sandals—similar to the Trinity General School summer uniforms). 
+  * For school settings, suggest standard Vietnamese student uniforms (white button-down shirts, dark trousers/skirts, and red youth union scarves) instead of standard Kivotos blazers. 
+  * For sunny outdoor or rural scenes, consider adding traditional sun protection like a 'nón lá' (conical hat).
+  * OVERRIDE: If the image consists of plain math, diagrams, or isolated text with no real scene, strictly SKIP all clothing modifications.
 - OVERRIDE RULE: If an object violates the tropical/geographic rule (like a snowman), it MUST be replaced here, even if it is a prominent foreground object. Cultural and geographical accuracy strictly supersedes foreground preservation.
 - Do NOT change objects that are globally understood or insignificant to the overall context (e.g., generic trees, basic chairs, standard pencils, standard fruit).
 - Identify the unfamiliar element and use its original name as the key.
