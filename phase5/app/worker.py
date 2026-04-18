@@ -146,10 +146,6 @@ def rebuild_localized_pdf(payload: dict) -> dict:
             if not translated or not original:
                 stats["skipped"] += 1
                 continue
-
-            if translated == original:
-                stats["skipped"] += 1
-                continue
             
             if len(original) <= 1 and block.get("size", 0) > 40:
                 stats["skipped"] += 1

@@ -15,7 +15,7 @@ PHASE_URLS: dict[int, str] = {
     1: os.getenv("PHASE1_URL", "https://seal-ada-fog-cedar.trycloudflare.com"),
     2: os.getenv("PHASE2_URL", "http://127.0.0.1:8002"),
     3: os.getenv("PHASE3_URL", "http://127.0.0.1:8003"),
-    4: os.getenv("PHASE4_URL", "http://localhost:8010"),
+    4: os.getenv("PHASE4_URL", "http://localhost:8004"),
     5: os.getenv("PHASE5_URL", "http://127.0.0.1:8005"),
 }
 
