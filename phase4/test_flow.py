@@ -29,7 +29,7 @@ import uvicorn
 from fastapi import FastAPI
 
 # ── Configuration ────────────────────────────────────────────────
-PHASE4_URL = "http://localhost:8000"
+PHASE4_URL = "http://localhost:8004"
 WEBHOOK_PORT = 9994
 WEBHOOK_URL = f"http://localhost:{WEBHOOK_PORT}/webhook"
 
