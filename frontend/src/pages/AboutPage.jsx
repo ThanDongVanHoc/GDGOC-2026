@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import NavBar from '../components/NavBar'
 
 function Icon({ name, className = '', filled = false }) {
   return (
@@ -27,38 +28,7 @@ export default function AboutPage() {
   return (
     <div className="bg-[#000000] text-[#ffffff] font-body min-h-screen flex flex-col antialiased selection:bg-[#FA500F] selection:text-[#000000]">
       {/* Top Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#000000]/80 backdrop-blur-xl shadow-[0_32px_64px_rgba(0,0,0,0.5)] border-b border-[#333333]">
-        <div className="flex justify-between items-center h-20 px-12 w-full max-w-[1920px] mx-auto">
-          {/* Brand */}
-          <Link to="/" className="font-headline font-black tracking-tighter text-2xl text-[#FA500F]">
-            MISTRAL.AI
-          </Link>
-          {/* Links */}
-          <div className="hidden md:flex items-center gap-8 font-headline tracking-tight font-medium text-neutral-400">
-            <Link to="/" className="hover:text-white transition-colors">Framework</Link>
-            <a href="#" className="hover:text-white transition-colors">Documentation</a>
-            <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
-            <Link to="/about" className="text-white font-bold border-b-2 border-[#FA500F] pb-1">About</Link>
-          </div>
-          {/* Actions */}
-          <div className="flex items-center gap-6">
-            <div className="flex gap-4 text-[#FA500F]">
-              <button className="hover:bg-[#111111] transition-all duration-150 p-2 rounded scale-98 active:opacity-80">
-                <Icon name="terminal" />
-              </button>
-              <button className="hover:bg-[#111111] transition-all duration-150 p-2 rounded scale-98 active:opacity-80">
-                <Icon name="settings" />
-              </button>
-            </div>
-            <button 
-              onClick={() => navigate('/upload')}
-              className="bg-[#FA500F] text-black font-bold px-6 py-2 rounded hover:opacity-90 transition-opacity"
-            >
-              Deploy Agent
-            </button>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Main Content Canvas */}
       <main className="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-[1920px] mx-auto w-full flex flex-col gap-32">
@@ -70,7 +40,7 @@ export default function AboutPage() {
               <span className="text-[#FA500F]">Cultural Bridges</span>
             </h1>
             <p className="font-body text-xl text-neutral-400 max-w-2xl leading-relaxed">
-              OmniLocal by MISTRAL.AI is not just translation. It is the real-time architectural synthesis of localized context, intent, and nuance at enterprise scale.
+              OmniLocal is not just translation. It is the real-time architectural synthesis of localized context, intent, and nuance at enterprise scale.
             </p>
             {/* Pulse Metric Component */}
             <div className="mt-8 flex items-baseline gap-6 border-l-2 border-[#FA500F] pl-6">
@@ -205,7 +175,7 @@ export default function AboutPage() {
       {/* Footer */}
       <footer className="w-full py-16 px-12 border-t border-[#333333] bg-[#000000]">
         <div className="flex flex-col md:flex-row justify-between items-center max-w-[1920px] mx-auto w-full">
-          <div className="font-headline font-black text-white mb-6 md:mb-0">MISTRAL.AI</div>
+          <div className="font-headline font-black text-white mb-6 md:mb-0">OMNILOCAL</div>
           <div className="flex gap-6 font-[JetBrains_Mono] text-[10px] uppercase tracking-wider text-neutral-500" style={{ fontFamily: "'JetBrains Mono'" }}>
             <a className="hover:text-[#FA500F] transition-colors" href="#">Privacy Policy</a>
             <a className="hover:text-[#FA500F] transition-colors" href="#">Security</a>
@@ -213,7 +183,7 @@ export default function AboutPage() {
             <a className="hover:text-[#FA500F] transition-colors" href="#">Changelog</a>
           </div>
           <div className="font-[JetBrains_Mono] text-[10px] uppercase tracking-wider text-neutral-500 mt-6 md:mt-0" style={{ fontFamily: "'JetBrains Mono'" }}>
-            © 2024 Kinetic Monolith Systems. AI-Optimized.
+            © 2026 Team 24A01 APCS. Built for GDGoC Hackathon.
           </div>
         </div>
       </footer>

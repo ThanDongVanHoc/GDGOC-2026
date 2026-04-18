@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import NavBar from '../components/NavBar'
 import './PipelinePage.css'
 
 const INITIAL_PIPELINE = [
@@ -81,20 +82,7 @@ export default function PipelinePage() {
   return (
     <div className="pipeline-page">
       {/* ── Navbar ───────────────────────────────────────── */}
-      <nav className="navbar">
-        <a href="/" className="navbar-brand" onClick={(e) => { e.preventDefault(); navigate('/') }}>
-          <div className="logo-icon">🌏</div>
-          <span className="gradient-text">OmniLocal</span>
-        </a>
-        <div className="navbar-actions">
-          {threadId && (
-            <div className="thread-badge">
-              <span className="tag">THREAD-ID</span>
-              <span className="id">{threadId.split('-')[0]}</span>
-            </div>
-          )}
-        </div>
-      </nav>
+      <NavBar />
 
       <div className="pipeline-container">
         {/* ── Context Sidebar ────────────────────────────── */}

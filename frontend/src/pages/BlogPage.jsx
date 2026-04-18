@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import NavBar from '../components/NavBar'
 
 export default function BlogPage() {
   const navigate = useNavigate()
@@ -11,50 +12,7 @@ export default function BlogPage() {
   return (
     <div className="bg-[#000000] text-[#ffffff] font-body min-h-screen flex flex-col antialiased selection:bg-[#FA500F] selection:text-[#000000]">
       {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 bg-[#000000]/80 backdrop-blur-xl shadow-[0_32px_64px_rgba(0,0,0,0.8)] border-b border-outline-variant/30">
-        <div className="flex justify-between items-center h-20 px-12 w-full max-w-[1920px] mx-auto">
-          {/* Brand */}
-          <Link to="/" className="font-headline font-black tracking-tighter text-2xl text-[#FA500F]">
-            MISTRAL.AI
-          </Link>
-          {/* Links (Web) */}
-          <div className="hidden md:flex gap-8 items-center font-headline tracking-tight font-medium">
-            <Link to="/" className="text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3 rounded-lg hover:bg-surface-container transition-all duration-150">
-              Framework
-            </Link>
-            <a href="#" className="text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3 rounded-lg hover:bg-surface-container transition-all duration-150">
-              Documentation
-            </a>
-            <Link to="/blog" className="text-[#FA500F] font-bold border-b-2 border-[#FA500F] pb-1 py-2 px-3 rounded-lg hover:bg-surface-container transition-all duration-150">
-              Blog
-            </Link>
-            <Link to="/about" className="text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3 rounded-lg hover:bg-surface-container transition-all duration-150">
-              About
-            </Link>
-          </div>
-          {/* Trailing Actions */}
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex gap-2">
-              <button className="p-2 text-[#FA500F] hover:bg-surface-container transition-all duration-150 rounded-full flex items-center justify-center scale-98 active:opacity-80">
-                <span className="material-symbols-outlined" data-icon="terminal">terminal</span>
-              </button>
-              <button className="p-2 text-[#FA500F] hover:bg-surface-container transition-all duration-150 rounded-full flex items-center justify-center scale-98 active:opacity-80">
-                <span className="material-symbols-outlined" data-icon="settings">settings</span>
-              </button>
-            </div>
-            <button 
-              onClick={() => navigate('/upload')}
-              className="hidden md:flex bg-[#FA500F] text-[#000000] px-6 py-2.5 rounded-lg font-bold text-sm tracking-wide scale-98 active:opacity-80 transition-transform hover:bg-[#cc3f09]"
-            >
-              Deploy Agent
-            </button>
-            {/* Mobile Menu Button */}
-            <button className="md:hidden p-2 text-[#FA500F]">
-              <span className="material-symbols-outlined">menu</span>
-            </button>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Main Content Canvas */}
       <main className="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-[1920px] mx-auto w-full flex flex-col gap-24">
@@ -240,7 +198,7 @@ export default function BlogPage() {
             <a className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 hover:text-[#FA500F] transition-colors" href="#">Changelog</a>
           </div>
           <div className="font-mono text-[10px] uppercase tracking-wider text-neutral-500">
-            © 2024 Kinetic Monolith Systems. AI-Optimized.
+            © 2026 Team 24A01 APCS. Built for GDGoC Hackathon.
           </div>
         </div>
       </footer>

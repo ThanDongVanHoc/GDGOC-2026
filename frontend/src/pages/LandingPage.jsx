@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import NavBar from '../components/NavBar';
 
 /* ── Icon component: forces Material Symbols font-family ── */
 function Icon({ name, className = '', filled = false, style = {} }) {
@@ -46,40 +47,7 @@ export default function LandingPage() {
     <div className="bg-background text-on-surface font-body antialiased selection:bg-primary-container selection:text-white min-h-screen flex flex-col dark noise-overlay">
 
       {/* ── TopNavBar ── */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#131313]/80 backdrop-blur-2xl border-b border-white/5 shadow-[0_1px_0_rgba(255,255,255,0.05)]">
-        <div className="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto">
-          <div className="text-2xl font-black tracking-tighter text-[#FA500F] uppercase" style={{ fontFamily: 'Inter' }}>OmniLocal</div>
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              { label: 'Framework', href: '#overview' },
-              { label: 'Solutions', href: '#showcase' },
-              { label: 'Architecture', href: '#architecture' },
-              { label: 'Pipeline', href: '#pipeline' },
-            ].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-[#e5e2e1]/60 hover:text-white transition-colors duration-150 tracking-tight text-sm font-medium"
-                style={{ fontFamily: 'Inter' }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="hidden md:block text-primary text-sm font-medium hover:bg-[#2a2a2a] transition-all duration-150 px-4 py-2 rounded">
-              System Status
-            </button>
-            <button
-              onClick={() => navigate('/upload')}
-              className="relative overflow-hidden bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold px-6 py-2.5 rounded-lg hover:opacity-90 hover:scale-[1.02] transition-all duration-150 active:scale-95 shadow-[0_0_32px_rgba(255,87,27,0.25)]"
-              style={{ fontFamily: 'Inter' }}
-            >
-              Deploy Agent
-            </button>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       <main className="flex-grow">
 

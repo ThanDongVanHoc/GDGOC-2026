@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import NavBar from '../components/NavBar'
 
 /* ── Icon component (same as LandingPage) ── */
 function Icon({ name, className = '', filled = false }) {
@@ -137,35 +138,7 @@ export default function UploadPage() {
     <div className="bg-surface text-on-surface font-body min-h-screen flex flex-col antialiased dark selection:bg-primary-container selection:text-on-primary-container" style={{ fontFamily: 'Inter' }}>
 
       {/* ── TopNavBar ── */}
-      <nav className="bg-[#201f1f] shadow-[0_4px_20px_rgba(0,0,0,0.4)] flex justify-between items-center w-full px-8 py-4 z-50 border-b border-outline-variant/10">
-        <div className="flex items-center gap-8">
-          <a
-            className="text-2xl font-black tracking-tighter text-[#FA500F] uppercase cursor-pointer active:scale-[0.98] transition-transform"
-            onClick={() => navigate('/')}
-          >
-            OmniLocal
-          </a>
-          <div className="hidden md:flex gap-6 items-center text-sm">
-            <a className="text-[#FA500F] border-b-2 border-[#FA500F] pb-1 px-2 font-medium" href="#">Workspace</a>
-            <a className="text-[#e5e2e1] opacity-60 hover:opacity-100 transition-opacity px-2 py-1 rounded font-medium" onClick={() => navigate('/')} style={{cursor:'pointer'}}>Home</a>
-            <a className="text-[#e5e2e1] opacity-60 hover:opacity-100 transition-opacity px-2 py-1 rounded font-medium" href="#">Logs</a>
-            <a className="text-[#e5e2e1] opacity-60 hover:opacity-100 transition-opacity px-2 py-1 rounded font-medium" href="#">Agents</a>
-          </div>
-        </div>
-        <div className="flex items-center gap-4">
-          <button className="text-[#e5e2e1] opacity-60 hover:opacity-100 transition-opacity px-4 py-2 rounded text-sm font-medium">
-            System Status
-          </button>
-          <button
-            onClick={handleSubmit}
-            disabled={isUploading}
-            className="bg-gradient-to-r from-primary to-primary-container text-on-primary px-5 py-2 rounded font-bold hover:opacity-90 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center gap-2 shadow-[0_0_20px_rgba(255,87,27,0.2)]"
-          >
-            <Icon name="rocket_launch" className="text-base" />
-            {isUploading ? 'Launching...' : 'Deploy Agent'}
-          </button>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* ── Main Workspace ── */}
       <main className="flex-1 flex overflow-hidden" style={{ height: 'calc(100vh - 73px)' }}>
