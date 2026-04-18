@@ -121,52 +121,45 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(300px,auto)]">
             {/* Lead Node */}
-            <div className="md:col-span-8 bg-[#111111] rounded-none p-8 relative flex flex-col justify-end overflow-hidden group hover:border-[#FA500F] border border-[#333333] transition-colors duration-150">
-              <img 
-                alt="Trịnh Võ Nam Kiệt" 
-                className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-50 transition-opacity grayscale" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzWpZ5n3ye1b2Os1HhS3wQNCZU_v-F9aEu8I57uX54gi0fFeBSFTaRbo2gqc42aLQZ1bIMUEns3gPfH9lMT4ZBoWOFXc7CIN2rcXXLbKh_p8qpkrqQe793MyAnZIv9hKIKTpiAx2ZnLtTBfA15Sq5xorHBufp78ag53SNoW2wyD3KWCIxbd88c17jZ5pZzB-P8ykxv4jqoTm2ghbOekkwH0aLJXR0z6vf4O444DUN_H9i9_b1cZPdlcBHF4UfTFKWlYWNLiQh5FkXh" 
-              />
+            <div className="md:col-span-12 bg-[#111111] rounded-none p-8 relative flex flex-col justify-end overflow-hidden group hover:border-[#FA500F] border border-[#333333] transition-colors duration-150 min-h-[400px]">
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-              <div className="relative z-10">
-                <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>SYS.ARCHITECT // 001</div>
-                <h4 className="font-headline text-3xl font-bold text-white mb-1">Trịnh Võ Nam Kiệt</h4>
-                <p className="font-body text-neutral-400">Chief Executive Officer</p>
+              <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                  <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>TEAM.LEADER // 001</div>
+                  <h4 className="font-headline text-4xl md:text-5xl font-bold text-white mb-2">Trịnh Võ Nam Kiệt</h4>
+                  <p className="font-body text-neutral-400 text-lg">Project Lead & Architect</p>
+                </div>
+                <div className="text-right hidden md:block">
+                  <span className="font-mono text-xs text-[#FA500F] uppercase tracking-widest bg-[#FA500F]/10 px-3 py-1 border border-[#FA500F]/30 rounded">Team 24A01</span>
+                </div>
               </div>
             </div>
             {/* Node 2 */}
             <div className="md:col-span-4 bg-[#111111] rounded-none p-8 relative flex flex-col justify-end overflow-hidden group hover:border-[#FA500F] border border-[#333333] transition-colors duration-150">
-              <img 
-                alt="Lê Thị Mai Trang" 
-                className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-50 transition-opacity grayscale" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8qbFHzJgwc-JwwpIKB31OE002YkHqimmXuHTMIgThgUON-eY62OhIPAJNl1tyGBhYBfdPDqxcooDN1B-3vLmMu2r5d5bE9sq5peT4e6yRbjbZZiD7uS2wDWykUGxZUw1T9kiCRfyHYTmsl1-A-wmQdb40Wv5smYlX6vhuuiZeFBQjbU5bqh05Mtw3xA1m4SlNgj9o0b8-OMvJ3Zb0hVKHJo_uZCsHBv_9aGoHbW31kEM8NKFCNIgDhlFk5nh5kRjNt09yt9d2iQ8o" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
               <div className="relative z-10">
-                <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>DATA.LEAD // 002</div>
+                <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>CORE.NODE // 002</div>
                 <h4 className="font-headline text-xl font-bold text-white mb-1">Nguyễn Chí Tính</h4>
-                <p className="font-body text-neutral-400 text-sm">Head of AI Research</p>
+                <p className="font-body text-neutral-400 text-sm">AI Engineer & Developer</p>
               </div>
             </div>
             {/* Node 3 */}
             <div className="md:col-span-4 bg-[#111111] rounded-none p-8 relative flex flex-col justify-end overflow-hidden group hover:border-[#FA500F] border border-[#333333] transition-colors duration-150">
-              <img 
-                alt="Nguyễn Hải Đăng" 
-                className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-50 transition-opacity grayscale" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA73zWGzomiC5VcNBdNqWbslBgLQQW-5NLvP6ZReaZhcORZUKMTj5cCqO8mYZxz-dIZJS7b2DfNQIkl10G8gPtz2Y754fE-wmgcfnQejeGHodsONSVY1aE4Vp5nm3RpAZuRDBqT74AgJDEMMRJ9Hb6CiA2qo8yGaDtr6dPC1cHLjkZaCrlTCfdQQo0nyMO-HK-THzQDwioArXxGFuBc-gr4YQMnwiUQgvuBXVGX7Glr607YqqY1xewXKKxB0kK2DQoZuO7L4hAK3ch3" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
               <div className="relative z-10">
-                <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>OPS.CORE // 003</div>
+                <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>CORE.NODE // 003</div>
                 <h4 className="font-headline text-xl font-bold text-white mb-1">Đoàn Tuấn Anh</h4>
-                <p className="font-body text-neutral-400 text-sm">VP of Operations</p>
+                <p className="font-body text-neutral-400 text-sm">Full-Stack Developer</p>
               </div>
             </div>
-            {/* Stat Block */}
-            <div className="md:col-span-8 bg-[#111111] border border-[#333333] rounded-none p-8 flex flex-col justify-center items-center text-center">
-              <div className="font-[JetBrains_Mono] text-6xl font-bold text-[#FA500F] mb-4" style={{ fontFamily: "'JetBrains Mono'" }}>42+</div>
-              <h4 className="font-headline text-xl font-bold text-white mb-2">Global Deployments</h4>
-              <p className="font-body text-neutral-400 max-w-md">Nodes active across 15 timezones, ensuring localized latency under 50ms.</p>
+            {/* Node 4 */}
+            <div className="md:col-span-4 bg-[#111111] rounded-none p-8 relative flex flex-col justify-end overflow-hidden group hover:border-[#FA500F] border border-[#333333] transition-colors duration-150">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
+              <div className="relative z-10">
+                <div className="font-[JetBrains_Mono] text-xs text-[#FA500F] mb-2" style={{ fontFamily: "'JetBrains Mono'" }}>CORE.NODE // 004</div>
+                <h4 className="font-headline text-xl font-bold text-white mb-1">Dương Gia Khương</h4>
+                <p className="font-body text-neutral-400 text-sm">AI Engineer & Data</p>
+              </div>
             </div>
           </div>
         </section>
