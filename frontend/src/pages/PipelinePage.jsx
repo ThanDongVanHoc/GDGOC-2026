@@ -24,9 +24,10 @@ export default function PipelinePage() {
   useEffect(() => {
     if (!threadId) return
 
-    const fetchStatus = async () => {
+      const fetchStatus = async () => {
       try {
-        const res = await fetch(`/api/v1/pipeline/${threadId}`)
+        const API_BASE = "https://yellow-hired-starter-peninsula.trycloudflare.com";
+        const res = await fetch(`${API_BASE}/api/v1/pipeline/${threadId}`)
         if (!res.ok) return
         const data = await res.json()
         

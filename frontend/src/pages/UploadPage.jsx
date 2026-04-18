@@ -104,7 +104,8 @@ export default function UploadPage() {
       formData.append('file', pdfFile)
       formData.append('brief', brief)
 
-      const response = await fetch('/api/v1/pipeline/upload-and-start', {
+      const API_BASE = "https://yellow-hired-starter-peninsula.trycloudflare.com";
+      const response = await fetch(`${API_BASE}/api/v1/pipeline/upload-and-start`, {
         method: 'POST',
         body: formData,
       })
