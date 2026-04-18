@@ -353,6 +353,7 @@ async def run(payload: dict) -> dict:
             "entity_graph": serialized_entity_graph,
             "localization_log": localization_log,
             "Images": processed_images,
+            "source_pdf_path": validated_payload.source_pdf_path,
         },
         "localization_warnings": translation_warnings,
     }

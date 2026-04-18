@@ -24,7 +24,8 @@ async def run_mock_test():
     # Ensure source_pdf_path is absolute or relative to where uvicorn runs
     # In this mock, we'll just use the one in the payload or fall back
     if not payload.get("source_pdf_path"):
-        payload["source_pdf_path"] = os.path.join(os.path.dirname(__file__), "data", "uploads", "source.pdf")
+        abs_pdf = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "uploads", "source.pdf"))
+        payload["source_pdf_path"] = abs_pdf.replace("\\", "/")
 
     phase3_url = "http://localhost:8003/api/v1/phase3/run"
     test_webhook_url = f"http://localhost:8003/webhook/test/{thread_id}"
@@ -66,9 +67,11 @@ async def run_mock_test():
                         out_p3 = data.get("output_phase_3", {})
                         log = out_p3.get("localization_log", [])
                         safe_pack = out_p3.get("context_safe_localized_text_pack", [])
+                        localized_images = out_p3.get("Images", [])
                         
                         print(f"Proposals processed: {len(log)}")
                         print(f"Safe text blocks: {len(safe_pack)}")
+                        print(f"Images identified: {len(localized_images)}")
                         if data.get("error"):
                             print(f"Error in processing: {data.get('error')}")
                         return
