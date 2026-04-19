@@ -8,15 +8,21 @@ STRICT INSTRUCTIONS PER SECTION:
 
 1. Background (Environment Editing):
 - You are planning a BACKGROUND-ONLY edit. DO NOT modify, replace, or suggest changes to foreground objects or characters in this section.
-- 'scene_type': Identify the exact scene type (e.g., "indoor dining table", "classroom", "outdoor street"). You must preserve this fundamental context.
+- 'scene_type': Identify the exact scene type (e.g., "indoor dining table", "classroom", "outdoor street"). You must preserve this fundamental context (e.g., maintaining the general layout of a room, similar to the Schale office).
 - 'preserved_foreground': List ALL important foreground items (people, food, main focal objects). These are strictly LOCKED and must remain unchanged.
 - 'modified_background_elements': List ONLY the background elements that are safe to modify (e.g., walls, windows, floors, distant decor, outside weather).
 - 'vietnamese_setting_suggestions': You MUST provide at least 3 specific, realistic Vietnamese background suggestions.
-- 'constraints': Provide strict rules to preserve the physical integrity and logic of the original scene during the background edit.
+- 'constraints': Provide strict rules to preserve the physical integrity and logic of the original scene during the background edit. 
+  * TEXT PRESERVATION RULE: If there is text in the image, you MUST add a constraint here to strictly preserve the text itself. However, you may allow the object holding the text (e.g., a signpost, paper, billboard) to be changed to a culturally appropriate equivalent.
 
-2. Object_Replacement (Cultural Adaptation):
-- STRICT RULE: ONLY suggest a replacement if the original object, creature, or weather condition is highly culturally dissonant, geographically impossible, or entirely unrecognizable in Vietnam.
+2. Object_Replacement (Cultural Adaptation & Characters):
+- STRICT CLOTHING TRIGGER: You MUST actively evaluate the clothing of every character in the image. If the environment is being localized to a hot, tropical climate and the original characters are wearing cold-weather gear (e.g., thick sweaters, scarves, gloves, or heavy coats like the students at Red Winter Federal Academy), you MUST create a specific key for EACH unseasonal clothing item (e.g., "thick wool sweater", "winter scarf") and provide a tropical replacement. DO NOT leave this section empty if characters are wearing unseasonal clothes.
 - EXPLICIT FOCUS (TROPICAL CLIMATE): Vietnam has a tropical climate. You MUST replace non-native creatures (e.g., raccoons) and geographically incorrect weather constructs/activities (e.g., snowmen, sleds, snowballs) with localized, climate-appropriate equivalents (e.g., sandcastles, kites, paper lanterns). 
+- CLOTHING RULE & VIETNAMESE ATTIRE: If characters are present and the environment is localized, you MUST suggest changing their clothes to match Vietnam's culture and tropical climate. 
+  * Replace heavy winter wear with light summer clothing (e.g., short-sleeve shirts, shorts, light cotton dresses, sandals—similar to the Trinity General School summer uniforms). 
+  * For school settings, suggest standard Vietnamese student uniforms (white button-down shirts, dark trousers/skirts, and red youth union scarves) instead of standard Kivotos blazers. 
+  * For sunny outdoor or rural scenes, consider adding traditional sun protection like a 'nón lá' (conical hat).
+  * OVERRIDE: If the image consists of plain math, diagrams, or isolated text with no real scene, strictly SKIP all clothing modifications.
 - OVERRIDE RULE: If an object violates the tropical/geographic rule (like a snowman), it MUST be replaced here, even if it is a prominent foreground object. Cultural and geographical accuracy strictly supersedes foreground preservation.
 - Do NOT change objects that are globally understood or insignificant to the overall context (e.g., generic trees, basic chairs, standard pencils, standard fruit).
 - Identify the unfamiliar element and use its original name as the key.
@@ -42,11 +48,10 @@ EVERYTHING MUST RETURN AS A JSON FILE:
     ],
     "constraints": [
       "string (e.g., food must stay on table)",
-      "string (e.g., people remain seated)",
-      "string (e.g., do not move objects)"
+      "string (e.g., keep existing text intact, but the billboard holding it can become a local chalkboard)"
     ]
   },
   "Object_Replacement": {
-    "string (object key)": "string (suggest in english)"
+    "string (object or clothing key)": "string (suggest in english)"
   }
 }
