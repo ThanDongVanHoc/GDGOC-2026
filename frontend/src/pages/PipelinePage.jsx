@@ -134,7 +134,7 @@ export default function PipelinePage() {
                     Preview Mode
                   </button>
                   <a 
-                    href={`https://strips-proxy-medicines-perfect.trycloudflare.com/api/v1/download/${threadId}`} 
+                    href={`${API_BASE}/api/v1/download/${threadId}`} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="btn-primary"
@@ -241,7 +241,7 @@ export default function PipelinePage() {
               <button className="close-btn" onClick={() => setShowPdfModal(false)}>✖</button>
             </div>
             <iframe 
-              src={`https://strips-proxy-medicines-perfect.trycloudflare.com/api/v1/download/${threadId}`}
+              src={`${API_BASE}/api/v1/download/${threadId}`}
               style={{ width: '100%', flex: 1, border: 'none', borderRadius: '8px', background: '#ccc' }}
               title="PDF Preview"
             />

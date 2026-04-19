@@ -65,6 +65,30 @@ def hex_color_to_tuple(color_int: int) -> tuple:
     b = (color_int & 0xFF) / 255.0
     return (r, g, b)
 
+def sanitize_bbox(bbox_list: list) -> fitz.Rect:
+    if not bbox_list or len(bbox_list) != 4:
+        return fitz.Rect(0, 0, 100, 100)
+    
+    x0, y0, x1, y1 = bbox_list
+    
+    # Fix inverted coordinates
+    if x0 > x1:
+        x0, x1 = x1, x0
+    if y0 > y1:
+        y0, y1 = y1, y0
+        
+    # Enforce minimum dimension
+    if x1 - x0 < 15:
+        x1 = x0 + 15
+    if y1 - y0 < 15:
+        y1 = y0 + 15
+        
+    # Prevent negative out of bounds
+    x0 = max(0, x0)
+    y0 = max(0, y0)
+    
+    return fitz.Rect(x0, y0, x1, y1)
+
 def fit_text_in_bbox(bbox: fitz.Rect, text: str, font: fitz.Font,
                      initial_size: float, min_ratio: float = 0.45) -> float:
     if initial_size <= 0:
@@ -186,20 +210,18 @@ def rebuild_localized_pdf(payload: dict) -> dict:
             print(f"[Phase 5] Page {page_id}: Replacing {len(replace_list)} text blocks...")
 
         for block in replace_list:
-            bbox = fitz.Rect(block.get("bbox", [0, 0, 0, 0]))
+            bbox = sanitize_bbox(block.get("bbox", [0, 0, 0, 0]))
             page.add_redact_annot(bbox, fill=(1, 1, 1))
         page.apply_redactions()
 
         for block in replace_list:
-            bbox = fitz.Rect(block.get("bbox", [0, 0, 0, 0]))
+            bbox = sanitize_bbox(block.get("bbox", [0, 0, 0, 0]))
             translated = block.get("final_text", "")
             font_size = block.get("size", 12.0)
+            if font_size <= 0:
+                font_size = 12.0
             color_int = block.get("color", 0)
             flags = block.get("flags", 0)
-
-            if bbox.width < 1 or bbox.height < 1:
-                stats["skipped"] += 1
-                continue
 
             color = hex_color_to_tuple(color_int)
             font = get_font(flags)
@@ -225,7 +247,7 @@ def rebuild_localized_pdf(payload: dict) -> dict:
                 bbox_list = img_data.get("bbox", [0, 0, 0, 0])
                 b64_str = img_data.get("image")
                 try:
-                    rect = fitz.Rect(bbox_list)
+                    rect = sanitize_bbox(bbox_list)
                     img_bytes = base64.b64decode(b64_str)
                     page.insert_image(rect, stream=img_bytes)
                     stats["replaced_images"] += 1
