@@ -11,7 +11,7 @@ import uuid
 
 import httpx
 
-COMFYUI_BASE_URL = os.getenv("COMFYUI_BASE_URL", "https://cir-videos-institutional-settle.trycloudflare.com")
+COMFYUI_BASE_URL = os.getenv("COMFYUI_BASE_URL", "https://privilege-hazardous-departmental-pregnancy.trycloudflare.com/")
 
 # Polling settings
 POLL_INTERVAL = 1.0  # seconds

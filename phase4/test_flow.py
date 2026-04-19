@@ -29,7 +29,7 @@ import uvicorn
 from fastapi import FastAPI
 
 # ── Configuration ────────────────────────────────────────────────
-PHASE4_URL = "http://localhost:8004"
+PHASE4_URL = "http://localhost:8011"
 WEBHOOK_PORT = 9994
 WEBHOOK_URL = f"http://localhost:{WEBHOOK_PORT}/webhook"
 
@@ -38,17 +38,7 @@ TEST_IMAGE_PATH = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "uploads", "sample_image.png")
 )
 
-# Sample JSON payload
-SAMPLE_REPLACEMENTS = {
-    "Background": {
-        "scene_type": "indoor",
-        "preserved_foreground": [],
-        "modified_background_elements": [],
-        "vietnamese_setting_suggestions": [],
-        "constraints": []
-    },
-    "Object_Replacement": {}
-}
+# Drop SAMPLE_REPLACEMENTS, we use the real payload
 
 # ── Webhook receiver (simulates Orchestrator) ────────────────────
 webhook_app = FastAPI()
@@ -82,21 +72,21 @@ async def main():
     time.sleep(1)
 
     # ── Step 2: Send job to Phase 4 ──────────────────────────────
-    thread_id = str(uuid.uuid4())
-    job_payload = {
-        "thread_id": thread_id,
-        "webhook_url": WEBHOOK_URL,
-        "tasks": [
-            {
-                "image_url": "https://images.dog.ceo/breeds/pomeranian/n02112018_1090.jpg", # Real dog image URL for testing
-                "replacements_json": SAMPLE_REPLACEMENTS
-            }
-        ]
-    }
+    json_path = r"C:\GDGOC 2026\src\GDGOC-2026\phase3_result_full.json"
+    print(f"\n[Test] Reading payload from {json_path}...")
+    with open(json_path, "r", encoding="utf-8") as f:
+        job_payload = json.load(f)
+        
+    thread_id = job_payload.get("thread_id", str(uuid.uuid4()))
+    job_payload["webhook_url"] = WEBHOOK_URL
+    job_payload["thread_id"] = thread_id
+    
+    # Inject mock paths so worker.py can test the smart fallback to cloudflare UI
+    job_payload["source_pdf_path"] = "/mock/does/not/4c8a9b56-8c05-4a08-8703-030e067c7d9c.pdf"
+    job_payload["source_pdf_url"] = "http://20.41.123.4:8000/uploads/4c8a9b56-8c05-4a08-8703-030e067c7d9c.pdf"
 
     print(f"\n[Test] Sending job to Phase 4...")
     print(f"  thread_id: {thread_id}")
-    print(f"  tasks: 1 image URL queued")
     print(f"  webhook_url: {WEBHOOK_URL}")
 
     async with httpx.AsyncClient() as client:

@@ -125,10 +125,25 @@ def rebuild_localized_pdf(payload: dict) -> dict:
         pid = block.get("page_id", 1)
         pages_map.setdefault(pid, []).append(block)
 
-    doc = fitz.open(source_pdf_path)
-    stats = {"replaced": 0, "skipped": 0, "shrunk": 0}
+    # ── Phase 4 Image Parsing ──
+    output_phase_4 = payload.get("output_phase_4", {})
+    image_results = output_phase_4.get("results", []) if isinstance(output_phase_4, dict) else []
+    
+    image_pages_map = {}
+    for img_data in image_results:
+        if img_data.get("status") == "success" and img_data.get("image"):
+            pid = img_data.get("page_id", 1)
+            image_pages_map.setdefault(pid, []).append(img_data)
 
-    for page_id, blocks in sorted(pages_map.items()):
+    doc = fitz.open(source_pdf_path)
+    stats = {"replaced": 0, "skipped": 0, "shrunk": 0, "replaced_images": 0, "skipped_images": 0}
+
+    all_pages = set(pages_map.keys()).union(set(image_pages_map.keys()))
+
+    for page_id in sorted(all_pages):
+        blocks = pages_map.get(page_id, [])
+        img_blocks = image_pages_map.get(page_id, [])
+        
         page_idx = page_id - 1
         if page_idx < 0 or page_idx >= len(doc):
             continue
@@ -153,11 +168,12 @@ def rebuild_localized_pdf(payload: dict) -> dict:
             
             replace_list.append(block)
 
-        if not replace_list:
-            print(f"[Phase 5] Page {page_id}: Skipped all {len(blocks)} blocks (No changes detected)")
+        if not replace_list and not img_blocks:
+            print(f"[Phase 5] Page {page_id}: Skipped all blocks (No text or image changes detected)")
             continue
             
-        print(f"[Phase 5] Page {page_id}: Replacing {len(replace_list)} blocks...")
+        if replace_list:
+            print(f"[Phase 5] Page {page_id}: Replacing {len(replace_list)} text blocks...")
 
         for block in replace_list:
             bbox = fitz.Rect(block.get("bbox", [0, 0, 0, 0]))
@@ -190,6 +206,22 @@ def rebuild_localized_pdf(payload: dict) -> dict:
                 stats["replaced"] += 1
             except Exception as e:
                 print(f"[Phase 5 ERROR] Failed to draw text on pg {page_id}: {e}")
+
+        # ── Image Insertion Logic ──
+        if img_blocks:
+            print(f"[Phase 5] Page {page_id}: Inserting {len(img_blocks)} images...")
+            import base64
+            for img_data in img_blocks:
+                bbox_list = img_data.get("bbox", [0, 0, 0, 0])
+                b64_str = img_data.get("image")
+                try:
+                    rect = fitz.Rect(bbox_list)
+                    img_bytes = base64.b64decode(b64_str)
+                    page.insert_image(rect, stream=img_bytes)
+                    stats["replaced_images"] += 1
+                except Exception as e:
+                    stats["skipped_images"] += 1
+                    print(f"[Phase 5 ERROR] Failed to insert image on pg {page_id}: {e}")
 
     # Save output
     output_dir = Path(__file__).parent.parent / "output"

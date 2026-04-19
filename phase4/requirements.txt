@@ -8,3 +8,4 @@ reportlab>=4.0.0
 google-genai>=1.0.0
 easyocr
 numpy
+PyMuPDF>=1.23.0
