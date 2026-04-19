@@ -67,6 +67,9 @@ def hex_color_to_tuple(color_int: int) -> tuple:
 
 def fit_text_in_bbox(bbox: fitz.Rect, text: str, font: fitz.Font,
                      initial_size: float, min_ratio: float = 0.45) -> float:
+    if initial_size <= 0:
+        initial_size = 12.0
+
     min_size = initial_size * min_ratio
     best_size = min_size
     
@@ -74,7 +77,7 @@ def fit_text_in_bbox(bbox: fitz.Rect, text: str, font: fitz.Font,
     try:
         if not tw.fill_textbox(bbox, text, fontsize=initial_size, font=font):
             return initial_size
-    except ValueError:
+    except (ValueError, ZeroDivisionError):
         return initial_size
 
     lo, hi = min_size, initial_size
@@ -87,7 +90,7 @@ def fit_text_in_bbox(bbox: fitz.Rect, text: str, font: fitz.Font,
             else:
                 best_size = mid
                 lo = mid
-        except ValueError:
+        except (ValueError, ZeroDivisionError):
             best_size = mid
             lo = mid
     return best_size
