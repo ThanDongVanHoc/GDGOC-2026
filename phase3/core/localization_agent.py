@@ -37,39 +37,44 @@ _FPT_API_KEY: str = os.environ.get("FPT_API_KEY", "")
 _FPT_BASE_URL: str = "https://mkp-api.fptcloud.com"
 _FPT_MODEL: str = "gemma-4-31B-it"
 _FPT_VLM_MODEL: str = "Qwen2.5-VL-7B-Instruct"
+
+# Prompt file paths
 _VLM_SYSTEM_PROMPT_PATH = os.path.join(os.path.dirname(__file__), "vlm_system_prompt.txt")
+_LOCALIZATION_PROMPT_PATH = os.path.join(os.path.dirname(__file__), "localization_system_prompt.txt")
+_EXTRACTION_PROMPT_PATH = os.path.join(os.path.dirname(__file__), "extraction_system_prompt.txt")
+_REWRITE_PROMPT_PATH = os.path.join(os.path.dirname(__file__), "rewrite_system_prompt.txt")
+
+
+def _read_prompt_file(file_path: str, fallback_text: str) -> str:
+    """Read prompt from file with absolute path resolution and fallback."""
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                return f.read().strip()
+        except Exception as e:
+            logger.warning(f"[Agent] Failed to read prompt file {file_path}: {e}")
+    else:
+        logger.warning(f"[Agent] Prompt file not found: {file_path}. Using fallback.")
+    return fallback_text
 
 # ---------------------------------------------------------------------------
-# System prompt for the localization agent
+# Fallback Prompts (if files are missing)
 # ---------------------------------------------------------------------------
 
-_SYSTEM_PROMPT = """\
+_FALLBACK_LOCALIZATION_PROMPT = """\
 You are a Vietnamese cultural localization expert for children's picture books.
+Your task: Propose Vietnamese replacements for Western cultural entities.
+Return a JSON array of proposals with "original", "proposed", and "rationale".
+"""
 
-Your task: Given a list of Western cultural entities found in a Vietnamese children's book, propose
-Vietnamese replacements that are familiar to Vietnamese children aged 6-10.
+_FALLBACK_EXTRACTION_PROMPT = """\
+You are an entity extractor. Given a list of texts by page, extract ALL cultural entities.
+Return a JSON array of objects: [{"name": "Entity Name", "type": "character|location|object", "pages": [1, 2]}]
+"""
 
-Rules:
-1. NEVER rename protected entities: {protected_names}
-2. NEVER violate these rules: {never_change_rules}
-3. Only replace entities that are culturally unfamiliar in Vietnam.
-4. Keep character names unchanged unless they are NOT in the protected list
-   AND have a clear Vietnamese cultural equivalent.
-5. The replacement must preserve the narrative meaning and emotional tone.
-6. Do NOT change entities that already work in Vietnamese context.
-
-Return a JSON array of proposals. Each proposal MUST have these fields:
-- "original": the exact entity name from the input
-- "proposed": the Vietnamese replacement
-- "rationale": 1-sentence explanation in Vietnamese
-
-Example:
-[
-  {{"original": "Lò sưởi", "proposed": "Bếp củi", "rationale": "Lò sưởi không phổ biến trong các gia đình Việt Nam; bếp củi là thay thế phù hợp với văn hóa."}},
-  {{"original": "Mũ len", "proposed": "Nón lá", "rationale": "Mũ len ít được dùng ở vùng nhiệt đới; nón lá là biểu tượng quen thuộc hơn."}}
-]
-
-Return ONLY the JSON array. No extra text, no markdown fences.
+_FALLBACK_REWRITE_PROMPT = """\
+You are a Vietnamese language expert. Translate the English sentence into Vietnamese,
+replacing the specific cultural concept as requested. Output ONLY the new sentence.
 """
 
 
@@ -210,8 +215,8 @@ def generate_proposals_llm(
     never_change = global_metadata.get("never_change_rules", [])
 
     # Build the system prompt with constraints
-    system = _SYSTEM_PROMPT.format(
-        "Your job is to localize the content of the book to Vietnamese.\n",
+    prompt_tpl = _read_prompt_file(_LOCALIZATION_PROMPT_PATH, _FALLBACK_LOCALIZATION_PROMPT)
+    system = prompt_tpl.format(
         protected_names=json.dumps(protected),
         never_change_rules=json.dumps(never_change),
     )
@@ -258,11 +263,7 @@ def extract_entities_llm(texts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     Returns:
         A list of entity dictionaries with 'name', 'type', and 'pages'.
     """
-    system = (
-        "You are an entity extractor. Given a list of texts by page, extract ALL "
-        "cultural entities (characters, locations, objects, food, clothing). "
-        "Return a JSON array of objects: [{\"name\": \"Entity Name\", \"type\": \"character|location|object\", \"pages\": [1, 2]}]"
-    )
+    system = _read_prompt_file(_EXTRACTION_PROMPT_PATH, _FALLBACK_EXTRACTION_PROMPT)
     user_msg = json.dumps(texts, ensure_ascii=False)
     
     try:
@@ -431,13 +432,7 @@ def process_images_vlm(
         if _FPT_API_KEY:
             try:
                 # Load VLM system prompt from file
-                vlm_system_prompt = ""
-                if os.path.exists(_VLM_SYSTEM_PROMPT_PATH):
-                    with open(_VLM_SYSTEM_PROMPT_PATH, "r", encoding="utf-8") as f:
-                        vlm_system_prompt = f.read().strip()
-                else:
-                    logger.warning("[Agent] VLM system prompt file not found: %s. Using basic fallback.", _VLM_SYSTEM_PROMPT_PATH)
-                    vlm_system_prompt = "You are an expert Cultural Localization Assistant."
+                vlm_system_prompt = _read_prompt_file(_VLM_SYSTEM_PROMPT_PATH, "You are an expert Cultural Localization Assistant.")
 
                 client = OpenAI(api_key=_FPT_API_KEY, base_url=_FPT_BASE_URL)
                 response = client.chat.completions.create(
@@ -522,15 +517,7 @@ def rewrite_sentence_llm(
         logger.warning("[Agent] No FPT API key — skipping LLM rewrite.")
         return vietnamese_sentence
 
-    system_prompt = (
-        "You are a Vietnamese language expert for children's picture books.\n"
-        "Your task: Translate the given English sentence into Vietnamese from scratch, "
-        "intentionally replacing a specific cultural concept with the provided Vietnamese-appropriate equivalent.\n\n"
-        "Rules:\n"
-        "1. Do NOT just loosely modify the existing Vietnamese sentence. You must recreate/translate the English sentence entirely in Vietnamese.\n"
-        "2. Ensure the requested replacement is naturally integrated into the new translation.\n"
-        "3. Output ONLY the newly translated Vietnamese sentence. No explanation.\n"
-    )
+    system_prompt = _read_prompt_file(_REWRITE_PROMPT_PATH, _FALLBACK_REWRITE_PROMPT)
 
     user_prompt = (
         f"English source sentence: {english_source}\n"
