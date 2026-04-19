@@ -71,16 +71,23 @@ def fit_text_in_bbox(bbox: fitz.Rect, text: str, font: fitz.Font,
     best_size = min_size
     
     tw = fitz.TextWriter(fitz.Rect(0, 0, 9999, 9999))
-    if not tw.fill_textbox(bbox, text, fontsize=initial_size, font=font):
+    try:
+        if not tw.fill_textbox(bbox, text, fontsize=initial_size, font=font):
+            return initial_size
+    except ValueError:
         return initial_size
 
     lo, hi = min_size, initial_size
     for _ in range(10):
         mid = (lo + hi) / 2
         tw = fitz.TextWriter(fitz.Rect(0, 0, 9999, 9999))
-        if tw.fill_textbox(bbox, text, fontsize=mid, font=font):
-            hi = mid
-        else:
+        try:
+            if tw.fill_textbox(bbox, text, fontsize=mid, font=font):
+                hi = mid
+            else:
+                best_size = mid
+                lo = mid
+        except ValueError:
             best_size = mid
             lo = mid
     return best_size
