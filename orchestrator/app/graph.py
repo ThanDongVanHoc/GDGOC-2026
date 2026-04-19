@@ -52,9 +52,10 @@ def build_graph(checkpointer=None) -> StateGraph:
     graph.add_edge("dispatch_phase2", "wait_phase2")
     graph.add_edge("wait_phase2", "dispatch_phase3")
     graph.add_edge("dispatch_phase3", "wait_phase3")
-    graph.add_edge("wait_phase3", "dispatch_phase4")
-    graph.add_edge("dispatch_phase4", "wait_phase4")
-    graph.add_edge("wait_phase4", "dispatch_phase5")
+    
+    # Bỏ qua Phase 4: Nối thẳng wait_phase3 sang dispatch_phase5
+    graph.add_edge("wait_phase3", "dispatch_phase5")
+    
     graph.add_edge("dispatch_phase5", "wait_phase5")
 
     # ── QA Feedback Router (the ONLY conditional edge) ───────
