@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 import './PipelinePage.css'
 
+const API_BASE = "https://strips-proxy-medicines-perfect.trycloudflare.com"
+
 const INITIAL_PIPELINE = [
   { id: 1, title: 'Ingestion & Structural Parsing', status: 'pending', node: 'phase1', time: '--', dispatch: null },
   { id: 2, title: 'Context-Aware Translation', status: 'pending', node: 'phase2', time: '--', dispatch: null },
@@ -27,7 +29,6 @@ export default function PipelinePage() {
 
       const fetchStatus = async () => {
       try {
-        const API_BASE = "https://strips-proxy-medicines-perfect.trycloudflare.com";
         const res = await fetch(`${API_BASE}/api/v1/pipeline/${threadId}`)
         if (!res.ok) return
         const data = await res.json()
@@ -38,7 +39,15 @@ export default function PipelinePage() {
           return prev.map((node, index) => {
             const phaseNum = index + 1
             let newStatus = 'pending'
-            
+
+            if (phaseNum === 4) {
+              return {
+                ...node,
+                status: data.current_phase >= 5 || data.status === 'COMPLETED' ? 'completed' : 'pending',
+                dispatch: null
+              }
+            }
+             
             // Map logic
             if (data.status === 'ERROR') {
               newStatus = phaseNum === data.current_phase ? 'error' : prev[index].status

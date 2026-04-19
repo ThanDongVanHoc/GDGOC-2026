@@ -14,7 +14,7 @@ from pathlib import Path
 app = FastAPI(title="OmniLocal Phase 5 — PDF Rebuild & QA")
 
 # Serve output PDFs as static files
-OUTPUT_DIR = Path(__file__).parent.parent / "output"
+OUTPUT_DIR = Path(__file__).resolve().parents[2] / "uploads"
 OUTPUT_DIR.mkdir(exist_ok=True)
 app.mount("/output", StaticFiles(directory=str(OUTPUT_DIR)), name="output")
 
