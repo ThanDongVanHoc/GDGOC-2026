@@ -131,13 +131,12 @@ export default function PipelinePage() {
           <div className="context-section" style={{ marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
             <h4>Output Artifact</h4>
             {overallStatus === 'COMPLETED' ? (
-              <div style={{ textAlign: 'center' }}>
-                <p style={{ fontSize: '0.85rem', color: 'var(--emerald)', marginBottom: '0.75rem' }}>✨ Construction Complete ✨</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <div className="output-artifact">
+                <p className="output-artifact-status">Construction Complete</p>
+                <div className="output-actions">
                   <button 
                     onClick={() => setShowPdfModal(true)}
-                    className="btn-primary"
-                    style={{ width: '100%', justifyContent: 'center', background: 'var(--accent)' }}
+                    className="output-action-btn output-action-btn-primary"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                     Preview Mode
@@ -146,8 +145,7 @@ export default function PipelinePage() {
                     href={`${API_BASE}/api/v1/download/${threadId}`} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="btn-primary"
-                    style={{ width: '100%', justifyContent: 'center', background: 'transparent', border: '1px solid var(--emerald)', color: 'var(--emerald)' }}
+                    className="output-action-btn output-action-btn-secondary"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                     Download
@@ -155,10 +153,10 @@ export default function PipelinePage() {
                 </div>
               </div>
             ) : (
-              <div style={{ textAlign: 'center', opacity: 0.5 }}>
-                <div className="spinner" style={{ margin: '0 auto 0.5rem', width: '20px', height: '20px', borderWidth: '2px' }}></div>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', margin: 0 }}>Processing PDF...</p>
-                <button className="btn-primary" disabled style={{ width: '100%', justifyContent: 'center', marginTop: '0.75rem', background: '#333', color: '#666' }}>
+              <div className="output-artifact output-artifact-pending">
+                <div className="spinner output-artifact-spinner"></div>
+                <p className="output-artifact-pending-text">Processing PDF...</p>
+                <button className="output-action-btn output-action-btn-disabled" disabled>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                   Download PDF
                 </button>
@@ -207,8 +205,8 @@ export default function PipelinePage() {
                 {/* Connecting Line */}
                 {i < pipeline.length - 1 && (
                   <div className={`connection-line ${pipeline[i+1].status !== 'pending' ? 'active' : ''}`}>
-                    <svg height="40" width="100%">
-                      <path d="M 0 20 L 100% 20" stroke="currentColor" strokeWidth="2" fill="none" />
+                    <svg height="40" width="100%" viewBox="0 0 60 40" preserveAspectRatio="none">
+                      <path d="M 0 20 L 60 20" stroke="currentColor" strokeWidth="2" fill="none" />
                     </svg>
                   </div>
                 )}

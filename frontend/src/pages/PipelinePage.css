@@ -146,6 +146,98 @@
   font-weight: 500;
 }
 
+.output-artifact {
+  text-align: center;
+}
+
+.output-artifact-status {
+  margin-bottom: 0.85rem;
+  color: #ffb36b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.output-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.output-action-btn {
+  width: 100%;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.output-action-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.output-action-btn-primary {
+  border: 1px solid rgba(255, 145, 77, 0.45);
+  background: linear-gradient(135deg, #ff7a18, #ff5a36);
+  color: #1a0d07;
+  box-shadow: 0 10px 24px rgba(255, 106, 46, 0.28);
+}
+
+.output-action-btn-primary:hover:not(:disabled) {
+  box-shadow: 0 14px 30px rgba(255, 106, 46, 0.36);
+}
+
+.output-action-btn-secondary {
+  border: 1px solid rgba(255, 145, 77, 0.35);
+  background:
+    linear-gradient(180deg, rgba(255, 145, 77, 0.08), rgba(255, 145, 77, 0.02)),
+    rgba(255, 255, 255, 0.02);
+  color: #ffb36b;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.output-action-btn-secondary:hover:not(:disabled) {
+  border-color: rgba(255, 145, 77, 0.55);
+  background:
+    linear-gradient(180deg, rgba(255, 145, 77, 0.15), rgba(255, 145, 77, 0.05)),
+    rgba(255, 255, 255, 0.03);
+  color: #ffd2a1;
+}
+
+.output-artifact-pending {
+  opacity: 0.72;
+}
+
+.output-artifact-spinner {
+  margin: 0 auto 0.6rem;
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.output-artifact-pending-text {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.output-action-btn-disabled {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #6d7584;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 /* ─── Graph Board (n8n style) ────────────────────────────── */
 
 .graph-board {
