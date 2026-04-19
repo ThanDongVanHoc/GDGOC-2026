@@ -14,7 +14,6 @@ from app.nodes import (
     dispatch_phase1, wait_phase1,
     dispatch_phase2, wait_phase2,
     dispatch_phase3, wait_phase3,
-    dispatch_phase4, wait_phase4,
     dispatch_phase5, wait_phase5,
 )
 from app.routers import qa_router
@@ -40,8 +39,7 @@ def build_graph(checkpointer=None) -> StateGraph:
     graph.add_node("wait_phase2", wait_phase2)
     graph.add_node("dispatch_phase3", dispatch_phase3)
     graph.add_node("wait_phase3", wait_phase3)
-    graph.add_node("dispatch_phase4", dispatch_phase4)
-    graph.add_node("wait_phase4", wait_phase4)
+
     graph.add_node("dispatch_phase5", dispatch_phase5)
     graph.add_node("wait_phase5", wait_phase5)
 
