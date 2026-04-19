@@ -213,6 +213,19 @@
   color: #ffd2a1;
 }
 
+.output-action-btn-tertiary {
+  border: 1px solid rgba(255, 193, 120, 0.38);
+  background: rgba(255, 193, 120, 0.08);
+  color: #ffe1b5;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.output-action-btn-tertiary:hover:not(:disabled) {
+  border-color: rgba(255, 193, 120, 0.58);
+  background: rgba(255, 193, 120, 0.14);
+  color: #fff1d8;
+}
+
 .output-artifact-pending {
   opacity: 0.72;
 }
@@ -228,6 +241,13 @@
   margin: 0 0 0.75rem;
   font-size: 0.85rem;
   color: var(--text-secondary);
+}
+
+.output-artifact-note {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #f4ba72;
 }
 
 .output-action-btn-disabled {
