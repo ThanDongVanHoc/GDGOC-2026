@@ -39,5 +39,6 @@
         "max_co_occurrence": 20,
         "max_depth": 10,
         "max_page_spread": 50
-    }
+    },
+    "cascading_max_groups": 30
 }
