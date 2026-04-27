@@ -34,9 +34,9 @@ except ImportError:
     pass
 
 _FPT_API_KEY: str = os.environ.get("FPT_API_KEY", "")
-_FPT_BASE_URL: str = "https://mkp-api.fptcloud.com"
+_FPT_BASE_URL: str = "https://mkp-api.fptcloud.com/v1"
 _FPT_MODEL: str = "gemma-4-31B-it"
-_FPT_VLM_MODEL: str = "Qwen2.5-VL-7B-Instruct"
+_FPT_VLM_MODEL: str = "gemma-4-31B-it"
 
 # Prompt file paths
 _VLM_SYSTEM_PROMPT_PATH = os.path.join(os.path.dirname(__file__), "vlm_system_prompt.txt")

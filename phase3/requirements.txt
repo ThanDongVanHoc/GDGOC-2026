@@ -30,6 +30,9 @@ datasets>=2.14.0,<3.0.0
 # --- FPT Marketplace LLM (OpenAI-compatible SDK) ---
 openai>=1.30.0,<2.0.0
 
+# --- LangGraph orchestration ---
+langgraph>=0.4.0,<1.0.0
+
 # --- MinerU PDF parsing (PDF -> Markdown + structured JSON) ---
 # Use mineru[core] for CPU-only / lighter install (~2GB)
 # Pin tightly — MinerU's transitive deps (gradio, ffmpy, starlette) cause
