@@ -12,6 +12,7 @@ import uuid
 
 from fastapi import FastAPI, File, Form, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.schemas.pipeline import PipelineStartRequest, DemoStartRequest, PipelineStatusResponse
 from app.state import OmniLocalState
@@ -25,16 +26,20 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS — allow frontend dev server
+# CORS — allow frontend dev server and Cloudflare Pages
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Register webhook routes
 app.include_router(webhook_router)
+
+# Expose uploaded PDFs for remote workers
+app.mount("/uploads", StaticFiles(directory="data/uploads"), name="uploads")
 
 # In-memory pipeline store (for quick lookups alongside SQLite state)
 _pipelines: dict[str, OmniLocalState] = {}
@@ -228,3 +233,23 @@ async def get_pipeline_status(thread_id: str) -> PipelineStatusResponse:
         final_pdf_path=state.get("final_pdf_path") or None,
         dispatch_info=state.get("dispatch_info", {}),
     )
+
+
+from fastapi.responses import FileResponse
+import os
+
+@app.get("/api/v1/download/{thread_id}")
+async def download_pdf(thread_id: str):
+    """
+    Download the final localized PDF once the pipeline is completed.
+    """
+    state = _pipelines.get(thread_id)
+    if not state or not state.get("final_pdf_path"):
+        return {"error": "Final PDF not ready or thread not found"}
+        
+    file_path = state["final_pdf_path"]
+    if not os.path.exists(file_path):
+        return {"error": "File not found on server"}
+        
+    filename = f"omnilocal_{thread_id}.pdf"
+    return FileResponse(path=file_path, filename=filename, media_type="application/pdf")

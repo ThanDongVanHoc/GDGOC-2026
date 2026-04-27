@@ -14,26 +14,14 @@ import app.main
 
 router = APIRouter(prefix="/webhook", tags=["webhook"])
 
-# Lock to prevent duplicate resume attempts per thread
+# Lock to prevent concurrent resume attempts per thread
 _resume_locks: dict[str, asyncio.Lock] = {}
-# Track which phases have been resumed to prevent infinite loops
-_resumed_phases: set[str] = set()
 
 
 async def _resume_pipeline(thread_id: str, phase: int, payload: dict):
     """
     Background task to resume the LangGraph pipeline after a phase completes.
-    Includes deduplication lock to prevent infinite retry loops.
     """
-    resume_key = f"{thread_id}:phase{phase}"
-
-    # Prevent duplicate resumes
-    if resume_key in _resumed_phases:
-        print(f"[Orchestrator] Ignoring duplicate webhook for {resume_key}")
-        return
-
-    _resumed_phases.add(resume_key)
-
     state = app.main._pipelines.get(thread_id)
     if not state:
         print(f"Warning: Webhook received for unknown thread: {thread_id}")
@@ -82,12 +70,14 @@ async def receive_webhook(phase_id: int, payload: dict, background_tasks: Backgr
     Receive results from a Phase Worker.
     """
     thread_id = payload["thread_id"]
-    result = payload["result"]
 
-    # Check for duplicate before scheduling
-    resume_key = f"{thread_id}:phase{phase_id}"
-    if resume_key in _resumed_phases:
-        return {"status": "duplicate_ignored", "thread_id": thread_id, "phase": phase_id}
+    # Phase workers use different key formats:
+    #   Phase 1/2: {"result": {...}}
+    #   Phase 3:   {"output_phase_3": {...}, "localization_warnings": [...]}
+    result = payload.get("result")
+    if result is None:
+        # Build result from phase-specific keys (Phase 3+ format)
+        result = {k: v for k, v in payload.items() if k != "thread_id"}
 
     background_tasks.add_task(_resume_pipeline, thread_id, phase_id, result)
 

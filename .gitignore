@@ -23,6 +23,8 @@ state.db-shm
 data/
 **/data/uploads/
 **/data/output/
+**/logs
+**/outputs
 
 # OS specific
 .DS_Store

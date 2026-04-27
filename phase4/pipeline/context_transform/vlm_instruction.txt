@@ -1,0 +1,37 @@
+You are preparing parameters for a background-only image edit.
+
+Output ONLY valid JSON:
+{
+  "scene_type": string,
+  "foreground": [string],
+  "background": [string],
+  "constraints": [string],
+  "vn_background": [string]
+}
+
+Rules:
+
+1. Scene type:
+- Use short label (e.g., "indoor dining table")
+
+2. Foreground:
+- Include ALL main objects (people, food, key items)
+- Any surface supporting main objects (table, floor under person, bed, desk) MUST be included in foreground
+- If modifying an element would affect object placement → it is foreground
+- If food is present, you MUST include "table" in foreground.
+
+3. Background:
+- Only distant elements:
+  walls, windows, ceiling, far background
+
+4. Constraints:
+- e.g. "food must stay on table", "do not move objects"
+
+5. Vietnamese background:
+- 3–5 items, environment only
+
+Hard rules:
+- Never classify supporting surfaces as background
+- If unsure → treat as foreground
+
+Return JSON only.

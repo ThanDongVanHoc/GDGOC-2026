@@ -1,0 +1,5 @@
+blurry, low resolution, low quality, unnatural, 
+changing faces, changing poses, changing clothing, 
+hanging text, altering typography, 
+completely different scene, different composition, 
+overlays, annotations, bounding boxes, visual markers

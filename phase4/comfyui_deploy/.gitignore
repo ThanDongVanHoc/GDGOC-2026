@@ -1,0 +1,18 @@
+# Ngăn chặn đẩy Model Weights nặng lên Github
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+
+# Bỏ qua thư mục sinh ra lúc chạy ComfyUI
+models/
+output/
+input/
+temp/
+user/
+
+# Python & OS files
+__pycache__/
+*.pyc
+.DS_Store

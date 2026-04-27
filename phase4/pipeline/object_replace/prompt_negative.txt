@@ -1,0 +1,5 @@
+blurry, low resolution, low quality, unnatural, 
+changing existing text, altering original typography, 
+distorting faces, changing poses, 
+adding extra objects, floating objects, disconnected shadows, disproportionate scale, 
+red boxes, outlines, frames, UI elements, drawn shapes, bounding boxes, graphical overlays

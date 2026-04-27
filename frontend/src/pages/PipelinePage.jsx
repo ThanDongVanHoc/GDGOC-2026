@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import NavBar from '../components/NavBar'
 import './PipelinePage.css'
+
+const API_BASE = "https://strips-proxy-medicines-perfect.trycloudflare.com"
 
 const INITIAL_PIPELINE = [
   { id: 1, title: 'Ingestion & Structural Parsing', status: 'pending', node: 'phase1', time: '--', dispatch: null },
@@ -15,7 +18,10 @@ export default function PipelinePage() {
   const navigate = useNavigate()
   const [pipeline, setPipeline] = useState(INITIAL_PIPELINE)
   const [overallStatus, setOverallStatus] = useState("STARTING...")
+  const [withImagesStatus, setWithImagesStatus] = useState("IDLE")
+  const [hasWithImagesPdf, setHasWithImagesPdf] = useState(false)
   const [selectedPayload, setSelectedPayload] = useState(null)
+  const [showPdfModal, setShowPdfModal] = useState(false)
   
   // Dữ liệu từ UploadPage
   const { threadId, pdfName = 'document.pdf', brief = 'No brief provided' } = location.state || {}
@@ -23,19 +29,29 @@ export default function PipelinePage() {
   useEffect(() => {
     if (!threadId) return
 
-    const fetchStatus = async () => {
+      const fetchStatus = async () => {
       try {
-        const res = await fetch(`/api/v1/pipeline/${threadId}`)
+        const res = await fetch(`${API_BASE}/api/v1/pipeline/${threadId}`)
         if (!res.ok) return
         const data = await res.json()
         
         setOverallStatus(data.status)
+        setWithImagesStatus(data.with_images_status || "IDLE")
+        setHasWithImagesPdf(Boolean(data.final_pdf_with_images_path))
         
         setPipeline(prev => {
           return prev.map((node, index) => {
             const phaseNum = index + 1
             let newStatus = 'pending'
-            
+
+            if (phaseNum === 4) {
+              return {
+                ...node,
+                status: data.current_phase >= 5 || data.status === 'COMPLETED' ? 'completed' : 'pending',
+                dispatch: null
+              }
+            }
+             
             // Map logic
             if (data.status === 'ERROR') {
               newStatus = phaseNum === data.current_phase ? 'error' : prev[index].status
@@ -81,20 +97,7 @@ export default function PipelinePage() {
   return (
     <div className="pipeline-page">
       {/* ── Navbar ───────────────────────────────────────── */}
-      <nav className="navbar">
-        <a href="/" className="navbar-brand" onClick={(e) => { e.preventDefault(); navigate('/') }}>
-          <div className="logo-icon">🌏</div>
-          <span className="gradient-text">OmniLocal</span>
-        </a>
-        <div className="navbar-actions">
-          {threadId && (
-            <div className="thread-badge">
-              <span className="tag">THREAD-ID</span>
-              <span className="id">{threadId.split('-')[0]}</span>
-            </div>
-          )}
-        </div>
-      </nav>
+      <NavBar />
 
       <div className="pipeline-container">
         {/* ── Context Sidebar ────────────────────────────── */}
@@ -128,6 +131,62 @@ export default function PipelinePage() {
               <li><span className="meta-key">Safety</span><span className="meta-val">Strict</span></li>
             </ul>
           </div>
+
+          <div className="context-section" style={{ marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <h4>Output Artifact</h4>
+            {overallStatus === 'COMPLETED' ? (
+              <div className="output-artifact">
+                <p className="output-artifact-status">Construction Complete</p>
+                <div className="output-actions">
+                  <button 
+                    onClick={() => setShowPdfModal(true)}
+                    className="output-action-btn output-action-btn-primary"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Preview Mode
+                  </button>
+                  <a 
+                    href={`${API_BASE}/api/v1/download/${threadId}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="output-action-btn output-action-btn-secondary"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    Download
+                  </a>
+                  {hasWithImagesPdf && withImagesStatus === 'COMPLETED' ? (
+                    <a
+                      href={`${API_BASE}/api/v1/download-with-images/${threadId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="output-action-btn output-action-btn-tertiary"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/><path d="M7 4h10"/></svg>
+                      Download with Images
+                    </a>
+                  ) : null}
+                  {withImagesStatus === 'PROCESSING' ? (
+                    <button className="output-action-btn output-action-btn-disabled" disabled>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      Rendering Images...
+                    </button>
+                  ) : null}
+                  {withImagesStatus === 'FAILED' ? (
+                    <p className="output-artifact-note">Image enhancement failed. The standard PDF is still available.</p>
+                  ) : null}
+                </div>
+              </div>
+            ) : (
+              <div className="output-artifact output-artifact-pending">
+                <div className="spinner output-artifact-spinner"></div>
+                <p className="output-artifact-pending-text">Processing PDF...</p>
+                <button className="output-action-btn output-action-btn-disabled" disabled>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  Download PDF
+                </button>
+              </div>
+            )}
+          </div>
         </aside>
 
         {/* ── Visual Graph (n8n style) ───────────────────── */}
@@ -155,19 +214,10 @@ export default function PipelinePage() {
                       <span className="node-type">LangGraph Node</span>
                     </div>
                     {node.dispatch && (
-                      <div className="node-dispatch-info">
-                        <div className="dispatch-url" title={node.dispatch.url}>
-                          <strong>POST</strong> <code>{node.dispatch.url}</code>
-                          <div className="url-note">*(Can be changed in <code>orchestrator/app/config.py</code>)*</div>
-                        </div>
-                        <div className="dispatch-payload-wrapper">
-                          <pre className="dispatch-payload">
-                            {JSON.stringify(node.dispatch.payload, null, 2)}
-                          </pre>
-                          <button className="view-payload-btn" onClick={() => setSelectedPayload(node.dispatch.payload)}>
-                            View Payload Modal ↗
-                          </button>
-                        </div>
+                      <div className="node-dispatch-info" style={{ marginTop: '0.75rem', padding: 0, background: 'transparent' }}>
+                        <button className="view-payload-btn" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setSelectedPayload(node.dispatch.payload)}>
+                          View Payload Data ↗
+                        </button>
                       </div>
                     )}
                   </div>
@@ -179,8 +229,8 @@ export default function PipelinePage() {
                 {/* Connecting Line */}
                 {i < pipeline.length - 1 && (
                   <div className={`connection-line ${pipeline[i+1].status !== 'pending' ? 'active' : ''}`}>
-                    <svg height="40" width="100%">
-                      <path d="M 0 20 L 100% 20" stroke="currentColor" strokeWidth="2" fill="none" />
+                    <svg height="40" width="100%" viewBox="0 0 60 40" preserveAspectRatio="none">
+                      <path d="M 0 20 L 60 20" stroke="currentColor" strokeWidth="2" fill="none" />
                     </svg>
                   </div>
                 )}
@@ -209,6 +259,23 @@ export default function PipelinePage() {
             <div className="modal-body">
               <pre>{JSON.stringify(selectedPayload, null, 2)}</pre>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── PDF Preview Modal ────────────────────────────────────── */}
+      {showPdfModal && (
+        <div className="payload-modal-overlay" style={{ backdropFilter: 'blur(10px)', background: 'rgba(0,0,0,0.8)' }} onClick={() => setShowPdfModal(false)}>
+          <div className="payload-modal-content" style={{ width: '90vw', height: '90vh', maxWidth: '1400px', padding: '1rem', display: 'flex', flexDirection: 'column' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-header" style={{ marginBottom: '1rem' }}>
+              <h2>✨ Localized PDF Preview</h2>
+              <button className="close-btn" onClick={() => setShowPdfModal(false)}>✖</button>
+            </div>
+            <iframe 
+              src={`${API_BASE}/api/v1/download/${threadId}`}
+              style={{ width: '100%', flex: 1, border: 'none', borderRadius: '8px', background: '#ccc' }}
+              title="PDF Preview"
+            />
           </div>
         </div>
       )}
